@@ -1,7 +1,3 @@
----
-permalink: blog/index.html
-eleventyExcludeFromCollections: true
----
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -12,8 +8,8 @@ eleventyExcludeFromCollections: true
 <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
 <link rel="shortcut icon" href="favicon.ico">
-<title>Blog — Siti web, Google Ads, SEO e Automazione AI · ClickBari Bari</title>
-<meta name="description" content="Articoli su siti web, Google Ads, SEO, AEO e automazione AI per piccole imprese a Bari e Puglia. Consigli pratici da chi lo fa davvero.">
+<title>{{ title }} · ClickBari Blog</title>
+<meta name="description" content="{{ excerpt }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -224,13 +220,6 @@ gtag('consent', 'default', {
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NRZ3S9F5');</script>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRZ3S9F5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-
-<a class="wa-float" href="https://wa.me/393805826738" target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
 <nav>
   <a class="nav-logo" href="/">
     <div class="nav-logo-mark">
@@ -260,100 +249,22 @@ gtag('consent', 'default', {
     <li class="mobile-nav-item"><a href="/portfolio/" class="mobile-nav-link">Portfolio</a></li>
     <li class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link active">Blog</a></li>
   </ul>
-  <a href="#"  onclick="openContactModal();return false;" class="mobile-cta">Contattami →</a>
+  <a href="#" onclick="openContactModal();return false;" class="mobile-cta">Contattami →</a>
 </div>
 
-
-<!-- HERO -->
-<section class="hero reveal">
-  <div class="hero-tag">Blog</div>
-  <h1 class="hero-title">Consigli pratici<br>per crescere<br><span>online.</span></h1>
-  <p class="hero-desc">Articoli su siti web, Google Ads, SEO e automazione AI. Scritti da chi lo fa davvero — per piccole imprese a Bari e in tutta Italia.</p>
-</section>
-
-<!-- CATEGORIE -->
-<div class="categorie reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px;padding:0">Categorie</div>
-  <div class="categorie-grid">
-    <a href="#" class="cat-card" data-cat="siti-web">
-      <div class="cat-icon">🌐</div>
-      <div class="cat-name">Siti Web</div>
-      <p class="cat-desc">Design, sviluppo, performance e conversioni. Tutto quello che devi sapere prima di fare un sito.</p>
-      <div class="cat-count"><span>{{ blogComingPosts | countByCategory("siti-web") }}</span> articoli in arrivo</div>
-    </a>
-    <a href="#" class="cat-card" data-cat="google">
-      <div class="cat-icon">📊</div>
-      <div class="cat-name">Google Ads</div>
-      <p class="cat-desc">Campagne, budget, keyword e ottimizzazione. Come far funzionare Google per la tua attività.</p>
-      <div class="cat-count"><span>{{ blogComingPosts | countByCategory("google") }}</span> articoli in arrivo</div>
-    </a>
-    <a href="#" class="cat-card" data-cat="seo">
-      <div class="cat-icon">🔍</div>
-      <div class="cat-name">SEO & AEO</div>
-      <p class="cat-desc">Posizionamento su Google e ottimizzazione per le risposte AI. Traffico organico che cresce nel tempo.</p>
-      <div class="cat-count"><span>{{ blogComingPosts | countByCategory("seo") }}</span> articoli in arrivo</div>
-    </a>
-    <a href="#" class="cat-card" data-cat="auto">
-      <div class="cat-icon">🤖</div>
-      <div class="cat-name">Automazione AI</div>
-      <p class="cat-desc">Chatbot, flussi automatici e AI agent. Come automatizzare la tua attività senza competenze tecniche.</p>
-      <div class="cat-count"><span>{{ blogComingPosts | countByCategory("auto") }}</span> articoli in arrivo</div>
-    </a>
+<article style="max-width:740px;margin:0 auto;padding:140px 24px 96px;color:#fff;font-family:var(--font-b);font-weight:300;line-height:1.7">
+  <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:16px">{{ categoryLabel }}</div>
+  <h1 style="font-family:var(--font-d);font-size:clamp(32px,5vw,52px);line-height:1.05;margin-bottom:20px;letter-spacing:.01em">{{ title }}</h1>
+  <div style="display:flex;gap:16px;color:#888;font-size:13px;margin-bottom:48px">
+    <span>{{ date }}</span>
+    <span>·</span>
+    <span>{{ readTime }} di lettura</span>
   </div>
-</div>
-
-<!-- FILTRI + ARTICOLI -->
-<div class="blog-header reveal">
-  <div class="filtri">
-    <button class="filtro active" data-filter="tutti">Tutti</button>
-    <button class="filtro" data-filter="siti-web">Siti Web</button>
-    <button class="filtro" data-filter="google">Google Ads</button>
-    <button class="filtro" data-filter="seo">SEO & AEO</button>
-    <button class="filtro" data-filter="auto">Automazione AI</button>
+  <div style="font-size:17px;color:#ddd" class="post-body">
+    {{ content | safe }}
   </div>
-  <div class="blog-count">{{ blogComingPosts.length }} articoli in arrivo</div>
-</div>
+</article>
 
-<div class="articoli-wrap">
-  <div class="articoli-grid">
-
-{%- for post in blogComingPosts %}
-    <div class="art-card coming" data-cat="{{ post.category }}">
-      <div class="coming-badge">{{ post.badge }}</div>
-      <div class="art-card-top">
-        <div class="art-cat {{ post.categoryClass }}">{{ post.categoryLabel }}</div>
-        <div class="art-title">{{ post.title | safe }}</div>
-        <p class="art-excerpt">{{ post.excerpt | safe }}</p>
-      </div>
-      <div class="art-card-bottom">
-        <div class="art-meta">
-          <span class="art-date">{{ post.date }}</span>
-          <span class="art-read">{{ post.readTime }}</span>
-        </div>
-        <span class="art-link">{{ post.linkText }}</span>
-      </div>
-    </div>
-{%- endfor %}
-
-  </div>
-</div>
-
-<!-- NEWSLETTER -->
-<div class="newsletter reveal">
-  <div>
-    <h3>Vuoi sapere quando escono gli articoli?</h3>
-    <p>Niente spam. Solo contenuti utili, quando sono pronti. Un articolo alla settimana sulla crescita digitale per PMI.</p>
-  </div>
-  <div>
-    <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="la-tua@email.it">
-      <button class="newsletter-btn">Iscriviti</button>
-    </div>
-    <p style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:10px">Nessuno spam. Cancellati quando vuoi.</p>
-  </div>
-</div>
-
-<!-- FOOTER -->
 <footer>
   <div>
     <a class="nav-logo" href="/">
@@ -396,60 +307,6 @@ gtag('consent', 'default', {
     </div>
   </div>
 </footer>
-
-<script>
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
-  });
-}, {threshold: 0.08});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-setTimeout(() => document.querySelector('.hero').classList.add('visible'), 150);
-
-// FILTRI
-const filtri = document.querySelectorAll('.filtro');
-const cards = document.querySelectorAll('.art-card');
-filtri.forEach(f => {
-  f.addEventListener('click', () => {
-    filtri.forEach(b => b.classList.remove('active'));
-    f.classList.add('active');
-    const filter = f.dataset.filter;
-    cards.forEach(card => {
-      if (filter === 'tutti' || card.dataset.cat === filter) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-});
-
-// CATEGORIE click → filter
-document.querySelectorAll('.cat-card').forEach(cat => {
-  cat.addEventListener('click', (e) => {
-    e.preventDefault();
-    const catFilter = cat.dataset.cat;
-    filtri.forEach(f => {
-      f.classList.toggle('active', f.dataset.filter === catFilter);
-    });
-    cards.forEach(card => {
-      card.style.display = card.dataset.cat === catFilter ? 'flex' : 'none';
-    });
-    document.querySelector('.blog-header').scrollIntoView({behavior:'smooth'});
-  });
-});
-
-// NEWSLETTER
-document.querySelector('.newsletter-btn').addEventListener('click', () => {
-  const input = document.querySelector('.newsletter-input');
-  if (input.value.includes('@')) {
-    input.value = '';
-    input.placeholder = '✓ Iscritto! A presto.';
-    input.style.color = '#4ade80';
-  }
-});
-</script>
-
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);flex-wrap:wrap">
   <p style="font-size:13px;color:#bbb;line-height:1.7;margin:0;flex:1;min-width:200px">Usiamo cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity). Leggi la <a href="/cookie/" style="color:var(--blue-bright);text-decoration:none">Cookie Policy</a> e la <a href="/privacy/" style="color:var(--blue-bright);text-decoration:none">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;width:100%;max-width:340px">

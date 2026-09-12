@@ -1,0 +1,13 @@
+{
+  "name": "clickbari-website",
+  "version": "1.0.0",
+  "description": "Sito ClickBari — ricostruito su Eleventy (11ty) per pubblicazione facilitata di articoli e progetti portfolio.",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

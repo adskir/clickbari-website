@@ -1,0 +1,23 @@
+---
+layout: post.njk
+title: "Quanto costa un sito web a Bari nel 2026?"
+date: 2026-10-15
+category: siti-web
+categoryClass: siti
+categoryLabel: "🌐 Siti Web"
+readTime: "5 min"
+excerpt: "Prezzi reali, cosa è incluso e come scegliere il professionista giusto senza spendere troppo o troppo poco."
+permalink: "blog/quanto-costa-un-sito-web-a-bari-nel-2026/index.html"
+---
+
+Scrivi qui il testo dell'articolo in Markdown normale.
+
+## Un sottotitolo
+
+Paragrafo di esempio. Puoi usare **grassetto**, *corsivo*, [link](https://clickbari.it), liste puntate, immagini, ecc. — tutto il Markdown standard funziona.
+
+- Punto uno
+- Punto due
+- Punto tre
+
+Quando il file è pronto, rinominalo togliendo `_esempio-` dal nome e l'estensione `.example` (es. `2026-10-15-quanto-costa-sito-web.md`) — a quel punto Eleventy lo trasforma in una pagina vera del blog.

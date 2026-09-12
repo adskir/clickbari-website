@@ -1,0 +1,41 @@
+backend:
+  name: github
+  repo: adskir/clickbari-website
+  branch: main
+  # NOTA: il backend "github" richiede un OAuth provider (un piccolo servizio
+  # che gestisce il login). Non è ancora configurato — finché non lo facciamo,
+  # l'accesso a /admin non funzionerà. Per scrivere articoli OGGI puoi comunque
+  # creare i file .md direttamente su GitHub (vedi src/posts/README.md).
+
+media_folder: "src/images/blog"
+public_folder: "/images/blog"
+
+collections:
+  - name: "posts"
+    label: "Articoli del blog"
+    folder: "src/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Siti Web", value: "siti-web" }
+          - { label: "Google Ads", value: "google" }
+          - { label: "SEO & AEO", value: "seo" }
+          - { label: "Automazione AI", value: "auto" }
+      - label: "Classe categoria (per lo stile, non toccare)"
+        name: "categoryClass"
+        widget: "hidden"
+        default: "siti"
+      - { label: "Etichetta categoria (es. '🌐 Siti Web')", name: "categoryLabel", widget: "string" }
+      - { label: "Tempo di lettura (es. '5 min')", name: "readTime", widget: "string" }
+      - { label: "Estratto (per anteprima e SEO)", name: "excerpt", widget: "text" }
+      - label: "Layout (non toccare)"
+        name: "layout"
+        widget: "hidden"
+        default: "post.njk"
+      - { label: "Corpo dell'articolo", name: "body", widget: "markdown" }

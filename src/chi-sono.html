@@ -1,0 +1,755 @@
+---
+permalink: chi-sono.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="shortcut icon" href="favicon.ico">
+<title>Chi sono — KIR · ClickBari</title>
+<meta name="description" content="Sono Kir, non sono italiano. Sono nato a Kaliningrad, ho scelto Bari. Ti racconto la mia storia e perché faccio quello che faccio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#060606;
+  --white:#ffffff;
+  --blue:#2563EB;
+  --blue-dark:#1d4ed8;
+  --blue-bright:#5b9bff;
+  --gray:#161616;
+  --gray-mid:#222;
+  --font-d:'Bebas Neue',sans-serif;
+  --font-b:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:300;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.09)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-mark{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.nav-logo-mark img{width:100%;height:100%;object-fit:cover}
+.nav-logo-text{font-family:var(--font-d);font-size:26px;letter-spacing:.06em;color:#fff;line-height:1}
+.nav-logo-sub{font-size:8px;letter-spacing:.3em;color:var(--blue-bright);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ddd;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:2px}
+
+/* HAMBURGER */
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}
+.nav-burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,0.98);backdrop-filter:blur(20px);z-index:105;flex-direction:column;padding:100px 32px 40px;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-nav-list{list-style:none;display:flex;flex-direction:column;gap:4px;flex:1}
+.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,0.06)}
+.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-family:var(--font-d);font-size:28px;letter-spacing:.06em;color:#ddd;text-decoration:none;transition:color .2s}
+.mobile-nav-link:hover{color:#fff}
+.mobile-nav-link.active{color:var(--blue-bright)}
+.mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:16px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:2px;margin-top:24px;transition:background .2s;border:none;width:100%;cursor:pointer}
+.mobile-cta:hover{background:var(--blue-dark)}
+
+.nav-cta:hover{background:var(--blue-dark)!important}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:120px 48px 80px;
+  gap:80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-200px;right:-200px;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-left{position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
+.hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
+.hero-title{font-family:var(--font-d);font-size:clamp(64px,7vw,110px);line-height:.88;letter-spacing:.02em;margin-bottom:32px;color:#fff}
+.hero-title span{color:var(--blue-bright)}
+.hero-intro{font-size:17px;line-height:1.85;color:#ccc;margin-bottom:40px;max-width:480px}
+.hero-intro strong{color:#fff;font-weight:500}
+.hero-intro em{color:var(--blue-bright);font-style:normal}
+
+/* PHOTO */
+.hero-photo{position:relative;z-index:1}
+.photo-wrap{
+  position:relative;
+  border-radius:4px;
+  overflow:hidden;
+  width:100%;
+}
+.photo-wrap::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(37,99,235,0.15) 0%,transparent 60%);
+  z-index:1;
+  pointer-events:none;
+}
+.photo-wrap img{
+  width:100%;
+  height:auto;
+  display:block;
+  filter:grayscale(15%);
+  transition:filter .4s;
+}
+.photo-wrap:hover img{filter:grayscale(0%)}
+.photo-frame{
+  position:absolute;
+  top:-12px;left:-12px;right:12px;bottom:12px;
+  border:1px solid rgba(91,155,255,0.3);
+  border-radius:4px;
+  pointer-events:none;
+  z-index:0;
+}
+.photo-badge{
+  position:absolute;
+  bottom:16px;left:-16px;
+  background:var(--blue);
+  padding:9px 14px;
+  border-radius:4px;
+  z-index:2;
+  box-shadow:0 6px 20px rgba(37,99,235,0.4);
+}
+.photo-badge-val{font-family:var(--font-d);font-size:22px;line-height:1;color:#fff}
+.photo-badge-label{font-size:7px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin-top:2px}
+
+/* SECTION COMUNE */
+.section{padding:80px 48px}
+.section-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px}
+.section-title{font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:32px}
+
+/* STORIA */
+.storia{background:var(--gray);padding:80px 48px}
+.storia-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1100px;margin:0 auto}
+.storia-text p{font-size:15px;line-height:1.9;color:#ccc;margin-bottom:20px}
+.storia-text p:last-child{margin-bottom:0}
+.storia-text strong{color:#fff;font-weight:500}
+.storia-text .highlight{color:var(--blue-bright)}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0}
+.timeline-item{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.07);position:relative}
+.timeline-item:last-child{border-bottom:none}
+.timeline-item::before{content:'';position:absolute;left:40px;top:0;bottom:0;width:1px;background:rgba(91,155,255,0.2)}
+.timeline-year{font-family:var(--font-d);font-size:14px;letter-spacing:.1em;color:var(--blue-bright);text-align:center;position:relative;z-index:1;padding-top:4px}
+.timeline-dot{width:8px;height:8px;background:var(--blue-bright);border-radius:50%;position:absolute;left:36px;top:32px;box-shadow:0 0 12px rgba(91,155,255,0.6)}
+.timeline-content{padding-left:8px}
+.timeline-event{font-family:var(--font-d);font-size:18px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
+.timeline-desc{font-size:12px;line-height:1.7;color:#999}
+
+/* VALORI */
+.valori{padding:80px 48px}
+.valori-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
+.valore-card{background:var(--gray);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s}
+.valore-card:hover{background:var(--gray-mid)}
+.valore-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--blue-bright);transition:height .4s}
+.valore-card:hover::before{height:100%}
+.valore-icon{font-size:28px;margin-bottom:20px;display:block}
+.valore-name{font-family:var(--font-d);font-size:24px;letter-spacing:.04em;color:#fff;margin-bottom:12px}
+.valore-desc{font-size:13px;line-height:1.8;color:#ccc}
+
+/* CAFFE CTA */
+.caffe{background:var(--blue);padding:72px 48px;text-align:center;position:relative;overflow:hidden}
+.caffe::before{content:'☕';position:absolute;font-size:200px;opacity:.06;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.caffe-title{font-family:var(--font-d);font-size:clamp(36px,5vw,72px);letter-spacing:.02em;color:#fff;margin-bottom:16px;position:relative;z-index:1}
+.caffe-desc{font-size:16px;line-height:1.75;color:rgba(255,255,255,0.9);max-width:520px;margin:0 auto 36px;position:relative;z-index:1}
+.caffe-btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--blue);padding:14px 48px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:2px;transition:transform .2s,box-shadow .2s;position:relative;z-index:1}
+.caffe-btn:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+
+/* INSTAGRAM */
+.instagram{padding:80px 48px;background:var(--gray);text-align:center}
+.instagram-desc{font-size:15px;line-height:1.8;color:#ccc;max-width:520px;margin:16px auto 36px}
+.instagram-btn{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(91,155,255,0.4);color:var(--blue-bright);padding:13px 36px;font-family:var(--font-d);font-size:18px;letter-spacing:.1em;text-decoration:none;border-radius:2px;transition:border-color .2s,box-shadow .2s}
+.instagram-btn:hover{border-color:var(--blue-bright);box-shadow:0 0 24px rgba(91,155,255,0.2)}
+.instagram-note{font-size:12px;color:#666;margin-top:16px;font-style:italic}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s,box-shadow .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,0.6)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* FOOTER */
+footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding:48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px}
+.footer-tagline{font-size:13px;color:#aaa;line-height:1.7;max-width:230px;margin-top:14px}
+.footer-col-title{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#888;margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:#bbb;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-social{display:flex;gap:10px;margin-top:4px}
+.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);letter-spacing:.05em;text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
+.social-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
+.footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:11px;color:#888}
+.footer-legal{display:flex;gap:22px}
+.footer-legal a{font-size:11px;color:#888;text-decoration:none}
+.footer-legal a:hover{color:#fff}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:14px 18px}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .hero{grid-template-columns:1fr;padding:100px 18px 60px;gap:48px}
+  .hero-photo{order:-1}
+  .photo-badge{left:16px;right:auto;bottom:auto;top:16px}
+  .photo-frame{display:none}
+  .storia{padding:56px 18px}
+  .storia-grid{grid-template-columns:1fr;gap:48px}
+  .valori{padding:56px 18px}
+  .valori-grid{grid-template-columns:1fr}
+  .caffe{padding:56px 18px}
+  .instagram{padding:56px 18px}
+  .section{padding:56px 18px}
+  footer{grid-template-columns:1fr;padding:36px 18px}
+  .footer-bottom{flex-direction:column;gap:14px;text-align:center}
+}
+
+/* Contact Modal */
+.modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.visible{display:flex}
+.modal-box{position:relative;width:100%;max-width:420px;background:var(--black);border:1px solid rgba(91,155,255,0.25);border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+.modal-canvas-wrap{position:relative;height:120px;overflow:hidden;border-bottom:1px solid rgba(91,155,255,0.2)}
+.modal-canvas-wrap canvas{position:absolute;top:0;left:0;width:100%;height:100%}
+.modal-close{position:absolute;top:14px;right:14px;z-index:5;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.08);border:none;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,0.18)}
+.modal-body{padding:28px 28px 32px}
+.modal-title{font-family:var(--font-d);font-size:26px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
+.modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
+.modal-field{margin-bottom:14px}
+.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
+.modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:4px;padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
+.modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
+.modal-field select{appearance:none;cursor:pointer}
+.modal-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:4px;font-family:var(--font-b);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .2s}
+.modal-submit:hover{background:var(--blue-dark)}
+.modal-success{display:none;text-align:center;padding:8px 0}
+.modal-success.visible{display:block}
+.modal-success svg{width:48px;height:48px;margin-bottom:14px}
+.modal-success h3{font-family:var(--font-d);font-size:20px;color:#fff;margin-bottom:8px;letter-spacing:.02em}
+.modal-success p{font-size:13px;color:#999;line-height:1.6}
+
+@media(max-width:480px){
+  .modal-body{padding:22px 20px 26px}
+  .modal-canvas-wrap{height:90px}
+}
+</style>
+<!-- GTM -->
+<!-- Consent Mode v2: stato iniziale (prima di GTM) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  'wait_for_update': 500
+});
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NRZ3S9F5');</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRZ3S9F5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<!-- WA FLOAT -->
+<a class="wa-float" href="https://wa.me/393805826738" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-mark">
+      <img src="logo-icon.png" alt="ClickBari">
+    </div>
+    <div>
+      <div class="nav-logo-text">ClickBari</div>
+      <div class="nav-logo-sub">Digital · Bari</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="chi-sono.html" class="active">Chi sono</a></li>
+    <li><a href="servizi.html">Servizi</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="#" class="nav-cta" onclick="openContactModal();return false;">Contattami</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul class="mobile-nav-list">
+    <li class="mobile-nav-item"><a href="chi-sono.html" class="mobile-nav-link active">Chi sono</a></li>
+    <li class="mobile-nav-item"><a href="servizi.html" class="mobile-nav-link">Servizi</a></li>
+    <li class="mobile-nav-item"><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+    <li class="mobile-nav-item"><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+  </ul>
+  <a href="#"  onclick="openContactModal();return false;" class="mobile-cta">Contattami →</a>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left reveal">
+    <div class="hero-tag">Chi sono</div>
+    <h1 class="hero-title">Sono <span>KIR.</span><br>Non sono<br>un'agenzia.</h1>
+    <p class="hero-intro">
+      Sono nato a <strong>Kaliningrad</strong>, cresciuto tra Russia e Ucraina. 
+      Qualche anno fa ho deciso di partire verso il sud Italia per costruire qualcosa di nuovo. 
+      Ho scelto <em>Bari</em> — non per le opportunità, ma per le persone.
+    </p>
+    <a href="#storia" style="display:inline-flex;align-items:center;gap:10px;color:var(--blue-bright);font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none">
+      La mia storia <span style="transition:transform .2s">↓</span>
+    </a>
+  </div>
+  <div class="hero-photo reveal">
+    <div class="photo-frame"></div>
+    <div class="photo-wrap">
+      <img src="kir-photo.webp" alt="KIR — ClickBari, Bari" 
+           onerror="this.style.display='none';this.parentElement.style.background='var(--gray)';this.parentElement.style.minHeight='500px';this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:18px;letter-spacing:.2em;color:#555\'>FOTO IN ARRIVO</div>'">
+    </div>
+    <div class="photo-badge">
+      <div class="photo-badge-val">10+</div>
+      <div class="photo-badge-label">anni di esperienza</div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIA -->
+<section class="storia" id="storia">
+  <div class="storia-grid">
+    <div class="storia-text reveal">
+      <div class="section-tag">La mia storia</div>
+      <h2 class="section-title">Da Kaliningrad<br>a Bari</h2>
+      <p>Dal <strong>2012</strong> lavoro nel digitale — SEO, Google Ads, siti web. Non l'ho imparato in aula: l'ho imparato costruendo i miei progetti, sbagliando, ottimizzando, ricominciando.</p>
+
+      <p>Oggi offro quei <span class="highlight">10+ anni di esperienza pratica</span> alle piccole imprese pugliesi — e non solo. Non promesse, non slide patinate: risultati concreti, misurabili, con una persona reale dall'altra parte.</p>
+      <p>Se vuoi sapere chi sono davvero, guarda il mio Instagram. Trovi un tipo che balla la salsa e la bachata quando non è davanti al computer. <strong>Sono reale.</strong> 😄</p>
+    </div>
+    <div class="reveal">
+      <div class="section-tag">Tappe</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2012</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-event">Primi passi nel digitale</div>
+            <div class="timeline-desc">Scopro il marketing digitale. Aiuto i progetti di famiglia in Ucraina con quello che imparo.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2015</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-event">SEO e progetti indipendenti</div>
+            <div class="timeline-desc">Mi avvicino alla SEO. Sviluppo diversi progetti indipendenti, tra cui un'agenzia di copywriting in Russia.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-event">Performance e commercio</div>
+            <div class="timeline-desc">Google Ads, social, e-commerce. Organizzo forniture dalla Cina a Mosca. Imparo come funziona il business vero.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-event">Kiev: siti e nuovi progetti</div>
+            <div class="timeline-desc">Gestisco un noleggio di scooter giapponesi a Kiev. Comincio a costruire siti per i miei progetti.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-event">Roma: glamping</div>
+            <div class="timeline-desc">Lancio un glamping in provincia di Roma su Airbnb. Superhost, top 5% nella zona.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-event">ClickBari nasce</div>
+            <div class="timeline-desc">Mi immergo nell'AI e nell'automazione. Metto insieme tutto quello che ho imparato e comincio ad offrirlo alle imprese.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORI -->
+<section class="valori">
+  <div style="text-align:center;margin-bottom:0" class="reveal">
+    <div class="section-tag">Come lavoro</div>
+    <h2 class="section-title">Quello che mi<br>differenzia</h2>
+  </div>
+  <div class="valori-grid">
+    <div class="valore-card reveal">
+      <span class="valore-icon">🤝</span>
+      <div class="valore-name">Rapporto diretto</div>
+      <p class="valore-desc">Niente account manager, niente centralino. Parli sempre con me. Possiamo vederci a Bari per un caffè — davvero.</p>
+    </div>
+    <div class="valore-card reveal">
+      <span class="valore-icon">📊</span>
+      <div class="valore-name">Dati, non promesse</div>
+      <p class="valore-desc">Ogni decisione si basa su numeri reali. Report chiari, risultati misurabili, nessun fumo negli occhi.</p>
+    </div>
+    <div class="valore-card reveal">
+      <span class="valore-icon">🌍</span>
+      <div class="valore-name">Prospettiva internazionale</div>
+      <p class="valore-desc">Ho lavorato con clienti a New York, Toronto, Roma, Mosca, Kiev e Minsk. Conosco mercati e segmenti diversi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAFFE CTA -->
+<div class="caffe reveal">
+  <h2 class="caffe-title">Prendiamo un caffè?</h2>
+  <p class="caffe-desc">Vivo a Bari. Sono sempre disponibile per un incontro di persona — uno spritz, un caffè, una chiacchierata. Raccontami il tuo progetto.</p>
+  <a href="#" onclick="openContactModal();return false;" class="caffe-btn">Scrivimi ora →</a>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-mark">
+        <img src="logo-icon.png" alt="ClickBari">
+      </div>
+      <div>
+        <div class="nav-logo-text">ClickBari</div>
+        <div class="nav-logo-sub">Digital · Bari</div>
+      </div>
+    </a>
+    <p class="footer-tagline">Siti web, Google Ads, SEO e automazione AI a Bari e provincia. Risultati misurabili, relazione diretta.</p>
+  </div>
+  <div>
+    <p class="footer-col-title">Navigazione</p>
+    <ul class="footer-links">
+      <li><a href="chi-sono.html">Chi sono</a></li>
+      <li><a href="servizi.html">Servizi</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="footer-col-title">Contatti</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-size:12px;color:#bbb">📍 Via Generale Bellomo 94, Bari</div>
+      <div style="font-size:12px;color:#bbb">📱 <a href="https://wa.me/393805826738" style="color:#bbb;text-decoration:none">WhatsApp</a></div>
+    </div>
+    <p class="footer-col-title" style="margin-top:20px">Seguimi</p>
+    <div class="footer-social">
+      <a class="social-btn" href="https://instagram.com/kir_italy" target="_blank" style="width:auto;padding:0 14px;gap:6px;letter-spacing:.08em;font-size:10px"><svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@kir_italy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ClickBari · KIR · P.IVA 17376101006</p>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookie.html">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+setTimeout(() => document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible')), 150);
+
+</script>
+
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);flex-wrap:wrap">
+  <p style="font-size:13px;color:#bbb;line-height:1.7;margin:0;flex:1;min-width:200px">Usiamo cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity). Leggi la <a href="cookie.html" style="color:var(--blue-bright);text-decoration:none">Cookie Policy</a> e la <a href="privacy.html" style="color:var(--blue-bright);text-decoration:none">Privacy Policy</a>.</p>
+  <div style="display:flex;gap:10px;width:100%;max-width:340px">
+    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:2px;cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#888;flex:1">Solo necessari</button>
+    <button onclick="cookieAccept()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:2px;cursor:pointer;border:none;background:var(--blue);color:#fff;flex:1">Accetta tutti</button>
+  </div>
+</div>
+<style> #cookie-banner.visible{transform:translateY(0)!important}@media(min-width:600px){ #cookie-banner{padding:20px 48px!important;flex-wrap:nowrap!important}#cookie-banner>div{width:auto!important;max-width:none!important}}</style>
+<script>
+(function(){
+  var STORAGE_KEY = 'cb_consent';
+  var banner = document.getElementById('cookie-banner');
+
+  function getConsent(){ return localStorage.getItem(STORAGE_KEY); }
+
+  function updateConsent(granted){
+    if (typeof gtag !== 'function') return;
+    gtag('consent', 'update', {
+      'ad_storage': granted ? 'granted' : 'denied',
+      'ad_user_data': granted ? 'granted' : 'denied',
+      'ad_personalization': granted ? 'granted' : 'denied',
+      'analytics_storage': granted ? 'granted' : 'denied'
+    });
+    // Notifica GTM: i tag non-Google (es. Meta Pixel) possono
+    // agganciarsi a questo evento per verificare di nuovo il consenso
+    window.dataLayer.push({'event': 'consent_update'});
+  }
+
+  window.cookieAccept = function(){
+    localStorage.setItem(STORAGE_KEY,'accepted');
+    banner.classList.remove('visible');
+    updateConsent(true);
+  };
+
+  window.cookieDecline = function(){
+    localStorage.setItem(STORAGE_KEY,'declined');
+    banner.classList.remove('visible');
+    updateConsent(false);
+  };
+
+  window.resetCookieConsent = function(){
+    localStorage.removeItem(STORAGE_KEY);
+    banner.classList.add('visible');
+  };
+
+  var consent = getConsent();
+  if(!consent){
+    setTimeout(function(){ banner.classList.add('visible'); }, 600);
+  } else if(consent === 'accepted'){
+    updateConsent(true);
+  }
+})();
+</script>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal-box">
+    <div class="modal-canvas-wrap">
+      <canvas id="modal-canvas"></canvas>
+    </div>
+    <button class="modal-close" onclick="closeContactModal()" aria-label="Chiudi">✕</button>
+    <div class="modal-body">
+      <div id="modal-form-wrap">
+        <div class="modal-title">Parliamone</div>
+        <p class="modal-sub">Lasciami nome e numero, ti contatto entro un'ora (orario lavorativo).</p>
+        <form id="modal-contact-form" action="https://formspree.io/f/mlgkbbkv" method="POST">
+          <div class="modal-field">
+            <label for="modal-name">Nome *</label>
+            <input type="text" id="modal-name" name="name" required>
+          </div>
+          <div class="modal-field">
+            <label for="modal-phone">Telefono *</label>
+            <input type="tel" id="modal-phone" name="phone" required>
+          </div>
+          <div class="modal-field">
+            <label for="modal-service">Servizio</label>
+            <select id="modal-service" name="service">
+              <option value="">Seleziona (opzionale)</option>
+              <option value="Siti Web">Siti Web</option>
+              <option value="Google Ecosystem">Google Ecosystem</option>
+              <option value="SEO + AEO">SEO + AEO</option>
+              <option value="Automazione AI">Automazione AI</option>
+              <option value="Altro">Altro</option>
+            </select>
+          </div>
+          <button type="submit" class="modal-submit">Invia richiesta</button>
+        </form>
+      </div>
+      <div class="modal-success" id="modal-success">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="#5b9bff" stroke-width="1.5"/><path d="M7 12.5L10.5 16L17 8.5" stroke="#5b9bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Richiesta inviata!</h3>
+        <p>Ti contatterò entro un'ora (orario lavorativo). Grazie per avermi scritto.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('contact-modal');
+  var formWrap = document.getElementById('modal-form-wrap');
+  var successBox = document.getElementById('modal-success');
+  var form = document.getElementById('modal-contact-form');
+  var serviceSelect = document.getElementById('modal-service');
+  var canvas = document.getElementById('modal-canvas');
+  var ctx = canvas ? canvas.getContext('2d') : null;
+  var particles = [], rafId = null;
+
+  function resizeCanvas(){
+    if(!canvas) return;
+    var wrap = canvas.parentElement;
+    canvas.width = wrap.clientWidth;
+    canvas.height = wrap.clientHeight;
+  }
+
+  function initParticles(){
+    particles = [];
+    var count = Math.floor((canvas.width*canvas.height)/9000);
+    for(var i=0;i<count;i++){
+      particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        vx: (Math.random()-0.5)*0.4,
+        vy: (Math.random()-0.5)*0.4,
+        r: Math.random()*1.6+0.6
+      });
+    }
+  }
+
+  function drawFrame(){
+    if(!ctx) return;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=0;i<particles.length;i++){
+      var p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if(p.x<0||p.x>canvas.width) p.vx*=-1;
+      if(p.y<0||p.y>canvas.height) p.vy*=-1;
+    }
+    for(var i=0;i<particles.length;i++){
+      for(var j=i+1;j<particles.length;j++){
+        var a=particles[i], b=particles[j];
+        var dx=a.x-b.x, dy=a.y-b.y;
+        var dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<70){
+          ctx.strokeStyle = 'rgba(91,155,255,'+(0.18*(1-dist/70))+')';
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+    for(var i=0;i<particles.length;i++){
+      var p = particles[i];
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(91,155,255,0.85)';
+      ctx.fill();
+    }
+    rafId = requestAnimationFrame(drawFrame);
+  }
+
+  function startAnimation(){
+    resizeCanvas();
+    initParticles();
+    if(rafId) cancelAnimationFrame(rafId);
+    drawFrame();
+  }
+
+  function stopAnimation(){
+    if(rafId) cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+
+  window.openContactModal = function(prefillService){
+    overlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+    formWrap.style.display = 'block';
+    successBox.classList.remove('visible');
+    form.reset();
+    if(prefillService && serviceSelect){ serviceSelect.value = prefillService; }
+    startAnimation();
+  };
+
+  window.closeContactModal = function(){
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+    stopAnimation();
+  };
+
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeContactModal();
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = new FormData(form);
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalBtnText = submitBtn ? submitBtn.textContent : '';
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if (res.ok) {
+        formWrap.style.display = 'none';
+        successBox.classList.add('visible');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({'event': 'form_submit_success'});
+      } else if (submitBtn) {
+        submitBtn.textContent = 'Errore, riprova';
+        setTimeout(function(){ submitBtn.textContent = originalBtnText; }, 3000);
+      }
+    }).catch(function(){
+      if (submitBtn) {
+        submitBtn.textContent = 'Errore, riprova';
+        setTimeout(function(){ submitBtn.textContent = originalBtnText; }, 3000);
+      }
+    });
+  });
+
+  window.addEventListener('resize', function(){
+    if(overlay.classList.contains('visible')) resizeCanvas();
+  });
+})();
+</script>
+
+<script>
+// HAMBURGER MENU
+(function(){
+  var burger = document.getElementById('burger');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if(!burger || !mobileMenu) return;
+
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+
+  mobileMenu.querySelectorAll('a, button').forEach(function(el){
+    el.addEventListener('click', function(){
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+</body>
+</html>

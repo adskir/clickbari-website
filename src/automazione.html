@@ -1,0 +1,880 @@
+---
+permalink: automazione.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<!-- Consent Mode v2: stato iniziale (prima di GTM) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  'wait_for_update': 500
+});
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NRZ3S9F5');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="shortcut icon" href="favicon.ico">
+<title>Automazione AI Bari — Chatbot e flussi automatici · ClickBari</title>
+<meta name="description" content="Automazione AI per piccole imprese a Bari. Chatbot, risponditori WhatsApp, flussi automatici e AI agents. Setup da 200€. Preventivo su misura per progetti avanzati.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#060606;
+  --blue:#2563EB;
+  --blue-dark:#1d4ed8;
+  --blue-bright:#5b9bff;
+  --gray:#161616;
+  --gray-mid:#222;
+  --font-d:'Bebas Neue',sans-serif;
+  --font-b:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:300;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.09)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-mark{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.nav-logo-mark img{width:100%;height:100%;object-fit:cover}
+.nav-logo-text{font-family:var(--font-d);font-size:26px;letter-spacing:.06em;color:#fff;line-height:1}
+.nav-logo-sub{font-size:8px;letter-spacing:.3em;color:var(--blue-bright);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ddd;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:2px}
+
+/* HAMBURGER */
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}
+.nav-burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,0.98);backdrop-filter:blur(20px);z-index:105;flex-direction:column;padding:100px 32px 40px;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-nav-list{list-style:none;display:flex;flex-direction:column;gap:4px;flex:1}
+.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,0.06)}
+.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-family:var(--font-d);font-size:28px;letter-spacing:.06em;color:#ddd;text-decoration:none;transition:color .2s}
+.mobile-nav-link:hover{color:#fff}
+.mobile-nav-link.active{color:var(--blue-bright)}
+.mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:16px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:2px;margin-top:24px;transition:background .2s;border:none;width:100%;cursor:pointer}
+.mobile-cta:hover{background:var(--blue-dark)}
+
+.nav-cta:hover{background:var(--blue-dark)!important}
+
+/* HERO */
+.hero{min-height:85vh;display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:700px;position:relative;z-index:1;margin:0 auto;text-align:center}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
+.hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
+.hero-title{font-family:var(--font-d);font-size:clamp(56px,8vw,116px);line-height:.88;letter-spacing:.02em;margin-bottom:28px;color:#fff}
+.hero-title span{color:var(--blue-bright)}
+.hero-desc{font-size:16px;line-height:1.85;color:#ccc;max-width:520px;margin:0 auto 40px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:14px 36px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:2px;transition:transform .2s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,99,235,0.5)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.2);color:#ddd;padding:14px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:2px;transition:border-color .2s,color .2s}
+.btn-outline:hover{border-color:var(--blue-bright);color:#fff}
+
+/* PERCHE */
+.perche{padding:80px 48px;background:var(--gray)}
+.perche-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.perche-title{font-family:var(--font-d);font-size:clamp(40px,5vw,68px);line-height:.92;color:#fff}
+.perche-title span{color:var(--blue-bright)}
+.perche-list{display:flex;flex-direction:column;gap:20px}
+.perche-item{display:flex;gap:16px;align-items:flex-start}
+.perche-icon{width:40px;height:40px;background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.perche-text strong{display:block;font-size:13px;font-weight:500;color:#fff;margin-bottom:4px}
+.perche-text span{font-size:12px;color:#888;line-height:1.6}
+
+/* LIVELLI */
+.livelli{padding:80px 48px}
+.livelli-grid{display:flex;flex-direction:column;gap:2px;margin-top:48px}
+
+.livello{display:grid;grid-template-columns:200px 1fr auto;gap:32px;align-items:start;background:var(--gray);padding:36px 40px;position:relative;overflow:hidden;transition:background .3s}
+.livello:hover{background:var(--gray-mid)}
+.livello::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--blue-bright);transition:height .4s}
+.livello:hover::before{height:100%}
+.livello.custom{background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.2)}
+.livello.custom::before{height:100%}
+
+.livello-level{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:8px}
+.livello-price{font-family:var(--font-d);font-size:36px;color:#fff;line-height:1}
+.livello-price sup{font-size:16px;vertical-align:top;margin-top:6px}
+.livello-period{font-size:10px;color:#666;letter-spacing:.1em;margin-top:4px}
+
+.livello-content{}
+.livello-name{font-family:var(--font-d);font-size:24px;letter-spacing:.04em;color:#fff;margin-bottom:8px}
+.livello-desc{font-size:13px;line-height:1.8;color:#999;margin-bottom:16px}
+.livello-tags{display:flex;flex-wrap:wrap;gap:6px}
+.livello-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#666;border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:2px}
+.livello.custom .livello-tag{border-color:rgba(37,99,235,0.3);color:var(--blue-bright)}
+
+.livello-action{display:flex;align-items:center;flex-shrink:0}
+.livello-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:11px 22px;font-family:var(--font-d);font-size:15px;letter-spacing:.1em;text-decoration:none;border-radius:2px;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.livello-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
+.livello.custom .livello-btn{background:#fff;color:var(--blue)}
+
+/* FLUSSO */
+.flusso{padding:80px 48px;background:var(--gray)}
+.flusso-visual{margin-top:48px;background:var(--black);padding:40px;border-radius:4px}
+.flusso-row{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+.flusso-node{background:rgba(91,155,255,0.08);border:1px solid rgba(91,155,255,0.25);padding:16px 20px;border-radius:4px;text-align:center;flex:1;min-width:120px}
+.flusso-node.trigger{border-color:rgba(37,99,235,0.5);background:rgba(37,99,235,0.12)}
+.flusso-node.action{border-color:rgba(34,197,94,0.4);background:rgba(34,197,94,0.06)}
+.flusso-node-icon{font-size:20px;margin-bottom:6px}
+.flusso-node-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#666;margin-bottom:4px}
+.flusso-node-name{font-size:12px;color:#ccc;line-height:1.4}
+.flusso-arrow{color:rgba(91,155,255,0.3);font-size:20px;padding:0 8px;flex-shrink:0}
+.flusso-title{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#666;margin-bottom:20px}
+
+/* STRUMENTI */
+.strumenti{padding:80px 48px}
+.strumenti-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
+.strumento{background:var(--gray);padding:28px 24px;text-align:center;transition:background .3s}
+.strumento:hover{background:var(--gray-mid)}
+.strumento-icon{font-size:28px;margin-bottom:12px}
+.strumento-name{font-family:var(--font-d);font-size:16px;letter-spacing:.06em;color:#fff;margin-bottom:6px}
+.strumento-desc{font-size:11px;color:#777;line-height:1.6}
+
+/* FAQ */
+.faq{padding:80px 48px;background:var(--gray)}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px}
+.faq-item{background:var(--black);overflow:hidden}
+.faq-q{padding:24px 28px;font-family:var(--font-d);font-size:18px;letter-spacing:.03em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.faq-q:hover{color:var(--blue-bright)}
+.faq-icon{color:var(--blue-bright);font-size:22px;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{padding:0 28px 24px;font-size:13px;line-height:1.85;color:#999;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* CTA */
+.cta-finale{padding:80px 48px;text-align:center;position:relative;overflow:hidden}
+.cta-finale::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
+.cta-finale h2{font-family:var(--font-d);font-size:clamp(40px,6vw,80px);line-height:.92;color:#fff;margin-bottom:16px;position:relative;z-index:1}
+.cta-finale p{font-size:15px;color:#aaa;max-width:440px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1}
+.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding:48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px}
+.footer-tagline{font-size:13px;color:#aaa;line-height:1.7;max-width:230px;margin-top:14px}
+.footer-col-title{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#888;margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:#bbb;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-social{display:flex;gap:10px;margin-top:4px}
+.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
+.social-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
+.footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:11px;color:#888}
+.footer-legal{display:flex;gap:22px}
+.footer-legal a{font-size:11px;color:#888;text-decoration:none}
+.footer-legal a:hover{color:#fff}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:768px){
+  nav{padding:14px 18px}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .hero{padding:100px 20px 60px;min-height:auto}
+  .perche{padding:56px 20px}
+  .perche-grid{grid-template-columns:1fr;gap:40px}
+  .livelli{padding:56px 20px}
+  .livello{grid-template-columns:1fr;gap:20px}
+  .livello-action{justify-content:flex-start}
+  .flusso{padding:56px 20px}
+  .flusso-row{flex-direction:column;align-items:stretch}
+  .flusso-arrow{transform:rotate(90deg);text-align:center;padding:4px 0}
+  .strumenti{padding:56px 20px}
+  .strumenti-grid{grid-template-columns:1fr 1fr}
+  .faq{padding:56px 20px}
+  .cta-finale{padding:56px 20px}
+  footer{grid-template-columns:1fr;padding:36px 20px}
+  .footer-bottom{flex-direction:column;gap:14px;text-align:center}
+  .wa-float{bottom:20px;right:20px;width:48px;height:48px}
+}
+
+/* Cookie banner */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+#cookie-banner.visible{transform:translateY(0)}
+.cb-text{font-size:13px;color:#bbb;line-height:1.7;max-width:620px}
+.cb-text a{color:var(--blue-bright);text-decoration:none}
+.cb-actions{display:flex;gap:10px;flex-shrink:0}
+.cb-btn{font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:10px 22px;border-radius:2px;cursor:pointer;border:none;transition:background .2s,color .2s;white-space:nowrap}
+.cb-accept{background:var(--blue);color:#fff}
+.cb-accept:hover{background:var(--blue-dark)}
+.cb-decline{background:transparent;color:#888;border:1px solid rgba(255,255,255,0.15)}
+.cb-decline:hover{color:#fff;border-color:rgba(255,255,255,0.4)}
+@media(max-width:768px){
+  #cookie-banner{flex-direction:column;align-items:flex-start;padding:20px 18px;gap:16px}
+  .cb-actions{width:100%;flex-direction:column}
+  .cb-btn{width:100%;text-align:center;padding:12px}
+}
+
+/* Contact Modal */
+.modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.visible{display:flex}
+.modal-box{position:relative;width:100%;max-width:420px;background:var(--black);border:1px solid rgba(91,155,255,0.25);border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+.modal-canvas-wrap{position:relative;height:120px;overflow:hidden;border-bottom:1px solid rgba(91,155,255,0.2)}
+.modal-canvas-wrap canvas{position:absolute;top:0;left:0;width:100%;height:100%}
+.modal-close{position:absolute;top:14px;right:14px;z-index:5;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.08);border:none;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,0.18)}
+.modal-body{padding:28px 28px 32px}
+.modal-title{font-family:var(--font-d);font-size:26px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
+.modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
+.modal-field{margin-bottom:14px}
+.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
+.modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:4px;padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
+.modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
+.modal-field select{appearance:none;cursor:pointer}
+.modal-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:4px;font-family:var(--font-b);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .2s}
+.modal-submit:hover{background:var(--blue-dark)}
+.modal-success{display:none;text-align:center;padding:8px 0}
+.modal-success.visible{display:block}
+.modal-success svg{width:48px;height:48px;margin-bottom:14px}
+.modal-success h3{font-family:var(--font-d);font-size:20px;color:#fff;margin-bottom:8px;letter-spacing:.02em}
+.modal-success p{font-size:13px;color:#999;line-height:1.6}
+
+@media(max-width:480px){
+  .modal-body{padding:22px 20px 26px}
+  .modal-canvas-wrap{height:90px}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRZ3S9F5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p class="cb-text">
+    Questo sito utilizza cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity).
+    Leggi la <a href="cookie.html">Cookie Policy</a> e la <a href="privacy.html">Privacy Policy</a>.
+  </p>
+  <div class="cb-actions">
+    <button class="cb-btn cb-decline" onclick="cookieDecline()">Solo necessari</button>
+    <button class="cb-btn cb-accept" onclick="cookieAccept()">Accetta tutti</button>
+  </div>
+</div>
+
+<a class="wa-float" href="https://wa.me/393805826738" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-mark">
+      <img src="logo-icon.png" alt="ClickBari">
+    </div>
+    <div>
+      <div class="nav-logo-text">ClickBari</div>
+      <div class="nav-logo-sub">Digital · Bari</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="chi-sono.html">Chi sono</a></li>
+    <li><a href="servizi.html">Servizi</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="#" class="nav-cta" onclick="openContactModal('Automazione AI');return false;">Contattami</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul class="mobile-nav-list">
+    <li class="mobile-nav-item"><a href="chi-sono.html" class="mobile-nav-link">Chi sono</a></li>
+    <li class="mobile-nav-item"><a href="servizi.html" class="mobile-nav-link">Servizi</a></li>
+    <li class="mobile-nav-item"><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+    <li class="mobile-nav-item"><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+  </ul>
+  <a href="#"  onclick="openContactModal('Automazione AI');return false;" class="mobile-cta">Contattami →</a>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner reveal">
+    <div class="hero-tag">Automazione AI · Bari</div>
+    <h1 class="hero-title">Lavora<br>anche<br><span>offline.</span></h1>
+    <p class="hero-desc">Chatbot, risponditori automatici e flussi AI che gestiscono i primi contatti per te. Il tuo business risponde, qualifica e accompagna il cliente — anche mentre dormi.</p>
+    <div class="hero-btns">
+      <a href="#" onclick="openContactModal('Automazione AI');return false;" class="btn-primary">Richiedi preventivo →</a>
+      <a href="#livelli" class="btn-outline">Vedi i servizi</a>
+    </div>
+  </div>
+</section>
+
+<!-- PERCHE -->
+<section class="perche reveal">
+  <div class="perche-grid">
+    <div>
+      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:16px">Perché automatizzare</div>
+      <h2 class="perche-title">Il tempo è<br>la tua risorsa<br><span>più preziosa.</span></h2>
+    </div>
+    <div class="perche-list">
+      <div class="perche-item">
+        <div class="perche-icon">⏰</div>
+        <div class="perche-text">
+          <strong>Risposte immediate 24/7</strong>
+          <span>Il cliente scrive alle 23:00. Il tuo bot risponde in secondi, raccoglie le informazioni e ti avvisa. Tu rispondi il giorno dopo con tutto il contesto.</span>
+        </div>
+      </div>
+      <div class="perche-item">
+        <div class="perche-icon">🎯</div>
+        <div class="perche-text">
+          <strong>Lead qualificati</strong>
+          <span>Il bot filtra le richieste, raccoglie nome, numero, tipo di servizio richiesto. Arrivi alla conversazione con le informazioni già pronte.</span>
+        </div>
+      </div>
+      <div class="perche-item">
+        <div class="perche-icon">📉</div>
+        <div class="perche-text">
+          <strong>Meno lavoro ripetitivo</strong>
+          <span>Risposte alle domande frequenti, conferme di appuntamento, aggiornamenti sullo stato degli ordini. Tutto automatico.</span>
+        </div>
+      </div>
+      <div class="perche-item">
+        <div class="perche-icon">📈</div>
+        <div class="perche-text">
+          <strong>Scala senza assumere</strong>
+          <span>Gestisci 10 o 100 conversazioni simultanee con la stessa qualità. L'automazione cresce con te.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVELLI -->
+<section class="livelli reveal" id="livelli">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Servizi</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Dal semplice<br>al su misura.</h2>
+
+  <div class="livelli-grid">
+
+    <div class="livello">
+      <div>
+        <div class="livello-level">Base</div>
+        <div class="livello-price"><sup>da €</sup>150</div>
+        <div class="livello-period">setup una tantum<br>+ da €80/mese</div>
+      </div>
+      <div class="livello-content">
+        <div class="livello-name">Chatbot + Notifiche</div>
+        <p class="livello-desc">Chatbot sul sito web, risponditore automatico WhatsApp e notifiche Telegram quando arriva una nuova richiesta. Perfetto per chi vuole iniziare ad automatizzare i primi contatti.</p>
+        <div class="livello-tags">
+          <span class="livello-tag">Chatbot sito</span>
+          <span class="livello-tag">WhatsApp auto</span>
+          <span class="livello-tag">Notifiche Telegram</span>
+          <span class="livello-tag">Form intelligente</span>
+        </div>
+      </div>
+      <div class="livello-action">
+        <a href="#" onclick="openContactModal('Automazione AI');return false;" class="livello-btn">Inizia →</a>
+      </div>
+    </div>
+
+    <div class="livello">
+      <div>
+        <div class="livello-level">Avanzato</div>
+        <div class="livello-price"><sup>da €</sup>300</div>
+        <div class="livello-period">setup una tantum<br>+ da €120/mese</div>
+      </div>
+      <div class="livello-content">
+        <div class="livello-name">Flussi automatici</div>
+        <p class="livello-desc">Flussi multi-step con Make o n8n. Il lead arriva dal sito, viene qualificato automaticamente, inserito in un CRM, riceve una email di benvenuto e tu ricevi una notifica completa.</p>
+        <div class="livello-tags">
+          <span class="livello-tag">Make / n8n</span>
+          <span class="livello-tag">CRM integration</span>
+          <span class="livello-tag">Email automatiche</span>
+          <span class="livello-tag">Lead scoring</span>
+        </div>
+      </div>
+      <div class="livello-action">
+        <a href="#" onclick="openContactModal('Automazione AI');return false;" class="livello-btn">Inizia →</a>
+      </div>
+    </div>
+
+    <div class="livello custom">
+      <div>
+        <div class="livello-level">Su misura</div>
+        <div class="livello-price"><sup>da €</sup>500</div>
+        <div class="livello-period">preventivo personalizzato</div>
+      </div>
+      <div class="livello-content">
+        <div class="livello-name">AI Agent su misura</div>
+        <p class="livello-desc">Immagina un assistente digitale che conosce il tuo business meglio di un nuovo dipendente — risponde ai clienti, gestisce le chiamate, aggiorna il tuo CRM e chiude trattative, tutto in automatico. Lo costruiamo insieme sui tuoi dati reali.</p>
+        <div class="livello-tags">
+          <span class="livello-tag">AI Agent custom</span>
+          <span class="livello-tag">Training su dati tuoi</span>
+          <span class="livello-tag">Voicebot</span>
+          <span class="livello-tag">Gestionale integration</span>
+          <span class="livello-tag">Sales automation</span>
+        </div>
+      </div>
+      <div class="livello-action">
+        <a href="#" onclick="openContactModal('Automazione AI');return false;" class="livello-btn">Parliamo →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FLUSSO ESEMPIO -->
+<section class="flusso reveal">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Esempio reale</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Come funziona<br>un flusso base.</h2>
+  <div class="flusso-visual">
+    <div class="flusso-title">Flusso: nuovo contatto dal sito web</div>
+    <div class="flusso-row">
+      <div class="flusso-node trigger">
+        <div class="flusso-node-icon">🌐</div>
+        <div class="flusso-node-label">Trigger</div>
+        <div class="flusso-node-name">Cliente compila il form sul sito</div>
+      </div>
+      <div class="flusso-arrow">→</div>
+      <div class="flusso-node">
+        <div class="flusso-node-icon">🤖</div>
+        <div class="flusso-node-label">Bot</div>
+        <div class="flusso-node-name">WhatsApp: risposta automatica in 30 secondi</div>
+      </div>
+      <div class="flusso-arrow">→</div>
+      <div class="flusso-node">
+        <div class="flusso-node-icon">📋</div>
+        <div class="flusso-node-label">CRM</div>
+        <div class="flusso-node-name">Lead salvato con nome, numero e servizio richiesto</div>
+      </div>
+      <div class="flusso-arrow">→</div>
+      <div class="flusso-node action">
+        <div class="flusso-node-icon">📱</div>
+        <div class="flusso-node-label">Tu ricevi</div>
+        <div class="flusso-node-name">Notifica Telegram con tutti i dettagli del lead</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRUMENTI -->
+<section class="strumenti reveal">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Strumenti</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Tecnologie che uso.</h2>
+  <div class="strumenti-grid">
+    <div class="strumento">
+      <div class="strumento-icon">⚡</div>
+      <div class="strumento-name">Make</div>
+      <div class="strumento-desc">Automazione visuale no-code. Connette centinaia di app senza scrivere codice.</div>
+    </div>
+    <div class="strumento">
+      <div class="strumento-icon">🔧</div>
+      <div class="strumento-name">n8n</div>
+      <div class="strumento-desc">Alternativa open-source a Make. Più flessibile per progetti complessi.</div>
+    </div>
+    <div class="strumento">
+      <div class="strumento-icon">💬</div>
+      <div class="strumento-name">Tidio / Crisp</div>
+      <div class="strumento-desc">Chatbot sul sito web con risposte automatiche e live chat.</div>
+    </div>
+    <div class="strumento">
+      <div class="strumento-icon">📱</div>
+      <div class="strumento-name">WhatsApp Business</div>
+      <div class="strumento-desc">Messaggi automatici, catalogo prodotti e gestione professionale dei contatti.</div>
+    </div>
+    <div class="strumento">
+      <div class="strumento-icon">🧠</div>
+      <div class="strumento-name">OpenAI / Claude API</div>
+      <div class="strumento-desc">Per AI agent personalizzati addestrati sui tuoi dati. Supporto sia OpenAI che Claude (Anthropic).</div>
+    </div>
+    <div class="strumento">
+      <div class="strumento-icon">✈️</div>
+      <div class="strumento-name">Telegram Bot</div>
+      <div class="strumento-desc">Notifiche istantanee e automazioni via bot Telegram.</div>
+    </div>
+    <div class="strumento">
+      <div class="strumento-icon">📊</div>
+      <div class="strumento-name">Google Sheets</div>
+      <div class="strumento-desc">CRM semplice per raccogliere e gestire lead automaticamente.</div>
+    </div>
+    <div class="strumento">
+      <div class="strumento-icon">🗂️</div>
+      <div class="strumento-name">CRM & Database</div>
+      <div class="strumento-desc">HubSpot, Notion, Airtable — gestione contatti e lead, dalla soluzione gratuita alla base dati avanzata.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq reveal">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Domande frequenti</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Hai dubbi?</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Ho bisogno di competenze tecniche? <span class="faq-icon">+</span></div>
+      <div class="faq-a">No. Mi occupo io di tutto — dalla configurazione degli strumenti all'integrazione con il tuo sito. Tu usi il risultato finale senza preoccuparti della tecnica.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Il chatbot risponde a qualsiasi domanda? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Dipende dal livello. Il chatbot base risponde a domande predefinite (FAQ, orari, prezzi) e raccoglie contatti. Un AI agent avanzato, addestrato sui tuoi dati, può rispondere in modo molto più naturale e preciso.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Funziona con WhatsApp normale o serve Business? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Per le automazioni base bastano strumenti di terze parti che si connettono a WhatsApp. Per un'integrazione più robusta e ufficiale, consiglio WhatsApp Business API — ti spiego come attivarlo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Posso vedere come funzionerà prima di pagare? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sì. Per i progetti personalizzati preparo prima una proposta dettagliata con il flusso esatto che andremo a costruire. Approvi tu prima di iniziare.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Cosa succede se qualcosa non funziona? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Con il canone mensile includo il monitoraggio e la manutenzione. Se un flusso si interrompe, lo ripristino io. Per i progetti una tantum, includo 30 giorni di assistenza post-consegna.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Cosa sono i voicebot? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sono bot vocali che rispondono alle chiamate in modo automatico. Utili per gestire prenotazioni, rispondere a domande frequenti e qualificare il cliente prima che parli con te. Li realizzo tramite ElevenLabs e Twilio — il risultato è sorprendentemente naturale.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Posso automatizzare il mio gestionale o CRM esistente? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Nella maggior parte dei casi sì. Con Make o n8n posso connettere il tuo gestionale al sito, ai form, alle email e ai canali social. Prima facciamo insieme un'analisi di fattibilità.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-finale reveal">
+  <h2>Automatizza<br>il primo passo.</h2>
+  <p>Scrivimi — in 15 minuti capiamo quale automazione ha più senso per la tua attività e quanto può farti risparmiare.</p>
+  <div class="cta-btns">
+    <a href="#" onclick="openContactModal('Automazione AI');return false;" class="btn-primary">Contattami ora →</a>
+    <a href="servizi.html" class="btn-outline">Tutti i servizi</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-mark">
+        <img src="logo-icon.png" alt="ClickBari">
+      </div>
+      <div>
+        <div class="nav-logo-text">ClickBari</div>
+        <div class="nav-logo-sub">Digital · Bari</div>
+      </div>
+    </a>
+    <p class="footer-tagline">Siti web, Google Ads, SEO e automazione AI a Bari e provincia. Risultati misurabili, relazione diretta.</p>
+  </div>
+  <div>
+    <p class="footer-col-title">Navigazione</p>
+    <ul class="footer-links">
+      <li><a href="chi-sono.html">Chi sono</a></li>
+      <li><a href="servizi.html">Servizi</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contatti.html#form">Contatti</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="footer-col-title">Contatti</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-size:12px;color:#bbb">📍 Via Generale Bellomo 94, Bari</div>
+      <div style="font-size:12px;color:#bbb">📱 <a href="https://wa.me/393805826738" style="color:#bbb;text-decoration:none">WhatsApp</a></div>
+    </div>
+    <p class="footer-col-title" style="margin-top:20px">Seguimi</p>
+    <div class="footer-social">
+      <a class="social-btn" href="https://instagram.com/kir_italy" target="_blank">@kir_italy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ClickBari · KIR · P.IVA 17376101006</p>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookie.html">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+  });
+}, {threshold: 0.08});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+setTimeout(() => document.querySelector('.hero .reveal').classList.add('visible'), 150);
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+<script>
+(function(){
+  var STORAGE_KEY = 'cb_consent';
+  var banner = document.getElementById('cookie-banner');
+
+  function getConsent(){ return localStorage.getItem(STORAGE_KEY); }
+
+  function updateConsent(granted){
+    if (typeof gtag !== 'function') return;
+    gtag('consent', 'update', {
+      'ad_storage': granted ? 'granted' : 'denied',
+      'ad_user_data': granted ? 'granted' : 'denied',
+      'ad_personalization': granted ? 'granted' : 'denied',
+      'analytics_storage': granted ? 'granted' : 'denied'
+    });
+    // Notifica GTM: i tag non-Google (es. Meta Pixel) possono
+    // agganciarsi a questo evento per verificare di nuovo il consenso
+    window.dataLayer.push({'event': 'consent_update'});
+  }
+
+  window.cookieAccept = function(){
+    localStorage.setItem(STORAGE_KEY,'accepted');
+    banner.classList.remove('visible');
+    updateConsent(true);
+  };
+
+  window.cookieDecline = function(){
+    localStorage.setItem(STORAGE_KEY,'declined');
+    banner.classList.remove('visible');
+    updateConsent(false);
+  };
+
+  window.resetCookieConsent = function(){
+    localStorage.removeItem(STORAGE_KEY);
+    banner.classList.add('visible');
+  };
+
+  var consent = getConsent();
+  if(!consent){
+    setTimeout(function(){ banner.classList.add('visible'); }, 600);
+  } else if(consent === 'accepted'){
+    updateConsent(true);
+  }
+})();
+</script>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal-box">
+    <div class="modal-canvas-wrap">
+      <canvas id="modal-canvas"></canvas>
+    </div>
+    <button class="modal-close" onclick="closeContactModal()" aria-label="Chiudi">✕</button>
+    <div class="modal-body">
+      <div id="modal-form-wrap">
+        <div class="modal-title">Parliamone</div>
+        <p class="modal-sub">Lasciami nome e numero, ti contatto entro un'ora (orario lavorativo).</p>
+        <form id="modal-contact-form" action="https://formspree.io/f/mlgkbbkv" method="POST">
+          <div class="modal-field">
+            <label for="modal-name">Nome *</label>
+            <input type="text" id="modal-name" name="name" required>
+          </div>
+          <div class="modal-field">
+            <label for="modal-phone">Telefono *</label>
+            <input type="tel" id="modal-phone" name="phone" required>
+          </div>
+          <div class="modal-field">
+            <label for="modal-service">Servizio</label>
+            <select id="modal-service" name="service">
+              <option value="">Seleziona (opzionale)</option>
+              <option value="Siti Web">Siti Web</option>
+              <option value="Google Ecosystem">Google Ecosystem</option>
+              <option value="SEO + AEO">SEO + AEO</option>
+              <option value="Automazione AI">Automazione AI</option>
+              <option value="Altro">Altro</option>
+            </select>
+          </div>
+          <button type="submit" class="modal-submit">Invia richiesta</button>
+        </form>
+      </div>
+      <div class="modal-success" id="modal-success">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="#5b9bff" stroke-width="1.5"/><path d="M7 12.5L10.5 16L17 8.5" stroke="#5b9bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Richiesta inviata!</h3>
+        <p>Ti contatterò entro un'ora (orario lavorativo). Grazie per avermi scritto.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('contact-modal');
+  var formWrap = document.getElementById('modal-form-wrap');
+  var successBox = document.getElementById('modal-success');
+  var form = document.getElementById('modal-contact-form');
+  var serviceSelect = document.getElementById('modal-service');
+  var canvas = document.getElementById('modal-canvas');
+  var ctx = canvas ? canvas.getContext('2d') : null;
+  var particles = [], rafId = null;
+
+  function resizeCanvas(){
+    if(!canvas) return;
+    var wrap = canvas.parentElement;
+    canvas.width = wrap.clientWidth;
+    canvas.height = wrap.clientHeight;
+  }
+
+  function initParticles(){
+    particles = [];
+    var count = Math.floor((canvas.width*canvas.height)/9000);
+    for(var i=0;i<count;i++){
+      particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        vx: (Math.random()-0.5)*0.4,
+        vy: (Math.random()-0.5)*0.4,
+        r: Math.random()*1.6+0.6
+      });
+    }
+  }
+
+  function drawFrame(){
+    if(!ctx) return;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=0;i<particles.length;i++){
+      var p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if(p.x<0||p.x>canvas.width) p.vx*=-1;
+      if(p.y<0||p.y>canvas.height) p.vy*=-1;
+    }
+    for(var i=0;i<particles.length;i++){
+      for(var j=i+1;j<particles.length;j++){
+        var a=particles[i], b=particles[j];
+        var dx=a.x-b.x, dy=a.y-b.y;
+        var dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<70){
+          ctx.strokeStyle = 'rgba(91,155,255,'+(0.18*(1-dist/70))+')';
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+    for(var i=0;i<particles.length;i++){
+      var p = particles[i];
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(91,155,255,0.85)';
+      ctx.fill();
+    }
+    rafId = requestAnimationFrame(drawFrame);
+  }
+
+  function startAnimation(){
+    resizeCanvas();
+    initParticles();
+    if(rafId) cancelAnimationFrame(rafId);
+    drawFrame();
+  }
+
+  function stopAnimation(){
+    if(rafId) cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+
+  window.openContactModal = function(prefillService){
+    overlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+    formWrap.style.display = 'block';
+    successBox.classList.remove('visible');
+    form.reset();
+    if(prefillService && serviceSelect){ serviceSelect.value = prefillService; }
+    startAnimation();
+  };
+
+  window.closeContactModal = function(){
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+    stopAnimation();
+  };
+
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeContactModal();
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = new FormData(form);
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalBtnText = submitBtn ? submitBtn.textContent : '';
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if (res.ok) {
+        formWrap.style.display = 'none';
+        successBox.classList.add('visible');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({'event': 'form_submit_success'});
+      } else if (submitBtn) {
+        submitBtn.textContent = 'Errore, riprova';
+        setTimeout(function(){ submitBtn.textContent = originalBtnText; }, 3000);
+      }
+    }).catch(function(){
+      if (submitBtn) {
+        submitBtn.textContent = 'Errore, riprova';
+        setTimeout(function(){ submitBtn.textContent = originalBtnText; }, 3000);
+      }
+    });
+  });
+
+  window.addEventListener('resize', function(){
+    if(overlay.classList.contains('visible')) resizeCanvas();
+  });
+})();
+</script>
+
+<script>
+// HAMBURGER MENU
+(function(){
+  var burger = document.getElementById('burger');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if(!burger || !mobileMenu) return;
+
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+
+  mobileMenu.querySelectorAll('a, button').forEach(function(el){
+    el.addEventListener('click', function(){
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+</body>
+</html>

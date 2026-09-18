@@ -1,0 +1,55 @@
+<h1>ClickBari — sito su Eleventy (11ty)</h1>
+<p>Questo repository contiene il sito clickbari.it ricostruito sullo stack
+GitHub + Eleventy (11ty), pronto per il deploy su OVH tramite Git.</p>
+<h2>Cosa è cambiato rispetto al sito originale, e cosa no</h2>
+<p><strong>Il contenuto visibile è identico al sito attuale</strong> — stesso testo, stessa
+struttura, stessi URL (<code>/index.html</code>, <code>/servizi.html</code>, ecc. — nessun
+redirect necessario, nessuna perdita di SEO).</p>
+<p><strong>Cosa è diverso &quot;sotto il cofano&quot;:</strong></p>
+<ul>
+<li>Ogni pagina (<code>index.html</code>, <code>chi-sono.html</code>, <code>servizi.html</code>, ecc.) è ora un
+file dentro <code>src/</code>, con un piccolo blocco di configurazione in testa
+(<code>permalink: ...</code>) che dice a Eleventy con che nome pubblicare la pagina.
+Il resto del file è identico all'originale.</li>
+<li><strong>Il blog è diventato &quot;a dati&quot;</strong>: le 12 anteprime &quot;in arrivo&quot; ora vivono in
+<code>src/_data/blogComingPosts.json</code> invece che scritte a mano nell'HTML.
+<code>blog.html</code> le mostra con un ciclo automatico — se aggiungi o togli una
+voce da quel file JSON, la griglia e i contatori per categoria si
+aggiornano da soli, senza toccare l'HTML.</li>
+<li><strong>Le pagine principali (chi-sono, servizi, portfolio, ecc.) NON sono state
+unificate in un layout comune</strong>, perché ogni pagina ha CSS personalizzato
+al suo interno (non condiviso 1:1 con le altre). Unificarle forzatamente
+ora avrebbe rischiato di rompere qualcosa senza un beneficio immediato.
+È un miglioramento possibile in futuro, con calma, pagina per pagina.</li>
+</ul>
+<h2>Come pubblicare un vero articolo di blog</h2>
+<ol>
+<li>Apri <code>src/posts/_esempio-articolo.md.example</code> — mostra la struttura da
+copiare (categoria, data, tempo di lettura, testo in Markdown).</li>
+<li>Crea un nuovo file dentro <code>src/posts/</code>, es. <code>2026-10-20-titolo-articolo.md</code>
+(l'estensione deve essere <code>.md</code>, non <code>.example</code>).</li>
+<li>Scrivi l'articolo in Markdown nel corpo del file.</li>
+<li>Fai commit e push — Eleventy genera automaticamente la pagina vera
+all'URL indicato nel campo <code>permalink</code> del file.</li>
+<li>Aggiorna manualmente <code>src/_data/blogComingPosts.json</code> togliendo la voce
+&quot;in arrivo&quot; corrispondente, se l'articolo pubblicato la sostituisce.</li>
+</ol>
+<p>Con Decap CMS collegato (passo successivo, non ancora incluso in questo
+repository) questo stesso flusso si farà da un'interfaccia visuale, senza
+scrivere Markdown a mano.</p>
+<h2>Comandi</h2>
+<pre><code class="language-bash">npm install
+npm run build   # genera il sito in _site/
+npm run serve   # anteprima locale con ricaricamento automatico
+</code></pre>
+<h2>Deploy su OVH</h2>
+<ol>
+<li>Aggiungi questo repository come sorgente Git nella sezione &quot;Multisito&quot;
+dell'hosting OVH per il dominio clickbari.it.</li>
+<li>OVH sincronizzerà i file automaticamente ad ogni push — ma se usi la
+sincronizzazione Git diretta di OVH, verifica che punti alla cartella
+<code>_site/</code> generata dalla build (serve una GitHub Action che esegua
+<code>npm run build</code> e pubblichi <code>_site/</code> su un branch dedicato, es. <code>dist</code>,
+che OVH sincronizzerà). Senza questo passaggio, OVH sincronizzerebbe i
+file sorgente grezzi invece del sito già compilato.</li>
+</ol>

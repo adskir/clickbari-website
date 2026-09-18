@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://clickbari.it/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickbari.it/chi-sono/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickbari.it/servizi/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickbari.it/siti-web/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickbari.it/google-ecosystem/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickbari.it/seo-aeo/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickbari.it/automazione/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickbari.it/portfolio/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickbari.it/blog/</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickbari.it/contatti/</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://clickbari.it/privacy/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://clickbari.it/cookie/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+</urlset>

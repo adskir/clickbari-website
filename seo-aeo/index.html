@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<!-- Consent Mode v2: stato iniziale (prima di GTM) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  'wait_for_update': 500
+});
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NRZ3S9F5');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="shortcut icon" href="favicon.ico">
+<title>SEO Bari — Ottimizzazione Google e AI Overview · ClickBari</title>
+<meta name="description" content="SEO e AEO a Bari. Ottimizzazione per Google e per le risposte AI — Google AI Overview, ChatGPT, Claude e Gemini. Articoli da 50€, audit da 100€.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#060606;
+  --blue:#2563EB;
+  --blue-dark:#1d4ed8;
+  --blue-bright:#5b9bff;
+  --gray:#161616;
+  --gray-mid:#222;
+  --font-d:'Bebas Neue',sans-serif;
+  --font-b:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:300;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.09)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-mark{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.nav-logo-mark img{width:100%;height:100%;object-fit:cover}
+.nav-logo-text{font-family:var(--font-d);font-size:26px;letter-spacing:.06em;color:#fff;line-height:1}
+.nav-logo-sub{font-size:8px;letter-spacing:.3em;color:var(--blue-bright);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ddd;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:2px}
+
+/* HAMBURGER */
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}
+.nav-burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,0.98);backdrop-filter:blur(20px);z-index:105;flex-direction:column;padding:100px 32px 40px;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-nav-list{list-style:none;display:flex;flex-direction:column;gap:4px;flex:1}
+.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,0.06)}
+.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-family:var(--font-d);font-size:28px;letter-spacing:.06em;color:#ddd;text-decoration:none;transition:color .2s}
+.mobile-nav-link:hover{color:#fff}
+.mobile-nav-link.active{color:var(--blue-bright)}
+.mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:16px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:2px;margin-top:24px;transition:background .2s;border:none;width:100%;cursor:pointer}
+.mobile-cta:hover{background:var(--blue-dark)}
+
+.nav-cta:hover{background:var(--blue-dark)!important}
+
+/* HERO */
+.hero{min-height:85vh;display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:700px;position:relative;z-index:1;margin:0 auto;text-align:center}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
+.hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
+.hero-title{font-family:var(--font-d);font-size:clamp(56px,8vw,116px);line-height:.88;letter-spacing:.02em;margin-bottom:28px;color:#fff}
+.hero-title span{color:var(--blue-bright)}
+.hero-desc{font-size:16px;line-height:1.85;color:#ccc;max-width:520px;margin-bottom:40px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:14px 36px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:2px;transition:transform .2s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,99,235,0.5)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.2);color:#ddd;padding:14px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:2px;transition:border-color .2s,color .2s}
+.btn-outline:hover{border-color:var(--blue-bright);color:#fff}
+
+/* SEO vs AEO */
+.differenza{padding:80px 48px;background:var(--gray)}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px}
+.diff-card{background:var(--black);padding:40px 32px}
+.diff-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px}
+.diff-card:first-child .diff-label{color:var(--blue-bright)}
+.diff-card:last-child .diff-label{color:#a78bfa}
+.diff-title{font-family:var(--font-d);font-size:32px;letter-spacing:.04em;color:#fff;margin-bottom:14px}
+.diff-desc{font-size:13px;line-height:1.85;color:#999;margin-bottom:20px}
+.diff-examples{display:flex;flex-direction:column;gap:8px}
+.diff-ex{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:2px;font-size:12px;color:#aaa;font-style:italic}
+.diff-ex::before{content:'🔍 ';font-style:normal}
+.diff-card:last-child .diff-ex::before{content:'🤖 ';font-style:normal}
+
+/* COSA FACCIO */
+.cosa{padding:80px 48px}
+.cosa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
+.cosa-item{background:var(--gray);padding:32px 28px;position:relative;overflow:hidden;transition:background .3s}
+.cosa-item:hover{background:var(--gray-mid)}
+.cosa-item::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--blue-bright);transition:height .4s}
+.cosa-item:hover::before{height:100%}
+.cosa-icon{font-size:24px;margin-bottom:16px}
+.cosa-name{font-family:var(--font-d);font-size:20px;letter-spacing:.04em;color:#fff;margin-bottom:8px}
+.cosa-desc{font-size:12px;line-height:1.75;color:#888}
+
+/* PREZZI */
+.prezzi{padding:80px 48px;background:var(--gray)}
+.prezzi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
+.prezzo{background:var(--black);padding:36px 28px;display:flex;flex-direction:column;position:relative}
+.prezzo.featured{background:var(--blue)}
+.prezzo-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#fff;color:var(--blue);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:5px 16px;font-weight:500;white-space:nowrap}
+.prezzo-name{font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+.prezzo:not(.featured) .prezzo-name{color:var(--blue-bright)}
+.prezzo.featured .prezzo-name{color:rgba(255,255,255,0.8)}
+.prezzo-val{font-family:var(--font-d);font-size:52px;line-height:1;color:#fff;margin-bottom:4px}
+.prezzo-val sup{font-size:22px;vertical-align:top;margin-top:8px}
+.prezzo-period{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:.1em;margin-bottom:20px}
+.prezzo-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1);flex:1}
+.prezzo-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+.prezzo-list li{font-size:12px;display:flex;align-items:flex-start;gap:8px;color:rgba(255,255,255,0.8);line-height:1.5}
+.prezzo-list li::before{content:'✓';color:var(--blue-bright);flex-shrink:0}
+.prezzo.featured .prezzo-list li::before{color:#fff}
+.prezzo-btn{display:block;text-align:center;padding:12px;font-family:var(--font-d);font-size:16px;letter-spacing:.1em;text-decoration:none;border-radius:2px;transition:transform .2s;margin-top:auto}
+.prezzo:not(.featured) .prezzo-btn{background:var(--blue);color:#fff}
+.prezzo.featured .prezzo-btn{background:#fff;color:var(--blue)}
+.prezzo-btn:hover{transform:translateY(-2px)}
+
+/* PROCESSO */
+.processo{padding:80px 48px}
+.processo-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
+.step{background:var(--gray);padding:32px 24px;position:relative}
+.step-num{font-family:var(--font-d);font-size:52px;color:rgba(91,155,255,0.12);line-height:1;margin-bottom:16px}
+.step-title{font-family:var(--font-d);font-size:20px;letter-spacing:.04em;color:#fff;margin-bottom:8px}
+.step-desc{font-size:12px;line-height:1.7;color:#777}
+.step-arrow{position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:rgba(91,155,255,0.25);font-size:20px;z-index:1}
+.step:last-child .step-arrow{display:none}
+
+/* TOPIC CLUSTER */
+.cluster{padding:80px 48px;background:var(--gray)}
+.cluster-visual{margin-top:48px;background:var(--black);padding:40px;border-radius:4px;position:relative}
+.cluster-center{text-align:center;margin-bottom:32px}
+.cluster-center-box{display:inline-block;background:var(--blue);padding:16px 32px;border-radius:4px;font-family:var(--font-d);font-size:18px;letter-spacing:.06em;color:#fff}
+.cluster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cluster-item{background:rgba(91,155,255,0.08);border:1px solid rgba(91,155,255,0.2);padding:16px;border-radius:4px;text-align:center}
+.cluster-item-tag{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:6px}
+.cluster-item-title{font-size:12px;color:#ccc;line-height:1.5}
+.cluster-arrow{text-align:center;color:rgba(91,155,255,0.3);font-size:20px;margin:12px 0}
+
+/* FAQ */
+.faq{padding:80px 48px}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px}
+.faq-item{background:var(--gray);overflow:hidden}
+.faq-q{padding:24px 28px;font-family:var(--font-d);font-size:18px;letter-spacing:.03em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.faq-q:hover{color:var(--blue-bright)}
+.faq-icon{color:var(--blue-bright);font-size:22px;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{padding:0 28px 24px;font-size:13px;line-height:1.85;color:#999;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* CTA */
+.cta-finale{padding:80px 48px;text-align:center;position:relative;overflow:hidden}
+.cta-finale::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
+.cta-finale h2{font-family:var(--font-d);font-size:clamp(40px,6vw,80px);line-height:.92;color:#fff;margin-bottom:16px;position:relative;z-index:1}
+.cta-finale p{font-size:15px;color:#aaa;max-width:420px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1}
+.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* FOOTER */
+footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding:48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px}
+.footer-tagline{font-size:13px;color:#aaa;line-height:1.7;max-width:230px;margin-top:14px}
+.footer-col-title{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#888;margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:#bbb;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-social{display:flex;gap:10px;margin-top:4px}
+.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
+.social-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
+.footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:11px;color:#888}
+.footer-legal{display:flex;gap:22px}
+.footer-legal a{font-size:11px;color:#888;text-decoration:none}
+.footer-legal a:hover{color:#fff}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:768px){
+  nav{padding:14px 18px}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .hero{padding:100px 20px 60px;min-height:auto}
+  .differenza{padding:56px 20px}
+  .diff-grid{grid-template-columns:1fr}
+  .cosa{padding:56px 20px}
+  .cosa-grid{grid-template-columns:1fr}
+  .prezzi{padding:56px 20px}
+  .prezzi-grid{grid-template-columns:1fr}
+  .processo{padding:56px 20px}
+  .processo-steps{grid-template-columns:1fr 1fr}
+  .step-arrow{display:none}
+  .cluster{padding:56px 20px}
+  .cluster-grid{grid-template-columns:1fr 1fr}
+  .faq{padding:56px 20px}
+  .cta-finale{padding:56px 20px}
+  footer{grid-template-columns:1fr;padding:36px 20px}
+  .footer-bottom{flex-direction:column;gap:14px;text-align:center}
+  .wa-float{bottom:20px;right:20px;width:48px;height:48px}
+}
+
+/* Cookie banner */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+#cookie-banner.visible{transform:translateY(0)}
+.cb-text{font-size:13px;color:#bbb;line-height:1.7;max-width:620px}
+.cb-text a{color:var(--blue-bright);text-decoration:none}
+.cb-actions{display:flex;gap:10px;flex-shrink:0}
+.cb-btn{font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:10px 22px;border-radius:2px;cursor:pointer;border:none;transition:background .2s,color .2s;white-space:nowrap}
+.cb-accept{background:var(--blue);color:#fff}
+.cb-accept:hover{background:var(--blue-dark)}
+.cb-decline{background:transparent;color:#888;border:1px solid rgba(255,255,255,0.15)}
+.cb-decline:hover{color:#fff;border-color:rgba(255,255,255,0.4)}
+@media(max-width:768px){
+  #cookie-banner{flex-direction:column;align-items:flex-start;padding:20px 18px;gap:16px}
+  .cb-actions{width:100%;flex-direction:column}
+  .cb-btn{width:100%;text-align:center;padding:12px}
+}
+
+/* Contact Modal */
+.modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.visible{display:flex}
+.modal-box{position:relative;width:100%;max-width:420px;background:var(--black);border:1px solid rgba(91,155,255,0.25);border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+.modal-canvas-wrap{position:relative;height:120px;overflow:hidden;border-bottom:1px solid rgba(91,155,255,0.2)}
+.modal-canvas-wrap canvas{position:absolute;top:0;left:0;width:100%;height:100%}
+.modal-close{position:absolute;top:14px;right:14px;z-index:5;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.08);border:none;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,0.18)}
+.modal-body{padding:28px 28px 32px}
+.modal-title{font-family:var(--font-d);font-size:26px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
+.modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
+.modal-field{margin-bottom:14px}
+.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
+.modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:4px;padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
+.modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
+.modal-field select{appearance:none;cursor:pointer}
+.modal-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:4px;font-family:var(--font-b);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .2s}
+.modal-submit:hover{background:var(--blue-dark)}
+.modal-success{display:none;text-align:center;padding:8px 0}
+.modal-success.visible{display:block}
+.modal-success svg{width:48px;height:48px;margin-bottom:14px}
+.modal-success h3{font-family:var(--font-d);font-size:20px;color:#fff;margin-bottom:8px;letter-spacing:.02em}
+.modal-success p{font-size:13px;color:#999;line-height:1.6}
+
+@media(max-width:480px){
+  .modal-body{padding:22px 20px 26px}
+  .modal-canvas-wrap{height:90px}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRZ3S9F5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p class="cb-text">
+    Questo sito utilizza cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity).
+    Leggi la <a href="/cookie/">Cookie Policy</a> e la <a href="/privacy/">Privacy Policy</a>.
+  </p>
+  <div class="cb-actions">
+    <button class="cb-btn cb-decline" onclick="cookieDecline()">Solo necessari</button>
+    <button class="cb-btn cb-accept" onclick="cookieAccept()">Accetta tutti</button>
+  </div>
+</div>
+
+<a class="wa-float" href="https://wa.me/393805826738" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <div class="nav-logo-mark">
+      <img src="logo-icon.png" alt="ClickBari">
+    </div>
+    <div>
+      <div class="nav-logo-text">ClickBari</div>
+      <div class="nav-logo-sub">Digital · Bari</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/chi-sono/">Chi sono</a></li>
+    <li><a href="/servizi/">Servizi</a></li>
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="#" class="nav-cta" onclick="openContactModal('SEO + AEO');return false;">Contattami</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul class="mobile-nav-list">
+    <li class="mobile-nav-item"><a href="/chi-sono/" class="mobile-nav-link">Chi sono</a></li>
+    <li class="mobile-nav-item"><a href="/servizi/" class="mobile-nav-link">Servizi</a></li>
+    <li class="mobile-nav-item"><a href="/portfolio/" class="mobile-nav-link">Portfolio</a></li>
+    <li class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link">Blog</a></li>
+  </ul>
+  <a href="#"  onclick="openContactModal('SEO + AEO');return false;" class="mobile-cta">Contattami →</a>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner reveal">
+    <div class="hero-tag">SEO + AEO · Bari</div>
+    <h1 class="hero-title">Trovato<br>su Google<br><span>e dall'AI.</span></h1>
+    <p class="hero-desc">SEO classico più ottimizzazione per Google AI Overview, ChatGPT, Claude e Gemini. Il traffico organico non si paga — si costruisce. Con contenuti di qualità e strategia.</p>
+    <div class="hero-btns">
+      <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="btn-primary">Richiedi audit →</a>
+      <a href="#differenza" class="btn-outline">SEO vs AEO</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEO vs AEO -->
+<section class="differenza reveal" id="differenza">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Due approcci, un obiettivo</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">SEO + AEO:<br>cosa cambia.</h2>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <div class="diff-label">SEO — Search Engine Optimization</div>
+      <div class="diff-title">Ottimizzazione per Google</div>
+      <p class="diff-desc">Il tuo sito appare nei risultati di ricerca quando qualcuno cerca un prodotto o servizio come il tuo. Traffico costante, gratuito, che cresce nel tempo.</p>
+      <div class="diff-examples">
+        <div class="diff-ex">ristorante con terrazza Bari</div>
+        <div class="diff-ex">estetista centro Bari</div>
+        <div class="diff-ex">idraulico urgente Bari</div>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-label" style="color:#a78bfa">AEO — Answer Engine Optimization</div>
+      <div class="diff-title">Ottimizzazione per l'AI</div>
+      <p class="diff-desc">Il tuo brand appare nelle risposte generate da Google AI Overview, ChatGPT, Claude e Gemini. Il futuro della ricerca è già qui — e pochi lo stanno facendo.</p>
+      <div class="diff-examples">
+        <div class="diff-ex">qual è il miglior ristorante sul mare a Bari?</div>
+        <div class="diff-ex">dove fare la ceretta semipermanente a Bari?</div>
+        <div class="diff-ex">chi chiamo per un tubo rotto a Bari di notte?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COSA FACCIO -->
+<section class="cosa reveal">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Cosa faccio</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Tutto il necessario<br>per posizionarti.</h2>
+  <div class="cosa-grid">
+    <div class="cosa-item">
+      <div class="cosa-icon">🔬</div>
+      <div class="cosa-name">Audit SEO tecnico</div>
+      <p class="cosa-desc">Analizzo il tuo sito dall'interno: velocità, struttura, errori di indicizzazione, meta tag, link interni. Trovo i problemi che frenano il tuo posizionamento.</p>
+    </div>
+    <div class="cosa-item">
+      <div class="cosa-icon">🗂️</div>
+      <div class="cosa-name">Semantica e keyword</div>
+      <p class="cosa-desc">Raccolgo le parole chiave che i tuoi clienti usano davvero. Le organizzo in cluster tematici — ogni pagina del sito punta a un gruppo di ricerche specifico.</p>
+    </div>
+    <div class="cosa-item">
+      <div class="cosa-icon">✍️</div>
+      <div class="cosa-name">Articoli SEO</div>
+      <p class="cosa-desc">Scrivo articoli ottimizzati per Google e per le risposte AI. Ogni articolo risponde a una domanda specifica del tuo pubblico e porta traffico qualificato.</p>
+    </div>
+    <div class="cosa-item">
+      <div class="cosa-icon">🤖</div>
+      <div class="cosa-name">AEO e structured data</div>
+      <p class="cosa-desc">Aggiungo schema markup, FAQ ottimizzate e contenuti strutturati per apparire nelle risposte AI. Un vantaggio competitivo che pochi offrono ancora.</p>
+    </div>
+    <div class="cosa-item">
+      <div class="cosa-icon">📈</div>
+      <div class="cosa-name">Monitoraggio posizioni</div>
+      <p class="cosa-desc">Tracciamento mensile delle posizioni su Google Search Console. Vedi come crescono i tuoi ranking parola chiave per parola chiave.</p>
+    </div>
+    <div class="cosa-item">
+      <div class="cosa-icon">🔗</div>
+      <div class="cosa-name">Ottimizzazione on-page</div>
+      <p class="cosa-desc">Titoli, descrizioni, heading, immagini, link interni. Ogni pagina del sito ottimizzata per massimizzare la visibilità su Google.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PREZZI -->
+<section class="prezzi reveal">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Prezzi</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Investimento trasparente.</h2>
+  <div class="prezzi-grid">
+    <div class="prezzo">
+      <div class="prezzo-name">SEO Audit</div>
+      <div class="prezzo-val"><sup>da €</sup>100</div>
+      <div class="prezzo-period">una tantum</div>
+      <div class="prezzo-desc">Analisi completa del sito, raccolta parole chiave e piano editoriale. Il punto di partenza per qualsiasi strategia SEO.</div>
+      <ul class="prezzo-list">
+        <li>Audit tecnico completo</li>
+        <li>Analisi competitor</li>
+        <li>Semantica e keyword research</li>
+        <li>Piano editoriale 3 mesi</li>
+        <li>Setup AEO base</li>
+      </ul>
+      <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Inizia con l'audit →</a>
+    </div>
+    <div class="prezzo featured">
+      <div class="prezzo-badge">Più efficace</div>
+      <div class="prezzo-name">SEO Mensile</div>
+      <div class="prezzo-val"><sup>da €</sup>150</div>
+      <div class="prezzo-period">/mese</div>
+      <div class="prezzo-desc">Articoli ottimizzati pubblicati ogni mese, aggiornamenti tecnici e ottimizzazione AEO continua. Il SEO che funziona davvero.</div>
+      <ul class="prezzo-list">
+        <li>4 articoli SEO/mese</li>
+        <li>Pubblicazione sul sito</li>
+        <li>Ottimizzazione pagine esistenti</li>
+        <li>AEO aggiornamenti mensili</li>
+        <li>Report posizionamento mensile</li>
+      </ul>
+      <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Inizia ora →</a>
+    </div>
+    <div class="prezzo">
+      <div class="prezzo-name">Articoli singoli</div>
+      <div class="prezzo-val"><sup>da €</sup>50</div>
+      <div class="prezzo-period">per articolo</div>
+      <div class="prezzo-desc">Articolo SEO ottimizzato per Google e per le risposte AI. Minimo 800 parole, ricerca keyword inclusa, pubblicazione inclusa.</div>
+      <ul class="prezzo-list">
+        <li>Ricerca keyword specifica</li>
+        <li>Testo ottimizzato SEO</li>
+        <li>FAQ per AEO incluse</li>
+        <li>Meta title e description</li>
+        <li>Pubblicazione sul sito</li>
+      </ul>
+      <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Ordina articolo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="processo reveal">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Come funziona</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Dal audit<br>ai risultati.</h2>
+  <div class="processo-steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Audit</div>
+      <div class="step-desc">Analizzo il tuo sito, i competitor e raccolgo le parole chiave giuste per il tuo settore e la tua zona.</div>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Strategia</div>
+      <div class="step-desc">Creo un piano editoriale con argomenti che portano traffico qualificato. Ogni articolo ha un obiettivo preciso.</div>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Contenuti</div>
+      <div class="step-desc">Scrivo e pubblico articoli ottimizzati per Google e per le risposte AI. Ogni mese nuovi contenuti sul tuo sito.</div>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Monitoraggio</div>
+      <div class="step-desc">Tracciamo le posizioni su Search Console, aggiustiamo la strategia e vediamo il traffico crescere mese dopo mese.</div>
+      <div class="step-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPIC CLUSTER -->
+<section class="cluster reveal">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">La strategia</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Topic cluster:<br>come funziona.</h2>
+  <p style="font-size:14px;color:#888;max-width:560px;margin-top:16px;line-height:1.8">Ogni servizio ha una pagina principale (pillar page) ottimizzata per la ricerca principale. Attorno ad essa, articoli del blog che rispondono a domande specifiche e rimandano alla pagina principale. Google capisce che sei l'esperto del settore.</p>
+  <div class="cluster-visual">
+    <div class="cluster-center">
+      <div class="cluster-center-box">Pagina servizio "Siti Web Bari"</div>
+    </div>
+    <div class="cluster-arrow">↑ link interni ↑</div>
+    <div class="cluster-grid">
+      <div class="cluster-item">
+        <div class="cluster-item-tag">Articolo blog</div>
+        <div class="cluster-item-title">Quanto costano i pannelli solari a Bari?</div>
+      </div>
+      <div class="cluster-item">
+        <div class="cluster-item-tag">Articolo blog</div>
+        <div class="cluster-item-title">Incentivi statali per il fotovoltaico in Puglia 2026</div>
+      </div>
+      <div class="cluster-item">
+        <div class="cluster-item-tag">Articolo blog</div>
+        <div class="cluster-item-title">Quanti pannelli servono per una casa di 100mq?</div>
+      </div>
+      <div class="cluster-item">
+        <div class="cluster-item-tag">Articolo blog</div>
+        <div class="cluster-item-title">Fotovoltaico con accumulo: conviene davvero?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq reveal">
+  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Domande frequenti</div>
+  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Hai dubbi sul SEO?</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Quanto tempo prima di vedere risultati? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Il SEO richiede pazienza: i primi miglioramenti si vedono in 3-4 mesi, risultati significativi in 8-9 mesi. Non è una bacchetta magica — è un investimento a lungo termine. Per risultati immediati, Google Ads è la scelta giusta.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Ho bisogno di WordPress per il SEO? <span class="faq-icon">+</span></div>
+      <div class="faq-a">No. Lavoro con qualsiasi tipo di sito — HTML, WordPress o altra piattaforma. Valutiamo insieme la situazione.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Cos'è esattamente l'AEO e perché mi interessa? <span class="faq-icon">+</span></div>
+      <div class="faq-a">AEO è l'ottimizzazione per apparire nelle risposte generate da AI come Google AI Overview, ChatGPT, Claude e Gemini. Sempre più persone fanno domande dirette agli AI invece di cercare su Google. Chi si posiziona ora ha un vantaggio enorme sui competitor.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Gli articoli li scrivi tu o devo scriverli io? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Li scrivo io, ottimizzati per SEO e AEO, e li consegno pronti alla pubblicazione. Tu mi fornisci solo le informazioni specifiche sulla tua attività che solo tu conosci — il resto lo gestisco io.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">SEO o Google Ads: cosa scelgo? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Dipende dal tuo obiettivo. Google Ads porta risultati immediati ma si paga sempre. Il SEO richiede mesi ma poi il traffico è gratuito. La combinazione ideale: Ads subito per generare clienti, SEO in parallelo per costruire il futuro.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-finale reveal">
+  <h2>Inizia con<br>l'audit.</h2>
+  <p>Analizzo il tuo sito e ti dico esattamente cosa fare per migliorare il posizionamento su Google e sulle AI.</p>
+  <div class="cta-btns">
+    <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="btn-primary">Richiedi audit →</a>
+    <a href="/google-ecosystem/" class="btn-outline">Google Ads →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a class="nav-logo" href="/">
+      <div class="nav-logo-mark">
+        <img src="logo-icon.png" alt="ClickBari">
+      </div>
+      <div>
+        <div class="nav-logo-text">ClickBari</div>
+        <div class="nav-logo-sub">Digital · Bari</div>
+      </div>
+    </a>
+    <p class="footer-tagline">Siti web, Google Ads, SEO e automazione AI a Bari e provincia. Risultati misurabili, relazione diretta.</p>
+  </div>
+  <div>
+    <p class="footer-col-title">Navigazione</p>
+    <ul class="footer-links">
+      <li><a href="/chi-sono/">Chi sono</a></li>
+      <li><a href="/servizi/">Servizi</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="contatti.html#form">Contatti</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="footer-col-title">Contatti</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-size:12px;color:#bbb">📍 Via Generale Bellomo 94, Bari</div>
+      <div style="font-size:12px;color:#bbb">📱 <a href="https://wa.me/393805826738" style="color:#bbb;text-decoration:none">WhatsApp</a></div>
+    </div>
+    <p class="footer-col-title" style="margin-top:20px">Seguimi</p>
+    <div class="footer-social">
+      <a class="social-btn" href="https://instagram.com/kir_italy" target="_blank">@kir_italy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ClickBari · Potekhin Kirill · P.IVA 17376101006</p>
+    <div class="footer-legal">
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/cookie/">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+  });
+}, {threshold: 0.08});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+setTimeout(() => document.querySelector('.hero .reveal').classList.add('visible'), 150);
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+<!-- WhatsApp floating button -->
+<a class="wa-float" href="https://wa.me/393805826738" target="_blank" aria-label="Scrivimi su WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'cb_consent';
+  var banner = document.getElementById('cookie-banner');
+
+  function getConsent(){ return localStorage.getItem(STORAGE_KEY); }
+
+  function updateConsent(granted){
+    if (typeof gtag !== 'function') return;
+    gtag('consent', 'update', {
+      'ad_storage': granted ? 'granted' : 'denied',
+      'ad_user_data': granted ? 'granted' : 'denied',
+      'ad_personalization': granted ? 'granted' : 'denied',
+      'analytics_storage': granted ? 'granted' : 'denied'
+    });
+    // Notifica GTM: i tag non-Google (es. Meta Pixel) possono
+    // agganciarsi a questo evento per verificare di nuovo il consenso
+    window.dataLayer.push({'event': 'consent_update'});
+  }
+
+  window.cookieAccept = function(){
+    localStorage.setItem(STORAGE_KEY,'accepted');
+    banner.classList.remove('visible');
+    updateConsent(true);
+  };
+
+  window.cookieDecline = function(){
+    localStorage.setItem(STORAGE_KEY,'declined');
+    banner.classList.remove('visible');
+    updateConsent(false);
+  };
+
+  window.resetCookieConsent = function(){
+    localStorage.removeItem(STORAGE_KEY);
+    banner.classList.add('visible');
+  };
+
+  var consent = getConsent();
+  if(!consent){
+    setTimeout(function(){ banner.classList.add('visible'); }, 600);
+  } else if(consent === 'accepted'){
+    updateConsent(true);
+  }
+})();
+</script>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal-box">
+    <div class="modal-canvas-wrap">
+      <canvas id="modal-canvas"></canvas>
+    </div>
+    <button class="modal-close" onclick="closeContactModal()" aria-label="Chiudi">✕</button>
+    <div class="modal-body">
+      <div id="modal-form-wrap">
+        <div class="modal-title">Parliamone</div>
+        <p class="modal-sub">Lasciami nome e numero, ti contatto entro un'ora (orario lavorativo).</p>
+        <form id="modal-contact-form" action="https://formspree.io/f/mlgkbbkv" method="POST">
+          <div class="modal-field">
+            <label for="modal-name">Nome *</label>
+            <input type="text" id="modal-name" name="name" required>
+          </div>
+          <div class="modal-field">
+            <label for="modal-phone">Telefono *</label>
+            <input type="tel" id="modal-phone" name="phone" required>
+          </div>
+          <div class="modal-field">
+            <label for="modal-service">Servizio</label>
+            <select id="modal-service" name="service">
+              <option value="">Seleziona (opzionale)</option>
+              <option value="Siti Web">Siti Web</option>
+              <option value="Google Ecosystem">Google Ecosystem</option>
+              <option value="SEO + AEO">SEO + AEO</option>
+              <option value="Automazione AI">Automazione AI</option>
+              <option value="Altro">Altro</option>
+            </select>
+          </div>
+          <button type="submit" class="modal-submit">Invia richiesta</button>
+        </form>
+      </div>
+      <div class="modal-success" id="modal-success">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="#5b9bff" stroke-width="1.5"/><path d="M7 12.5L10.5 16L17 8.5" stroke="#5b9bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Richiesta inviata!</h3>
+        <p>Ti contatterò entro un'ora (orario lavorativo). Grazie per avermi scritto.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('contact-modal');
+  var formWrap = document.getElementById('modal-form-wrap');
+  var successBox = document.getElementById('modal-success');
+  var form = document.getElementById('modal-contact-form');
+  var serviceSelect = document.getElementById('modal-service');
+  var canvas = document.getElementById('modal-canvas');
+  var ctx = canvas ? canvas.getContext('2d') : null;
+  var particles = [], rafId = null;
+
+  function resizeCanvas(){
+    if(!canvas) return;
+    var wrap = canvas.parentElement;
+    canvas.width = wrap.clientWidth;
+    canvas.height = wrap.clientHeight;
+  }
+
+  function initParticles(){
+    particles = [];
+    var count = Math.floor((canvas.width*canvas.height)/9000);
+    for(var i=0;i<count;i++){
+      particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        vx: (Math.random()-0.5)*0.4,
+        vy: (Math.random()-0.5)*0.4,
+        r: Math.random()*1.6+0.6
+      });
+    }
+  }
+
+  function drawFrame(){
+    if(!ctx) return;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=0;i<particles.length;i++){
+      var p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if(p.x<0||p.x>canvas.width) p.vx*=-1;
+      if(p.y<0||p.y>canvas.height) p.vy*=-1;
+    }
+    for(var i=0;i<particles.length;i++){
+      for(var j=i+1;j<particles.length;j++){
+        var a=particles[i], b=particles[j];
+        var dx=a.x-b.x, dy=a.y-b.y;
+        var dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<70){
+          ctx.strokeStyle = 'rgba(91,155,255,'+(0.18*(1-dist/70))+')';
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+    for(var i=0;i<particles.length;i++){
+      var p = particles[i];
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(91,155,255,0.85)';
+      ctx.fill();
+    }
+    rafId = requestAnimationFrame(drawFrame);
+  }
+
+  function startAnimation(){
+    resizeCanvas();
+    initParticles();
+    if(rafId) cancelAnimationFrame(rafId);
+    drawFrame();
+  }
+
+  function stopAnimation(){
+    if(rafId) cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+
+  window.openContactModal = function(prefillService){
+    overlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+    formWrap.style.display = 'block';
+    successBox.classList.remove('visible');
+    form.reset();
+    if(prefillService && serviceSelect){ serviceSelect.value = prefillService; }
+    startAnimation();
+  };
+
+  window.closeContactModal = function(){
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+    stopAnimation();
+  };
+
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeContactModal();
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = new FormData(form);
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalBtnText = submitBtn ? submitBtn.textContent : '';
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if (res.ok) {
+        formWrap.style.display = 'none';
+        successBox.classList.add('visible');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({'event': 'form_submit_success'});
+      } else if (submitBtn) {
+        submitBtn.textContent = 'Errore, riprova';
+        setTimeout(function(){ submitBtn.textContent = originalBtnText; }, 3000);
+      }
+    }).catch(function(){
+      if (submitBtn) {
+        submitBtn.textContent = 'Errore, riprova';
+        setTimeout(function(){ submitBtn.textContent = originalBtnText; }, 3000);
+      }
+    });
+  });
+
+  window.addEventListener('resize', function(){
+    if(overlay.classList.contains('visible')) resizeCanvas();
+  });
+})();
+</script>
+
+<script>
+// HAMBURGER MENU
+(function(){
+  var burger = document.getElementById('burger');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if(!burger || !mobileMenu) return;
+
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+
+  mobileMenu.querySelectorAll('a, button').forEach(function(el){
+    el.addEventListener('click', function(){
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+</body>
+</html>

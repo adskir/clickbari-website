@@ -6,6 +6,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/*.webp");
   eleventyConfig.addPassthroughCopy("src/*.xml");
   eleventyConfig.addPassthroughCopy("src/admin");
+  // Portfolio screenshots, blog images, etc. — served at /images/... to
+  // match the media_folder convention already set up for Decap CMS.
+  eleventyConfig.addPassthroughCopy("src/images");
 
   // Custom filter: counts items in an array whose `category` field matches.
   // (Nunjucks' built-in selectattr(...,"equalto",...) does not reliably

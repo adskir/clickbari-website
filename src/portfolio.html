@@ -92,7 +92,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .p-card:hover::before{transform:scaleX(1)}
 
 .p-card-visual{aspect-ratio:16/9;position:relative;overflow:hidden;background:#0a0a0a}
-.p-card-visual iframe{width:166.67%;height:166.67%;transform:scale(0.6);transform-origin:top left;border:none;pointer-events:none}
+.p-card-visual img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .p-card-visual-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(6,6,6,0.6) 100%)}
 
 .p-card-body{padding:24px 24px 20px;flex:1;display:flex;flex-direction:column}
@@ -278,7 +278,7 @@ gtag('consent', 'default', {
     <!-- BEAUTY BY KSENIA — FEATURED -->
     <div class="p-card p-card-featured reveal" id="beautybyksenia" data-tags="sito-web google-ads in-corso">
       <div class="p-card-visual">
-        <iframe src="https://beautybyksenia.com" title="Beauty by Ksenia" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe>
+        <img src="/images/portfolio/beautybyksenia.webp" alt="Screenshot del sito Beauty by Ksenia" loading="lazy" width="1280" height="800">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -308,14 +308,14 @@ gtag('consent', 'default', {
       </div>
       <div class="p-card-footer">
         <span class="p-card-url">beautybyksenia.com</span>
-        <a href="https://beautybyksenia.com" target="_blank" class="p-card-link">Visita il sito →</a>
+        <a href="https://beautybyksenia.com" target="_blank" rel="noopener" class="p-card-link">Visita il sito →</a>
       </div>
     </div>
 
     <!-- KTI HAIR EXTENSION -->
     <div class="p-card reveal" id="ktiphairextension" data-tags="sito-web google-ads">
       <div class="p-card-visual">
-        <iframe src="https://ktiphairextension.com" title="KTI Hair Extension" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe>
+        <img src="/images/portfolio/ktiphairextension.webp" alt="Screenshot del sito KTI Hair Extension" loading="lazy" width="1280" height="800">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -330,14 +330,14 @@ gtag('consent', 'default', {
       </div>
       <div class="p-card-footer">
         <span class="p-card-url">ktiphairextension.com</span>
-        <a href="https://ktiphairextension.com" target="_blank" class="p-card-link">Visita il sito →</a>
+        <a href="https://ktiphairextension.com" target="_blank" rel="noopener" class="p-card-link">Visita il sito →</a>
       </div>
     </div>
 
     <!-- REMARKAFILM -->
     <div class="p-card reveal" id="remarkafilm" data-tags="sito-web">
       <div class="p-card-visual">
-        <iframe src="https://remarkafilm.com.ua/" title="Remarkafilm" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe>
+        <img src="/images/portfolio/remarkafilm.webp" alt="Screenshot del sito Remarkafilm" loading="lazy" width="1280" height="800">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -351,14 +351,14 @@ gtag('consent', 'default', {
       </div>
       <div class="p-card-footer">
         <span class="p-card-url">remarkafilm.com.ua</span>
-        <a href="https://remarkafilm.com.ua/" target="_blank" class="p-card-link">Visita il sito →</a>
+        <a href="https://remarkafilm.com.ua/" target="_blank" rel="noopener" class="p-card-link">Visita il sito →</a>
       </div>
     </div>
 
     <!-- LADY-CAR -->
     <div class="p-card reveal" id="lady-car" data-tags="sito-web">
       <div class="p-card-visual">
-        <iframe src="https://lady-car.it" title="Lady-Car" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe>
+        <img src="/images/portfolio/lady-car.webp" alt="Screenshot del sito Lady-Car" loading="lazy" width="1280" height="800">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -372,14 +372,14 @@ gtag('consent', 'default', {
       </div>
       <div class="p-card-footer">
         <span class="p-card-url">lady-car.it</span>
-        <a href="https://lady-car.it" target="_blank" class="p-card-link">Visita il sito →</a>
+        <a href="https://lady-car.it" target="_blank" rel="noopener" class="p-card-link">Visita il sito →</a>
       </div>
     </div>
 
     <!-- SALERNO FITNESS -->
     <div class="p-card reveal" id="salernofitness" data-tags="sito-web">
       <div class="p-card-visual">
-        <iframe src="https://salernofitness.it" title="Salerno Fitness" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe>
+        <img src="/images/portfolio/salernofitness.webp" alt="Screenshot del sito Salerno Fitness" loading="lazy" width="1280" height="800">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -393,7 +393,29 @@ gtag('consent', 'default', {
       </div>
       <div class="p-card-footer">
         <span class="p-card-url">salernofitness.it</span>
-        <a href="https://salernofitness.it" target="_blank" class="p-card-link">Visita il sito →</a>
+        <a href="https://salernofitness.it" target="_blank" rel="noopener" class="p-card-link">Visita il sito →</a>
+      </div>
+    </div>
+
+    <!-- CAPPUCCINI DI PUGLIA -->
+    <div class="p-card reveal" id="cappuccinipuglia" data-tags="sito-web seo">
+      <div class="p-card-visual">
+        <img src="/images/portfolio/cappuccinipuglia.webp" alt="Screenshot del sito Cappuccini di Puglia" loading="lazy" width="1280" height="800">
+        <div class="p-card-visual-overlay"></div>
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-tags">
+          <span class="p-tag p-tag-blue">Sito Web</span>
+          <span class="p-tag p-tag-blue">SEO</span>
+          <span class="p-tag p-tag-gray">Puglia, IT</span>
+        </div>
+        <div class="p-card-name">Cappuccini di Puglia</div>
+        <div class="p-card-location">📍 Puglia, Italia</div>
+        <p class="p-card-desc">Sito web istituzionale per l'Ordine dei Frati Minori Cappuccini di Puglia, Basilicata, Albania e Mozambico. Struttura chiara per raccontare storia, missioni e attività della comunità, con impostazione SEO per la visibilità organica.</p>
+      </div>
+      <div class="p-card-footer">
+        <span class="p-card-url">cappuccinipuglia.it</span>
+        <a href="https://cappuccinipuglia.it/" target="_blank" rel="noopener" class="p-card-link">Visita il sito →</a>
       </div>
     </div>
 

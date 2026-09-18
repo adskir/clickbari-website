@@ -8,6 +8,13 @@ categoryLabel: "🌐 Siti Web"
 readTime: "4 min"
 excerpt: "Dal fai-da-te su un builder all'agenzia: prezzi reali per Bari, spiegati senza fronzoli."
 permalink: "blog/quanto-costa-un-sito-web-a-bari-nel-2026/index.html"
+faq:
+  - q: "Quanto costa un sito web a Bari nel 2026?"
+    a: "I prezzi partono da 300€ per una landing page e arrivano a 1.000€ o più per un e-commerce. Un sito vetrina standard costa in media 500-700€, mentre le agenzie applicano tariffe da 1.500€ fino a oltre 15.000€ per progetti complessi."
+  - q: "Conviene un freelance o un'agenzia per il proprio sito web?"
+    a: "Per la maggior parte delle piccole imprese un freelance è la scelta più efficiente: stesso risultato di un'agenzia, contatto diretto senza intermediari, e senza il ricarico di 2-3 volte che serve a coprire le spese fisse di un team."
+  - q: "I prezzi dei siti web scenderanno ancora nei prossimi anni?"
+    a: "I siti semplici sì, perché gli strumenti IA riducono sempre di più i tempi di sviluppo. Ma quello che non si automatizza — capire il business del cliente, la strategia e il supporto dopo il lancio — manterrà il suo valore, ed è lì che si gioca la differenza tra i professionisti."
 ---
 
 Se lo stai cercando su Google, ecco i prezzi diretti:

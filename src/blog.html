@@ -279,25 +279,25 @@ gtag('consent', 'default', {
       <div class="cat-icon">🌐</div>
       <div class="cat-name">Siti Web</div>
       <p class="cat-desc">Design, sviluppo, performance e conversioni. Tutto quello che devi sapere prima di fare un sito.</p>
-      <div class="cat-count"><span>{{ blogComingPosts | countByCategory("siti-web") }}</span> articoli in arrivo</div>
+      <div class="cat-count"><span>{{ (collections.posts | countByCategory("siti-web")) + (blogComingPosts | countByCategory("siti-web")) }}</span> articoli</div>
     </a>
     <a href="#" class="cat-card" data-cat="google">
       <div class="cat-icon">📊</div>
       <div class="cat-name">Google Ads</div>
       <p class="cat-desc">Campagne, budget, keyword e ottimizzazione. Come far funzionare Google per la tua attività.</p>
-      <div class="cat-count"><span>{{ blogComingPosts | countByCategory("google") }}</span> articoli in arrivo</div>
+      <div class="cat-count"><span>{{ (collections.posts | countByCategory("google")) + (blogComingPosts | countByCategory("google")) }}</span> articoli</div>
     </a>
     <a href="#" class="cat-card" data-cat="seo">
       <div class="cat-icon">🔍</div>
       <div class="cat-name">SEO & AEO</div>
       <p class="cat-desc">Posizionamento su Google e ottimizzazione per le risposte AI. Traffico organico che cresce nel tempo.</p>
-      <div class="cat-count"><span>{{ blogComingPosts | countByCategory("seo") }}</span> articoli in arrivo</div>
+      <div class="cat-count"><span>{{ (collections.posts | countByCategory("seo")) + (blogComingPosts | countByCategory("seo")) }}</span> articoli</div>
     </a>
     <a href="#" class="cat-card" data-cat="auto">
       <div class="cat-icon">🤖</div>
       <div class="cat-name">Automazione AI</div>
       <p class="cat-desc">Chatbot, flussi automatici e AI agent. Come automatizzare la tua attività senza competenze tecniche.</p>
-      <div class="cat-count"><span>{{ blogComingPosts | countByCategory("auto") }}</span> articoli in arrivo</div>
+      <div class="cat-count"><span>{{ (collections.posts | countByCategory("auto")) + (blogComingPosts | countByCategory("auto")) }}</span> articoli</div>
     </a>
   </div>
 </div>
@@ -311,12 +311,28 @@ gtag('consent', 'default', {
     <button class="filtro" data-filter="seo">SEO & AEO</button>
     <button class="filtro" data-filter="auto">Automazione AI</button>
   </div>
-  <div class="blog-count">{{ blogComingPosts.length }} articoli in arrivo</div>
+  <div class="blog-count">{{ collections.posts.length }} {{ "articolo pubblicato" if collections.posts.length == 1 else "articoli pubblicati" }} · {{ blogComingPosts.length }} in arrivo</div>
 </div>
 
 <div class="articoli-wrap">
   <div class="articoli-grid">
 
+{%- for post in collections.posts %}
+    <a class="art-card" href="{{ post.url }}" data-cat="{{ post.data.category }}">
+      <div class="art-card-top">
+        <div class="art-cat {{ post.data.categoryClass }}">{{ post.data.categoryLabel }}</div>
+        <div class="art-title">{{ post.data.title | safe }}</div>
+        <p class="art-excerpt">{{ post.data.excerpt | safe }}</p>
+      </div>
+      <div class="art-card-bottom">
+        <div class="art-meta">
+          <span class="art-date">{{ post.date | readableDateIt }}</span>
+          <span class="art-read">{{ post.data.readTime }}</span>
+        </div>
+        <span class="art-link">Leggi →</span>
+      </div>
+    </a>
+{%- endfor %}
 {%- for post in blogComingPosts %}
     <div class="art-card coming" data-cat="{{ post.category }}">
       <div class="coming-badge">{{ post.badge }}</div>

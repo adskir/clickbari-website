@@ -96,6 +96,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .p-card-visual{aspect-ratio:16/10;position:relative;overflow:hidden;background:#0a0a0a}
 .p-card-visual img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s ease}
 .p-card-visual-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(6,6,6,0.6) 100%)}
+.p-card-visual-placeholder{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gray) 0%,#0a0a0a 100%)}
+.placeholder-name{font-family:var(--font-d);font-size:26px;line-height:1.15;letter-spacing:.03em;color:rgba(255,255,255,.3);text-align:center;padding:0 24px}
+.coming-badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:var(--radius-sm);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#666}
 
 .p-card-body{padding:24px 24px 20px;flex:1;display:flex;flex-direction:column}
 .p-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
@@ -286,7 +289,7 @@ gtag('consent', 'default', {
     <!-- BEAUTY BY KSENIA — FEATURED -->
     <div class="p-card reveal" id="beautybyksenia" data-tags="sito-web google-ads in-corso">
       <div class="p-card-visual">
-        <img src="/images/portfolio/beautybyksenia.webp" alt="Screenshot del sito Beauty by Ksenia" loading="lazy" width="1280" height="800">
+        <img src="/img/portfolio/beautybyksenia.webp" alt="Sito web Beauty by Ksenia" loading="eager" decoding="async" width="1200" height="750">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -322,7 +325,7 @@ gtag('consent', 'default', {
     <!-- KTI HAIR EXTENSION -->
     <div class="p-card reveal" id="ktiphairextension" data-tags="sito-web google-ads">
       <div class="p-card-visual">
-        <img src="/images/portfolio/ktiphairextension.webp" alt="Screenshot del sito KTI Hair Extension" loading="lazy" width="1280" height="800">
+        <img src="/img/portfolio/ktiphairextension.webp" alt="Sito web KTI Hair Extension" loading="eager" decoding="async" width="1200" height="750">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -343,7 +346,7 @@ gtag('consent', 'default', {
     <!-- REMARKAFILM -->
     <div class="p-card reveal" id="remarkafilm" data-tags="sito-web">
       <div class="p-card-visual">
-        <img src="/images/portfolio/remarkafilm.webp" alt="Screenshot del sito Remarkafilm" loading="lazy" width="1280" height="800">
+        <img src="/img/portfolio/remarkafilm.webp" alt="Sito web Remarkafilm" loading="eager" decoding="async" width="1200" height="750">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -363,7 +366,7 @@ gtag('consent', 'default', {
     <!-- LADY-CAR -->
     <div class="p-card reveal" id="lady-car" data-tags="sito-web">
       <div class="p-card-visual">
-        <img src="/images/portfolio/lady-car.webp" alt="Screenshot del sito Lady-Car" loading="lazy" width="1280" height="800">
+        <img src="/img/portfolio/lady-car.webp" alt="Sito web Lady-Car" loading="lazy" decoding="async" width="1200" height="750">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -383,7 +386,7 @@ gtag('consent', 'default', {
     <!-- SALERNO FITNESS -->
     <div class="p-card reveal" id="salernofitness" data-tags="sito-web">
       <div class="p-card-visual">
-        <img src="/images/portfolio/salernofitness.webp" alt="Screenshot del sito Salerno Fitness" loading="lazy" width="1280" height="800">
+        <img src="/img/portfolio/salernofitness.webp" alt="Sito web Salerno Fitness" loading="lazy" decoding="async" width="1200" height="750">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -403,7 +406,7 @@ gtag('consent', 'default', {
     <!-- CAPPUCCINI DI PUGLIA -->
     <div class="p-card reveal" id="cappuccinipuglia" data-tags="sito-web seo">
       <div class="p-card-visual">
-        <img src="/images/portfolio/cappuccinipuglia.webp" alt="Screenshot del sito Cappuccini di Puglia" loading="lazy" width="1280" height="800">
+        <img src="/img/portfolio/cappuccinipuglia.webp" alt="Sito web Cappuccini di Puglia" loading="lazy" decoding="async" width="1200" height="750">
         <div class="p-card-visual-overlay"></div>
       </div>
       <div class="p-card-body">
@@ -418,6 +421,68 @@ gtag('consent', 'default', {
       <div class="p-card-footer">
         <span class="p-card-url">cappuccinipuglia.it</span>
         <a href="https://cappuccinipuglia.it/" target="_blank" rel="noopener" class="p-card-link">Visita il sito →</a>
+      </div>
+    </div>
+
+    <!-- BLACK MOBILE DETAILING — IN ARRIVO -->
+    <div class="p-card reveal" id="blackmobiledetailing" data-tags="sito-web seo">
+      <div class="p-card-visual p-card-visual-placeholder">
+        <span class="coming-badge">In arrivo</span>
+        <div class="placeholder-name">Black Mobile<br>Detailing</div>
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-tags">
+          <span class="p-tag p-tag-blue">Sito Web</span>
+          <span class="p-tag p-tag-blue">SEO</span>
+          <span class="p-tag p-tag-gray">Toronto, CA</span>
+        </div>
+        <div class="p-card-name">Black Mobile Detailing</div>
+        <p class="p-card-desc">Servizio di car detailing mobile a Toronto. Nuovo sito in lavorazione — a breve online con il restyling completo.</p>
+      </div>
+      <div class="p-card-footer">
+        <span class="p-card-url">In arrivo</span>
+      </div>
+    </div>
+
+    <!-- BABY GREENS BARI — IN ARRIVO -->
+    <div class="p-card reveal" id="babygreensbari" data-tags="sito-web in-corso">
+      <div class="p-card-visual p-card-visual-placeholder">
+        <span class="coming-badge">In arrivo</span>
+        <div class="placeholder-name">Baby Greens<br>Bari</div>
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-tags">
+          <span class="p-tag p-tag-blue">Sito Web</span>
+          <span class="p-tag p-tag-blue">In corso</span>
+          <span class="p-tag p-tag-gray">Bari, IT</span>
+        </div>
+        <div class="p-card-name">Baby Greens Bari</div>
+        <p class="p-card-desc">Nuovo sito web in sviluppo per Baby Greens Bari. Presentazione del brand e dei prodotti, pensata per convertire i visitatori in clienti.</p>
+      </div>
+      <div class="p-card-footer">
+        <span class="p-card-url">babygreensbari.it</span>
+        <a href="https://babygreensbari.it/" target="_blank" rel="noopener" class="p-card-link">Visita il sito →</a>
+      </div>
+    </div>
+
+    <!-- BAR MOBILE — IN ARRIVO -->
+    <div class="p-card reveal" id="barmobile" data-tags="sito-web in-corso">
+      <div class="p-card-visual p-card-visual-placeholder">
+        <span class="coming-badge">In arrivo</span>
+        <div class="placeholder-name">Bar Mobile</div>
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-tags">
+          <span class="p-tag p-tag-blue">Sito Web</span>
+          <span class="p-tag p-tag-blue">In corso</span>
+          <span class="p-tag p-tag-gray">IT</span>
+        </div>
+        <div class="p-card-name">Bar Mobile</div>
+        <p class="p-card-desc">Nuovo sito web in sviluppo per Bar Mobile. Restyling in corso, online a breve con tutti i contenuti aggiornati.</p>
+      </div>
+      <div class="p-card-footer">
+        <span class="p-card-url">barmobile.it</span>
+        <a href="https://barmobile.it/" target="_blank" rel="noopener" class="p-card-link">Visita il sito →</a>
       </div>
     </div>
 

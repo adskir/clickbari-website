@@ -62,7 +62,24 @@ const HIDE_CSS = `
 `;
 
 async function shoot(playwright, slug, url) {
-  const browser = await playwright.chromium.launch({ headless: true });
+  const launchOpts = { headless: true, args: [] };
+  // Optional override for environments where Playwright's own browser
+  // download isn't available/matching (e.g. a sandboxed CI image that
+  // ships a pinned Chromium build) — point this at that binary instead
+  // of running `npx playwright install chromium`.
+  if (process.env.PLAYWRIGHT_CHROMIUM_PATH) {
+    launchOpts.executablePath = process.env.PLAYWRIGHT_CHROMIUM_PATH;
+  }
+  // Optional: trust one specific additional CA by its SPKI pin (base64
+  // sha256 of the public key) instead of disabling verification outright
+  // — needed in sandboxes that MITM outbound TLS for policy inspection
+  // with their own CA. Leave unset on a normal machine.
+  if (process.env.PLAYWRIGHT_TRUST_SPKI) {
+    launchOpts.args.push(
+      `--ignore-certificate-errors-spki-list=${process.env.PLAYWRIGHT_TRUST_SPKI}`
+    );
+  }
+  const browser = await playwright.chromium.launch(launchOpts);
   try {
     const page = await browser.newPage({
       viewport: VIEWPORT,

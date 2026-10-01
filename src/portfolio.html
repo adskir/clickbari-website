@@ -7,11 +7,11 @@ eleventyExcludeFromCollections: true
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="shortcut icon" href="/favicon.ico">
 <title>Portfolio — Progetti realizzati · ClickBari</title>
 <meta name="description" content="Siti web, Google Ads e SEO per clienti reali. Scopri i progetti realizzati da KIR · ClickBari a Bari e nel mondo.">
 <link rel="canonical" href="{{ site.url }}/portfolio/">
@@ -29,6 +29,9 @@ eleventyExcludeFromCollections: true
   --gray-mid:#222;
   --font-d:'Bebas Neue',sans-serif;
   --font-b:'DM Sans',sans-serif;
+  --radius-lg:18px;
+  --radius-md:10px;
+  --radius-sm:6px;
 }
 html{scroll-behavior:smooth}
 
@@ -45,7 +48,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ddd;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#fff}
 .nav-links a.active{color:#fff}
-.nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:2px}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:var(--radius-md)}
 
 /* HAMBURGER */
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}
@@ -62,7 +65,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-family:var(--font-d);font-size:28px;letter-spacing:.06em;color:#ddd;text-decoration:none;transition:color .2s}
 .mobile-nav-link:hover{color:#fff}
 .mobile-nav-link.active{color:var(--blue-bright)}
-.mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:16px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:2px;margin-top:24px;transition:background .2s;border:none;width:100%;cursor:pointer}
+.mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:16px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);margin-top:24px;transition:background .2s;border:none;width:100%;cursor:pointer}
 .mobile-cta:hover{background:var(--blue-dark)}
 
 .nav-cta:hover{background:var(--blue-dark)!important}
@@ -78,33 +81,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* FILTRI */
 .filtri{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:40px 48px 0}
-.filtro{border:1px solid rgba(255,255,255,0.12);padding:8px 20px;border-radius:2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;cursor:pointer;transition:all .2s;background:none}
+.filtro{border:1px solid rgba(255,255,255,0.12);padding:8px 20px;border-radius:var(--radius-md);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;cursor:pointer;transition:all .2s;background:none}
 .filtro:hover{border-color:rgba(91,155,255,0.4);color:#ddd}
 .filtro.active{background:var(--blue);border-color:var(--blue);color:#fff}
 
 /* PROGETTI */
 .progetti-wrap{padding:48px}
-.progetti-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.progetti-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 
 /* CARD PROGETTO */
-.p-card{background:var(--gray);display:flex;flex-direction:column;transition:background .3s;position:relative;overflow:hidden}
+.p-card{background:var(--gray);display:flex;flex-direction:column;transition:background .3s,transform .35s ease,box-shadow .35s ease,border-color .35s ease;position:relative;overflow:hidden;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,.08)}
 .p-card:hover{background:var(--gray-mid)}
-.p-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue-bright);transform:scaleX(0);transition:transform .4s;transform-origin:left}
-.p-card:hover::before{transform:scaleX(1)}
 
-.p-card-visual{aspect-ratio:16/9;position:relative;overflow:hidden;background:#0a0a0a}
-.p-card-visual img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.p-card-visual{aspect-ratio:16/10;position:relative;overflow:hidden;background:#0a0a0a}
+.p-card-visual img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s ease}
 .p-card-visual-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(6,6,6,0.6) 100%)}
 
 .p-card-body{padding:24px 24px 20px;flex:1;display:flex;flex-direction:column}
 .p-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-.p-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:2px}
+.p-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:var(--radius-sm)}
 .p-tag-blue{background:rgba(37,99,235,0.2);color:var(--blue-bright)}
 .p-tag-gray{background:rgba(255,255,255,0.06);color:#888}
 
 .p-card-name{font-family:var(--font-d);font-size:24px;letter-spacing:.04em;color:#fff;margin-bottom:6px;line-height:1}
-.p-card-location{font-size:11px;color:#666;letter-spacing:.1em;margin-bottom:12px}
-.p-card-desc{font-size:12px;line-height:1.75;color:#999;flex:1}
+.p-card-desc{font-size:12px;line-height:1.75;color:#999;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
 /* METRICHE */
 .p-metrics{display:flex;gap:0;border-top:1px solid rgba(255,255,255,0.06);margin-top:16px}
@@ -118,16 +118,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .p-card-link{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-bright);text-decoration:none;transition:gap .2s}
 .p-card-link:hover{gap:10px}
 
-/* CARD GRANDE (featured) */
-.p-card-featured{grid-column:span 2}
-.p-card-featured .p-card-visual{aspect-ratio:16/7}
-.p-card-featured .p-card-name{font-size:32px}
+/* HOVER (solo su dispositivi con hover reale) */
+@media(hover:hover){
+  .p-card:hover{box-shadow:0 16px 40px rgba(37,99,235,.18);border-color:rgba(91,155,255,.35)}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .p-card:hover{transform:translateY(-6px)}
+  .p-card:hover .p-card-visual img{transform:scale(1.04)}
+}
 
 /* CTA */
 .portfolio-cta{background:var(--blue);padding:64px 48px;text-align:center}
 .portfolio-cta h2{font-family:var(--font-d);font-size:clamp(36px,5vw,64px);letter-spacing:.02em;color:#fff;margin-bottom:12px}
 .portfolio-cta p{font-size:14px;color:rgba(255,255,255,0.85);max-width:420px;margin:0 auto 32px;line-height:1.8}
-.portfolio-cta a{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--blue);padding:13px 36px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:2px;transition:transform .2s,box-shadow .2s}
+.portfolio-cta a{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--blue);padding:13px 36px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s}
 .portfolio-cta a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
 
 /* WA FLOAT */
@@ -143,7 +147,7 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
 .footer-links a{font-size:13px;color:#bbb;text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:#fff}
 .footer-social{display:flex;gap:10px;margin-top:4px}
-.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
+.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
 .social-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
 .footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:11px;color:#888}
@@ -155,6 +159,11 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
 
+/* TABLET */
+@media(max-width:1024px){
+  .progetti-grid{grid-template-columns:repeat(2,1fr)}
+}
+
 /* MOBILE */
 @media(max-width:768px){
   nav{padding:14px 18px}
@@ -163,9 +172,7 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
   .hero{padding:100px 20px 48px}
   .filtri{padding:32px 20px 0}
   .progetti-wrap{padding:32px 20px}
-  .progetti-grid{grid-template-columns:1fr}
-  .p-card-featured{grid-column:span 1}
-  .p-card-featured .p-card-visual{aspect-ratio:16/9}
+  .progetti-grid{grid-template-columns:1fr;gap:16px}
   .portfolio-cta{padding:48px 20px}
   footer{grid-template-columns:1fr;padding:36px 20px}
   .footer-bottom{flex-direction:column;gap:14px;text-align:center}
@@ -185,10 +192,10 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
 .modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
 .modal-field{margin-bottom:14px}
 .modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
-.modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:4px;padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
+.modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
 .modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
 .modal-field select{appearance:none;cursor:pointer}
-.modal-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:4px;font-family:var(--font-b);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .2s}
+.modal-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:var(--radius-md);font-family:var(--font-b);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .2s}
 .modal-submit:hover{background:var(--blue-dark)}
 .modal-success{display:none;text-align:center;padding:8px 0}
 .modal-success.visible{display:block}
@@ -227,7 +234,7 @@ gtag('consent', 'default', {
 <nav>
   <a class="nav-logo" href="/">
     <div class="nav-logo-mark">
-      <img src="logo-icon.png" alt="ClickBari">
+      <img src="/logo-icon.png" alt="ClickBari">
     </div>
     <div>
       <div class="nav-logo-text">ClickBari</div>
@@ -277,7 +284,7 @@ gtag('consent', 'default', {
   <div class="progetti-grid">
 
     <!-- BEAUTY BY KSENIA — FEATURED -->
-    <div class="p-card p-card-featured reveal" id="beautybyksenia" data-tags="sito-web google-ads in-corso">
+    <div class="p-card reveal" id="beautybyksenia" data-tags="sito-web google-ads in-corso">
       <div class="p-card-visual">
         <img src="/images/portfolio/beautybyksenia.webp" alt="Screenshot del sito Beauty by Ksenia" loading="lazy" width="1280" height="800">
         <div class="p-card-visual-overlay"></div>
@@ -290,7 +297,6 @@ gtag('consent', 'default', {
           <span class="p-tag p-tag-gray">Brooklyn, NY</span>
         </div>
         <div class="p-card-name">Beauty by Ksenia</div>
-        <div class="p-card-location">📍 Brooklyn, New York</div>
         <p class="p-card-desc">Permanent makeup artist con 30 anni di esperienza a Brooklyn. Sito web su misura, campagne Google Ads ottimizzate per il mercato di New York. In corso: SEO, Google Business Profile e automazione AI.</p>
         <div class="p-metrics">
           <div class="p-metric">
@@ -326,7 +332,6 @@ gtag('consent', 'default', {
           <span class="p-tag p-tag-gray">Brooklyn, NY</span>
         </div>
         <div class="p-card-name">KTI Hair Extension</div>
-        <div class="p-card-location">📍 Brooklyn, New York</div>
         <p class="p-card-desc">Salone specializzato in hair extensions e colorazione a Brooklyn. Sito web professionale e campagne Google Ads per attrarre clienti nel mercato di New York.</p>
       </div>
       <div class="p-card-footer">
@@ -347,7 +352,6 @@ gtag('consent', 'default', {
           <span class="p-tag p-tag-gray">Ucraina</span>
         </div>
         <div class="p-card-name">Remarkafilm</div>
-        <div class="p-card-location">📍 Ucraina</div>
         <p class="p-card-desc">Agenzia di produzione video professionale. Sito web su misura per un brand nel settore cinematografico.</p>
       </div>
       <div class="p-card-footer">
@@ -368,7 +372,6 @@ gtag('consent', 'default', {
           <span class="p-tag p-tag-gray">Roma, IT</span>
         </div>
         <div class="p-card-name">Lady-Car</div>
-        <div class="p-card-location">📍 Roma, Italia</div>
         <p class="p-card-desc">Servizio di car detailing mobile a Roma. Sito web professionale con presentazione dei servizi e contatti diretti per prenotazioni.</p>
       </div>
       <div class="p-card-footer">
@@ -389,7 +392,6 @@ gtag('consent', 'default', {
           <span class="p-tag p-tag-gray">Bari, IT</span>
         </div>
         <div class="p-card-name">Salerno Fitness</div>
-        <div class="p-card-location">📍 Bari, Italia</div>
         <p class="p-card-desc">Sito web per personal trainer con estetica curata in stile sportivo, tra tonalità sabbia e ruggine. Modulo di contatto integrato e collegamento diretto a WhatsApp per richiedere una consulenza in pochi secondi.</p>
       </div>
       <div class="p-card-footer">
@@ -411,7 +413,6 @@ gtag('consent', 'default', {
           <span class="p-tag p-tag-gray">Puglia, IT</span>
         </div>
         <div class="p-card-name">Cappuccini di Puglia</div>
-        <div class="p-card-location">📍 Puglia, Italia</div>
         <p class="p-card-desc">Sito web istituzionale per l'Ordine dei Frati Minori Cappuccini di Puglia, Basilicata, Albania e Mozambico. Struttura chiara per raccontare storia, missioni e attività della comunità, con impostazione SEO per la visibilità organica.</p>
       </div>
       <div class="p-card-footer">
@@ -435,7 +436,7 @@ gtag('consent', 'default', {
   <div>
     <a class="nav-logo" href="/">
       <div class="nav-logo-mark">
-        <img src="logo-icon.png" alt="ClickBari">
+        <img src="/logo-icon.png" alt="ClickBari">
       </div>
       <div>
         <div class="nav-logo-text">ClickBari</div>
@@ -509,8 +510,8 @@ filtri.forEach(f => {
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);flex-wrap:wrap">
   <p style="font-size:13px;color:#bbb;line-height:1.7;margin:0;flex:1;min-width:200px">Usiamo cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity). Leggi la <a href="/cookie/" style="color:var(--blue-bright);text-decoration:none">Cookie Policy</a> e la <a href="/privacy/" style="color:var(--blue-bright);text-decoration:none">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;width:100%;max-width:340px">
-    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:2px;cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#888;flex:1">Solo necessari</button>
-    <button onclick="cookieAccept()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:2px;cursor:pointer;border:none;background:var(--blue);color:#fff;flex:1">Accetta tutti</button>
+    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#888;flex:1">Solo necessari</button>
+    <button onclick="cookieAccept()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:none;background:var(--blue);color:#fff;flex:1">Accetta tutti</button>
   </div>
 </div>
 <style> #cookie-banner.visible{transform:translateY(0)!important}@media(min-width:600px){ #cookie-banner{padding:20px 48px!important;flex-wrap:nowrap!important}#cookie-banner>div{width:auto!important;max-width:none!important}}</style>

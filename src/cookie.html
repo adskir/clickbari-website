@@ -26,11 +26,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NRZ3S9F5');</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="shortcut icon" href="/favicon.ico">
 <title>Cookie Policy — ClickBari</title>
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="{{ site.url }}/cookie/">
@@ -48,6 +48,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --gray-mid:#222;
   --font-d:'Bebas Neue',sans-serif;
   --font-b:'DM Sans',sans-serif;
+  --radius-lg:18px;
+  --radius-md:10px;
+  --radius-sm:6px;
 }
 html{scroll-behavior:smooth}
 body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:300;overflow-x:hidden}
@@ -61,7 +64,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ddd;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#fff}
-.nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:2px}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:var(--radius-md)}
 
 /* HAMBURGER */
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}
@@ -78,7 +81,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-family:var(--font-d);font-size:28px;letter-spacing:.06em;color:#ddd;text-decoration:none;transition:color .2s}
 .mobile-nav-link:hover{color:#fff}
 .mobile-nav-link.active{color:var(--blue-bright)}
-.mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:16px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:2px;margin-top:24px;transition:background .2s;border:none;width:100%;cursor:pointer}
+.mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:16px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);margin-top:24px;transition:background .2s;border:none;width:100%;cursor:pointer}
 .mobile-cta:hover{background:var(--blue-dark)}
 
 
@@ -106,7 +109,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .cookie-table th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#888;padding:10px 16px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.1)}
 .cookie-table td{font-size:13px;color:#ccc;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06);vertical-align:top;line-height:1.6}
 .cookie-table tr:last-child td{border-bottom:none}
-.badge{display:inline-block;font-size:10px;letter-spacing:.08em;padding:2px 8px;border-radius:2px;font-weight:500}
+.badge{display:inline-block;font-size:10px;letter-spacing:.08em;padding:2px 8px;border-radius:var(--radius-sm);font-weight:500}
 .badge-tech{background:rgba(91,155,255,0.15);color:var(--blue-bright);border:1px solid rgba(91,155,255,0.3)}
 .badge-prof{background:rgba(255,150,50,0.12);color:#ff9632;border:1px solid rgba(255,150,50,0.3)}
 .badge-anal{background:rgba(100,200,100,0.12);color:#64c864;border:1px solid rgba(100,200,100,0.3)}
@@ -118,7 +121,7 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
 .footer-links a{font-size:13px;color:#bbb;text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:#fff}
 .footer-social{display:flex;gap:10px;margin-top:4px}
-.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);letter-spacing:.05em;text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
+.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);letter-spacing:.05em;text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
 .social-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
 .footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:11px;color:#888;letter-spacing:.05em}
@@ -147,7 +150,7 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
 .cb-text a{color:var(--blue-bright);text-decoration:none}
 .cb-text a:hover{text-decoration:underline}
 .cb-actions{display:flex;gap:10px;flex-shrink:0}
-.cb-btn{font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:10px 22px;border-radius:2px;cursor:pointer;border:none;transition:background .2s,color .2s;white-space:nowrap}
+.cb-btn{font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:10px 22px;border-radius:var(--radius-md);cursor:pointer;border:none;transition:background .2s,color .2s;white-space:nowrap}
 .cb-accept{background:var(--blue);color:#fff}
 .cb-accept:hover{background:var(--blue-dark)}
 .cb-decline{background:transparent;color:#888;border:1px solid rgba(255,255,255,0.15)}
@@ -181,10 +184,10 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
 .modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
 .modal-field{margin-bottom:14px}
 .modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
-.modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:4px;padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
+.modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
 .modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
 .modal-field select{appearance:none;cursor:pointer}
-.modal-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:4px;font-family:var(--font-b);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .2s}
+.modal-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:var(--radius-md);font-family:var(--font-b);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .2s}
 .modal-submit:hover{background:var(--blue-dark)}
 .modal-success{display:none;text-align:center;padding:8px 0}
 .modal-success.visible{display:block}
@@ -219,7 +222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav>
   <a class="nav-logo" href="/">
     <div class="nav-logo-icon">
-      <img src="logo-icon.png" alt="ClickBari" style="width:100%;height:100%;object-fit:cover;border-radius:6px">
+      <img src="/logo-icon.png" alt="ClickBari" style="width:100%;height:100%;object-fit:cover;border-radius:6px">
     </div>
     <div>
       <div class="nav-logo-text">ClickBari</div>
@@ -369,7 +372,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div>
     <a class="nav-logo" href="/">
       <div class="nav-logo-icon">
-        <img src="logo-icon.png" alt="ClickBari" style="width:100%;height:100%;object-fit:cover;border-radius:6px">
+        <img src="/logo-icon.png" alt="ClickBari" style="width:100%;height:100%;object-fit:cover;border-radius:6px">
       </div>
       <div>
         <div class="nav-logo-text">ClickBari</div>

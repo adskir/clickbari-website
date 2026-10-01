@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="shortcut icon" href="/favicon.ico">
 <title>Quanto costa un sito web a Bari nel 2026? · ClickBari Blog</title>
 <meta name="description" content="Dal fai-da-te su un builder all&#39;agenzia: prezzi reali per Bari, spiegati senza fronzoli.">
 <link rel="canonical" href="https://clickbari.it/blog/quanto-costa-un-sito-web-a-bari-nel-2026/">
@@ -37,6 +37,9 @@
   --gray-mid:#222;
   --font-d:'Bebas Neue',sans-serif;
   --font-b:'DM Sans',sans-serif;
+  --radius-lg:18px;
+  --radius-md:10px;
+  --radius-sm:6px;
 }
 html{scroll-behavior:smooth}
 
@@ -52,7 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ddd;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#fff}
 .nav-links a.active{color:#fff}
-.nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:2px}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:var(--radius-md)}
 
 /* HAMBURGER */
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}
@@ -69,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-family:var(--font-d);font-size:28px;letter-spacing:.06em;color:#ddd;text-decoration:none;transition:color .2s}
 .mobile-nav-link:hover{color:#fff}
 .mobile-nav-link.active{color:var(--blue-bright)}
-.mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:16px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:2px;margin-top:24px;transition:background .2s;border:none;width:100%;cursor:pointer}
+.mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:16px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);margin-top:24px;transition:background .2s;border:none;width:100%;cursor:pointer}
 .mobile-cta:hover{background:var(--blue-dark)}
 
 .nav-cta:hover{background:var(--blue-dark)!important}
@@ -99,7 +102,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* FILTRI */
 .blog-header{padding:0 48px;display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:16px}
 .filtri{display:flex;gap:8px;flex-wrap:wrap}
-.filtro{border:1px solid rgba(255,255,255,0.12);padding:8px 18px;border-radius:2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;cursor:pointer;transition:all .2s;background:none}
+.filtro{border:1px solid rgba(255,255,255,0.12);padding:8px 18px;border-radius:var(--radius-md);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;cursor:pointer;transition:all .2s;background:none}
 .filtro:hover{border-color:rgba(91,155,255,0.4);color:#ddd}
 .filtro.active{background:var(--blue);border-color:var(--blue);color:#fff}
 .blog-count{font-size:12px;color:#666;letter-spacing:.06em}
@@ -115,7 +118,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .art-card:hover::before{transform:scaleX(1)}
 
 .art-card-top{padding:32px 28px 0}
-.art-cat{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:4px 12px;border-radius:2px;margin-bottom:16px}
+.art-cat{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:4px 12px;border-radius:var(--radius-sm);margin-bottom:16px}
 .art-cat.siti{background:rgba(37,99,235,0.15);color:var(--blue-bright)}
 .art-cat.google{background:rgba(234,67,53,0.12);color:#f87171}
 .art-cat.seo{background:rgba(34,197,94,0.1);color:#4ade80}
@@ -134,7 +137,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* CARD COMING SOON */
 .art-card.coming{opacity:.5;pointer-events:none}
 .art-card.coming .art-title{color:#666}
-.coming-badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:2px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#666}
+.coming-badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:var(--radius-sm);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#666}
 
 /* NEWSLETTER */
 .newsletter{margin:0 48px 64px;background:var(--blue);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;border-radius:4px;position:relative;overflow:hidden}
@@ -142,10 +145,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .newsletter h3{font-family:var(--font-d);font-size:clamp(28px,3.5vw,44px);letter-spacing:.03em;color:#fff;margin-bottom:10px}
 .newsletter p{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.7}
 .newsletter-form{display:flex;gap:8px}
-.newsletter-input{flex:1;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:13px 16px;font-family:var(--font-b);font-size:13px;border-radius:2px;outline:none;transition:border-color .2s}
+.newsletter-input{flex:1;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:13px 16px;font-family:var(--font-b);font-size:13px;border-radius:var(--radius-md);outline:none;transition:border-color .2s}
 .newsletter-input::placeholder{color:rgba(255,255,255,0.5)}
 .newsletter-input:focus{border-color:#fff}
-.newsletter-btn{background:#fff;color:var(--blue);border:none;padding:13px 24px;font-family:var(--font-d);font-size:16px;letter-spacing:.1em;cursor:pointer;border-radius:2px;white-space:nowrap;transition:transform .2s}
+.newsletter-btn{background:#fff;color:var(--blue);border:none;padding:13px 24px;font-family:var(--font-d);font-size:16px;letter-spacing:.1em;cursor:pointer;border-radius:var(--radius-md);white-space:nowrap;transition:transform .2s}
 .newsletter-btn:hover{transform:translateY(-2px)}
 
 /* WA FLOAT */
@@ -160,7 +163,7 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
 .footer-links a{font-size:13px;color:#bbb;text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:#fff}
 .footer-social{display:flex;gap:10px;margin-top:4px}
-.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
+.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
 .social-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
 .footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:11px;color:#888}
@@ -202,10 +205,10 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
 .modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
 .modal-field{margin-bottom:14px}
 .modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
-.modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:4px;padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
+.modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
 .modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
 .modal-field select{appearance:none;cursor:pointer}
-.modal-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:4px;font-family:var(--font-b);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .2s}
+.modal-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:var(--radius-md);font-family:var(--font-b);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .2s}
 .modal-submit:hover{background:var(--blue-dark)}
 .modal-success{display:none;text-align:center;padding:8px 0}
 .modal-success.visible{display:block}
@@ -272,7 +275,7 @@ gtag('consent', 'default', {
 <nav>
   <a class="nav-logo" href="/">
     <div class="nav-logo-mark">
-      <img src="logo-icon.png" alt="ClickBari">
+      <img src="/logo-icon.png" alt="ClickBari">
     </div>
     <div>
       <div class="nav-logo-text">ClickBari</div>
@@ -397,7 +400,7 @@ gtag('consent', 'default', {
   <div>
     <a class="nav-logo" href="/">
       <div class="nav-logo-mark">
-        <img src="logo-icon.png" alt="ClickBari">
+        <img src="/logo-icon.png" alt="ClickBari">
       </div>
       <div>
         <div class="nav-logo-text">ClickBari</div>
@@ -438,8 +441,8 @@ gtag('consent', 'default', {
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);flex-wrap:wrap">
   <p style="font-size:13px;color:#bbb;line-height:1.7;margin:0;flex:1;min-width:200px">Usiamo cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity). Leggi la <a href="/cookie/" style="color:var(--blue-bright);text-decoration:none">Cookie Policy</a> e la <a href="/privacy/" style="color:var(--blue-bright);text-decoration:none">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;width:100%;max-width:340px">
-    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:2px;cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#888;flex:1">Solo necessari</button>
-    <button onclick="cookieAccept()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:2px;cursor:pointer;border:none;background:var(--blue);color:#fff;flex:1">Accetta tutti</button>
+    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#888;flex:1">Solo necessari</button>
+    <button onclick="cookieAccept()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:none;background:var(--blue);color:#fff;flex:1">Accetta tutti</button>
   </div>
 </div>
 <style> #cookie-banner.visible{transform:translateY(0)!important}@media(min-width:600px){ #cookie-banner{padding:20px 48px!important;flex-wrap:nowrap!important}#cookie-banner>div{width:auto!important;max-width:none!important}}</style>

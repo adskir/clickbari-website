@@ -1,10 +1,11 @@
+const SITE_URL = "https://clickbari.it";
+
 module.exports = function (eleventyConfig) {
-  // Copy static assets as-is (images, favicons, sitemap) so relative
-  // paths in the HTML (e.g. src="logo-icon.png") keep working unchanged.
+  // Copy static assets as-is (images, favicons) so relative paths in the
+  // HTML (e.g. src="logo-icon.png") keep working unchanged.
   eleventyConfig.addPassthroughCopy("src/*.png");
   eleventyConfig.addPassthroughCopy("src/*.ico");
   eleventyConfig.addPassthroughCopy("src/*.webp");
-  eleventyConfig.addPassthroughCopy("src/*.xml");
   eleventyConfig.addPassthroughCopy("src/admin");
   // Portfolio screenshots, blog images, etc. — served at /images/... to
   // match the media_folder convention already set up for Decap CMS.
@@ -43,7 +44,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("absoluteUrl", function (url) {
-    return `https://www.clickbari.it${url || ""}`;
+    return `${SITE_URL}${url || ""}`;
   });
 
   // JSON-LD Article schema for a blog post (SEO + AEO: gives search
@@ -53,7 +54,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("articleJsonLd", function (data) {
     const d = new Date(data.date);
     if (!data.title || isNaN(d)) return "";
-    const url = `https://www.clickbari.it${data.url}`;
+    const url = `${SITE_URL}${data.url}`;
     const iso = d.toISOString();
     return JSON.stringify({
       "@context": "https://schema.org",
@@ -63,11 +64,11 @@ module.exports = function (eleventyConfig) {
       "datePublished": iso,
       "dateModified": iso,
       "inLanguage": "it-IT",
-      "author": { "@type": "Organization", "name": "ClickBari", "url": "https://www.clickbari.it/chi-sono/" },
+      "author": { "@type": "Organization", "name": "ClickBari", "url": `${SITE_URL}/chi-sono/` },
       "publisher": {
         "@type": "Organization",
         "name": "ClickBari",
-        "logo": { "@type": "ImageObject", "url": "https://www.clickbari.it/logo-icon.png" },
+        "logo": { "@type": "ImageObject", "url": `${SITE_URL}/logo-icon.png` },
       },
       "mainEntityOfPage": { "@type": "WebPage", "@id": url },
       "url": url,

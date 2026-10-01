@@ -1,0 +1,22 @@
+---
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ site.url }}/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
+  <url><loc>{{ site.url }}/chi-sono/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>{{ site.url }}/servizi/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>{{ site.url }}/siti-web/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>{{ site.url }}/google-ecosystem/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>{{ site.url }}/seo-aeo/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>{{ site.url }}/automazione/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>{{ site.url }}/portfolio/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>{{ site.url }}/blog/</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>{{ site.url }}/contatti/</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>{{ site.url }}/privacy/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>{{ site.url }}/cookie/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+{%- for post in collections.posts %}
+  <url><loc>{{ post.url | absoluteUrl }}</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+{%- endfor %}
+</urlset>

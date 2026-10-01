@@ -1,40 +1,52 @@
 # ClickBari — sito su Eleventy (11ty)
 
-Questo repository contiene il sito clickbari.it ricostruito sullo stack
-GitHub + Eleventy (11ty), pronto per il deploy su OVH tramite Git.
+Questo repository contiene il sito **clickbari.it**, generato con Eleventy
+(11ty) e pubblicato su hosting OVH.
 
-## Cosa è cambiato rispetto al sito originale, e cosa no
+## URL e dominio
 
-**Il contenuto visibile è identico al sito attuale** — stesso testo, stessa
-struttura, stessi URL (`/index.html`, `/servizi.html`, ecc. — nessun
-redirect necessario, nessuna perdita di SEO).
+- Gli URL sono **puliti, senza `.html`** (es. `/servizi/`, `/portfolio/`,
+  `/blog/...`). Ogni pagina sorgente in `src/` ha un blocco di
+  configurazione in testa (`permalink: nome/index.html`) che dice a
+  Eleventy con che URL pubblicarla.
+- Il dominio canonico è **`https://clickbari.it`** (senza `www`). Il base
+  URL è definito in un solo punto, `src/_data/site.json`, usato da tutte
+  le pagine per `canonical`, `og:url`, lo schema JSON-LD e la sitemap.
+  Non ci sono redirect configurati (niente `.htaccess`): se cambi il
+  dominio, aggiorna solo `site.json` e la costante `SITE_URL` in
+  `.eleventy.js`.
 
-**Cosa è diverso "sotto il cofano":**
+## Struttura
 
-- Ogni pagina (`index.html`, `chi-sono.html`, `servizi.html`, ecc.) è ora un
-  file dentro `src/`, con un piccolo blocco di configurazione in testa
-  (`permalink: ...`) che dice a Eleventy con che nome pubblicare la pagina.
-  Il resto del file è identico all'originale.
-- **Il blog è diventato "a dati"**: le 12 anteprime "in arrivo" ora vivono in
-  `src/_data/blogComingPosts.json` invece che scritte a mano nell'HTML.
-  `blog.html` le mostra con un ciclo automatico — se aggiungi o togli una
-  voce da quel file JSON, la griglia e i contatori per categoria si
-  aggiornano da soli, senza toccare l'HTML.
-- **Le pagine principali (chi-sono, servizi, portfolio, ecc.) NON sono state
-  unificate in un layout comune**, perché ogni pagina ha CSS personalizzato
-  al suo interno (non condiviso 1:1 con le altre). Unificarle forzatamente
-  ora avrebbe rischiato di rompere qualcosa senza un beneficio immediato.
-  È un miglioramento possibile in futuro, con calma, pagina per pagina.
+- **Il blog è "a dati"**: le anteprime "in arrivo" vivono in
+  `src/_data/blogComingPosts.json`. `blog.html` le mostra insieme agli
+  articoli realmente pubblicati (presi dalla collection `posts`), con
+  contatori per categoria calcolati solo sugli articoli pubblicati (una
+  categoria senza articoli pubblicati mostra "In arrivo" invece di "0
+  articoli").
+- **Le pagine principali** (chi-sono, servizi, portfolio, ecc.) non sono
+  unificate in un layout comune, perché ognuna ha CSS personalizzato al
+  suo interno. Il layout condiviso (`src/_includes/post.njk`) esiste solo
+  per gli articoli del blog.
+- **`src/sitemap.njk`** genera `sitemap.xml` automaticamente: le pagine
+  principali sono elencate nel template, mentre ogni articolo pubblicato
+  in `src/posts/` ci finisce da solo tramite la collection `posts` — non
+  serve aggiornarla a mano. Le anteprime "in arrivo" non ci compaiono
+  (non hanno una pagina reale).
 
 ## Come pubblicare un vero articolo di blog
 
 1. Apri `src/posts/_esempio-articolo.md.example` — mostra la struttura da
-   copiare (categoria, data, tempo di lettura, testo in Markdown).
+   copiare (categoria, data, tempo di lettura, testo in Markdown). Il
+   layout supporta anche un campo `faq` opzionale nel front-matter (lista
+   di `{q, a}`) per generare una sezione FAQ con dati strutturati — vedi
+   `src/posts/2026-10-15-quanto-costa-un-sito-web-a-bari.md` come esempio.
 2. Crea un nuovo file dentro `src/posts/`, es. `2026-10-20-titolo-articolo.md`
    (l'estensione deve essere `.md`, non `.example`).
 3. Scrivi l'articolo in Markdown nel corpo del file.
 4. Fai commit e push — Eleventy genera automaticamente la pagina vera
-   all'URL indicato nel campo `permalink` del file.
+   all'URL indicato nel campo `permalink` del file, la aggiunge alla
+   griglia di `/blog/` e alla sitemap.
 5. Aggiorna manualmente `src/_data/blogComingPosts.json` togliendo la voce
    "in arrivo" corrispondente, se l'articolo pubblicato la sostituisce.
 
@@ -50,13 +62,12 @@ npm run build   # genera il sito in _site/
 npm run serve   # anteprima locale con ricaricamento automatico
 ```
 
-## Deploy su OVH
+## Deploy
 
-1. Aggiungi questo repository come sorgente Git nella sezione "Multisito"
-   dell'hosting OVH per il dominio clickbari.it.
-2. OVH sincronizzerà i file automaticamente ad ogni push — ma se usi la
-   sincronizzazione Git diretta di OVH, verifica che punti alla cartella
-   `_site/` generata dalla build (serve una GitHub Action che esegua
-   `npm run build` e pubblichi `_site/` su un branch dedicato, es. `dist`,
-   che OVH sincronizzerà). Senza questo passaggio, OVH sincronizzerebbe i
-   file sorgente grezzi invece del sito già compilato.
+1. Push su `main` → una GitHub Action (`.github/workflows/build.yml`)
+   installa le dipendenze, esegue `npm run build` e pubblica il
+   contenuto di `_site/` sul branch `dist` (deploy incrementale, non
+   forzato, così OVH può sempre fare un pull normale).
+2. L'hosting OVH (sezione "Multisito") è collegato via Git al branch
+   `dist` di questo repository, con un webhook che avvisa OVH ad ogni
+   push su `dist` e sincronizza i file pubblicati.

@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: "Quanto costa un sito web a Bari nel 2026?"
-date: 2026-10-15
+date: 2026-09-18
 category: siti-web
 categoryClass: siti
 categoryLabel: "🌐 Siti Web"

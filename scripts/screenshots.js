@@ -26,6 +26,7 @@ const SITES = [
   { slug: "salernofitness", url: "https://salernofitness.it" },
   { slug: "cappuccinipuglia", url: "https://cappuccinipuglia.it" },
   { slug: "blackmobiledetailing", url: "https://www.blackmobiledetailing.com" },
+  { slug: "barmobile", url: "https://barmobile.it" },
   // Add new entries here once a project's site is ready to be reshot —
   // e.g. { slug: "babygreensbari", url: "https://babygreensbari.it" }.
 ];

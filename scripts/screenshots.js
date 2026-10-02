@@ -27,8 +27,8 @@ const SITES = [
   { slug: "cappuccinipuglia", url: "https://cappuccinipuglia.it" },
   { slug: "blackmobiledetailing", url: "https://www.blackmobiledetailing.com" },
   { slug: "barmobile", url: "https://barmobile.it" },
+  { slug: "babygreensbari", url: "https://babygreensbari.it" },
   // Add new entries here once a project's site is ready to be reshot —
-  // e.g. { slug: "babygreensbari", url: "https://babygreensbari.it" }.
 ];
 
 const OUT_DIR = path.join(__dirname, "..", "src", "img", "portfolio");

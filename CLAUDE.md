@@ -81,9 +81,7 @@ push su main → GitHub Action (.github/workflows/build.yml)
   `<img>` — `.p-card-visual.p-card-visual-placeholder` con un
   `.placeholder-name` (nome progetto in Bebas Neue) e un badge
   `.coming-badge` "In arrivo" in alto a destra. Stato attuale (ottobre
-  2026): Black Mobile Detailing (Toronto, car detailing — manca ancora
-  l'URL del sito, per cui la card non ha link "Visita il sito"), Baby
-  Greens Bari (e-commerce di microgreens, babygreensbari.it, tag "In
+  2026): Baby Greens Bari (e-commerce di microgreens, babygreensbari.it, tag "In
   corso"), Bar Mobile (barmobile.it, tag "In corso").
 - Per sostituire un placeholder con lo screenshot reale: aggiungi la voce
   in `scripts/screenshots.js` (`SITES`), esegui lo script, poi nel markup

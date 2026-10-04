@@ -83,15 +83,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 .hero-stack{--w:232px;--step:184px;--dy:34px;position:relative}
 .phones{position:relative;height:calc(var(--w) * 844 / 390 + 16px + var(--dy));touch-action:pan-y}
-.phone{position:absolute;top:0;left:50%;width:var(--w);padding:8px;background:#0d0d0d;border-radius:calc(var(--w) * .17);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.6),0 40px 80px rgba(0,0,0,.65);transform:translateX(-50%);transition:transform .8s cubic-bezier(.22,1,.36,1),opacity .6s,filter .6s;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.phone{position:absolute;top:0;left:50%;width:var(--w);padding:8px;background:#0d0d0d;border-radius:calc(var(--w) * .17);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.6),0 40px 80px rgba(0,0,0,.65);transform:translateX(-50%);transition:transform .9s cubic-bezier(.45,0,.15,1),opacity .9s cubic-bezier(.45,0,.15,1);will-change:transform,opacity;backface-visibility:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.phone::after{content:'';position:absolute;inset:0;border-radius:inherit;background:#000;opacity:0;pointer-events:none;transition:opacity .9s cubic-bezier(.45,0,.15,1);z-index:3}
+.phone.dim::after{opacity:.32}
 .phone::before{content:'';position:absolute;top:15px;left:50%;width:28%;height:calc(var(--w) * .07);transform:translateX(-50%);background:#000;border-radius:999px;z-index:2}
 .phone img{display:block;width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:calc(var(--w) * .135);background:#111}
-.phones-meta{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px}
-.phones-cap{font-size:12px;letter-spacing:.08em;color:#bdbdbd;text-decoration:none;min-width:170px;text-align:right;transition:color .2s}
-.phones-cap:hover{color:var(--blue-bright)}
-.phones-dots{display:flex;gap:6px;min-width:170px}
-.phones-dots button{width:7px;height:7px;padding:0;border:0;border-radius:999px;background:rgba(255,255,255,.22);cursor:pointer;transition:width .3s,background .3s}
-.phones-dots button.on{width:22px;background:var(--blue-bright)}
+.ph-arrow{position:absolute;top:calc(50% - 26px);z-index:20;width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(10,10,10,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;cursor:pointer;transition:background .25s,border-color .25s,transform .25s}
+.ph-arrow svg{width:20px;height:20px}
+.ph-arrow:hover{background:var(--blue);border-color:var(--blue);transform:scale(1.06)}
+.ph-arrow:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px}
+.ph-prev{left:0}
+.ph-next{right:0}
 
 /* FILTRI */
 .filtri-bar{max-width:1344px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:56px 48px 0;box-sizing:content-box}
@@ -185,9 +187,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .hero-stack{--w:156px;--step:112px;--dy:22px}
   .phone{padding:5px}
   .phone::before{top:10px}
-  .phones-meta{gap:12px}
-  .phones-cap{min-width:0}
-  .phones-dots{min-width:0}
+  .ph-arrow{width:42px;height:42px;top:calc(50% - 21px)}
+  .ph-arrow svg{width:17px;height:17px}
+  .ph-prev{left:-6px}
+  .ph-next{right:-6px}
   .hero-stats b{font-size:34px}
   .hero-stats li{padding-right:10px;font-size:10px}
   .hero-stats li+li{padding-left:12px}
@@ -307,7 +310,8 @@ gtag('consent', 'default', {
         <a class="phone" href="#blackmobiledetailing" data-domain="blackmobiledetailing.com" aria-label="blackmobiledetailing.com"><img src="/img/portfolio/mobile/blackmobiledetailing.webp" alt="" width="600" height="1298" decoding="async" loading="lazy"></a>
         <a class="phone" href="#lady-car" data-domain="lady-car.it" aria-label="lady-car.it"><img src="/img/portfolio/mobile/lady-car.webp" alt="" width="600" height="1298" decoding="async" loading="lazy"></a>
       </div>
-      <div class="phones-meta"><a class="phones-cap" href="#barmobile">barmobile.it</a><div class="phones-dots"></div></div>
+      <button type="button" class="ph-arrow ph-prev" aria-label="Progetto precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="ph-arrow ph-next" aria-label="Progetto successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
   </div>
 </section>
@@ -615,53 +619,38 @@ setTimeout(() => document.querySelector('.hero').classList.add('visible'), 150);
 
 // FILTRI
 const filtri = document.querySelectorAll('.filtro');
-// Carosello anteprime mobile (hero)
+// Carosello anteprime mobile (hero) — solo manuale: frecce, clic sui laterali, swipe
 (() => {
   const stack = document.querySelector('.hero-stack');
   if (!stack) return;
   const phones = [...stack.querySelectorAll('.phone')], n = phones.length;
-  const cap = stack.querySelector('.phones-cap'), dotsWrap = stack.querySelector('.phones-dots');
-  let cur = 0, timer = null;
-  const dots = phones.map((p, i) => {
-    const b = document.createElement('button');
-    b.type = 'button'; b.setAttribute('aria-label', p.dataset.domain);
-    b.onclick = () => { go(i); restart(); };
-    dotsWrap.appendChild(b); return b;
-  });
+  let cur = 0;
   const num = v => parseFloat(getComputedStyle(stack).getPropertyValue(v));
   function layout() {
     const step = num('--step'), dy = num('--dy');
     phones.forEach((p, i) => {
       let d = ((i - cur) % n + n) % n; if (d > n / 2) d -= n;
       const a = Math.abs(d);
-      p.style.transform = `translateX(calc(-50% + ${d * step}px)) translateY(${a ? dy : 0}px) scale(${a === 0 ? 1 : a === 1 ? .84 : .7})`;
+      p.style.transform = `translate3d(calc(-50% + ${d * step}px), ${a ? dy : 0}px, 0) scale(${a === 0 ? 1 : a === 1 ? .84 : .7})`;
       p.style.zIndex = 10 - a;
       p.style.opacity = a > 1 ? 0 : 1;
-      p.style.filter = a ? 'brightness(.7)' : 'none';
       p.style.pointerEvents = a > 1 ? 'none' : 'auto';
+      p.classList.toggle('dim', a > 0);
       p.tabIndex = a === 0 ? 0 : -1;
     });
-    cap.textContent = phones[cur].dataset.domain;
-    cap.href = phones[cur].getAttribute('href');
-    dots.forEach((b, i) => b.classList.toggle('on', i === cur));
   }
   const go = i => { cur = (i + n) % n; layout(); };
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const start = () => { if (!reduced && !timer) timer = setInterval(() => go(cur + 1), 3500); };
-  const stop = () => { clearInterval(timer); timer = null; };
-  const restart = () => { stop(); start(); };
-  phones.forEach((p, i) => p.addEventListener('click', e => { if (i !== cur) { e.preventDefault(); go(i); restart(); } }));
-  stack.addEventListener('mouseenter', stop);
-  stack.addEventListener('mouseleave', start);
+  stack.querySelector('.ph-prev').onclick = () => go(cur - 1);
+  stack.querySelector('.ph-next').onclick = () => go(cur + 1);
+  phones.forEach((p, i) => p.addEventListener('click', e => { if (i !== cur) { e.preventDefault(); go(i); } }));
   let x0 = null;
-  stack.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+  stack.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
   stack.addEventListener('touchend', e => {
     if (x0 !== null) { const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1)); }
-    x0 = null; start();
+    x0 = null;
   });
-  document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
   addEventListener('resize', layout);
-  layout(); start();
+  layout();
 })();
 
 const cards = document.querySelectorAll('.p-card');

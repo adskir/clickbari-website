@@ -48,7 +48,7 @@ const MAX_BYTES = (MOBILE ? 90 : 120) * 1024;
 // would otherwise show up in a "first screen" screenshot. Extend this list
 // if a given site uses something not covered here.
 const HIDE_CSS = `
-  #cookie-banner, .cookie-banner, .cookie-consent, .cookieconsent,
+  #cookie, #cookies, #cookie-banner, .cookie-banner, .cookie-consent, .cookieconsent,
   .cc-window, .cc-banner, #cc-window,
   #onetrust-banner-sdk, #onetrust-consent-sdk, .onetrust-pc-dark-filter,
   .cky-consent-container, .cky-overlay,

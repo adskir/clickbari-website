@@ -85,17 +85,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-stats li+li{padding-left:18px;border-left:1px solid rgba(255,255,255,.1)}
 .hero-stats b{display:block;font-family:var(--font-d);font-weight:400;font-size:44px;letter-spacing:.02em;color:#fff;line-height:1;margin-bottom:6px}
 
-.hero-stack{position:relative;display:flex;justify-content:center;align-items:center;padding:8px 0}
-.phone{--w:196px;position:relative;flex-shrink:0;width:var(--w);padding:8px;background:#0d0d0d;border-radius:calc(var(--w) * .17);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.6),0 40px 80px rgba(0,0,0,.65);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.hero-stack{--w:232px;--step:184px;--dy:34px;position:relative}
+.phones{position:relative;height:calc(var(--w) * 844 / 390 + 16px + var(--dy));touch-action:pan-y}
+.phone{position:absolute;top:0;left:50%;width:var(--w);padding:8px;background:#0d0d0d;border-radius:calc(var(--w) * .17);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.6),0 40px 80px rgba(0,0,0,.65);transform:translateX(-50%);transition:transform .8s cubic-bezier(.22,1,.36,1),opacity .6s,filter .6s;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .phone::before{content:'';position:absolute;top:15px;left:50%;width:28%;height:calc(var(--w) * .07);transform:translateX(-50%);background:#000;border-radius:999px;z-index:2}
 .phone img{display:block;width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:calc(var(--w) * .135);background:#111}
-.phone.p-side{z-index:1;transform:translateY(34px);filter:brightness(.78)}
-.phone.p-l{margin-right:-34px}
-.phone.p-r{margin-left:-34px}
-.phone.p-main{--w:232px;z-index:2}
-.hero-stack:hover .p-l{transform:translate(-14px,34px)}
-.hero-stack:hover .p-r{transform:translate(14px,34px)}
-.hero-stack:hover .p-main{transform:translateY(-6px)}
+.phones-meta{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px}
+.phones-cap{font-size:12px;letter-spacing:.08em;color:#bdbdbd;text-decoration:none;min-width:170px;text-align:right;transition:color .2s}
+.phones-cap:hover{color:var(--blue-bright)}
+.phones-dots{display:flex;gap:6px;min-width:170px}
+.phones-dots button{width:7px;height:7px;padding:0;border:0;border-radius:999px;background:rgba(255,255,255,.22);cursor:pointer;transition:width .3s,background .3s}
+.phones-dots button.on{width:22px;background:var(--blue-bright)}
 
 /* FILTRI */
 .filtri-bar{max-width:1344px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:56px 48px 0;box-sizing:content-box}
@@ -176,8 +176,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* TABLET */
 @media(max-width:1024px){
   .progetti-grid{grid-template-columns:repeat(2,1fr)}
-  .phone{--w:160px}
-  .phone.p-main{--w:192px}
+  .hero-stack{--w:192px;--step:150px;--dy:28px}
 }
 
 /* MOBILE */
@@ -187,14 +186,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .nav-burger{display:flex}
   .hero{padding:104px 20px 48px}
   .hero-grid{grid-template-columns:1fr;gap:36px}
-  .phone{--w:122px;padding:5px}
+  .hero-stack{--w:156px;--step:112px;--dy:22px}
+  .phone{padding:5px}
   .phone::before{top:10px}
-  .phone.p-main{--w:150px}
-  .phone.p-side{transform:translateY(22px)}
-  .phone.p-l{margin-right:-26px}
-  .phone.p-r{margin-left:-26px}
-  .hero-stack:hover .p-l,.hero-stack:hover .p-r{transform:translateY(22px)}
-  .hero-stack:hover .p-main{transform:none}
+  .phones-meta{gap:12px}
+  .phones-cap{min-width:0}
+  .phones-dots{min-width:0}
   .hero-stats b{font-size:34px}
   .hero-stats li{padding-right:10px;font-size:10px}
   .hero-stats li+li{padding-left:12px}
@@ -306,10 +303,15 @@ gtag('consent', 'default', {
         <li><b data-stat="google-ads">3</b>Con Google Ads</li>
       </ul>
     </div>
-    <div class="hero-stack" aria-hidden="true">
-      <div class="phone p-side p-l"><img src="/img/portfolio/mobile/cappuccinipuglia.webp" alt="" width="600" height="1298" decoding="async"></div>
-      <div class="phone p-main"><img src="/img/portfolio/mobile/barmobile.webp" alt="" width="600" height="1298" decoding="async"></div>
-      <div class="phone p-side p-r"><img src="/img/portfolio/mobile/babygreensbari.webp" alt="" width="600" height="1298" decoding="async"></div>
+    <div class="hero-stack" aria-roledescription="carousel" aria-label="Anteprime mobile dei progetti">
+      <div class="phones">
+        <a class="phone" href="#barmobile" data-domain="barmobile.it" aria-label="barmobile.it"><img src="/img/portfolio/mobile/barmobile.webp" alt="" width="600" height="1298" decoding="async"></a>
+        <a class="phone" href="#cappuccinipuglia" data-domain="cappuccinipuglia.it" aria-label="cappuccinipuglia.it"><img src="/img/portfolio/mobile/cappuccinipuglia.webp" alt="" width="600" height="1298" decoding="async"></a>
+        <a class="phone" href="#babygreensbari" data-domain="babygreensbari.it" aria-label="babygreensbari.it"><img src="/img/portfolio/mobile/babygreensbari.webp" alt="" width="600" height="1298" decoding="async"></a>
+        <a class="phone" href="#blackmobiledetailing" data-domain="blackmobiledetailing.com" aria-label="blackmobiledetailing.com"><img src="/img/portfolio/mobile/blackmobiledetailing.webp" alt="" width="600" height="1298" decoding="async" loading="lazy"></a>
+        <a class="phone" href="#lady-car" data-domain="lady-car.it" aria-label="lady-car.it"><img src="/img/portfolio/mobile/lady-car.webp" alt="" width="600" height="1298" decoding="async" loading="lazy"></a>
+      </div>
+      <div class="phones-meta"><a class="phones-cap" href="#barmobile">barmobile.it</a><div class="phones-dots"></div></div>
     </div>
   </div>
 </section>
@@ -555,6 +557,55 @@ setTimeout(() => document.querySelector('.hero').classList.add('visible'), 150);
 
 // FILTRI
 const filtri = document.querySelectorAll('.filtro');
+// Carosello anteprime mobile (hero)
+(() => {
+  const stack = document.querySelector('.hero-stack');
+  if (!stack) return;
+  const phones = [...stack.querySelectorAll('.phone')], n = phones.length;
+  const cap = stack.querySelector('.phones-cap'), dotsWrap = stack.querySelector('.phones-dots');
+  let cur = 0, timer = null;
+  const dots = phones.map((p, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('aria-label', p.dataset.domain);
+    b.onclick = () => { go(i); restart(); };
+    dotsWrap.appendChild(b); return b;
+  });
+  const num = v => parseFloat(getComputedStyle(stack).getPropertyValue(v));
+  function layout() {
+    const step = num('--step'), dy = num('--dy');
+    phones.forEach((p, i) => {
+      let d = ((i - cur) % n + n) % n; if (d > n / 2) d -= n;
+      const a = Math.abs(d);
+      p.style.transform = `translateX(calc(-50% + ${d * step}px)) translateY(${a ? dy : 0}px) scale(${a === 0 ? 1 : a === 1 ? .84 : .7})`;
+      p.style.zIndex = 10 - a;
+      p.style.opacity = a > 1 ? 0 : 1;
+      p.style.filter = a ? 'brightness(.7)' : 'none';
+      p.style.pointerEvents = a > 1 ? 'none' : 'auto';
+      p.tabIndex = a === 0 ? 0 : -1;
+    });
+    cap.textContent = phones[cur].dataset.domain;
+    cap.href = phones[cur].getAttribute('href');
+    dots.forEach((b, i) => b.classList.toggle('on', i === cur));
+  }
+  const go = i => { cur = (i + n) % n; layout(); };
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const start = () => { if (!reduced && !timer) timer = setInterval(() => go(cur + 1), 3500); };
+  const stop = () => { clearInterval(timer); timer = null; };
+  const restart = () => { stop(); start(); };
+  phones.forEach((p, i) => p.addEventListener('click', e => { if (i !== cur) { e.preventDefault(); go(i); restart(); } }));
+  stack.addEventListener('mouseenter', stop);
+  stack.addEventListener('mouseleave', start);
+  let x0 = null;
+  stack.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+  stack.addEventListener('touchend', e => {
+    if (x0 !== null) { const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1)); }
+    x0 = null; start();
+  });
+  document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+  addEventListener('resize', layout);
+  layout(); start();
+})();
+
 const cards = document.querySelectorAll('.p-card');
 const countFor = f => [...cards].filter(c => f === 'tutti' || c.dataset.tags.split(' ').includes(f)).length;
 filtri.forEach(f => { const n = f.querySelector('.n'); if (n) n.textContent = countFor(f.dataset.filter); });

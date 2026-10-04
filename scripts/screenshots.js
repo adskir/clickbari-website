@@ -13,6 +13,11 @@
  *
  * Output: src/img/portfolio/<slug>.webp (1200px wide, quality ~80,
  * capped around 120 KB by stepping quality down if needed).
+ *
+ * --mobile: shoots the first screen on a phone viewport (390×844 @2x)
+ * instead, saved as src/img/portfolio/mobile/<slug>.webp (600px wide) —
+ * used by the phone mockups in the portfolio hero.
+ *   node scripts/screenshots.js --mobile barmobile cappuccinipuglia
  */
 
 const path = require("path");
@@ -31,11 +36,13 @@ const SITES = [
   // Add new entries here once a project's site is ready to be reshot —
 ];
 
-const OUT_DIR = path.join(__dirname, "..", "src", "img", "portfolio");
-const VIEWPORT = { width: 1440, height: 900 };
-const TARGET_WIDTH = 1200;
-const TARGET_QUALITY = 80;
-const MAX_BYTES = 120 * 1024;
+const MOBILE = process.argv.includes("--mobile");
+const OUT_DIR = path.join(__dirname, "..", "src", "img", "portfolio", ...(MOBILE ? ["mobile"] : []));
+const VIEWPORT = MOBILE ? { width: 390, height: 844 } : { width: 1440, height: 900 };
+const SCALE = MOBILE ? 2 : 1;
+const TARGET_WIDTH = MOBILE ? 600 : 1200;
+const TARGET_QUALITY = MOBILE ? 84 : 80;
+const MAX_BYTES = (MOBILE ? 90 : 120) * 1024;
 
 // Common cookie-consent banners, chat widgets and floating buttons that
 // would otherwise show up in a "first screen" screenshot. Extend this list
@@ -81,11 +88,18 @@ async function shoot(playwright, slug, url) {
       `--ignore-certificate-errors-spki-list=${process.env.PLAYWRIGHT_TRUST_SPKI}`
     );
   }
+  // Optional: route Chromium through an HTTP(S) proxy if one is set in
+  // the environment (Playwright doesn't pick HTTPS_PROXY up by itself).
+  if (process.env.HTTPS_PROXY) {
+    launchOpts.proxy = { server: process.env.HTTPS_PROXY };
+  }
   const browser = await playwright.chromium.launch(launchOpts);
   try {
     const page = await browser.newPage({
       viewport: VIEWPORT,
-      deviceScaleFactor: 1,
+      deviceScaleFactor: SCALE,
+      isMobile: MOBILE,
+      hasTouch: MOBILE,
     });
     await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
     await page.addStyleTag({ content: HIDE_CSS });
@@ -135,7 +149,7 @@ async function main() {
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  const requested = process.argv.slice(2);
+  const requested = process.argv.slice(2).filter((a) => !a.startsWith("--"));
   const targets = requested.length
     ? SITES.filter((s) => requested.includes(s.slug))
     : SITES;

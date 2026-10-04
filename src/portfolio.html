@@ -85,18 +85,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-stats li+li{padding-left:18px;border-left:1px solid rgba(255,255,255,.1)}
 .hero-stats b{display:block;font-family:var(--font-d);font-weight:400;font-size:44px;letter-spacing:.02em;color:#fff;line-height:1;margin-bottom:6px}
 
-.hero-stack{position:relative;height:500px}
-.frame{position:absolute;width:76%;background:#141414;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transition:transform .5s cubic-bezier(.22,1,.36,1)}
-.frame-bar{display:flex;align-items:center;gap:6px;height:28px;padding:0 12px;background:#1b1b1b;border-bottom:1px solid rgba(255,255,255,.06)}
-.frame-bar i{width:8px;height:8px;border-radius:50%;background:#3a3a3a}
-.frame-bar span{margin-left:10px;font-size:10px;letter-spacing:.06em;color:#7a7a7a}
-.frame img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
-.frame.f1{left:0;top:40px;transform:rotate(-4deg);z-index:1}
-.frame.f2{right:0;top:0;transform:rotate(3deg);z-index:2}
-.frame.f3{left:12%;top:200px;transform:rotate(-1deg);z-index:3}
-.hero-stack:hover .f1{transform:rotate(-6deg) translate(-12px,4px)}
-.hero-stack:hover .f2{transform:rotate(5deg) translate(12px,-6px)}
-.hero-stack:hover .f3{transform:rotate(0) translateY(10px)}
+.hero-stack{position:relative;display:flex;justify-content:center;align-items:center;padding:8px 0}
+.phone{--w:196px;position:relative;flex-shrink:0;width:var(--w);padding:8px;background:#0d0d0d;border-radius:calc(var(--w) * .17);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.6),0 40px 80px rgba(0,0,0,.65);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.phone::before{content:'';position:absolute;top:15px;left:50%;width:28%;height:calc(var(--w) * .07);transform:translateX(-50%);background:#000;border-radius:999px;z-index:2}
+.phone img{display:block;width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:calc(var(--w) * .135);background:#111}
+.phone.p-side{z-index:1;transform:translateY(34px);filter:brightness(.78)}
+.phone.p-l{margin-right:-34px}
+.phone.p-r{margin-left:-34px}
+.phone.p-main{--w:232px;z-index:2}
+.hero-stack:hover .p-l{transform:translate(-14px,34px)}
+.hero-stack:hover .p-r{transform:translate(14px,34px)}
+.hero-stack:hover .p-main{transform:translateY(-6px)}
 
 /* FILTRI */
 .filtri-bar{max-width:1344px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:56px 48px 0;box-sizing:content-box}
@@ -177,7 +176,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* TABLET */
 @media(max-width:1024px){
   .progetti-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-stack{height:400px}
+  .phone{--w:160px}
+  .phone.p-main{--w:192px}
 }
 
 /* MOBILE */
@@ -187,9 +187,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .nav-burger{display:flex}
   .hero{padding:104px 20px 48px}
   .hero-grid{grid-template-columns:1fr;gap:36px}
-  .hero-stack{height:300px}
-  .frame{width:82%}
-  .frame.f3{top:120px;left:8%}
+  .phone{--w:122px;padding:5px}
+  .phone::before{top:10px}
+  .phone.p-main{--w:150px}
+  .phone.p-side{transform:translateY(22px)}
+  .phone.p-l{margin-right:-26px}
+  .phone.p-r{margin-left:-26px}
+  .hero-stack:hover .p-l,.hero-stack:hover .p-r{transform:translateY(22px)}
+  .hero-stack:hover .p-main{transform:none}
   .hero-stats b{font-size:34px}
   .hero-stats li{padding-right:10px;font-size:10px}
   .hero-stats li+li{padding-left:12px}
@@ -294,7 +299,7 @@ gtag('consent', 'default', {
     <div class="hero-copy">
       <div class="hero-tag">Portfolio</div>
       <h1 class="hero-title">Lavori<br><span>recenti.</span></h1>
-      <p class="hero-desc">Alcuni degli ultimi progetti: siti web, Google Ads e strategie digitali per clienti che volevano risultati concreti. Italia, Stati Uniti, Canada, Ucraina.</p>
+      <p class="hero-desc">Alcuni degli ultimi progetti, tra Italia, Stati Uniti, Canada e Ucraina.</p>
       <ul class="hero-stats">
         <li><b data-stat="progetti">9</b>Progetti online</li>
         <li><b>4</b>Paesi</li>
@@ -302,9 +307,9 @@ gtag('consent', 'default', {
       </ul>
     </div>
     <div class="hero-stack" aria-hidden="true">
-      <div class="frame f1"><div class="frame-bar"><i></i><i></i><i></i><span>cappuccinipuglia.it</span></div><img src="/img/portfolio/cappuccinipuglia.webp" alt="" width="1200" height="750"></div>
-      <div class="frame f2"><div class="frame-bar"><i></i><i></i><i></i><span>babygreensbari.it</span></div><img src="/img/portfolio/babygreensbari.webp" alt="" width="1200" height="750"></div>
-      <div class="frame f3"><div class="frame-bar"><i></i><i></i><i></i><span>barmobile.it</span></div><img src="/img/portfolio/barmobile.webp" alt="" width="1200" height="750"></div>
+      <div class="phone p-side p-l"><img src="/img/portfolio/mobile/cappuccinipuglia.webp" alt="" width="600" height="1298" decoding="async"></div>
+      <div class="phone p-main"><img src="/img/portfolio/mobile/barmobile.webp" alt="" width="600" height="1298" decoding="async"></div>
+      <div class="phone p-side p-r"><img src="/img/portfolio/mobile/babygreensbari.webp" alt="" width="600" height="1298" decoding="async"></div>
     </div>
   </div>
 </section>

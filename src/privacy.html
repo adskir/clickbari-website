@@ -111,20 +111,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .tool-item .tool-desc{font-size:12px;color:#888;line-height:1.6}
 .tool-item .tool-link{font-size:11px;color:var(--blue-bright);margin-top:6px;display:block}
 
-footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding:48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:start}
-.footer-tagline{font-size:13px;color:#aaa;line-height:1.7;max-width:230px;margin-top:16px}
-.footer-col-title{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#888;margin-bottom:18px}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-links a{font-size:13px;color:#bbb;text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:#fff}
-.footer-social{display:flex;gap:10px;margin-top:4px}
-.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--font-d);letter-spacing:.05em;text-decoration:none;color:#bbb;transition:border-color .2s,color .2s}
-.social-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
-.footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
-.footer-bottom p{font-size:11px;color:#888;letter-spacing:.05em}
-.footer-legal{display:flex;gap:22px}
-.footer-legal a{font-size:11px;color:#888;text-decoration:none;transition:color .2s}
-.footer-legal a:hover{color:#fff}
 
 @media(max-width:768px){
   nav{padding:14px 18px}
@@ -133,8 +119,6 @@ footer{background:var(--gray);border-top:1px solid rgba(255,255,255,.09);padding
   .page-hero{padding:110px 18px 48px}
   .content{padding:48px 18px 64px}
   .tool-grid{grid-template-columns:1fr}
-  footer{grid-template-columns:1fr;padding:36px 18px}
-  .footer-bottom{flex-direction:column;gap:14px;text-align:center}
 }
 
 /* WhatsApp floating button */
@@ -351,44 +335,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </div>
 
-<footer>
-  <div>
-    <a class="nav-logo" href="/">
-      <div class="nav-logo-icon">
-        <img src="/logo-icon.png" alt="ClickBari" style="width:100%;height:100%;object-fit:cover;border-radius:6px">
-      </div>
-      <div>
-        <div class="nav-logo-text">ClickBari</div>
-        <div class="nav-logo-sub">Digital · Bari</div>
-      </div>
-    </a>
-    <p class="footer-tagline">Siti web, Google Ads, SEO e automazione AI a Bari e provincia. Risultati misurabili, relazione diretta.</p>
-  </div>
-  <div>
-    <p class="footer-col-title">Navigazione</p>
-    <ul class="footer-links">
-      <li><a href="/chi-sono/">Chi sono</a></li>
-      <li><a href="/servizi/">Servizi</a></li>
-      <li><a href="/portfolio/">Portfolio</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/contatti/">Contatti</a></li>
-    </ul>
-  </div>
-  <div>
-    <p class="footer-col-title">Contatti</p>
-    <ul class="footer-links">
-      <li><a href="mailto:kir@clickbari.it">kir@clickbari.it</a></li>
-      <li><a href="https://wa.me/393805826738" target="_blank">WhatsApp</a></li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 ClickBari · Potekhin Kirill · P.IVA 17376101006</p>
-    <div class="footer-legal">
-      <a href="/privacy/">Privacy Policy</a>
-      <a href="/cookie/">Cookie Policy</a>
-    </div>
-  </div>
-</footer>
+{% include "footer.njk" %}
 
 <!-- WhatsApp floating button -->
 <a class="wa-float" href="https://wa.me/393805826738" target="_blank" aria-label="Scrivimi su WhatsApp">

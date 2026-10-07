@@ -14,8 +14,6 @@ eleventyExcludeFromCollections: true
   <url><loc>{{ site.url }}/portfolio/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>{{ site.url }}/blog/</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
   <url><loc>{{ site.url }}/contatti/</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
-  <url><loc>{{ site.url }}/privacy/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
-  <url><loc>{{ site.url }}/cookie/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 {%- for post in collections.posts %}
   <url><loc>{{ post.url | absoluteUrl }}</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
 {%- endfor %}

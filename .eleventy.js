@@ -8,6 +8,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/*.webp");
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/.htaccess");
   // Blog images, etc. — served at /images/... to match the media_folder
   // convention already set up for Decap CMS.
   eleventyConfig.addPassthroughCopy("src/images");

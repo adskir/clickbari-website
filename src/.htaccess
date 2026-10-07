@@ -1,0 +1,4 @@
+# Old .html addresses (before the move to clean URLs) -> new addresses, permanent 301
+RewriteEngine On
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(chi-sono|servizi|siti-web|google-ecosystem|seo-aeo|automazione|portfolio|blog|contatti|privacy|cookie)\.html$ /$1/ [R=301,L]

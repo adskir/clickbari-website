@@ -16,7 +16,7 @@ eleventyExcludeFromCollections: true
 <meta name="description" content="Sono Kir e non sono un'agenzia: dal 2012 lavoro nel digitale tra siti web, SEO e Google Ads. Ho scelto Bari per le persone. Ecco la mia storia.">
 <link rel="canonical" href="{{ site.url }}/chi-sono/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -69,156 +69,117 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 .nav-cta:hover{background:var(--blue-dark)!important}
 
+/* ===== VARIANTE G — "Ritratto": foto a tutta altezza, storia in stile rivista con corsivo serif ===== */
+:root{--line:rgba(255,255,255,.09);--wrap:1344px;--serif:'Instrument Serif',Georgia,serif}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px}
+
 /* HERO */
-.hero{
-  min-height:100vh;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  padding:120px 48px 80px;
-  gap:80px;
-  position:relative;
-  overflow:hidden;
-}
-.hero::before{
-  content:'';
-  position:absolute;
-  top:-200px;right:-200px;
-  width:600px;height:600px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 70%);
-  pointer-events:none;
-}
-.hero-left{position:relative;z-index:1}
+.hero{min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-left{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:140px 56px 80px 48px}
 .hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
 .hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
-.hero-title{font-family:var(--font-d);font-size:clamp(64px,7vw,110px);line-height:.88;letter-spacing:.02em;margin-bottom:32px;color:#fff}
+.hero-title{font-family:var(--font-d);font-weight:400;font-size:clamp(72px,8.4vw,148px);line-height:.85;letter-spacing:.01em;margin-bottom:32px;color:#fff}
 .hero-title span{color:var(--blue-bright)}
-.hero-intro{font-size:17px;line-height:1.85;color:#ccc;margin-bottom:40px;max-width:480px}
-.hero-intro strong{color:#fff;font-weight:500}
-.hero-intro em{color:var(--blue-bright);font-style:normal}
+.hero-intro{font-family:var(--serif);font-size:clamp(22px,2vw,28px);line-height:1.4;color:#d8d8d8;margin-bottom:40px;max-width:540px}
+.hero-intro strong{color:#fff;font-weight:400}
+.hero-intro em{color:var(--blue-bright);font-style:italic}
+.hero-left>a{align-self:flex-start;padding:12px 20px;border:1px solid rgba(91,155,255,.4);border-radius:var(--radius-md);transition:background .2s,border-color .2s}
+.hero-left>a:hover{background:rgba(91,155,255,.1);border-color:var(--blue-bright)}
 
 /* PHOTO */
-.hero-photo{position:relative;z-index:1}
-.photo-wrap{
-  position:relative;
-  border-radius:4px;
-  overflow:hidden;
-  width:100%;
-}
-.photo-wrap::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,rgba(37,99,235,0.15) 0%,transparent 60%);
-  z-index:1;
-  pointer-events:none;
-}
-.photo-wrap img{
-  width:100%;
-  height:auto;
-  display:block;
-  filter:grayscale(15%);
-  transition:filter .4s;
-}
-.photo-wrap:hover img{filter:grayscale(0%)}
-.photo-frame{
-  position:absolute;
-  top:-12px;left:-12px;right:12px;bottom:12px;
-  border:1px solid rgba(91,155,255,0.3);
-  border-radius:4px;
-  pointer-events:none;
-  z-index:0;
-}
-.photo-badge{
-  position:absolute;
-  bottom:16px;left:-16px;
-  background:var(--blue);
-  padding:9px 14px;
-  border-radius:4px;
-  z-index:2;
-  box-shadow:0 6px 20px rgba(37,99,235,0.4);
-}
-.photo-badge-val{font-family:var(--font-d);font-size:22px;line-height:1;color:#fff}
-.photo-badge-label{font-size:7px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin-top:2px}
+.hero-photo{position:relative;z-index:1;min-height:560px}
+.photo-wrap{position:absolute;inset:0;overflow:hidden}
+.photo-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--black) 0%,rgba(6,6,6,.35) 22%,transparent 50%),linear-gradient(0deg,rgba(6,6,6,.75) 0%,transparent 35%);pointer-events:none}
+.photo-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+.photo-frame{display:none}
+.photo-badge{position:absolute;left:40px;bottom:48px;z-index:2;display:flex;align-items:baseline;gap:12px}
+.photo-badge-val{font-family:var(--font-d);font-size:96px;line-height:.8;color:#fff}
+.photo-badge-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85);max-width:110px;line-height:1.4}
 
 /* SECTION COMUNE */
-.section{padding:80px 48px}
-.section-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px}
-.section-title{font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:32px}
+.section-tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px}
+.section-title{font-family:var(--font-d);font-weight:400;font-size:clamp(48px,5.4vw,88px);letter-spacing:.01em;line-height:.88;color:#fff;margin-bottom:36px}
 
 /* STORIA */
-.storia{background:var(--gray);padding:80px 48px}
-.storia-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1100px;margin:0 auto}
-.storia-text p{font-size:15px;line-height:1.9;color:#ccc;margin-bottom:20px}
+.storia{padding:120px 48px}
+.storia-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:96px;align-items:start;max-width:var(--wrap);margin:0 auto}
+.storia-text{position:sticky;top:110px}
+.storia-text p{font-size:16px;line-height:1.8;color:#c4c4c4;margin-bottom:20px;max-width:560px}
+.storia-text p:first-of-type{font-family:var(--serif);font-size:clamp(24px,2.2vw,32px);line-height:1.35;color:#ececec}
 .storia-text p:last-child{margin-bottom:0}
 .storia-text strong{color:#fff;font-weight:500}
+.storia-text p:first-of-type strong{font-weight:400;font-style:italic;color:var(--blue-bright)}
 .storia-text .highlight{color:var(--blue-bright)}
 
 /* TIMELINE */
-.timeline{display:flex;flex-direction:column;gap:0}
-.timeline-item{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.07);position:relative}
-.timeline-item:last-child{border-bottom:none}
-.timeline-item::before{content:'';position:absolute;left:40px;top:0;bottom:0;width:1px;background:rgba(91,155,255,0.2)}
-.timeline-year{font-family:var(--font-d);font-size:14px;letter-spacing:.1em;color:var(--blue-bright);text-align:center;position:relative;z-index:1;padding-top:4px}
-.timeline-dot{width:8px;height:8px;background:var(--blue-bright);border-radius:50%;position:absolute;left:36px;top:32px;box-shadow:0 0 12px rgba(91,155,255,0.6)}
-.timeline-content{padding-left:8px}
-.timeline-event{font-family:var(--font-d);font-size:18px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
-.timeline-desc{font-size:12px;line-height:1.7;color:#999}
+.timeline{display:flex;flex-direction:column;position:relative;border-left:1px solid rgba(91,155,255,.3);margin-left:8px}
+.timeline-item{display:block;padding:0 0 44px 40px;position:relative}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{display:none}
+.timeline-year{font-family:var(--font-d);font-size:64px;line-height:.85;letter-spacing:.01em;color:transparent;-webkit-text-stroke:1px rgba(91,155,255,.75);margin-bottom:10px}
+.timeline-item:last-child .timeline-year{color:var(--blue-bright);-webkit-text-stroke:0}
+.timeline-dot{position:absolute;left:-6px;top:22px;width:11px;height:11px;border-radius:50%;background:var(--black);border:2px solid var(--blue-bright)}
+.timeline-item:last-child .timeline-dot{background:var(--blue-bright);box-shadow:0 0 0 5px rgba(91,155,255,.2)}
+.timeline-event{font-family:var(--font-d);font-size:30px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:8px}
+.timeline-desc{font-size:15px;line-height:1.65;color:#a9a9a9;max-width:480px}
 
 /* VALORI */
-.valori{padding:80px 48px}
-.valori-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
-.valore-card{background:var(--gray);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s}
-.valore-card:hover{background:var(--gray-mid)}
-.valore-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--blue-bright);transition:height .4s}
-.valore-card:hover::before{height:100%}
-.valore-icon{font-size:28px;margin-bottom:20px;display:block}
-.valore-name{font-family:var(--font-d);font-size:24px;letter-spacing:.04em;color:#fff;margin-bottom:12px}
-.valore-desc{font-size:13px;line-height:1.8;color:#ccc}
+.valori{padding:112px 48px;background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.valori-head{max-width:var(--wrap);margin:0 auto}
+.valori-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:24px auto 0;max-width:var(--wrap);border-top:1px solid var(--line)}
+.valore-card{padding:40px 36px 8px 0}
+.valore-card+.valore-card{padding-left:36px;border-left:1px solid var(--line)}
+.valore-icon{font-size:30px;margin-bottom:26px;display:block}
+.valore-name{font-family:var(--font-d);font-size:36px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:14px}
+.valore-desc{font-size:15px;line-height:1.7;color:#b8b8b8}
 
 /* CAFFE CTA */
-.caffe{background:var(--blue);padding:72px 48px;text-align:center;position:relative;overflow:hidden}
-.caffe::before{content:'☕';position:absolute;font-size:200px;opacity:.06;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
-.caffe-title{font-family:var(--font-d);font-size:clamp(36px,5vw,72px);letter-spacing:.02em;color:#fff;margin-bottom:16px;position:relative;z-index:1}
-.caffe-desc{font-size:16px;line-height:1.75;color:rgba(255,255,255,0.9);max-width:520px;margin:0 auto 36px;position:relative;z-index:1}
-.caffe-btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--blue);padding:14px 48px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s;position:relative;z-index:1}
-.caffe-btn:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
-
-/* INSTAGRAM */
-.instagram{padding:80px 48px;background:var(--gray);text-align:center}
-.instagram-desc{font-size:15px;line-height:1.8;color:#ccc;max-width:520px;margin:16px auto 36px}
-.instagram-btn{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(91,155,255,0.4);color:var(--blue-bright);padding:13px 36px;font-family:var(--font-d);font-size:18px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,box-shadow .2s}
-.instagram-btn:hover{border-color:var(--blue-bright);box-shadow:0 0 24px rgba(91,155,255,0.2)}
-.instagram-note{font-size:12px;color:#666;margin-top:16px;font-style:italic}
+.caffe-wrap{padding:112px 48px}
+.caffe{max-width:var(--wrap);margin:0 auto;background:var(--blue);border-radius:var(--radius-lg);padding:72px 64px;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 64px;align-items:end}
+.caffe::before{content:'☕';position:absolute;font-size:260px;opacity:.12;right:-20px;top:-40px;pointer-events:none;transform:rotate(-12deg)}
+.caffe-title{font-family:var(--font-d);font-weight:400;font-size:clamp(56px,7vw,112px);line-height:.86;color:#fff;position:relative;z-index:1;grid-column:1}
+.caffe-desc{font-family:var(--serif);font-size:clamp(20px,1.8vw,26px);line-height:1.4;color:rgba(255,255,255,.95);max-width:560px;position:relative;z-index:1;grid-column:1}
+.caffe-btn{grid-column:2;grid-row:1/3;align-self:end;display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--blue);padding:16px 40px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s;position:relative;z-index:1}
+.caffe-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.3)}
 
 /* WA FLOAT */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s,box-shadow .2s;text-decoration:none}
 .wa-float:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,0.6)}
 .wa-float svg{width:28px;height:28px;fill:#fff}
 
-/* FOOTER */
-
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:1100px){
+  .storia-grid{grid-template-columns:1fr;gap:56px}
+  .storia-text{position:static}
+  .caffe{grid-template-columns:1fr}
+  .caffe-btn{grid-column:1;grid-row:auto;justify-self:start}
+}
 
 /* MOBILE */
 @media(max-width:768px){
   nav{padding:14px 18px}
   .nav-links{display:none}
   .nav-burger{display:flex}
-  .hero{grid-template-columns:1fr;padding:100px 18px 60px;gap:48px}
-  .hero-photo{order:-1}
-  .photo-badge{left:16px;right:auto;bottom:auto;top:16px}
-  .photo-frame{display:none}
-  .storia{padding:56px 18px}
-  .storia-grid{grid-template-columns:1fr;gap:48px}
-  .valori{padding:56px 18px}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-photo{order:-1;min-height:0;aspect-ratio:4/5}
+  .photo-wrap::after{background:linear-gradient(0deg,var(--black) 0%,rgba(6,6,6,.2) 40%,transparent 60%)}
+  .photo-badge{left:20px;bottom:24px}
+  .photo-badge-val{font-size:72px}
+  .hero-left{padding:8px 20px 64px}
+  .hero-title{font-size:clamp(64px,19vw,96px)}
+  .storia{padding:72px 20px}
+  .timeline-year{font-size:52px}
+  .valori{padding:72px 20px}
   .valori-grid{grid-template-columns:1fr}
-  .caffe{padding:56px 18px}
-  .instagram{padding:56px 18px}
-  .section{padding:56px 18px}
+  .valore-card,.valore-card+.valore-card{padding:32px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .caffe-wrap{padding:72px 20px}
+  .caffe{padding:40px 24px}
+  .caffe::before{font-size:160px}
+  .wa-float{bottom:20px;right:20px;width:48px;height:48px}
 }
 
 /* Contact Modal */
@@ -338,7 +299,7 @@ gtag('consent', 'default', {
 <!-- STORIA -->
 <section class="storia" id="storia">
   <div class="storia-grid">
-    <div class="storia-text reveal">
+    <div class="storia-text">
       <div class="section-tag">La mia storia</div>
       <h2 class="section-title">Da Kaliningrad<br>a Bari</h2>
       <p>Dal <strong>2012</strong> lavoro nel digitale — SEO, Google Ads, siti web. Non l'ho imparato in aula: l'ho imparato costruendo i miei progetti, sbagliando, ottimizzando, ricominciando.</p>
@@ -346,7 +307,7 @@ gtag('consent', 'default', {
       <p>Oggi offro quei <span class="highlight">10+ anni di esperienza pratica</span> alle piccole imprese pugliesi — e non solo. Non promesse, non slide patinate: risultati concreti, misurabili, con una persona reale dall'altra parte.</p>
       <p>Se vuoi sapere chi sono davvero, guarda il mio Instagram. Trovi un tipo che balla la salsa e la bachata quando non è davanti al computer. <strong>Sono reale.</strong> 😄</p>
     </div>
-    <div class="reveal">
+    <div>
       <div class="section-tag">Tappe</div>
       <div class="timeline">
         <div class="timeline-item">
@@ -404,22 +365,22 @@ gtag('consent', 'default', {
 
 <!-- VALORI -->
 <section class="valori">
-  <div style="text-align:center;margin-bottom:0" class="reveal">
+  <div class="valori-head">
     <div class="section-tag">Come lavoro</div>
     <h2 class="section-title">Quello che mi<br>differenzia</h2>
   </div>
   <div class="valori-grid">
-    <div class="valore-card reveal">
+    <div class="valore-card">
       <span class="valore-icon">🤝</span>
       <div class="valore-name">Rapporto diretto</div>
       <p class="valore-desc">Niente account manager, niente centralino. Parli sempre con me. Possiamo vederci a Bari per un caffè — davvero.</p>
     </div>
-    <div class="valore-card reveal">
+    <div class="valore-card">
       <span class="valore-icon">📊</span>
       <div class="valore-name">Dati, non promesse</div>
       <p class="valore-desc">Ogni decisione si basa su numeri reali. Report chiari, risultati misurabili, nessun fumo negli occhi.</p>
     </div>
-    <div class="valore-card reveal">
+    <div class="valore-card">
       <span class="valore-icon">🌍</span>
       <div class="valore-name">Prospettiva internazionale</div>
       <p class="valore-desc">Ho lavorato con clienti a New York, Toronto, Roma, Mosca, Kiev e Minsk. Conosco mercati e segmenti diversi.</p>
@@ -428,10 +389,12 @@ gtag('consent', 'default', {
 </section>
 
 <!-- CAFFE CTA -->
-<div class="caffe reveal">
+<div class="caffe-wrap">
+<div class="caffe">
   <h2 class="caffe-title">Prendiamo un caffè?</h2>
   <p class="caffe-desc">Vivo a Bari. Sono sempre disponibile per un incontro di persona — uno spritz, un caffè, una chiacchierata. Raccontami il tuo progetto.</p>
   <a href="#" onclick="openContactModal();return false;" class="caffe-btn">Scrivimi ora →</a>
+</div>
 </div>
 
 

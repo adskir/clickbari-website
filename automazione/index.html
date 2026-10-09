@@ -81,126 +81,184 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 .nav-cta:hover{background:var(--blue-dark)!important}
 
-/* HERO */
-.hero{min-height:85vh;display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:700px;position:relative;z-index:1;margin:0 auto;text-align:center}
-.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
-.hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
-.hero-title{font-family:var(--font-d);font-size:clamp(56px,8vw,116px);line-height:.88;letter-spacing:.02em;margin-bottom:28px;color:#fff}
-.hero-title span{color:var(--blue-bright)}
-.hero-desc{font-size:16px;line-height:1.85;color:#ccc;max-width:520px;margin:0 auto 40px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:14px 36px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,99,235,0.5)}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.2);color:#ddd;padding:14px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s}
-.btn-outline:hover{border-color:var(--blue-bright);color:#fff}
+/* HERO-BASE */
+:root{--line:rgba(255,255,255,.09);--wrap:1344px;--panel:#0f1115}
+a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px}
+.sec{padding:112px 48px}
+.sec>*{max-width:var(--wrap);margin-left:auto;margin-right:auto}
+.sec-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:12px}
+.sec-title{font-family:var(--font-d);font-weight:400;font-size:clamp(44px,5vw,80px);letter-spacing:.01em;line-height:.9;color:#fff}
 
-/* PERCHE */
-.perche{padding:80px 48px;background:var(--gray)}
-.perche-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.perche-title{font-family:var(--font-d);font-size:clamp(40px,5vw,68px);line-height:.92;color:#fff}
-.perche-title span{color:var(--blue-bright)}
-.perche-list{display:flex;flex-direction:column;gap:20px}
-.perche-item{display:flex;gap:16px;align-items:flex-start}
-.perche-icon{width:40px;height:40px;background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.perche-text strong{display:block;font-size:13px;font-weight:500;color:#fff;margin-bottom:4px}
-.perche-text span{font-size:12px;color:#888;line-height:1.6}
-
-/* LIVELLI */
-.livelli{padding:80px 48px}
-.livelli-grid{display:flex;flex-direction:column;gap:2px;margin-top:48px}
-
-.livello{display:grid;grid-template-columns:200px 1fr auto;gap:32px;align-items:start;background:var(--gray);padding:36px 40px;position:relative;overflow:hidden;transition:background .3s}
-.livello:hover{background:var(--gray-mid)}
-.livello::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--blue-bright);transition:height .4s}
-.livello:hover::before{height:100%}
-.livello.custom{background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.2)}
-.livello.custom::before{height:100%}
-
-.livello-level{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:8px}
-.livello-price{font-family:var(--font-d);font-size:36px;color:#fff;line-height:1}
-.livello-price sup{font-size:16px;vertical-align:top;margin-top:6px}
-.livello-period{font-size:10px;color:#666;letter-spacing:.1em;margin-top:4px}
-
-.livello-content{}
-.livello-name{font-family:var(--font-d);font-size:24px;letter-spacing:.04em;color:#fff;margin-bottom:8px}
-.livello-desc{font-size:13px;line-height:1.8;color:#999;margin-bottom:16px}
-.livello-tags{display:flex;flex-wrap:wrap;gap:6px}
-.livello-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#666;border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:var(--radius-sm)}
-.livello.custom .livello-tag{border-color:rgba(37,99,235,0.3);color:var(--blue-bright)}
-
-.livello-action{display:flex;align-items:center;flex-shrink:0}
-.livello-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:11px 22px;font-family:var(--font-d);font-size:15px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);white-space:nowrap;transition:transform .2s,box-shadow .2s}
-.livello-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.4)}
-.livello.custom .livello-btn{background:#fff;color:var(--blue)}
-
-/* FLUSSO */
-.flusso{padding:80px 48px;background:var(--gray)}
-.flusso-visual{margin-top:48px;background:var(--black);padding:40px;border-radius:4px}
-.flusso-row{display:flex;align-items:center;gap:0;flex-wrap:wrap}
-.flusso-node{background:rgba(91,155,255,0.08);border:1px solid rgba(91,155,255,0.25);padding:16px 20px;border-radius:4px;text-align:center;flex:1;min-width:120px}
-.flusso-node.trigger{border-color:rgba(37,99,235,0.5);background:rgba(37,99,235,0.12)}
-.flusso-node.action{border-color:rgba(34,197,94,0.4);background:rgba(34,197,94,0.06)}
-.flusso-node-icon{font-size:20px;margin-bottom:6px}
-.flusso-node-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#666;margin-bottom:4px}
-.flusso-node-name{font-size:12px;color:#ccc;line-height:1.4}
-.flusso-arrow{color:rgba(91,155,255,0.3);font-size:20px;padding:0 8px;flex-shrink:0}
-.flusso-title{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#666;margin-bottom:20px}
-
-/* STRUMENTI */
-.strumenti{padding:80px 48px}
-.strumenti-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
-.strumento{background:var(--gray);padding:28px 24px;text-align:center;transition:background .3s}
-.strumento:hover{background:var(--gray-mid)}
-.strumento-icon{font-size:28px;margin-bottom:12px}
-.strumento-name{font-family:var(--font-d);font-size:16px;letter-spacing:.06em;color:#fff;margin-bottom:6px}
-.strumento-desc{font-size:11px;color:#777;line-height:1.6}
-
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:15px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,99,235,.45)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.22);color:#e6e6e6;padding:15px 30px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s,background .2s}
+.btn-outline:hover{border-color:var(--blue-bright);color:#fff;background:rgba(91,155,255,.08)}
 /* FAQ */
-.faq{padding:80px 48px;background:var(--gray)}
-.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px}
-.faq-item{background:var(--black);overflow:hidden}
-.faq-q{padding:24px 28px;font-family:var(--font-d);font-size:18px;letter-spacing:.03em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:rgba(91,155,255,.35)}
+.faq-q{padding:22px 24px;font-family:var(--font-d);font-size:22px;letter-spacing:.02em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
 .faq-q:hover{color:var(--blue-bright)}
-.faq-icon{color:var(--blue-bright);font-size:22px;flex-shrink:0;transition:transform .3s}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-a{padding:0 28px 24px;font-size:13px;line-height:1.85;color:#999;display:none}
+.faq-icon{width:30px;height:30px;border-radius:50%;border:1px solid rgba(91,155,255,.4);display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:var(--font-b);font-size:18px;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue);color:#fff;border-color:var(--blue)}
+.faq-a{padding:0 24px 22px;font-size:15px;line-height:1.75;color:#a9a9a9;display:none}
 .faq-item.open .faq-a{display:block}
 
-/* CTA */
-.cta-finale{padding:80px 48px;text-align:center;position:relative;overflow:hidden}
-.cta-finale::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
-.cta-finale h2{font-family:var(--font-d);font-size:clamp(40px,6vw,80px);line-height:.92;color:#fff;margin-bottom:16px;position:relative;z-index:1}
-.cta-finale p{font-size:15px;color:#aaa;max-width:440px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1}
-.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+/* CTA FINALE */
+.cta-wrap{padding:0 48px 112px}
+.cta-finale{max-width:var(--wrap);margin:0 auto;position:relative;overflow:hidden;background:var(--blue);border-radius:var(--radius-lg);padding:64px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:end}
+.cta-finale::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(90deg,#000,transparent 70%);mask-image:linear-gradient(90deg,#000,transparent 70%);pointer-events:none}
+.cta-finale>*{position:relative;z-index:1}
+.cta-finale h2{font-family:var(--font-d);font-weight:400;font-size:clamp(56px,7vw,112px);line-height:.86;color:#fff}
+.cta-finale p{font-size:16px;color:rgba(255,255,255,.9);max-width:460px;line-height:1.7;margin-top:18px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.cta-finale .btn-primary{background:#fff;color:var(--blue)}
+.cta-finale .btn-primary:hover{background:#fff;box-shadow:0 10px 32px rgba(0,0,0,.25)}
+.cta-finale .btn-outline{border-color:rgba(255,255,255,.55);color:#fff}
+.cta-finale .btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff}
 
 /* WA FLOAT */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;text-decoration:none}
 .wa-float:hover{transform:scale(1.1)}
 .wa-float svg{width:28px;height:28px;fill:#fff}
 
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
+/* ===== VARIANTE F — "Conversazione": hero con chat in stile messaggi, flusso come pipeline ===== */
+/* HERO */
+.hero{padding:150px 48px 96px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::after{content:'';position:absolute;left:30%;top:-35%;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.2) 0%,rgba(37,211,102,.05) 45%,transparent 70%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;max-width:var(--wrap);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
+.hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
+.hero-title{font-family:var(--font-d);font-weight:400;font-size:clamp(72px,9.5vw,156px);line-height:.85;letter-spacing:.01em;margin-bottom:28px;color:#fff}
+.hero-title span{color:var(--blue-bright)}
+.hero-desc{font-size:17px;line-height:1.7;color:#cfcfcf;max-width:520px;margin-bottom:40px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+.chat{background:#0e1512;border:1px solid rgba(255,255,255,.1);border-radius:28px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.65);max-width:440px;justify-self:end;width:100%}
+.chat-head{display:flex;align-items:center;gap:12px;padding:16px 18px;background:#14201b;border-bottom:1px solid rgba(255,255,255,.06)}
+.chat-av{width:38px;height:38px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.chat-av img{width:100%;height:100%;object-fit:cover}
+.chat-head b{display:block;width:110px;height:9px;border-radius:5px;background:rgba(255,255,255,.55);margin-bottom:7px}
+.chat-head i{display:flex;align-items:center;gap:6px;width:70px;height:7px;border-radius:4px;background:rgba(37,211,102,.55)}
+.chat-body{padding:22px 18px 26px;display:flex;flex-direction:column;gap:12px;background:radial-gradient(circle at 20% 10%,rgba(37,211,102,.05),transparent 60%)}
+.bub{max-width:78%;padding:12px 14px;border-radius:16px;display:grid;gap:7px}
+.bub span{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.28)}
+.bub.in{align-self:flex-start;background:#1c2a24;border-bottom-left-radius:4px}
+.bub.out{align-self:flex-end;background:#1f5c3d;border-bottom-right-radius:4px}
+.bub.out span{background:rgba(255,255,255,.45)}
+.bub.bot{align-self:flex-end;background:var(--blue);border-bottom-right-radius:4px}
+.bub.bot span{background:rgba(255,255,255,.6)}
+.typing{align-self:flex-start;display:flex;gap:5px;padding:12px 16px;background:#1c2a24;border-radius:16px;border-bottom-left-radius:4px}
+.typing i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);animation:dot 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+
+/* PERCHE */
+.perche-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start}
+.perche-title{font-family:var(--font-d);font-weight:400;font-size:clamp(52px,6vw,96px);line-height:.88;color:#fff;position:sticky;top:120px}
+.perche-title span{color:var(--blue-bright)}
+.perche-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.perche-item{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px}
+.perche-icon{width:46px;height:46px;border-radius:14px;background:rgba(37,99,235,.14);border:1px solid rgba(91,155,255,.3);display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:22px}
+.perche-text strong{display:block;font-family:var(--font-d);font-weight:400;font-size:26px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
+.perche-text span{font-size:14px;color:#a9a9a9;line-height:1.65}
+
+/* LIVELLI */
+.livelli{background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.livelli-grid{display:flex;flex-direction:column;gap:16px;margin-top:48px}
+.livello{display:grid;grid-template-columns:240px minmax(0,1fr) auto;gap:40px;align-items:center;background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px 36px;transition:border-color .3s}
+.livello:hover{border-color:rgba(91,155,255,.35)}
+.livello.custom{background:linear-gradient(120deg,#0f2a6b 0%,var(--blue) 70%);border-color:var(--blue)}
+.livello>div:first-child{padding-right:32px;border-right:1px solid rgba(255,255,255,.1)}
+.livello-level{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:10px}
+.livello.custom .livello-level{color:rgba(255,255,255,.8)}
+.livello-price{font-family:var(--font-d);font-size:68px;color:#fff;line-height:.9}
+.livello-price sup{font-size:20px;vertical-align:top;margin-right:6px;letter-spacing:.06em;color:var(--blue-bright)}
+.livello.custom .livello-price sup{color:rgba(255,255,255,.75)}
+.livello-period{font-size:12px;color:#8d8d8d;letter-spacing:.04em;margin-top:8px;line-height:1.5}
+.livello.custom .livello-period{color:rgba(255,255,255,.75)}
+.livello-name{font-family:var(--font-d);font-size:36px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
+.livello-desc{font-size:15px;line-height:1.7;color:#b0b0b0;margin-bottom:16px;max-width:640px}
+.livello.custom .livello-desc{color:rgba(255,255,255,.88)}
+.livello-tags{display:flex;flex-wrap:wrap;gap:6px}
+.livello-tag{font-size:11px;letter-spacing:.04em;color:#bcd3ff;background:rgba(91,155,255,.10);border:1px solid rgba(91,155,255,.22);padding:4px 10px;border-radius:var(--radius-sm)}
+.livello.custom .livello-tag{color:#fff;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.25)}
+.livello-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:14px 26px;font-family:var(--font-d);font-size:19px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.livello-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.45)}
+.livello.custom .livello-btn{background:#fff;color:var(--blue)}
+
+/* FLUSSO — pipeline */
+.flusso-visual{margin-top:48px;background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:36px 32px 40px}
+.flusso-title{font-size:13px;color:#9a9a9a;margin-bottom:28px;display:flex;align-items:center;gap:10px}
+.flusso-title::before{content:'';width:8px;height:8px;border-radius:50%;background:#25d366;box-shadow:0 0 0 4px rgba(37,211,102,.18)}
+.flusso-row{display:flex;align-items:stretch;gap:0}
+.flusso-node{flex:1;min-width:0;background:#151821;border:1px solid rgba(91,155,255,.22);border-radius:var(--radius-md);padding:20px 18px;text-align:left}
+.flusso-node.trigger{border-color:rgba(91,155,255,.55);background:rgba(37,99,235,.14)}
+.flusso-node.action{border-color:rgba(37,211,102,.45);background:rgba(37,211,102,.08)}
+.flusso-node-icon{font-size:22px;margin-bottom:12px}
+.flusso-node-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:6px}
+.flusso-node.action .flusso-node-label{color:#4ade80}
+.flusso-node-name{font-size:14px;color:#e0e0e0;line-height:1.45}
+.flusso-arrow{flex:0 0 40px;display:flex;align-items:center;justify-content:center;font-size:0;position:relative}
+.flusso-arrow::before{content:'';position:absolute;left:4px;right:4px;top:50%;height:2px;background:linear-gradient(90deg,rgba(91,155,255,.2),var(--blue-bright))}
+.flusso-arrow::after{content:'';position:absolute;right:2px;top:calc(50% - 4px);border:5px solid transparent;border-left-color:var(--blue-bright);border-right:0}
+
+/* STRUMENTI */
+.strumenti-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.strumento{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 24px;transition:border-color .3s}
+.strumento:hover{border-color:rgba(91,155,255,.35)}
+.strumento-icon{font-size:26px;margin-bottom:16px}
+.strumento-name{font-family:var(--font-d);font-size:26px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:8px}
+.strumento-desc{font-size:14px;color:#9a9a9a;line-height:1.6}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.typing i{animation:none}html{scroll-behavior:auto}}
+
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .chat{justify-self:start}
+  .perche-grid{grid-template-columns:1fr;gap:40px}
+  .perche-title{position:static}
+  .livello{grid-template-columns:1fr;gap:20px}
+  .livello>div:first-child{padding-right:0;border-right:0;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .flusso-row{flex-direction:column}
+  .flusso-arrow{flex-basis:32px}
+  .flusso-arrow::before{left:50%;right:auto;top:4px;bottom:4px;width:2px;height:auto;background:linear-gradient(180deg,rgba(91,155,255,.2),var(--blue-bright))}
+  .flusso-arrow::after{right:auto;left:calc(50% - 4px);top:auto;bottom:0;border:5px solid transparent;border-top-color:var(--blue-bright);border-bottom:0}
+  .strumenti-grid{grid-template-columns:1fr 1fr}
+  .faq-grid{grid-template-columns:1fr;gap:32px}
+  .cta-finale{grid-template-columns:1fr}
+}
 @media(max-width:768px){
   nav{padding:14px 18px}
   .nav-links{display:none}
   .nav-burger{display:flex}
-  .hero{padding:100px 20px 60px;min-height:auto}
-  .perche{padding:56px 20px}
-  .perche-grid{grid-template-columns:1fr;gap:40px}
-  .livelli{padding:56px 20px}
-  .livello{grid-template-columns:1fr;gap:20px}
-  .livello-action{justify-content:flex-start}
-  .flusso{padding:56px 20px}
-  .flusso-row{flex-direction:column;align-items:stretch}
-  .flusso-arrow{transform:rotate(90deg);text-align:center;padding:4px 0}
-  .strumenti{padding:56px 20px}
-  .strumenti-grid{grid-template-columns:1fr 1fr}
-  .faq{padding:56px 20px}
-  .cta-finale{padding:56px 20px}
+  .hero{padding:110px 20px 56px}
+  .hero-title{font-size:clamp(64px,19vw,96px)}
+  .hero-btns,.cta-btns{flex-direction:column}
+  .hero-btns a,.cta-btns a{justify-content:center}
+  .sec{padding:72px 20px}
+  .perche-list{grid-template-columns:1fr}
+  .livello{padding:26px 22px}
+  .livello-btn{width:100%;justify-content:center}
+  .flusso-visual{padding:24px 18px}
+  .strumenti-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .strumento{padding:20px 16px}
+  .cta-wrap{padding:0 20px 72px}
+  .cta-finale{padding:40px 24px}
   .wa-float{bottom:20px;right:20px;width:48px;height:48px}
 }
 
@@ -308,7 +366,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner reveal">
+  <div class="hero-grid">
+    <div class="hero-inner reveal">
     <div class="hero-tag">Automazione AI · Bari</div>
     <h1 class="hero-title">Lavora<br>anche<br><span>offline.</span></h1>
     <p class="hero-desc">Chatbot, risponditori automatici e flussi AI che gestiscono i primi contatti per te. Il tuo business risponde, qualifica e accompagna il cliente — anche mentre dormi.</p>
@@ -317,13 +376,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#livelli" class="btn-outline">Vedi i servizi</a>
     </div>
   </div>
+    <div class="chat reveal" aria-hidden="true">
+      <div class="chat-head"><div class="chat-av"><img src="/logo-icon.png" alt=""></div><div><b></b><i></i></div></div>
+      <div class="chat-body">
+        <div class="bub in"><span style="width:180px"></span><span style="width:120px"></span></div>
+        <div class="bub bot"><span style="width:200px"></span><span style="width:160px"></span><span style="width:90px"></span></div>
+        <div class="bub in"><span style="width:110px"></span></div>
+        <div class="bub bot"><span style="width:170px"></span><span style="width:130px"></span></div>
+        <div class="bub out"><span style="width:150px"></span></div>
+        <div class="typing"><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- PERCHE -->
-<section class="perche reveal">
+<section class="sec perche">
   <div class="perche-grid">
     <div>
-      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:16px">Perché automatizzare</div>
+      <div class="sec-kicker">Perché automatizzare</div>
       <h2 class="perche-title">Il tempo è<br>la tua risorsa<br><span>più preziosa.</span></h2>
     </div>
     <div class="perche-list">
@@ -360,9 +431,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- LIVELLI -->
-<section class="livelli reveal" id="livelli">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Servizi</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Dal semplice<br>al su misura.</h2>
+<section class="sec livelli" id="livelli">
+  <div class="sec-kicker">Servizi</div>
+  <h2 class="sec-title">Dal semplice<br>al su misura.</h2>
 
   <div class="livelli-grid">
 
@@ -434,9 +505,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FLUSSO ESEMPIO -->
-<section class="flusso reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Esempio reale</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Come funziona<br>un flusso base.</h2>
+<section class="sec flusso">
+  <div class="sec-kicker">Esempio reale</div>
+  <h2 class="sec-title">Come funziona<br>un flusso base.</h2>
   <div class="flusso-visual">
     <div class="flusso-title">Flusso: nuovo contatto dal sito web</div>
     <div class="flusso-row">
@@ -468,9 +539,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- STRUMENTI -->
-<section class="strumenti reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Strumenti</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Tecnologie che uso.</h2>
+<section class="sec strumenti">
+  <div class="sec-kicker">Strumenti</div>
+  <h2 class="sec-title">Tecnologie che uso.</h2>
   <div class="strumenti-grid">
     <div class="strumento">
       <div class="strumento-icon">⚡</div>
@@ -516,50 +587,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FAQ -->
-<section class="faq reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Domande frequenti</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Hai dubbi?</h2>
+<section class="sec faq">
+  <div class="faq-grid">
+  <div>
+  <div class="sec-kicker">Domande frequenti</div>
+  <h2 class="sec-title">Hai dubbi?</h2>
+  </div>
   <div class="faq-list">
     <div class="faq-item">
-      <div class="faq-q">Ho bisogno di competenze tecniche? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Ho bisogno di competenze tecniche? <span class="faq-icon">+</span></div>
       <div class="faq-a">No. Mi occupo io di tutto — dalla configurazione degli strumenti all'integrazione con il tuo sito. Tu usi il risultato finale senza preoccuparti della tecnica.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Il chatbot risponde a qualsiasi domanda? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Il chatbot risponde a qualsiasi domanda? <span class="faq-icon">+</span></div>
       <div class="faq-a">Dipende dal livello. Il chatbot base risponde a domande predefinite (FAQ, orari, prezzi) e raccoglie contatti. Un AI agent avanzato, addestrato sui tuoi dati, può rispondere in modo molto più naturale e preciso.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Funziona con WhatsApp normale o serve Business? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Funziona con WhatsApp normale o serve Business? <span class="faq-icon">+</span></div>
       <div class="faq-a">Per le automazioni base bastano strumenti di terze parti che si connettono a WhatsApp. Per un'integrazione più robusta e ufficiale, consiglio WhatsApp Business API — ti spiego come attivarlo.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Posso vedere come funzionerà prima di pagare? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Posso vedere come funzionerà prima di pagare? <span class="faq-icon">+</span></div>
       <div class="faq-a">Sì. Per i progetti personalizzati preparo prima una proposta dettagliata con il flusso esatto che andremo a costruire. Approvi tu prima di iniziare.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Cosa succede se qualcosa non funziona? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Cosa succede se qualcosa non funziona? <span class="faq-icon">+</span></div>
       <div class="faq-a">Con il canone mensile includo il monitoraggio e la manutenzione. Se un flusso si interrompe, lo ripristino io. Per i progetti una tantum, includo 30 giorni di assistenza post-consegna.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Cosa sono i voicebot? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Cosa sono i voicebot? <span class="faq-icon">+</span></div>
       <div class="faq-a">Sono bot vocali che rispondono alle chiamate in modo automatico. Utili per gestire prenotazioni, rispondere a domande frequenti e qualificare il cliente prima che parli con te. Li realizzo tramite ElevenLabs e Twilio — il risultato è sorprendentemente naturale.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Posso automatizzare il mio gestionale o CRM esistente? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Posso automatizzare il mio gestionale o CRM esistente? <span class="faq-icon">+</span></div>
       <div class="faq-a">Nella maggior parte dei casi sì. Con Make o n8n posso connettere il tuo gestionale al sito, ai form, alle email e ai canali social. Prima facciamo insieme un'analisi di fattibilità.</div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- CTA -->
-<section class="cta-finale reveal">
-  <h2>Automatizza<br>il primo passo.</h2>
-  <p>Scrivimi — in 15 minuti capiamo quale automazione ha più senso per la tua attività e quanto può farti risparmiare.</p>
+<div class="cta-wrap">
+<section class="cta-finale">
+  <div><h2>Automatizza<br>il primo passo.</h2>
+  <p>Scrivimi — in 15 minuti capiamo quale automazione ha più senso per la tua attività e quanto può farti risparmiare.</p></div>
   <div class="cta-btns">
     <a href="#" onclick="openContactModal('Automazione AI');return false;" class="btn-primary">Contattami ora →</a>
     <a href="/servizi/" class="btn-outline">Tutti i servizi</a>
   </div>
 </section>
+</div>
 
 <!-- FOOTER -->
 <style>
@@ -640,6 +717,8 @@ document.querySelectorAll('.faq-item').forEach(item => {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   });
+  const q = item.querySelector('.faq-q');
+  if (q) q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); } });
 });
 </script>
 <script>

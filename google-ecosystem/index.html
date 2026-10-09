@@ -82,137 +82,178 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 .nav-cta:hover{background:var(--blue-dark)!important}
 
+/* ===== VARIANTE D — "Cruscotto": hero con pannello analytics, numeri in stile dashboard ===== */
+:root{--line:rgba(255,255,255,.09);--wrap:1344px;--panel:#0f1115}
+a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px}
+.sec{padding:112px 48px}
+.sec>*{max-width:var(--wrap);margin-left:auto;margin-right:auto}
+.sec-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:12px}
+.sec-title{font-family:var(--font-d);font-weight:400;font-size:clamp(44px,5vw,80px);letter-spacing:.01em;line-height:.9;color:#fff}
+
 /* HERO */
-.hero{min-height:85vh;display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:680px;position:relative;z-index:1}
+.hero{padding:150px 48px 88px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-10%;top:-20%;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.22) 0%,rgba(37,99,235,.05) 42%,transparent 70%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;max-width:var(--wrap);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
 .hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
 .hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
-.hero-title{font-family:var(--font-d);font-size:clamp(60px,8vw,120px);line-height:.88;letter-spacing:.02em;margin-bottom:28px;color:#fff}
+.hero-title{font-family:var(--font-d);font-weight:400;font-size:clamp(68px,8.6vw,140px);line-height:.86;letter-spacing:.01em;margin-bottom:28px;color:#fff}
 .hero-title span{color:var(--blue-bright)}
-.hero-desc{font-size:16px;line-height:1.85;color:#ccc;max-width:520px;margin-bottom:40px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:14px 36px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,99,235,0.5)}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.2);color:#ddd;padding:14px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s}
-.btn-outline:hover{border-color:var(--blue-bright);color:#fff}
+.hero-desc{font-size:17px;line-height:1.7;color:#cfcfcf;max-width:500px;margin-bottom:40px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:15px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,99,235,.45)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.22);color:#e6e6e6;padding:15px 30px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s,background .2s}
+.btn-outline:hover{border-color:var(--blue-bright);color:#fff;background:rgba(91,155,255,.08)}
 
-/* BONUS BANNER */
-.bonus{background:linear-gradient(135deg,rgba(37,99,235,0.2),rgba(91,155,255,0.1));border:1px solid rgba(91,155,255,0.3);margin:0 48px;padding:28px 36px;border-radius:4px;display:flex;align-items:center;gap:24px}
-.bonus-icon{font-size:36px;flex-shrink:0}
-.bonus-val{font-family:var(--font-d);font-size:48px;color:var(--blue-bright);line-height:1;flex-shrink:0}
-.bonus-text strong{display:block;font-size:15px;font-weight:500;color:#fff;margin-bottom:4px}
-.bonus-text span{font-size:13px;color:#aaa;line-height:1.6}
+/* pannello finto analytics (decorativo) */
+.dash{background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:22px;box-shadow:0 40px 90px rgba(0,0,0,.6);display:grid;gap:14px}
+.dash-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.dash-tile{background:#151821;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);padding:14px 14px 12px}
+.dash-tile b{display:block;width:44%;height:8px;border-radius:4px;background:rgba(255,255,255,.14);margin-bottom:12px}
+.dash-tile i{display:block;width:70%;height:20px;border-radius:5px;background:linear-gradient(90deg,#fff,rgba(255,255,255,.55))}
+.dash-tile:nth-child(2) i{width:52%;background:linear-gradient(90deg,var(--blue-bright),rgba(91,155,255,.5))}
+.dash-tile:nth-child(3) i{width:60%}
+.dash-tile s{display:block;margin-top:10px;width:38%;height:6px;border-radius:3px;background:rgba(40,200,120,.55)}
+.dash-chart{background:#151821;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);padding:16px}
+.dash-chart svg{display:block;width:100%;height:auto}
+.dash-ad{display:flex;gap:12px;align-items:center;background:#151821;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);padding:14px}
+.dash-ad .pin{width:34px;height:34px;border-radius:50%;background:rgba(37,99,235,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dash-ad .pin svg{width:18px;height:18px}
+.dash-ad .lines{flex:1;display:grid;gap:7px}
+.dash-ad .lines span{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.12)}
+.dash-ad .lines span:first-child{width:56%;background:rgba(91,155,255,.6);height:9px}
+.dash-ad .lines span:last-child{width:80%}
+
+/* BONUS */
+.bonus{max-width:var(--wrap);margin:0 auto;position:relative;overflow:hidden;background:linear-gradient(120deg,#0f2a6b 0%,var(--blue) 55%,#3b82f6 100%);border-radius:var(--radius-lg);padding:36px 44px;display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:28px;align-items:center}
+.bonus-wrap{padding:0 48px}
+.bonus-icon{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:30px}
+.bonus-val{font-family:var(--font-d);font-size:96px;color:#fff;line-height:.85}
+.bonus-text strong{display:block;font-family:var(--font-d);font-weight:400;font-size:28px;letter-spacing:.02em;color:#fff;margin-bottom:6px}
+.bonus-text span{font-size:15px;color:rgba(255,255,255,.88);line-height:1.6}
 
 /* SERVIZI GOOGLE */
-.servizi{padding:80px 48px;background:var(--gray)}
-.servizi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:48px}
-.sg-card{background:var(--black);padding:36px 32px;position:relative;overflow:hidden;transition:background .3s}
-.sg-card:hover{background:var(--gray-mid)}
-.sg-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--blue-bright);transition:height .4s}
-.sg-card:hover::before{height:100%}
-.sg-icon{font-size:28px;margin-bottom:20px}
-.sg-name{font-family:var(--font-d);font-size:26px;letter-spacing:.04em;color:#fff;margin-bottom:10px}
-.sg-desc{font-size:13px;line-height:1.8;color:#888;margin-bottom:16px}
-.sg-list{list-style:none;display:flex;flex-direction:column;gap:7px}
-.sg-list li{font-size:12px;color:#aaa;display:flex;align-items:flex-start;gap:8px;line-height:1.5}
-.sg-list li::before{content:'✓';color:var(--blue-bright);flex-shrink:0}
+.servizi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.sg-card{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:36px 34px;transition:border-color .3s}
+.sg-card:hover{border-color:rgba(91,155,255,.35)}
+.sg-icon{width:52px;height:52px;border-radius:var(--radius-md);background:rgba(37,99,235,.12);border:1px solid rgba(91,155,255,.25);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:22px}
+.sg-name{font-family:var(--font-d);font-size:36px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:12px}
+.sg-desc{font-size:15px;line-height:1.7;color:#b0b0b0;margin-bottom:20px}
+.sg-list{list-style:none;display:grid;gap:9px;padding-top:18px;border-top:1px solid var(--line)}
+.sg-list li{font-size:14px;color:#d0d0d0;display:flex;align-items:flex-start;gap:10px;line-height:1.45}
+.sg-list li::before{content:'';flex-shrink:0;width:6px;height:6px;margin-top:7px;border-radius:50%;background:var(--blue-bright)}
 
 /* PREZZI */
-.prezzi{padding:80px 48px}
-.prezzi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
-.prezzo{background:var(--gray);padding:36px 28px;position:relative;display:flex;flex-direction:column}
-.prezzo.featured{background:var(--blue)}
-.prezzo-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#fff;color:var(--blue);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:5px 16px;font-weight:500;white-space:nowrap}
-.prezzo-name{font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
-.prezzo:not(.featured) .prezzo-name{color:var(--blue-bright)}
-.prezzo.featured .prezzo-name{color:rgba(255,255,255,0.8)}
-.prezzo-val{font-family:var(--font-d);font-size:52px;line-height:1;color:#fff;margin-bottom:4px}
-.prezzo-val sup{font-size:22px;vertical-align:top;margin-top:8px}
-.prezzo-period{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:.1em;margin-bottom:20px}
-.prezzo-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1);flex:1}
-.prezzo-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
-.prezzo-list li{font-size:12px;display:flex;align-items:flex-start;gap:8px;color:rgba(255,255,255,0.8);line-height:1.5}
-.prezzo-list li::before{content:'✓';color:var(--blue-bright);flex-shrink:0}
-.prezzo.featured .prezzo-list li::before{color:#fff}
-.prezzo-btn{display:block;text-align:center;padding:12px;font-family:var(--font-d);font-size:16px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s;margin-top:auto}
+.prezzi{background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prezzi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.prezzo{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:38px 32px 32px;position:relative;display:flex;flex-direction:column}
+.prezzo.featured{background:var(--blue);border-color:var(--blue);box-shadow:0 30px 80px rgba(37,99,235,.35)}
+.prezzo-badge{position:absolute;top:18px;right:18px;background:#fff;color:var(--blue);font-size:11px;letter-spacing:.08em;padding:5px 12px;border-radius:999px;font-weight:500;white-space:nowrap}
+.prezzo-name{font-family:var(--font-d);font-size:28px;letter-spacing:.04em;margin-bottom:20px;color:#fff}
+.prezzo-val{font-family:var(--font-d);font-size:80px;line-height:.9;color:#fff;margin-bottom:6px}
+.prezzo-val sup{font-size:22px;vertical-align:top;margin-right:6px;letter-spacing:.06em;color:var(--blue-bright)}
+.prezzo.featured .prezzo-val sup{color:rgba(255,255,255,.75)}
+.prezzo-period{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.08em;margin-bottom:22px}
+.prezzo-desc{font-size:14px;line-height:1.65;color:rgba(255,255,255,.78);margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12)}
+.prezzo-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:30px}
+.prezzo-list li{font-size:14px;display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.85);line-height:1.45}
+.prezzo-list li::before{content:'';flex-shrink:0;width:16px;height:16px;margin-top:1px;border-radius:50%;background:rgba(91,155,255,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%235b9bff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.prezzo.featured .prezzo-list li::before{background-color:rgba(255,255,255,.2);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.prezzo-btn{display:block;text-align:center;padding:14px;font-family:var(--font-d);font-size:19px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s;margin-top:auto}
 .prezzo:not(.featured) .prezzo-btn{background:var(--blue);color:#fff}
 .prezzo.featured .prezzo-btn{background:#fff;color:var(--blue)}
-.prezzo-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
-
-/* RISULTATI */
-.risultati{background:var(--gray);padding:80px 48px}
-.risultati-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
-.risultato{background:var(--black);padding:36px 28px;text-align:center}
-.risultato-val{font-family:var(--font-d);font-size:56px;color:var(--blue-bright);line-height:1;margin-bottom:8px}
-.risultato-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#666;margin-bottom:12px}
-.risultato-desc{font-size:12px;color:#888;line-height:1.7}
-
-/* PROCESSO */
-.processo{padding:80px 48px}
-.processo-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
-.step{background:var(--gray);padding:32px 24px;position:relative}
-.step-num{font-family:var(--font-d);font-size:52px;color:rgba(91,155,255,0.12);line-height:1;margin-bottom:16px}
-.step-title{font-family:var(--font-d);font-size:20px;letter-spacing:.04em;color:#fff;margin-bottom:8px}
-.step-desc{font-size:12px;line-height:1.7;color:#777}
-.step-arrow{position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:rgba(91,155,255,0.25);font-size:20px;z-index:1}
-.step:last-child .step-arrow{display:none}
+.prezzo-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
 
 /* BUDGET NOTE */
-.budget-note{margin:0 48px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:28px 32px;display:flex;gap:20px;align-items:flex-start}
-.budget-note-icon{font-size:24px;flex-shrink:0;margin-top:2px}
-.budget-note-text strong{display:block;font-size:14px;font-weight:500;color:#fff;margin-bottom:6px}
-.budget-note-text span{font-size:13px;color:#888;line-height:1.7}
+.budget-wrap{padding:56px 48px 0}
+.budget-note{max-width:var(--wrap);margin:0 auto;background:var(--gray);border:1px solid var(--line);border-left:3px solid #f5c542;border-radius:var(--radius-md);padding:28px 32px;display:flex;gap:20px;align-items:flex-start}
+.budget-note-icon{font-size:26px;flex-shrink:0}
+.budget-note-text strong{display:block;font-family:var(--font-d);font-weight:400;font-size:26px;letter-spacing:.02em;color:#fff;margin-bottom:8px}
+.budget-note-text span{font-size:15px;color:#b0b0b0;line-height:1.7}
+
+/* RISULTATI — tile da dashboard */
+.risultati-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.risultato{background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:30px 30px 28px;position:relative;overflow:hidden}
+.risultato::after{content:'';position:absolute;left:0;right:0;bottom:0;height:56px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 56' preserveAspectRatio='none'%3E%3Cpath d='M0 50 L40 44 L80 46 L120 34 L160 36 L200 22 L240 20 L300 6 L300 56 L0 56Z' fill='rgba(91,155,255,.12)'/%3E%3Cpath d='M0 50 L40 44 L80 46 L120 34 L160 36 L200 22 L240 20 L300 6' fill='none' stroke='%235b9bff' stroke-width='2'/%3E%3C/svg%3E") bottom/100% 100% no-repeat;opacity:.8;pointer-events:none}
+.risultato-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8d8d8d;margin-bottom:10px}
+.risultato-val{font-family:var(--font-d);font-size:96px;color:#fff;line-height:.85;margin-bottom:16px}
+.risultato:first-child .risultato-val{color:var(--blue-bright)}
+.risultato-desc{font-size:14px;color:#a9a9a9;line-height:1.65;position:relative;z-index:1;padding-bottom:44px}
+.risultato>*{position:relative}
+
+/* PROCESSO */
+.processo{background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.processo-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px;counter-reset:s}
+.step{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px 26px;position:relative}
+.step-num{font-family:var(--font-d);font-size:72px;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(91,155,255,.6);margin-bottom:22px}
+.step-title{font-family:var(--font-d);font-size:28px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
+.step-desc{font-size:14px;line-height:1.65;color:#9a9a9a}
+.step-arrow{display:none}
 
 /* FAQ */
-.faq{padding:80px 48px;background:var(--gray)}
-.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px}
-.faq-item{background:var(--black);overflow:hidden}
-.faq-q{padding:24px 28px;font-family:var(--font-d);font-size:18px;letter-spacing:.03em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:rgba(91,155,255,.35)}
+.faq-q{padding:22px 24px;font-family:var(--font-d);font-size:22px;letter-spacing:.02em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
 .faq-q:hover{color:var(--blue-bright)}
-.faq-icon{color:var(--blue-bright);font-size:22px;flex-shrink:0;transition:transform .3s}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-a{padding:0 28px 24px;font-size:13px;line-height:1.85;color:#999;display:none}
+.faq-icon{width:30px;height:30px;border-radius:50%;border:1px solid rgba(91,155,255,.4);display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:var(--font-b);font-size:18px;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue);color:#fff;border-color:var(--blue)}
+.faq-a{padding:0 24px 22px;font-size:15px;line-height:1.75;color:#a9a9a9;display:none}
 .faq-item.open .faq-a{display:block}
 
 /* CTA FINALE */
-.cta-finale{padding:80px 48px;text-align:center;position:relative;overflow:hidden}
-.cta-finale::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
-.cta-finale h2{font-family:var(--font-d);font-size:clamp(40px,6vw,80px);line-height:.92;color:#fff;margin-bottom:16px;position:relative;z-index:1}
-.cta-finale p{font-size:15px;color:#aaa;max-width:420px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1}
-.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.cta-wrap{padding:0 48px 112px}
+.cta-finale{max-width:var(--wrap);margin:0 auto;position:relative;overflow:hidden;background:var(--blue);border-radius:var(--radius-lg);padding:64px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:end}
+.cta-finale::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(90deg,#000,transparent 70%);mask-image:linear-gradient(90deg,#000,transparent 70%);pointer-events:none}
+.cta-finale>*{position:relative;z-index:1}
+.cta-finale h2{font-family:var(--font-d);font-weight:400;font-size:clamp(56px,7vw,112px);line-height:.86;color:#fff}
+.cta-finale p{font-size:16px;color:rgba(255,255,255,.9);max-width:460px;line-height:1.7;margin-top:18px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.cta-finale .btn-primary{background:#fff;color:var(--blue)}
+.cta-finale .btn-primary:hover{background:#fff;box-shadow:0 10px 32px rgba(0,0,0,.25)}
+.cta-finale .btn-outline{border-color:rgba(255,255,255,.55);color:#fff}
+.cta-finale .btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff}
 
 /* WA FLOAT */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;text-decoration:none}
 .wa-float:hover{transform:scale(1.1)}
 .wa-float svg{width:28px;height:28px;fill:#fff}
 
-/* FOOTER */
-
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-/* MOBILE */
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:1fr}
+  .dash{max-width:620px}
+  .bonus{grid-template-columns:auto 1fr}
+  .bonus-text{grid-column:1/-1}
+  .prezzi-grid{grid-template-columns:1fr;max-width:560px}
+  .risultati-grid{grid-template-columns:1fr}
+  .processo-steps{grid-template-columns:1fr 1fr}
+  .faq-grid{grid-template-columns:1fr;gap:32px}
+  .cta-finale{grid-template-columns:1fr}
+}
 @media(max-width:768px){
   nav{padding:14px 18px}
   .nav-links{display:none}
   .nav-burger{display:flex}
-  .hero{padding:100px 20px 60px;min-height:auto}
-  .bonus{margin:0 20px;flex-wrap:wrap;gap:16px}
-  .bonus-val{font-size:36px}
-  .servizi{padding:56px 20px}
+  .hero{padding:110px 20px 56px}
+  .hero-title{font-size:clamp(60px,18vw,92px)}
+  .hero-btns,.cta-btns{flex-direction:column}
+  .hero-btns a,.cta-btns a{justify-content:center}
+  .sec{padding:72px 20px}
+  .bonus-wrap,.budget-wrap{padding-left:20px;padding-right:20px}
+  .bonus{padding:28px 24px;gap:18px}
+  .bonus-val{font-size:72px}
   .servizi-grid{grid-template-columns:1fr}
-  .prezzi{padding:56px 20px}
-  .prezzi-grid{grid-template-columns:1fr}
-  .risultati{padding:56px 20px}
-  .risultati-grid{grid-template-columns:1fr}
-  .processo{padding:56px 20px}
-  .processo-steps{grid-template-columns:1fr 1fr}
-  .step-arrow{display:none}
-  .budget-note{margin:0 20px;flex-wrap:wrap}
-  .faq{padding:56px 20px}
-  .cta-finale{padding:56px 20px}
+  .sg-card{padding:28px 24px}
+  .processo-steps{grid-template-columns:1fr}
+  .budget-note{flex-direction:column;padding:24px}
+  .cta-wrap{padding:0 20px 72px}
+  .cta-finale{padding:40px 24px}
   .wa-float{bottom:20px;right:20px;width:48px;height:48px}
 }
 
@@ -320,7 +361,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner reveal">
+  <div class="hero-grid">
+    <div class="hero-inner reveal">
     <div class="hero-tag">Google Ecosystem · Bari</div>
     <h1 class="hero-title">Google<br>lavora<br><span>per te.</span></h1>
     <p class="hero-desc">Google Ads, Google Business Profile e Google Analytics 4. Ogni euro investito viene tracciato e ottimizzato. Lavoro con dati reali — non con intuizioni.</p>
@@ -329,10 +371,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#servizi-google" class="btn-outline">Scopri i servizi</a>
     </div>
   </div>
+    <div class="dash reveal" aria-hidden="true">
+      <div class="dash-row">
+        <div class="dash-tile"><b></b><i></i><s></s></div>
+        <div class="dash-tile"><b></b><i></i><s></s></div>
+        <div class="dash-tile"><b></b><i></i><s></s></div>
+      </div>
+      <div class="dash-chart">
+        <svg viewBox="0 0 520 170" fill="none">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(91,155,255,.35)"/><stop offset="1" stop-color="rgba(91,155,255,0)"/></linearGradient></defs>
+          <g stroke="rgba(255,255,255,.07)"><line x1="0" y1="40" x2="520" y2="40"/><line x1="0" y1="85" x2="520" y2="85"/><line x1="0" y1="130" x2="520" y2="130"/></g>
+          <path d="M0 150 L52 140 L104 146 L156 120 L208 126 L260 98 L312 92 L364 70 L416 74 L468 44 L520 24 L520 170 L0 170Z" fill="url(#g1)"/>
+          <path d="M0 150 L52 140 L104 146 L156 120 L208 126 L260 98 L312 92 L364 70 L416 74 L468 44 L520 24" stroke="#5b9bff" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M0 160 L52 156 L104 158 L156 150 L208 152 L260 142 L312 140 L364 132 L416 134 L468 122 L520 116" stroke="rgba(255,255,255,.28)" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <circle cx="514" cy="26" r="5" fill="#5b9bff"/>
+        </svg>
+      </div>
+      <div class="dash-ad">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <div class="lines"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- BONUS BANNER -->
-<div class="bonus reveal">
+<div class="bonus-wrap">
+<div class="bonus">
   <div class="bonus-icon">🎁</div>
   <div class="bonus-val">€400</div>
   <div class="bonus-text">
@@ -340,11 +405,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span>Se non hai mai fatto pubblicità su Google, puoi ricevere €400 di credito gratuito: spendi €400 e Google te ne regala altri €400. Ti aiuto ad attivarlo e a usarli nel modo giusto.</span>
   </div>
 </div>
+</div>
 
 <!-- SERVIZI GOOGLE -->
-<section class="servizi reveal" id="servizi-google">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Cosa faccio</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Tutta l'ecosistema<br>Google, gestita.</h2>
+<section class="sec servizi" id="servizi-google">
+  <div class="sec-kicker">Cosa faccio</div>
+  <h2 class="sec-title">Tutta l'ecosistema<br>Google, gestita.</h2>
   <div class="servizi-grid">
     <div class="sg-card">
       <div class="sg-icon">🔍</div>
@@ -400,9 +466,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- PREZZI -->
-<section class="prezzi reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Prezzi</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Chiari e senza sorprese.</h2>
+<section class="sec prezzi">
+  <div class="sec-kicker">Prezzi</div>
+  <h2 class="sec-title">Chiari e senza sorprese.</h2>
   <div class="prezzi-grid">
     <div class="prezzo">
       <div class="prezzo-name">Setup Completo</div>
@@ -453,18 +519,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- BUDGET NOTE -->
-<div class="budget-note reveal">
+<div class="budget-wrap">
+<div class="budget-note">
   <div class="budget-note-icon">💡</div>
   <div class="budget-note-text">
     <strong>Il budget pubblicitario è tuo</strong>
     <span>Il denaro che spendi su Google Ads lo paghi direttamente a Google con la tua carta di credito. Io gestisco le campagne e ti addebito separatamente solo per il lavoro di gestione. Nessun margine nascosto sul budget. Il budget minimo consigliato dipende dalla città e dal settore — per Bari e la Puglia consiglio almeno €300/mese per ottenere dati sufficienti e risultati concreti.</span>
   </div>
 </div>
+</div>
 
 <!-- RISULTATI -->
-<section class="risultati reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Risultati reali</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Numeri dai miei progetti.</h2>
+<section class="sec risultati">
+  <div class="sec-kicker">Risultati reali</div>
+  <h2 class="sec-title">Numeri dai miei progetti.</h2>
   <div class="risultati-grid">
     <div class="risultato">
       <div class="risultato-val">$15</div>
@@ -485,9 +553,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- PROCESSO -->
-<section class="processo reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Come funziona</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Dal primo giorno<br>ai primi risultati.</h2>
+<section class="sec processo">
+  <div class="sec-kicker">Come funziona</div>
+  <h2 class="sec-title">Dal primo giorno<br>ai primi risultati.</h2>
   <div class="processo-steps">
     <div class="step">
       <div class="step-num">01</div>
@@ -517,42 +585,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FAQ -->
-<section class="faq reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Domande frequenti</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Hai dubbi?</h2>
+<section class="sec faq">
+  <div class="faq-grid">
+  <div>
+  <div class="sec-kicker">Domande frequenti</div>
+  <h2 class="sec-title">Hai dubbi?</h2>
+  </div>
   <div class="faq-list">
     <div class="faq-item">
-      <div class="faq-q">Quanto devo spendere in pubblicità al mese? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Quanto devo spendere in pubblicità al mese? <span class="faq-icon">+</span></div>
       <div class="faq-a">Per ottenere risultati concreti con Google Ads consiglio un budget minimo di 300€/mese da destinare alla pubblicità. Con meno è difficile raccogliere dati sufficienti per ottimizzare. Il budget ottimale dipende dal settore e dalla concorrenza — ne parliamo insieme.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Come funziona il bonus 400€? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Come funziona il bonus 400€? <span class="faq-icon">+</span></div>
       <div class="faq-a">Google offre un credito pubblicitario di 400€ ai nuovi account che soddisfano certe condizioni. In pratica: spendi i primi 400€ e Google te ne regala altri 400€. Ti aiuto a configurare tutto correttamente per ottenerlo.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Quando vedrò i primi risultati? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Quando vedrò i primi risultati? <span class="faq-icon">+</span></div>
       <div class="faq-a">Con Google Ads i primi click arrivano subito, ma i risultati concreti — lead e clienti — richiedono 4-8 settimane di ottimizzazione. Le prime settimane servono per raccogliere dati, testare annunci e affinare il targeting. È normale e fa parte del processo.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Posso smettere quando voglio? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Posso smettere quando voglio? <span class="faq-icon">+</span></div>
       <div class="faq-a">Sì. Non ci sono contratti a lungo termine. Puoi interrompere il servizio con un preavviso di 30 giorni. Il tuo account Google Ads rimane sempre tuo.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Con che frequenza ricevo i report? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Con che frequenza ricevo i report? <span class="faq-icon">+</span></div>
       <div class="faq-a">Dipende dalla dimensione del progetto. Per campagne attive invio report ogni settimana o ogni due settimane. I report sono semplici e chiari — non fogli Excel incomprensibili, ma numeri che capisci subito.</div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- CTA FINALE -->
-<section class="cta-finale reveal">
-  <h2>Pronti a<br>partire?</h2>
-  <p>Scrivimi — analizziamo la tua situazione e vediamo se c'è margine per il bonus 400€.</p>
+<div class="cta-wrap">
+<section class="cta-finale">
+  <div><h2>Pronti a<br>partire?</h2>
+  <p>Scrivimi — analizziamo la tua situazione e vediamo se c'è margine per il bonus 400€.</p></div>
   <div class="cta-btns">
     <a href="#" onclick="openContactModal('Google Ecosystem');return false;" class="btn-primary">Contattami ora →</a>
     <a href="/portfolio/" class="btn-outline">Vedi i risultati</a>
   </div>
 </section>
+</div>
 
 <!-- FOOTER -->
 <style>
@@ -634,6 +708,8 @@ document.querySelectorAll('.faq-item').forEach(item => {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   });
+  const q = item.querySelector('.faq-q');
+  if (q) q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); } });
 });
 </script>
 <!-- WhatsApp floating button -->

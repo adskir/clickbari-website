@@ -67,122 +67,159 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 .nav-cta:hover{background:var(--blue-dark)!important}
 
+/* ===== VARIANTE C — "Vetrina browser": hero con finestra browser + telefono, prezzi a tre colonne ===== */
+:root{--line:rgba(255,255,255,.09);--wrap:1344px}
+a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px}
+.sec{padding:112px 48px}
+.sec>*{max-width:var(--wrap);margin-left:auto;margin-right:auto}
+.sec-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:12px}
+.sec-title{font-family:var(--font-d);font-weight:400;font-size:clamp(44px,5vw,80px);letter-spacing:.01em;line-height:.9;color:#fff}
+
 /* HERO */
-.hero{min-height:85vh;display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:680px;position:relative;z-index:1;margin:0 auto;text-align:center}
+.hero{padding:150px 48px 96px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 60% 80% at 75% 45%,#000 15%,transparent 75%);mask-image:radial-gradient(ellipse 60% 80% at 75% 45%,#000 15%,transparent 75%);pointer-events:none}
+.hero::after{content:'';position:absolute;right:-10%;top:-20%;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.24) 0%,rgba(37,99,235,.06) 42%,transparent 70%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;max-width:var(--wrap);margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
 .hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
 .hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
-.hero-title{font-family:var(--font-d);font-size:clamp(60px,8vw,120px);line-height:.88;letter-spacing:.02em;margin-bottom:28px;color:#fff}
+.hero-title{font-family:var(--font-d);font-weight:400;font-size:clamp(68px,8.6vw,140px);line-height:.86;letter-spacing:.01em;margin-bottom:28px;color:#fff}
 .hero-title span{color:var(--blue-bright)}
-.hero-desc{font-size:16px;line-height:1.85;color:#ccc;max-width:520px;margin-bottom:40px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:14px 36px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,99,235,0.5)}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.2);color:#ddd;padding:14px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s}
-.btn-outline:hover{border-color:var(--blue-bright);color:#fff}
+.hero-desc{font-size:17px;line-height:1.7;color:#cfcfcf;max-width:470px;margin-bottom:40px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:15px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,99,235,.45)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.22);color:#e6e6e6;padding:15px 30px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s,background .2s}
+.btn-outline:hover{border-color:var(--blue-bright);color:#fff;background:rgba(91,155,255,.08)}
+
+.showcase{position:relative;padding:0 0 60px 0}
+.browser{border-radius:14px;background:#111;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 40px 90px rgba(0,0,0,.7);overflow:hidden}
+.browser-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#1a1a1a;border-bottom:1px solid var(--line)}
+.browser-bar i{width:10px;height:10px;border-radius:50%;background:#3a3a3a}
+.browser-bar i:nth-child(1){background:#ff5f57}.browser-bar i:nth-child(2){background:#febc2e}.browser-bar i:nth-child(3){background:#28c840}
+.browser-url{margin-left:12px;flex:1;max-width:260px;height:22px;border-radius:6px;background:#0d0d0d;display:flex;align-items:center;padding:0 10px;font-size:11px;color:#8d8d8d}
+.browser img{display:block;width:100%;height:auto;aspect-ratio:1200/750;object-fit:cover;object-position:top}
+.showcase .phone{position:absolute;right:-12px;bottom:0;width:150px;padding:6px;background:#0d0d0d;border-radius:26px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 30px 60px rgba(0,0,0,.75)}
+.showcase .phone img{display:block;width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:21px}
 
 /* COSA INCLUDE */
-.include{padding:80px 48px;background:var(--gray)}
-.include-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
-.include-item{background:var(--black);padding:32px 28px;position:relative;overflow:hidden;transition:background .3s}
-.include-item:hover{background:var(--gray-mid)}
-.include-item::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--blue-bright);transition:height .4s}
-.include-item:hover::before{height:100%}
-.include-icon{font-size:24px;margin-bottom:16px}
-.include-name{font-family:var(--font-d);font-size:20px;letter-spacing:.04em;color:#fff;margin-bottom:8px}
-.include-desc{font-size:12px;line-height:1.75;color:#888}
+.include{background:#0a0a0a;border-bottom:1px solid var(--line)}
+.include-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.include-item{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px 30px;transition:border-color .3s,transform .3s}
+.include-item:hover{border-color:rgba(91,155,255,.35);transform:translateY(-3px)}
+.include-icon{width:48px;height:48px;border-radius:var(--radius-md);background:rgba(37,99,235,.12);border:1px solid rgba(91,155,255,.25);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:22px}
+.include-name{font-family:var(--font-d);font-size:28px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
+.include-desc{font-size:14px;line-height:1.7;color:#a9a9a9}
+.include-desc a{display:inline-block;margin-top:10px}
 
 /* PACCHETTI */
-.pacchetti{padding:80px 48px}
-.pacchetti-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
-.pacchetto{background:var(--gray);padding:40px 32px;position:relative;display:flex;flex-direction:column}
-.pacchetto.featured{background:var(--blue)}
-.pacchetto-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#fff;color:var(--blue);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:5px 16px;font-weight:500;white-space:nowrap}
-.pacchetto-name{font-family:var(--font-d);font-size:20px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px}
-.pacchetto.featured .pacchetto-name{color:rgba(255,255,255,0.8)}
-.pacchetto-name:not(.featured .pacchetto-name){color:var(--blue-bright)}
-.pacchetto-price{font-family:var(--font-d);font-size:56px;line-height:1;color:#fff;margin-bottom:4px}
-.pacchetto-price sup{font-size:24px;vertical-align:top;margin-top:10px}
-.pacchetto-period{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:.1em;margin-bottom:20px}
-.pacchetto-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.7);margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.1);flex:1}
-.pacchetto-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.pacchetto-list li{font-size:12px;display:flex;align-items:flex-start;gap:8px;color:rgba(255,255,255,0.8);line-height:1.5}
-.pacchetto-list li::before{content:'✓';color:var(--blue-bright);flex-shrink:0}
-.pacchetto.featured .pacchetto-list li::before{color:#fff}
-.pacchetto-btn{display:block;text-align:center;padding:12px;font-family:var(--font-d);font-size:16px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s;margin-top:auto}
+.pacchetti-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;align-items:stretch}
+.pacchetto{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:40px 34px 34px;position:relative;display:flex;flex-direction:column}
+.pacchetto.featured{background:var(--blue);border-color:var(--blue);box-shadow:0 30px 80px rgba(37,99,235,.35);transform:translateY(-14px)}
+.pacchetto-badge{position:absolute;top:18px;right:18px;background:#fff;color:var(--blue);font-size:11px;letter-spacing:.08em;padding:5px 12px;border-radius:999px;font-weight:500;white-space:nowrap}
+.pacchetto-name{font-family:var(--font-d);font-size:30px;letter-spacing:.04em;margin-bottom:22px;color:#fff}
+.pacchetto-price{font-family:var(--font-d);font-size:80px;line-height:.9;color:#fff;margin-bottom:6px}
+.pacchetto-price sup{font-size:22px;vertical-align:top;margin-right:6px;letter-spacing:.06em;color:var(--blue-bright)}
+.pacchetto.featured .pacchetto-price sup{color:rgba(255,255,255,.75)}
+.pacchetto-period{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.08em;margin-bottom:22px}
+.pacchetto-desc{font-size:14px;line-height:1.65;color:rgba(255,255,255,.78);margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12)}
+.pacchetto-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:30px}
+.pacchetto-list li{font-size:14px;display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.85);line-height:1.45}
+.pacchetto-list li::before{content:'';flex-shrink:0;width:16px;height:16px;margin-top:1px;border-radius:50%;background:rgba(91,155,255,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%235b9bff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.pacchetto.featured .pacchetto-list li::before{background-color:rgba(255,255,255,.2);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.pacchetto-btn{display:block;text-align:center;padding:14px;font-family:var(--font-d);font-size:19px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s;margin-top:auto}
 .pacchetto:not(.featured) .pacchetto-btn{background:var(--blue);color:#fff}
 .pacchetto.featured .pacchetto-btn{background:#fff;color:var(--blue)}
-.pacchetto-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+.pacchetto-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.pacchetti-note{text-align:center;margin-top:32px;font-size:14px;color:#8d8d8d}
 
-/* PROCESSO */
-.processo{padding:80px 48px;background:var(--gray)}
-.processo-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:48px}
-.step{background:var(--black);padding:32px 24px;position:relative}
-.step-num{font-family:var(--font-d);font-size:52px;color:rgba(91,155,255,0.12);line-height:1;margin-bottom:16px}
-.step-title{font-family:var(--font-d);font-size:18px;letter-spacing:.04em;color:#fff;margin-bottom:8px}
-.step-desc{font-size:12px;line-height:1.7;color:#777}
-.step-arrow{position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:rgba(91,155,255,0.25);font-size:20px;z-index:1}
-.step:last-child .step-arrow{display:none}
-
-/* DOMANDE */
-.domande{padding:80px 48px}
-.domande-note{font-size:14px;color:#888;max-width:480px;margin-top:12px;line-height:1.7}
-.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px}
-.faq-item{background:var(--gray);overflow:hidden}
-.faq-q{padding:24px 28px;font-family:var(--font-d);font-size:18px;letter-spacing:.03em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
-.faq-q:hover{color:var(--blue-bright)}
-.faq-icon{color:var(--blue-bright);font-size:22px;flex-shrink:0;transition:transform .3s}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-a{padding:0 28px 24px;font-size:13px;line-height:1.85;color:#999;display:none}
-.faq-item.open .faq-a{display:block}
+/* PROCESSO — linea del tempo */
+.processo{background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.processo-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:64px;position:relative}
+.processo-steps::before{content:'';position:absolute;left:0;right:0;top:27px;height:1px;background:linear-gradient(90deg,var(--blue-bright),rgba(91,155,255,.15))}
+.step{position:relative}
+.step-num{position:relative;width:56px;height:56px;border-radius:50%;background:var(--black);border:1px solid rgba(91,155,255,.5);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:24px;color:var(--blue-bright);margin-bottom:24px}
+.step:first-child .step-num{background:var(--blue);border-color:var(--blue);color:#fff}
+.step-title{font-family:var(--font-d);font-size:26px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
+.step-desc{font-size:14px;line-height:1.65;color:#9a9a9a}
+.step-arrow{display:none}
 
 /* PORTFOLIO PREVIEW */
-.preview{padding:80px 48px;background:var(--gray)}
-.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px}
-.preview-card{aspect-ratio:16/9;position:relative;overflow:hidden;background:#0a0a0a}
-.preview-card iframe{width:166.67%;height:166.67%;transform:scale(0.6);transform-origin:top left;border:none;pointer-events:none}
-.preview-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,6,0.95) 0%,rgba(6,6,6,0.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
-.preview-tag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:6px}
-.preview-name{font-family:var(--font-d);font-size:22px;letter-spacing:.04em;color:#fff;margin-bottom:4px}
-.preview-link{font-size:11px;color:#666;text-decoration:none;letter-spacing:.06em;transition:color .2s}
+.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.preview-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:#0d0d0d;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .3s,transform .3s}
+.preview-card:hover{border-color:rgba(91,155,255,.35);transform:translateY(-4px)}
+.preview-card img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+.preview-overlay{padding:22px 24px 24px}
+.preview-tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:8px}
+.preview-name{font-family:var(--font-d);font-size:32px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:6px}
+.preview-link{font-size:13px;color:#8d8d8d;text-decoration:none;transition:color .2s}
 .preview-link:hover{color:var(--blue-bright)}
+.preview-more{text-align:center;margin-top:32px}
+
+/* DOMANDE */
+.domande-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.domande-note{font-size:15px;color:#9a9a9a;max-width:380px;margin-top:18px;line-height:1.7}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:rgba(91,155,255,.35)}
+.faq-q{padding:22px 24px;font-family:var(--font-d);font-size:22px;letter-spacing:.02em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.faq-q:hover{color:var(--blue-bright)}
+.faq-icon{width:30px;height:30px;border-radius:50%;border:1px solid rgba(91,155,255,.4);display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:var(--font-b);font-size:18px;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue);color:#fff;border-color:var(--blue)}
+.faq-a{padding:0 24px 22px;font-size:15px;line-height:1.75;color:#a9a9a9;display:none}
+.faq-item.open .faq-a{display:block}
 
 /* CTA FINALE */
-.cta-finale{padding:80px 48px;text-align:center;position:relative;overflow:hidden}
-.cta-finale::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
-.cta-finale h2{font-family:var(--font-d);font-size:clamp(40px,6vw,80px);line-height:.92;color:#fff;margin-bottom:16px;position:relative;z-index:1}
-.cta-finale p{font-size:15px;color:#aaa;max-width:420px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1}
-.cta-finale-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.cta-wrap{padding:0 48px 112px}
+.cta-finale{max-width:var(--wrap);margin:0 auto;position:relative;overflow:hidden;background:var(--blue);border-radius:var(--radius-lg);padding:64px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:end}
+.cta-finale::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(90deg,#000,transparent 70%);mask-image:linear-gradient(90deg,#000,transparent 70%);pointer-events:none}
+.cta-finale>*{position:relative;z-index:1}
+.cta-finale h2{font-family:var(--font-d);font-weight:400;font-size:clamp(56px,7vw,112px);line-height:.86;color:#fff}
+.cta-finale p{font-size:16px;color:rgba(255,255,255,.9);max-width:460px;line-height:1.7;margin-top:18px}
+.cta-finale-btns{display:flex;gap:12px;flex-wrap:wrap}
+.cta-finale .btn-primary{background:#fff;color:var(--blue)}
+.cta-finale .btn-primary:hover{background:#fff;box-shadow:0 10px 32px rgba(0,0,0,.25)}
+.cta-finale .btn-outline{border-color:rgba(255,255,255,.55);color:#fff}
+.cta-finale .btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff}
 
 /* WA FLOAT */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;text-decoration:none}
 .wa-float:hover{transform:scale(1.1)}
 .wa-float svg{width:28px;height:28px;fill:#fff}
 
-/* FOOTER */
-
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-/* MOBILE */
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:1fr}
+  .showcase{max-width:680px}
+  .include-grid{grid-template-columns:1fr 1fr}
+  .pacchetti-grid{grid-template-columns:1fr;max-width:560px}
+  .pacchetto.featured{transform:none}
+  .processo-steps{grid-template-columns:1fr;gap:28px}
+  .processo-steps::before{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto;background:linear-gradient(180deg,var(--blue-bright),rgba(91,155,255,.15))}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:0 20px}
+  .step-num{grid-row:1/3;margin:0}
+  .domande-grid{grid-template-columns:1fr;gap:32px}
+  .cta-finale{grid-template-columns:1fr}
+}
 @media(max-width:768px){
   nav{padding:14px 18px}
   .nav-links{display:none}
   .nav-burger{display:flex}
-  .hero{padding:100px 20px 60px;min-height:auto}
-  .include{padding:56px 20px}
+  .hero{padding:110px 20px 56px}
+  .hero-title{font-size:clamp(60px,18vw,92px)}
+  .showcase{padding-bottom:40px}
+  .showcase .phone{width:96px;right:-4px;border-radius:18px;padding:4px}
+  .showcase .phone img{border-radius:14px}
+  .sec{padding:72px 20px}
   .include-grid{grid-template-columns:1fr}
-  .pacchetti{padding:56px 20px}
-  .pacchetti-grid{grid-template-columns:1fr}
-  .processo{padding:56px 20px}
-  .processo-steps{grid-template-columns:1fr 1fr}
-  .step-arrow{display:none}
-  .domande{padding:56px 20px}
-  .preview{padding:56px 20px}
   .preview-grid{grid-template-columns:1fr}
-  .cta-finale{padding:56px 20px}
+  .cta-wrap{padding:0 20px 72px}
+  .cta-finale{padding:40px 24px}
+  .hero-btns,.cta-finale-btns{flex-direction:column}
+  .hero-btns a,.cta-finale-btns a{justify-content:center}
   .wa-float{bottom:20px;right:20px;width:48px;height:48px}
 }
 
@@ -274,7 +311,8 @@ gtag('consent', 'default', {
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner reveal">
+  <div class="hero-grid">
+    <div class="hero-inner reveal">
     <div class="hero-tag">Siti Web · Bari</div>
     <h1 class="hero-title">Il tuo sito.<br>Fatto<br><span>bene.</span></h1>
     <p class="hero-desc">Design su misura, velocità e SEO integrato dall'inizio. Realizzo siti web a Bari che non sono solo belli — sono strumenti che portano clienti.</p>
@@ -283,12 +321,20 @@ gtag('consent', 'default', {
       <a href="/portfolio/" class="btn-outline">Vedi i progetti</a>
     </div>
   </div>
+    <div class="showcase reveal" aria-hidden="true">
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">barmobile.it</span></div>
+        <img src="/img/portfolio/barmobile.webp" alt="" width="1200" height="750" decoding="async">
+      </div>
+      <div class="phone"><img src="/img/portfolio/mobile/barmobile.webp" alt="" width="600" height="1298" decoding="async"></div>
+    </div>
+  </div>
 </section>
 
 <!-- COSA INCLUDE -->
-<section class="include reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Cosa include ogni sito</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Tutto quello che serve,<br>niente di superfluo.</h2>
+<section class="sec include">
+  <div class="sec-kicker">Cosa include ogni sito</div>
+  <h2 class="sec-title">Tutto quello che serve,<br>niente di superfluo.</h2>
   <div class="include-grid">
     <div class="include-item">
       <div class="include-icon">🎨</div>
@@ -324,9 +370,9 @@ gtag('consent', 'default', {
 </section>
 
 <!-- PACCHETTI -->
-<section class="pacchetti reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Prezzi</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Scegli il tuo pacchetto.</h2>
+<section class="sec pacchetti">
+  <div class="sec-kicker">Prezzi</div>
+  <h2 class="sec-title">Scegli il tuo pacchetto.</h2>
   <div class="pacchetti-grid">
 
     <div class="pacchetto">
@@ -389,13 +435,13 @@ gtag('consent', 'default', {
     </div>
 
   </div>
-  <p style="text-align:center;margin-top:24px;font-size:13px;color:#666">Ogni progetto è diverso — <a href="#" onclick="openContactModal('Siti Web');return false;" style="color:var(--blue-bright);text-decoration:none">contattami per un preventivo su misura</a>.</p>
+  <p class="pacchetti-note">Ogni progetto è diverso — <a href="#" onclick="openContactModal('Siti Web');return false;" style="color:var(--blue-bright);text-decoration:none">contattami per un preventivo su misura</a>.</p>
 </section>
 
 <!-- PROCESSO -->
-<section class="processo reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Come funziona</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Cinque passi.<br>Zero sorprese.</h2>
+<section class="sec processo">
+  <div class="sec-kicker">Come funziona</div>
+  <h2 class="sec-title">Cinque passi.<br>Zero sorprese.</h2>
   <div class="processo-steps">
     <div class="step">
       <div class="step-num">01</div>
@@ -431,12 +477,12 @@ gtag('consent', 'default', {
 </section>
 
 <!-- PORTFOLIO PREVIEW -->
-<section class="preview reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">I miei progetti</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Portfolio 2026.</h2>
+<section class="sec preview">
+  <div class="sec-kicker">I miei progetti</div>
+  <h2 class="sec-title">Portfolio 2026.</h2>
   <div class="preview-grid">
     <div class="preview-card">
-      <iframe src="https://beautybyksenia.com" loading="lazy" sandbox="allow-same-origin allow-scripts" title="Beauty by Ksenia"></iframe>
+      <img src="/img/portfolio/beautybyksenia.webp" alt="Sito Beauty by Ksenia" width="1200" height="750" loading="lazy" decoding="async">
       <div class="preview-overlay">
         <div class="preview-tag">Permanent Makeup · Brooklyn NY</div>
         <div class="preview-name">Beauty by Ksenia</div>
@@ -444,7 +490,7 @@ gtag('consent', 'default', {
       </div>
     </div>
     <div class="preview-card">
-      <iframe src="https://blackmobiledetailing.com" loading="lazy" sandbox="allow-same-origin allow-scripts" title="Black Mobile Detailing"></iframe>
+      <img src="/img/portfolio/blackmobiledetailing.webp" alt="Sito Black Mobile Detailing" width="1200" height="750" loading="lazy" decoding="async">
       <div class="preview-overlay">
         <div class="preview-tag">Car Detailing · Toronto CA</div>
         <div class="preview-name">Black Mobile Detailing</div>
@@ -452,49 +498,55 @@ gtag('consent', 'default', {
       </div>
     </div>
   </div>
-  <div style="text-align:center;margin-top:24px">
-    <a href="/portfolio/" class="btn-outline" style="display:inline-flex">Vedi tutti i progetti →</a>
+  <div class="preview-more">
+    <a href="/portfolio/" class="btn-outline">Vedi tutti i progetti →</a>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="domande reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Domande frequenti</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Hai dubbi?</h2>
+<section class="sec domande">
+  <div class="domande-grid">
+  <div>
+  <div class="sec-kicker">Domande frequenti</div>
+  <h2 class="sec-title">Hai dubbi?</h2>
   <p class="domande-note">Le domande più comuni che mi vengono fatte prima di iniziare un progetto.</p>
+  </div>
   <div class="faq-list">
     <div class="faq-item">
-      <div class="faq-q">Quanto tempo ci vuole per fare il mio sito? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Quanto tempo ci vuole per fare il mio sito? <span class="faq-icon">+</span></div>
       <div class="faq-a">Una landing page richiede circa 1 settimana. Un sito multipage circa 2 settimane. Un e-commerce circa 3 settimane. I tempi dipendono soprattutto da quanto velocemente mi invii i materiali.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Ho bisogno di comprare un dominio e un hosting? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Ho bisogno di comprare un dominio e un hosting? <span class="faq-icon">+</span></div>
       <div class="faq-a">Sì, dominio e hosting sono a tuo carico — è importante che siano di tua proprietà. Ti aiuto a sceglierli e a configurarli. Per un sito base bastano 3-5€ al mese.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Il sito sarà ottimizzato per Google? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Il sito sarà ottimizzato per Google? <span class="faq-icon">+</span></div>
       <div class="faq-a">Sì, le basi SEO sono incluse in tutti i pacchetti: meta title, description, struttura heading, URL leggibili, sitemap. Per una strategia SEO completa con articoli e keyword research, guarda il servizio SEO+AEO.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Posso pagare a rate? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Posso pagare a rate? <span class="faq-icon">+</span></div>
       <div class="faq-a">Dipende dal progetto. Scrivimi e troviamo insieme una soluzione.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Lavori solo a Bari? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Lavori solo a Bari? <span class="faq-icon">+</span></div>
       <div class="faq-a">No, lavoro con clienti in tutta Italia e all'estero. Ho realizzato siti per clienti a New York, Toronto, Roma e altri. Tutto si gestisce comodamente online.</div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- CTA FINALE -->
-<section class="cta-finale reveal">
-  <h2>Pronto a<br>iniziare?</h2>
-  <p>Scrivimi, ti rispondo entro 24 ore. Oppure se sei a Bari, possiamo prendere un caffè.</p>
+<div class="cta-wrap">
+<section class="cta-finale">
+  <div><h2>Pronto a<br>iniziare?</h2>
+  <p>Scrivimi, ti rispondo entro 24 ore. Oppure se sei a Bari, possiamo prendere un caffè.</p></div>
   <div class="cta-finale-btns">
     <a href="#" onclick="openContactModal('Siti Web');return false;" class="btn-primary">Contattami ora →</a>
     <a href="/portfolio/" class="btn-outline">Vedi il portfolio</a>
   </div>
 </section>
+</div>
 
 <!-- FOOTER -->
 {% include "footer.njk" %}
@@ -514,6 +566,8 @@ document.querySelectorAll('.faq-item').forEach(item => {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   });
+  const q = item.querySelector('.faq-q');
+  if (q) q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); } });
 });
 
 </script>

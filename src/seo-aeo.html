@@ -85,135 +85,189 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 .nav-cta:hover{background:var(--blue-dark)!important}
 
-/* HERO */
-.hero{min-height:85vh;display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:700px;position:relative;z-index:1;margin:0 auto;text-align:center}
-.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
-.hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
-.hero-title{font-family:var(--font-d);font-size:clamp(56px,8vw,116px);line-height:.88;letter-spacing:.02em;margin-bottom:28px;color:#fff}
-.hero-title span{color:var(--blue-bright)}
-.hero-desc{font-size:16px;line-height:1.85;color:#ccc;max-width:520px;margin-bottom:40px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:14px 36px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,99,235,0.5)}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.2);color:#ddd;padding:14px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.12em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s}
-.btn-outline:hover{border-color:var(--blue-bright);color:#fff}
+/* HERO-BASE */
+:root{--line:rgba(255,255,255,.09);--wrap:1344px;--panel:#0f1115}
+a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px}
+.sec{padding:112px 48px}
+.sec>*{max-width:var(--wrap);margin-left:auto;margin-right:auto}
+.sec-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:12px}
+.sec-title{font-family:var(--font-d);font-weight:400;font-size:clamp(44px,5vw,80px);letter-spacing:.01em;line-height:.9;color:#fff}
 
-/* SEO vs AEO */
-.differenza{padding:80px 48px;background:var(--gray)}
-.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px}
-.diff-card{background:var(--black);padding:40px 32px}
-.diff-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px}
-.diff-card:first-child .diff-label{color:var(--blue-bright)}
-.diff-card:last-child .diff-label{color:#a78bfa}
-.diff-title{font-family:var(--font-d);font-size:32px;letter-spacing:.04em;color:#fff;margin-bottom:14px}
-.diff-desc{font-size:13px;line-height:1.85;color:#999;margin-bottom:20px}
-.diff-examples{display:flex;flex-direction:column;gap:8px}
-.diff-ex{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:2px;font-size:12px;color:#aaa;font-style:italic}
-.diff-ex::before{content:'🔍 ';font-style:normal}
-.diff-card:last-child .diff-ex::before{content:'🤖 ';font-style:normal}
-
-/* COSA FACCIO */
-.cosa{padding:80px 48px}
-.cosa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
-.cosa-item{background:var(--gray);padding:32px 28px;position:relative;overflow:hidden;transition:background .3s}
-.cosa-item:hover{background:var(--gray-mid)}
-.cosa-item::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--blue-bright);transition:height .4s}
-.cosa-item:hover::before{height:100%}
-.cosa-icon{font-size:24px;margin-bottom:16px}
-.cosa-name{font-family:var(--font-d);font-size:20px;letter-spacing:.04em;color:#fff;margin-bottom:8px}
-.cosa-desc{font-size:12px;line-height:1.75;color:#888}
-
-/* PREZZI */
-.prezzi{padding:80px 48px;background:var(--gray)}
-.prezzi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
-.prezzo{background:var(--black);padding:36px 28px;display:flex;flex-direction:column;position:relative}
-.prezzo.featured{background:var(--blue)}
-.prezzo-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#fff;color:var(--blue);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:5px 16px;font-weight:500;white-space:nowrap}
-.prezzo-name{font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
-.prezzo:not(.featured) .prezzo-name{color:var(--blue-bright)}
-.prezzo.featured .prezzo-name{color:rgba(255,255,255,0.8)}
-.prezzo-val{font-family:var(--font-d);font-size:52px;line-height:1;color:#fff;margin-bottom:4px}
-.prezzo-val sup{font-size:22px;vertical-align:top;margin-top:8px}
-.prezzo-period{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:.1em;margin-bottom:20px}
-.prezzo-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1);flex:1}
-.prezzo-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
-.prezzo-list li{font-size:12px;display:flex;align-items:flex-start;gap:8px;color:rgba(255,255,255,0.8);line-height:1.5}
-.prezzo-list li::before{content:'✓';color:var(--blue-bright);flex-shrink:0}
-.prezzo.featured .prezzo-list li::before{color:#fff}
-.prezzo-btn{display:block;text-align:center;padding:12px;font-family:var(--font-d);font-size:16px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s;margin-top:auto}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:15px 32px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,99,235,.45)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.22);color:#e6e6e6;padding:15px 30px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s,background .2s}
+.btn-outline:hover{border-color:var(--blue-bright);color:#fff;background:rgba(91,155,255,.08)}
+.prezzi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.prezzo{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:38px 32px 32px;position:relative;display:flex;flex-direction:column}
+.prezzo.featured{background:var(--blue);border-color:var(--blue);box-shadow:0 30px 80px rgba(37,99,235,.35)}
+.prezzo-badge{position:absolute;top:18px;right:18px;background:#fff;color:var(--blue);font-size:11px;letter-spacing:.08em;padding:5px 12px;border-radius:999px;font-weight:500;white-space:nowrap}
+.prezzo-name{font-family:var(--font-d);font-size:28px;letter-spacing:.04em;margin-bottom:20px;color:#fff}
+.prezzo-val{font-family:var(--font-d);font-size:80px;line-height:.9;color:#fff;margin-bottom:6px}
+.prezzo-val sup{font-size:22px;vertical-align:top;margin-right:6px;letter-spacing:.06em;color:var(--blue-bright)}
+.prezzo.featured .prezzo-val sup{color:rgba(255,255,255,.75)}
+.prezzo-period{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.08em;margin-bottom:22px}
+.prezzo-desc{font-size:14px;line-height:1.65;color:rgba(255,255,255,.78);margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12)}
+.prezzo-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:30px}
+.prezzo-list li{font-size:14px;display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.85);line-height:1.45}
+.prezzo-list li::before{content:'';flex-shrink:0;width:16px;height:16px;margin-top:1px;border-radius:50%;background:rgba(91,155,255,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%235b9bff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.prezzo.featured .prezzo-list li::before{background-color:rgba(255,255,255,.2);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.prezzo-btn{display:block;text-align:center;padding:14px;font-family:var(--font-d);font-size:19px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s;margin-top:auto}
 .prezzo:not(.featured) .prezzo-btn{background:var(--blue);color:#fff}
 .prezzo.featured .prezzo-btn{background:#fff;color:var(--blue)}
-.prezzo-btn:hover{transform:translateY(-2px)}
-
-/* PROCESSO */
-.processo{padding:80px 48px}
-.processo-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
-.step{background:var(--gray);padding:32px 24px;position:relative}
-.step-num{font-family:var(--font-d);font-size:52px;color:rgba(91,155,255,0.12);line-height:1;margin-bottom:16px}
-.step-title{font-family:var(--font-d);font-size:20px;letter-spacing:.04em;color:#fff;margin-bottom:8px}
-.step-desc{font-size:12px;line-height:1.7;color:#777}
-.step-arrow{position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:rgba(91,155,255,0.25);font-size:20px;z-index:1}
-.step:last-child .step-arrow{display:none}
-
-/* TOPIC CLUSTER */
-.cluster{padding:80px 48px;background:var(--gray)}
-.cluster-visual{margin-top:48px;background:var(--black);padding:40px;border-radius:4px;position:relative}
-.cluster-center{text-align:center;margin-bottom:32px}
-.cluster-center-box{display:inline-block;background:var(--blue);padding:16px 32px;border-radius:4px;font-family:var(--font-d);font-size:18px;letter-spacing:.06em;color:#fff}
-.cluster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.cluster-item{background:rgba(91,155,255,0.08);border:1px solid rgba(91,155,255,0.2);padding:16px;border-radius:4px;text-align:center}
-.cluster-item-tag{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:6px}
-.cluster-item-title{font-size:12px;color:#ccc;line-height:1.5}
-.cluster-arrow{text-align:center;color:rgba(91,155,255,0.3);font-size:20px;margin:12px 0}
+.prezzo-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+/* PROCESSO — linea del tempo */
+.processo{background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.processo-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:64px;position:relative}
+.processo-steps::before{content:'';position:absolute;left:0;right:0;top:27px;height:1px;background:linear-gradient(90deg,var(--blue-bright),rgba(91,155,255,.15))}
+.step{position:relative}
+.step-num{position:relative;width:56px;height:56px;border-radius:50%;background:var(--black);border:1px solid rgba(91,155,255,.5);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:24px;color:var(--blue-bright);margin-bottom:24px}
+.step:first-child .step-num{background:var(--blue);border-color:var(--blue);color:#fff}
+.step-title{font-family:var(--font-d);font-size:26px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
+.step-desc{font-size:14px;line-height:1.65;color:#9a9a9a}
+.step-arrow{display:none}
 
 /* FAQ */
-.faq{padding:80px 48px}
-.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px}
-.faq-item{background:var(--gray);overflow:hidden}
-.faq-q{padding:24px 28px;font-family:var(--font-d);font-size:18px;letter-spacing:.03em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:rgba(91,155,255,.35)}
+.faq-q{padding:22px 24px;font-family:var(--font-d);font-size:22px;letter-spacing:.02em;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
 .faq-q:hover{color:var(--blue-bright)}
-.faq-icon{color:var(--blue-bright);font-size:22px;flex-shrink:0;transition:transform .3s}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-a{padding:0 28px 24px;font-size:13px;line-height:1.85;color:#999;display:none}
+.faq-icon{width:30px;height:30px;border-radius:50%;border:1px solid rgba(91,155,255,.4);display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:var(--font-b);font-size:18px;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue);color:#fff;border-color:var(--blue)}
+.faq-a{padding:0 24px 22px;font-size:15px;line-height:1.75;color:#a9a9a9;display:none}
 .faq-item.open .faq-a{display:block}
 
-/* CTA */
-.cta-finale{padding:80px 48px;text-align:center;position:relative;overflow:hidden}
-.cta-finale::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none}
-.cta-finale h2{font-family:var(--font-d);font-size:clamp(40px,6vw,80px);line-height:.92;color:#fff;margin-bottom:16px;position:relative;z-index:1}
-.cta-finale p{font-size:15px;color:#aaa;max-width:420px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1}
-.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+/* CTA FINALE */
+.cta-wrap{padding:0 48px 112px}
+.cta-finale{max-width:var(--wrap);margin:0 auto;position:relative;overflow:hidden;background:var(--blue);border-radius:var(--radius-lg);padding:64px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:end}
+.cta-finale::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(90deg,#000,transparent 70%);mask-image:linear-gradient(90deg,#000,transparent 70%);pointer-events:none}
+.cta-finale>*{position:relative;z-index:1}
+.cta-finale h2{font-family:var(--font-d);font-weight:400;font-size:clamp(56px,7vw,112px);line-height:.86;color:#fff}
+.cta-finale p{font-size:16px;color:rgba(255,255,255,.9);max-width:460px;line-height:1.7;margin-top:18px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.cta-finale .btn-primary{background:#fff;color:var(--blue)}
+.cta-finale .btn-primary:hover{background:#fff;box-shadow:0 10px 32px rgba(0,0,0,.25)}
+.cta-finale .btn-outline{border-color:rgba(255,255,255,.55);color:#fff}
+.cta-finale .btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff}
 
 /* WA FLOAT */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;text-decoration:none}
 .wa-float:hover{transform:scale(1.1)}
 .wa-float svg{width:28px;height:28px;fill:#fff}
 
-/* FOOTER */
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
+/* ===== VARIANTE E — "Ricerca": hero centrato con barra di ricerca, SEO a sinistra e AI a destra ===== */
+/* HERO */
+.hero{padding:170px 48px 104px;position:relative;overflow:hidden;text-align:center;border-bottom:1px solid var(--line)}
+.hero::before{content:'';position:absolute;left:50%;top:-30%;transform:translateX(-50%);width:1100px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.22) 0%,rgba(167,139,250,.08) 40%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:980px;margin:0 auto}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:24px}
+.hero-tag::before,.hero-tag::after{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
+.hero-title{font-family:var(--font-d);font-weight:400;font-size:clamp(72px,10vw,160px);line-height:.85;letter-spacing:.01em;margin-bottom:28px;color:#fff}
+.hero-title span{color:var(--blue-bright)}
+.hero-desc{font-size:17px;line-height:1.7;color:#cfcfcf;max-width:600px;margin:0 auto 40px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.searchbar{margin:0 auto 44px;max-width:640px;display:flex;align-items:center;gap:14px;padding:16px 22px;background:#fff;border-radius:999px;box-shadow:0 20px 60px rgba(37,99,235,.35),0 0 0 6px rgba(91,155,255,.12);text-align:left}
+.searchbar svg{width:22px;height:22px;flex-shrink:0}
+.searchbar .q{flex:1;font-size:17px;color:#1f2937;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.searchbar .caret{display:inline-block;width:2px;height:20px;background:var(--blue);vertical-align:-4px;margin-left:2px;animation:blink 1s steps(1) infinite}
+.searchbar .ai{flex-shrink:0;font-size:12px;font-weight:500;color:#fff;background:linear-gradient(135deg,var(--blue),#a78bfa);padding:6px 12px;border-radius:999px}
+@keyframes blink{50%{opacity:0}}
+
+/* SEO vs AEO */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px}
+.diff-card{border-radius:var(--radius-lg);padding:40px 36px;border:1px solid var(--line);background:var(--gray)}
+.diff-card:last-child{background:linear-gradient(160deg,rgba(167,139,250,.14),rgba(22,22,22,1) 55%);border-color:rgba(167,139,250,.28)}
+.diff-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;color:var(--blue-bright)}
+.diff-card:last-child .diff-label{color:#c4b5fd!important}
+.diff-title{font-family:var(--font-d);font-size:44px;letter-spacing:.01em;line-height:.95;color:#fff;margin-bottom:14px}
+.diff-desc{font-size:15px;line-height:1.7;color:#b0b0b0;margin-bottom:26px}
+.diff-examples{display:flex;flex-direction:column;gap:10px}
+.diff-ex{display:flex;align-items:center;gap:12px;background:#fff;color:#1f2937;padding:12px 18px;border-radius:999px;font-size:14px}
+.diff-ex::before{content:'';width:16px;height:16px;flex-shrink:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563EB' stroke-width='2.4'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E") center/contain no-repeat}
+.diff-card:last-child .diff-ex{background:rgba(167,139,250,.14);color:#ede9fe;border-radius:18px 18px 18px 4px;border:1px solid rgba(167,139,250,.3);align-self:flex-start}
+.diff-card:last-child .diff-ex::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c4b5fd'%3E%3Cpath d='M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* COSA FACCIO */
+.cosa{background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cosa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:1px solid var(--line)}
+.cosa-item{padding:36px 32px 40px;border-bottom:1px solid var(--line);transition:background .3s}
+.cosa-item:not(:nth-child(3n)){border-right:1px solid var(--line)}
+.cosa-item:hover{background:rgba(37,99,235,.06)}
+.cosa-icon{font-size:26px;margin-bottom:22px}
+.cosa-name{font-family:var(--font-d);font-size:30px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
+.cosa-desc{font-size:14px;line-height:1.7;color:#a9a9a9}
+
+/* PREZZI */
+.prezzi .sec-title{margin-bottom:0}
+.processo-steps{grid-template-columns:repeat(4,1fr)}
+.cluster-intro{margin-left:max(0px,calc((100% - var(--wrap))/2))!important}
+
+/* TOPIC CLUSTER */
+.cluster{background:#0a0a0a;border-top:1px solid var(--line)}
+.cluster-intro{font-size:15px;color:#a9a9a9;max-width:620px;margin-top:18px;line-height:1.75}
+.cluster-visual{margin-top:56px;position:relative}
+.cluster-center{text-align:center;margin-bottom:0;position:relative}
+.cluster-center-box{display:inline-block;background:var(--blue);padding:20px 40px;border-radius:999px;font-family:var(--font-d);font-size:28px;letter-spacing:.04em;color:#fff;box-shadow:0 20px 60px rgba(37,99,235,.4)}
+.cluster-arrow{text-align:center;color:var(--blue-bright);font-size:13px;letter-spacing:.1em;margin:0;padding:22px 0;position:relative}
+.cluster-arrow::before{content:'';position:absolute;left:12.5%;right:12.5%;bottom:0;height:22px;border:1px solid rgba(91,155,255,.45);border-bottom:0;border-radius:14px 14px 0 0}
+.cluster-arrow::after{content:'';position:absolute;left:50%;top:0;height:calc(100% - 22px);width:1px;background:rgba(91,155,255,.45)}
+.cluster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cluster-item{background:var(--gray);border:1px solid rgba(91,155,255,.25);padding:20px;border-radius:var(--radius-md);text-align:left}
+.cluster-item-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:8px}
+.cluster-item-title{font-size:15px;color:#e0e0e0;line-height:1.45}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.searchbar .caret{animation:none}html{scroll-behavior:auto}}
+
+@media(max-width:1100px){
+  .prezzi-grid{grid-template-columns:1fr;max-width:560px}
+  .processo-steps{grid-template-columns:1fr;gap:28px}
+  .processo-steps::before{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto;background:linear-gradient(180deg,var(--blue-bright),rgba(91,155,255,.15))}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:0 20px}
+  .step-num{grid-row:1/3;margin:0}
+  .faq-grid{grid-template-columns:1fr;gap:32px}
+  .cta-finale{grid-template-columns:1fr}
+  .cosa-grid{grid-template-columns:1fr 1fr}
+  .cosa-item:not(:nth-child(3n)){border-right:0}
+  .cosa-item:nth-child(odd){border-right:1px solid var(--line)}
+  .cluster-grid{grid-template-columns:1fr 1fr}
+  .cluster-arrow::before{display:none}
+  .cluster-arrow::after{height:100%}
+}
 @media(max-width:768px){
   nav{padding:14px 18px}
   .nav-links{display:none}
   .nav-burger{display:flex}
-  .hero{padding:100px 20px 60px;min-height:auto}
-  .differenza{padding:56px 20px}
+  .hero{padding:120px 20px 64px}
+  .hero-title{font-size:clamp(60px,18vw,92px)}
+  .searchbar{padding:12px 16px}
+  .searchbar .q{font-size:14px}
+  .searchbar .ai{display:none}
+  .hero-btns,.cta-btns{flex-direction:column}
+  .hero-btns a,.cta-btns a{justify-content:center}
+  .sec{padding:72px 20px}
   .diff-grid{grid-template-columns:1fr}
-  .cosa{padding:56px 20px}
+  .diff-card{padding:28px 22px}
   .cosa-grid{grid-template-columns:1fr}
-  .prezzi{padding:56px 20px}
-  .prezzi-grid{grid-template-columns:1fr}
-  .processo{padding:56px 20px}
-  .processo-steps{grid-template-columns:1fr 1fr}
-  .step-arrow{display:none}
-  .cluster{padding:56px 20px}
-  .cluster-grid{grid-template-columns:1fr 1fr}
-  .faq{padding:56px 20px}
-  .cta-finale{padding:56px 20px}
+  .cosa-item:nth-child(odd){border-right:0}
+  .cosa-item{padding:28px 4px}
+  .cluster-grid{grid-template-columns:1fr}
+  .cluster-center-box{font-size:22px;padding:16px 24px}
+  .cta-wrap{padding:0 20px 72px}
+  .cta-finale{padding:40px 24px}
   .wa-float{bottom:20px;right:20px;width:48px;height:48px}
 }
 
@@ -325,6 +379,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-tag">SEO + AEO · Bari</div>
     <h1 class="hero-title">Trovato<br>su Google<br><span>e dall'AI.</span></h1>
     <p class="hero-desc">SEO classico più ottimizzazione per Google AI Overview, ChatGPT, Claude e Gemini. Il traffico organico non si paga — si costruisce. Con contenuti di qualità e strategia.</p>
+    <div class="searchbar" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <span class="q">qual è il miglior ristorante sul mare a Bari?<span class="caret"></span></span>
+      <span class="ai">AI Overview</span>
+    </div>
     <div class="hero-btns">
       <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="btn-primary">Richiedi audit →</a>
       <a href="#differenza" class="btn-outline">SEO vs AEO</a>
@@ -333,9 +392,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- SEO vs AEO -->
-<section class="differenza reveal" id="differenza">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Due approcci, un obiettivo</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">SEO + AEO:<br>cosa cambia.</h2>
+<section class="sec differenza" id="differenza">
+  <div class="sec-kicker">Due approcci, un obiettivo</div>
+  <h2 class="sec-title">SEO + AEO:<br>cosa cambia.</h2>
   <div class="diff-grid">
     <div class="diff-card">
       <div class="diff-label">SEO — Search Engine Optimization</div>
@@ -361,9 +420,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- COSA FACCIO -->
-<section class="cosa reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Cosa faccio</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Tutto il necessario<br>per posizionarti.</h2>
+<section class="sec cosa">
+  <div class="sec-kicker">Cosa faccio</div>
+  <h2 class="sec-title">Tutto il necessario<br>per posizionarti.</h2>
   <div class="cosa-grid">
     <div class="cosa-item">
       <div class="cosa-icon">🔬</div>
@@ -399,9 +458,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- PREZZI -->
-<section class="prezzi reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Prezzi</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Investimento trasparente.</h2>
+<section class="sec prezzi">
+  <div class="sec-kicker">Prezzi</div>
+  <h2 class="sec-title">Investimento trasparente.</h2>
   <div class="prezzi-grid">
     <div class="prezzo">
       <div class="prezzo-name">SEO Audit</div>
@@ -450,9 +509,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- PROCESSO -->
-<section class="processo reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Come funziona</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Dal audit<br>ai risultati.</h2>
+<section class="sec processo">
+  <div class="sec-kicker">Come funziona</div>
+  <h2 class="sec-title">Dal audit<br>ai risultati.</h2>
   <div class="processo-steps">
     <div class="step">
       <div class="step-num">01</div>
@@ -482,10 +541,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- TOPIC CLUSTER -->
-<section class="cluster reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">La strategia</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Topic cluster:<br>come funziona.</h2>
-  <p style="font-size:14px;color:#888;max-width:560px;margin-top:16px;line-height:1.8">Ogni servizio ha una pagina principale (pillar page) ottimizzata per la ricerca principale. Attorno ad essa, articoli del blog che rispondono a domande specifiche e rimandano alla pagina principale. Google capisce che sei l'esperto del settore.</p>
+<section class="sec cluster">
+  <div class="sec-kicker">La strategia</div>
+  <h2 class="sec-title">Topic cluster:<br>come funziona.</h2>
+  <p class="cluster-intro">Ogni servizio ha una pagina principale (pillar page) ottimizzata per la ricerca principale. Attorno ad essa, articoli del blog che rispondono a domande specifiche e rimandano alla pagina principale. Google capisce che sei l'esperto del settore.</p>
   <div class="cluster-visual">
     <div class="cluster-center">
       <div class="cluster-center-box">Pagina servizio "Siti Web Bari"</div>
@@ -513,42 +572,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FAQ -->
-<section class="faq reveal">
-  <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:14px">Domande frequenti</div>
-  <h2 style="font-family:var(--font-d);font-size:clamp(36px,4vw,56px);letter-spacing:.02em;color:#fff">Hai dubbi sul SEO?</h2>
+<section class="sec faq">
+  <div class="faq-grid">
+  <div>
+  <div class="sec-kicker">Domande frequenti</div>
+  <h2 class="sec-title">Hai dubbi sul SEO?</h2>
+  </div>
   <div class="faq-list">
     <div class="faq-item">
-      <div class="faq-q">Quanto tempo prima di vedere risultati? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Quanto tempo prima di vedere risultati? <span class="faq-icon">+</span></div>
       <div class="faq-a">Il SEO richiede pazienza: i primi miglioramenti si vedono in 3-4 mesi, risultati significativi in 8-9 mesi. Non è una bacchetta magica — è un investimento a lungo termine. Per risultati immediati, Google Ads è la scelta giusta.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Ho bisogno di WordPress per il SEO? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Ho bisogno di WordPress per il SEO? <span class="faq-icon">+</span></div>
       <div class="faq-a">No. Lavoro con qualsiasi tipo di sito — HTML, WordPress o altra piattaforma. Valutiamo insieme la situazione.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Cos'è esattamente l'AEO e perché mi interessa? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Cos'è esattamente l'AEO e perché mi interessa? <span class="faq-icon">+</span></div>
       <div class="faq-a">AEO è l'ottimizzazione per apparire nelle risposte generate da AI come Google AI Overview, ChatGPT, Claude e Gemini. Sempre più persone fanno domande dirette agli AI invece di cercare su Google. Chi si posiziona ora ha un vantaggio enorme sui competitor.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Gli articoli li scrivi tu o devo scriverli io? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">Gli articoli li scrivi tu o devo scriverli io? <span class="faq-icon">+</span></div>
       <div class="faq-a">Li scrivo io, ottimizzati per SEO e AEO, e li consegno pronti alla pubblicazione. Tu mi fornisci solo le informazioni specifiche sulla tua attività che solo tu conosci — il resto lo gestisco io.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">SEO o Google Ads: cosa scelgo? <span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0">SEO o Google Ads: cosa scelgo? <span class="faq-icon">+</span></div>
       <div class="faq-a">Dipende dal tuo obiettivo. Google Ads porta risultati immediati ma si paga sempre. Il SEO richiede mesi ma poi il traffico è gratuito. La combinazione ideale: Ads subito per generare clienti, SEO in parallelo per costruire il futuro.</div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- CTA -->
-<section class="cta-finale reveal">
-  <h2>Inizia con<br>l'audit.</h2>
-  <p>Analizzo il tuo sito e ti dico esattamente cosa fare per migliorare il posizionamento su Google e sulle AI.</p>
+<div class="cta-wrap">
+<section class="cta-finale">
+  <div><h2>Inizia con<br>l'audit.</h2>
+  <p>Analizzo il tuo sito e ti dico esattamente cosa fare per migliorare il posizionamento su Google e sulle AI.</p></div>
   <div class="cta-btns">
     <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="btn-primary">Richiedi audit →</a>
     <a href="/google-ecosystem/" class="btn-outline">Google Ads →</a>
   </div>
 </section>
+</div>
 
 <!-- FOOTER -->
 {% include "footer.njk" %}
@@ -567,6 +632,8 @@ document.querySelectorAll('.faq-item').forEach(item => {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   });
+  const q = item.querySelector('.faq-q');
+  if (q) q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); } });
 });
 </script>
 <!-- WhatsApp floating button -->

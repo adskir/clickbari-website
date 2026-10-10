@@ -62,6 +62,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a:hover{color:#fff}
 .nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:var(--radius-md)}
 
+/* NAV — Sito regalo (voce evidenziata) */
+.nav-links{align-items:center}
+.nav-links a.nav-gift{display:inline-flex;align-items:center;gap:7px;color:#0b0b0f;background:#FFD23F;padding:8px 13px 7px 11px;border-radius:999px;font-weight:500;transform:rotate(-3deg);box-shadow:0 0 0 3px rgba(255,210,63,.22);transition:transform .2s,box-shadow .2s;animation:navGift 7s ease-in-out 2s infinite}
+.nav-links a.nav-gift:hover,.nav-links a.nav-gift.active{color:#0b0b0f;animation:none;transform:rotate(0) scale(1.05);box-shadow:0 0 0 5px rgba(255,210,63,.3)}
+.nav-gift svg{width:15px;height:15px;flex:none}
+@keyframes navGift{0%,88%,100%{transform:rotate(-3deg)}91%{transform:rotate(5deg) scale(1.08)}94%{transform:rotate(-7deg) scale(1.08)}97%{transform:rotate(2deg)}}
+.mobile-nav-link.mobile-gift{color:#FFD23F}
+.mobile-gift .gift-badge{font-family:var(--font-b);font-size:12px;letter-spacing:.1em;background:#FFD23F;color:#0b0b0f;padding:5px 11px;border-radius:999px;font-weight:500}
+@media(max-width:1180px) and (min-width:769px){.nav-links{gap:18px}.nav-links a{letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){.nav-links a.nav-gift{animation:none}}
+
 /* HAMBURGER */
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}
 .nav-burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
@@ -203,6 +214,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="/chi-sono/">Chi sono</a></li>
     <li><a href="/servizi/">Servizi</a></li>
     <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/sito-regalo/" class="nav-gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3-5-4-5-1.5S10 8 12 8zm0 0c1.5-3 5-4 5-1.5S14 8 12 8z"/></svg>Sito regalo</a></li>
     <li><a href="/blog/">Blog</a></li>
     <li><a href="#" class="nav-cta" onclick="openContactModal();return false;">Contattami</a></li>
   </ul>
@@ -216,6 +228,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li class="mobile-nav-item"><a href="/chi-sono/" class="mobile-nav-link">Chi sono</a></li>
     <li class="mobile-nav-item"><a href="/servizi/" class="mobile-nav-link">Servizi</a></li>
     <li class="mobile-nav-item"><a href="/portfolio/" class="mobile-nav-link">Portfolio</a></li>
+    <li class="mobile-nav-item"><a href="/sito-regalo/" class="mobile-nav-link mobile-gift">Sito regalo <span class="gift-badge">99 €</span></a></li>
     <li class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link">Blog</a></li>
   </ul>
   <a href="#"  onclick="openContactModal();return false;" class="mobile-cta">Contattami →</a>

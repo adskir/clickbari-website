@@ -71,7 +71,7 @@ push su main → GitHub Action (.github/workflows/build.yml)
   (`.p-card-desc` è clampata a 3 righe); niente card "featured"/più larga.
 - Ogni card: `id` = slug del progetto, `data-tags` = valori filtrabili
   separati da spazio. I filtri attivi sono `sito-web`, `google-ads`,
-  `in-corso` (bottoni in `.filtri`); altri valori (es. `seo`) possono stare
+  `in-corso`, `sito-regalo` (bottoni in `.filtri`); altri valori (es. `seo`) possono stare
   in `data-tags` per coerenza/futuro ma non hanno un bottone filtro oggi.
 - **Card con sito pubblicato**: `.p-card-visual` contiene un `<img>` verso
   `/img/portfolio/<slug>.webp` (1200×750, `width`/`height` espliciti,
@@ -87,6 +87,28 @@ push su main → GitHub Action (.github/workflows/build.yml)
   sostituisci `.p-card-visual-placeholder`/`.placeholder-name`/
   `.coming-badge` con l'`<img>` nello stesso formato delle altre card
   (vedi sopra) e togli il tag "In corso" se non più pertinente.
+
+## Sito regalo (`src/sito-regalo.html`, URL `/sito-regalo/`)
+
+- Servizio "sito comico in regalo": 99 € tutto incluso, consegna in 72 ore.
+  Pagina volutamente più giocosa del resto del sito (fondo giallo, adesivi,
+  coriandoli), ma con lo stesso nav, footer, cookie banner, modal contatti
+  e GTM delle altre pagine. CSS della pagina con prefisso `rg-`.
+- **Voce di menu evidenziata** "Sito regalo" (pillola gialla `.nav-gift` +
+  voce `.mobile-gift` con badge "99 €"): è duplicata a mano in OGNI pagina
+  (`src/*.html`, `src/_includes/post.njk`, `src/post.njk`), insieme al suo
+  blocco CSS "NAV — Sito regalo" subito prima di `/* HAMBURGER */`. Una
+  nuova pagina deve copiare entrambi.
+- Esempi (demo, non clienti): Kir fa tutto, Nonna a Noleggio, Mimmo il
+  Parcheggiatore — repo GitHub separati (`adskir/max-bari`,
+  `adskir/nonna-a-noleggio`, `adskir/mimmo-parcheggiatore`) pubblicati su
+  Netlify. Screenshot mobile per la pagina in `src/img/regalo/<slug>.webp`
+  (600×1298).
+- Nel portfolio le tre demo hanno `data-tags="sito-regalo"` (filtro
+  "Siti regalo", tag giallo `.p-tag-gift`) e **non** vengono contate nella
+  statistica "Progetti online" dell'hero (solo progetti per clienti).
+- La pagina ha JSON-LD `FAQPage` + `Service`/`Offer` (99 EUR): se cambiano
+  prezzo o FAQ, aggiorna sia il testo visibile sia il JSON-LD.
 
 ## `scripts/screenshots.js`
 

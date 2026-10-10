@@ -50,6 +50,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a.active{color:#fff}
 .nav-cta{background:var(--blue)!important;color:#fff!important;padding:10px 22px;border-radius:var(--radius-md)}
 
+/* NAV — Sito regalo (voce evidenziata) */
+.nav-links{align-items:center}
+.nav-links a.nav-gift{display:inline-flex;align-items:center;gap:7px;color:#0b0b0f;background:#FFD23F;padding:8px 13px 7px 11px;border-radius:999px;font-weight:500;transform:rotate(-3deg);box-shadow:0 0 0 3px rgba(255,210,63,.22);transition:transform .2s,box-shadow .2s;animation:navGift 7s ease-in-out 2s infinite}
+.nav-links a.nav-gift:hover,.nav-links a.nav-gift.active{color:#0b0b0f;animation:none;transform:rotate(0) scale(1.05);box-shadow:0 0 0 5px rgba(255,210,63,.3)}
+.nav-gift svg{width:15px;height:15px;flex:none}
+@keyframes navGift{0%,88%,100%{transform:rotate(-3deg)}91%{transform:rotate(5deg) scale(1.08)}94%{transform:rotate(-7deg) scale(1.08)}97%{transform:rotate(2deg)}}
+.mobile-nav-link.mobile-gift{color:#FFD23F}
+.mobile-gift .gift-badge{font-family:var(--font-b);font-size:12px;letter-spacing:.1em;background:#FFD23F;color:#0b0b0f;padding:5px 11px;border-radius:999px;font-weight:500}
+@media(max-width:1180px) and (min-width:769px){.nav-links{gap:18px}.nav-links a{letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){.nav-links a.nav-gift{animation:none}}
+
 /* HAMBURGER */
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}
 .nav-burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
@@ -109,6 +120,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .filtro:hover{color:#fff}
 .filtro.active{background:var(--blue);color:#fff}
 .filtro.active .n{color:rgba(255,255,255,.7)}
+.filtro-gift{color:#FFD23F}
+.filtro-gift.active{background:#FFD23F;color:#0b0b0f}
+.filtro-gift.active .n{color:rgba(11,11,15,.6)}
+.p-tag-gift{background:rgba(255,210,63,.16);color:#FFD23F}
+.gift-strip{width:min(1344px,calc(100% - 96px));margin:0 auto 32px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap;padding:26px 32px;border-radius:var(--radius-lg);background:#FFD23F;color:#0b0b0f;text-decoration:none;transition:transform .25s}
+.gift-strip:hover{transform:rotate(-.6deg) scale(1.01)}
+.gift-strip b{font-family:var(--font-d);font-weight:400;font-size:clamp(30px,3.4vw,46px);letter-spacing:.03em;line-height:1}
+.gift-strip span{font-size:14px;line-height:1.6;max-width:520px}
+.gift-strip i{font-style:normal;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;background:#0b0b0f;color:#fff;padding:12px 22px;border-radius:var(--radius-md);white-space:nowrap}
+@media(max-width:768px){.gift-strip{width:calc(100% - 40px);padding:24px 22px}}
 
 /* PROGETTI */
 .progetti-wrap{padding:32px 48px 72px;max-width:1344px;margin:0 auto;box-sizing:content-box}
@@ -274,6 +295,7 @@ gtag('consent', 'default', {
     <li><a href="/chi-sono/">Chi sono</a></li>
     <li><a href="/servizi/">Servizi</a></li>
     <li><a href="/portfolio/" class="active">Portfolio</a></li>
+    <li><a href="/sito-regalo/" class="nav-gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3-5-4-5-1.5S10 8 12 8zm0 0c1.5-3 5-4 5-1.5S14 8 12 8z"/></svg>Sito regalo</a></li>
     <li><a href="/blog/">Blog</a></li>
     <li><a href="#" class="nav-cta" onclick="openContactModal();return false;">Contattami</a></li>
   </ul>
@@ -287,6 +309,7 @@ gtag('consent', 'default', {
     <li class="mobile-nav-item"><a href="/chi-sono/" class="mobile-nav-link">Chi sono</a></li>
     <li class="mobile-nav-item"><a href="/servizi/" class="mobile-nav-link">Servizi</a></li>
     <li class="mobile-nav-item"><a href="/portfolio/" class="mobile-nav-link active">Portfolio</a></li>
+    <li class="mobile-nav-item"><a href="/sito-regalo/" class="mobile-nav-link mobile-gift">Sito regalo <span class="gift-badge">99 €</span></a></li>
     <li class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link">Blog</a></li>
   </ul>
   <a href="#"  onclick="openContactModal();return false;" class="mobile-cta">Contattami →</a>
@@ -329,6 +352,7 @@ gtag('consent', 'default', {
     <button class="filtro" data-filter="sito-web">Sito Web<span class="n"></span></button>
     <button class="filtro" data-filter="google-ads">Google Ads<span class="n"></span></button>
     <button class="filtro" data-filter="in-corso">In corso<span class="n"></span></button>
+    <button class="filtro filtro-gift" data-filter="sito-regalo">Siti regalo<span class="n"></span></button>
   </div>
 </div>
 
@@ -537,8 +561,71 @@ gtag('consent', 'default', {
       </div>
     </div>
 
+    <!-- KIR-FA-TUTTO (sito regalo) -->
+    <div class="p-card reveal" id="kir-fa-tutto" data-tags="sito-regalo">
+      <div class="p-card-visual">
+        <img src="/img/portfolio/kir-fa-tutto.webp" alt="Sito regalo Kir fa tutto" loading="lazy" decoding="async" width="1200" height="750">
+        <div class="p-card-visual-overlay"></div>
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-tags">
+          <span class="p-tag p-tag-gift">Sito regalo</span>
+          <span class="p-tag p-tag-gray">Demo · Bari</span>
+        </div>
+        <div class="p-card-name">Kir fa tutto</div>
+        <p class="p-card-desc">Il russo coi baffi che a Bari fa tutto: riparazioni, chiavi in aeroporto, autista sobrio. Foto scontornata con baffi animati, stato «adesso è…» e WhatsApp vero.</p>
+      </div>
+      <div class="p-card-footer">
+        <span class="p-card-url">kir-fa-tutto.netlify.app</span>
+        <a href="https://kir-fa-tutto.netlify.app/" target="_blank" rel="noopener" class="p-card-link">Apri la demo →</a>
+      </div>
+    </div>
+
+    <!-- NONNA-A-NOLEGGIO (sito regalo) -->
+    <div class="p-card reveal" id="nonna-a-noleggio" data-tags="sito-regalo">
+      <div class="p-card-visual">
+        <img src="/img/portfolio/nonna-a-noleggio.webp" alt="Sito regalo Nonna a Noleggio" loading="lazy" decoding="async" width="1200" height="750">
+        <div class="p-card-visual-overlay"></div>
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-tags">
+          <span class="p-tag p-tag-gift">Sito regalo</span>
+          <span class="p-tag p-tag-gray">Demo · Bari</span>
+        </div>
+        <div class="p-card-name">Nonna a Noleggio</div>
+        <p class="p-card-desc">La nonna barese a ore: corso di orecchiette, telefonata «hai mangiato?» e giudizio del fidanzato. Personaggio disegnato e animato, calcolatore delle porzioni.</p>
+      </div>
+      <div class="p-card-footer">
+        <span class="p-card-url">nonna-a-noleggio.netlify.app</span>
+        <a href="https://nonna-a-noleggio.netlify.app/" target="_blank" rel="noopener" class="p-card-link">Apri la demo →</a>
+      </div>
+    </div>
+
+    <!-- MIMMO-PARCHEGGIATORE (sito regalo) -->
+    <div class="p-card reveal" id="mimmo-parcheggiatore" data-tags="sito-regalo">
+      <div class="p-card-visual">
+        <img src="/img/portfolio/mimmo-parcheggiatore.webp" alt="Sito regalo Mimmo il Parcheggiatore" loading="lazy" decoding="async" width="1200" height="750">
+        <div class="p-card-visual-overlay"></div>
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-tags">
+          <span class="p-tag p-tag-gift">Sito regalo</span>
+          <span class="p-tag p-tag-gray">Demo · Bari</span>
+        </div>
+        <div class="p-card-name">Mimmo il Parcheggiatore</div>
+        <p class="p-card-desc">Il tieni-posto di Murat che fa lo scontrino. Scena notturna animata, parchimetro interattivo che stampa il ticket e segnaletica stradale come sistema grafico.</p>
+      </div>
+      <div class="p-card-footer">
+        <span class="p-card-url">mimmo-parcheggiatore.netlify.app</span>
+        <a href="https://mimmo-parcheggiatore.netlify.app/" target="_blank" rel="noopener" class="p-card-link">Apri la demo →</a>
+      </div>
+    </div>
+
   </div>
 </div>
+
+<!-- SITO REGALO -->
+<a class="gift-strip reveal" href="/sito-regalo/"><div><b>Novità: il sito regalo</b><br><span>Un sito comico e animato su un amico, un parente o un collega. 99 € tutto incluso, pronto in 72 ore.</span></div><i>Scopri →</i></a>
 
 <!-- CTA -->
 <div class="portfolio-cta reveal">
@@ -599,7 +686,9 @@ const filtri = document.querySelectorAll('.filtro');
 const cards = document.querySelectorAll('.p-card');
 const countFor = f => [...cards].filter(c => f === 'tutti' || c.dataset.tags.split(' ').includes(f)).length;
 filtri.forEach(f => { const n = f.querySelector('.n'); if (n) n.textContent = countFor(f.dataset.filter); });
-document.querySelectorAll('[data-stat]').forEach(el => { el.textContent = el.dataset.stat === 'progetti' ? cards.length : countFor(el.dataset.stat); });
+// I siti regalo sono demo: non contano tra i progetti per clienti
+const clientCards = [...cards].filter(c => !c.dataset.tags.split(' ').includes('sito-regalo'));
+document.querySelectorAll('[data-stat]').forEach(el => { el.textContent = el.dataset.stat === 'progetti' ? clientCards.length : countFor(el.dataset.stat); });
 
 filtri.forEach(f => {
   f.addEventListener('click', () => {

@@ -106,7 +106,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-cta{display:inline-flex;align-items:center;gap:14px;background:var(--blue);color:#fff;padding:16px 34px;font-family:var(--font-d);font-size:22px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:var(--radius-md);transition:background .2s,transform .2s,box-shadow .2s}
 .hero-cta:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 40px rgba(37,99,235,.45)}
 .hero-cta-arrow{font-size:20px;transition:transform .2s}
-.hero-cta:hover .hero-cta-arrow{transform:translateX(4px)}
+.hero-cta:hover .hero-cta-arrow{transform:translateY(3px)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-cta-ghost{background:transparent;border:1px solid rgba(255,255,255,.28)}
+.hero-cta-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff;box-shadow:none}
+#servizi{scroll-margin-top:72px}
 
 .fan{--w:220px;position:relative;height:calc(var(--w) * 844 / 390 + 60px)}
 .fan .phone{position:absolute;top:30px;left:50%;width:var(--w);padding:8px;background:#0d0d0d;border-radius:calc(var(--w) * .17);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.6),0 40px 80px rgba(0,0,0,.7);text-decoration:none;transition:transform .5s cubic-bezier(.22,1,.36,1)}
@@ -227,6 +231,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .hero{padding:110px 20px 64px}
   .hero-title{font-size:clamp(64px,19vw,96px)}
   .hero-desc{font-size:16px}
+  .hero-btns{flex-direction:column}
+  .hero-btns .hero-cta{justify-content:center}
   .fan{--w:140px}
   .fan .p1{transform:translateX(-112%) translateY(24px) rotate(-8deg)}
   .fan .p3{transform:translateX(12%) translateY(24px) rotate(8deg)}
@@ -328,10 +334,10 @@ gtag('consent', 'default', {
         FAI CRESCERE<br>IL TUO<br><span>BUSINESS.</span>
       </h1>
       <p class="hero-desc">Siti web, Google Ads, SEO e automazione AI. Trasformo la tua comunicazione in risultati concreti.</p>
-      <a href="/servizi/" class="hero-cta">
-        Inizia ora
-        <span class="hero-cta-arrow" aria-hidden="true">→</span>
-      </a>
+      <div class="hero-btns">
+        <a href="#servizi" class="hero-cta">Scopri i servizi <span class="hero-cta-arrow" aria-hidden="true">↓</span></a>
+        <a href="/portfolio/" class="hero-cta hero-cta-ghost">Guarda i lavori</a>
+      </div>
     </div>
     <div class="fan reveal" aria-label="Alcuni lavori recenti">
       <a class="phone p1" href="/portfolio/#cappuccinipuglia" aria-label="Cappuccini di Puglia"><img src="/img/portfolio/mobile/cappuccinipuglia.webp" alt="" width="600" height="1298" decoding="async"></a>
@@ -360,14 +366,13 @@ gtag('consent', 'default', {
 </div>
 
 <!-- SERVIZI -->
-<section class="section">
+<section class="section" id="servizi">
   <div class="wrap">
     <div class="section-header">
       <div>
         <div class="section-tag">Cosa faccio</div>
         <h2 class="section-title">I miei servizi</h2>
       </div>
-      <a href="/servizi/" class="section-link">Tutti i servizi →</a>
     </div>
     <ul class="svc-list">
       <li class="svc">

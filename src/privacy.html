@@ -77,6 +77,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @media(max-width:1180px) and (min-width:769px){.nav-links{gap:18px}.nav-links a{letter-spacing:.08em}}
 @media(prefers-reduced-motion:reduce){.nav-links a.nav-gift{animation:none}}
 
+/* NAV — Home + menu a tendina Servizi */
+.nav-dd{position:relative}
+.nav-dd>a::after{content:'';display:inline-block;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:0 0 3px 8px;opacity:.7}
+.nav-dd::before{content:'';position:absolute;left:-10px;right:-10px;top:100%;height:18px}
+.nav-dd-menu{position:absolute;top:100%;left:50%;transform:translate(-50%,6px);min-width:240px;padding:8px;margin:0;background:rgba(14,14,14,.98);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-md);box-shadow:0 20px 50px rgba(0,0,0,.5);list-style:none;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;z-index:120}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{opacity:1;visibility:visible;transform:translate(-50%,14px)}
+.nav-dd-menu li{display:block}
+.nav-dd-menu a{display:block;padding:11px 14px;border-radius:6px;white-space:nowrap}
+.nav-dd-menu a:hover,.nav-dd-menu a.active{background:rgba(91,155,255,.12);color:#fff}
+.mobile-menu{z-index:99!important}
+.mobile-sub-list{list-style:none;margin:-6px 0 10px;padding:0 0 4px 16px;border-left:2px solid rgba(91,155,255,.3)}
+.mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9a9a9a;text-decoration:none}
+.mobile-sub-list a:hover,.mobile-sub-list a.active{color:var(--blue-bright)}
+@media(max-width:960px){nav .nav-links{display:none}nav .nav-burger{display:flex}}
+
 /* HAMBURGER */
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}
 .nav-burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
@@ -214,8 +229,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </a>
   <ul class="nav-links">
+    <li><a href="/">Home</a></li>
     <li><a href="/chi-sono/">Chi sono</a></li>
-    <li><a href="/servizi/">Servizi</a></li>
+    <li class="nav-dd"><a href="/servizi/">Servizi</a><ul class="nav-dd-menu"><li><a href="/siti-web/">Siti Web</a></li><li><a href="/google-ecosystem/">Google Ecosystem</a></li><li><a href="/seo-aeo/">SEO + AEO</a></li><li><a href="/automazione/">Automazione AI</a></li></ul></li>
     <li><a href="/portfolio/">Portfolio</a></li>
     <li><a href="/sito-regalo/" class="nav-gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3-5-4-5-1.5S10 8 12 8zm0 0c1.5-3 5-4 5-1.5S14 8 12 8z"/></svg>Sito regalo</a></li>
     <li><a href="/blog/">Blog</a></li>
@@ -228,8 +244,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <ul class="mobile-nav-list">
+    <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">Home</a></li>
     <li class="mobile-nav-item"><a href="/chi-sono/" class="mobile-nav-link">Chi sono</a></li>
-    <li class="mobile-nav-item"><a href="/servizi/" class="mobile-nav-link">Servizi</a></li>
+    <li class="mobile-nav-item"><a href="/servizi/" class="mobile-nav-link">Servizi</a><ul class="mobile-sub-list"><li><a href="/siti-web/">Siti Web</a></li><li><a href="/google-ecosystem/">Google Ecosystem</a></li><li><a href="/seo-aeo/">SEO + AEO</a></li><li><a href="/automazione/">Automazione AI</a></li></ul></li>
     <li class="mobile-nav-item"><a href="/portfolio/" class="mobile-nav-link">Portfolio</a></li>
     <li class="mobile-nav-item"><a href="/sito-regalo/" class="mobile-nav-link mobile-gift">Sito regalo <span class="gift-badge">99 €</span></a></li>
     <li class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link">Blog</a></li>

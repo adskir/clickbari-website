@@ -12,7 +12,7 @@
 <meta name="description" content="Sono Kir e non sono un'agenzia: dal 2012 lavoro nel digitale tra siti web, SEO e Google Ads. Ho scelto Bari per le persone. Ecco la mia storia.">
 <link rel="canonical" href="https://clickbari.it/chi-sono/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -100,7 +100,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta:hover{background:var(--blue-dark)!important}
 
 /* ===== VARIANTE G — "Ritratto": foto a tutta altezza, storia in stile rivista con corsivo serif ===== */
-:root{--line:rgba(255,255,255,.09);--wrap:1344px;--serif:'Instrument Serif',Georgia,serif}
+:root{--line:rgba(255,255,255,.09);--wrap:1344px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px}
 
 /* HERO */
@@ -110,9 +110,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outlin
 .hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
 .hero-title{font-family:var(--font-d);font-weight:400;font-size:clamp(72px,8.4vw,148px);line-height:.85;letter-spacing:.01em;margin-bottom:32px;color:#fff}
 .hero-title span{color:var(--blue-bright)}
-.hero-intro{font-family:var(--serif);font-size:clamp(22px,2vw,28px);line-height:1.4;color:#d8d8d8;margin-bottom:40px;max-width:540px}
+.hero-intro{font-family:var(--font-b);font-weight:300;font-size:18px;line-height:1.7;color:#cfcfcf;margin-bottom:40px;max-width:540px}
 .hero-intro strong{color:#fff;font-weight:400}
-.hero-intro em{color:var(--blue-bright);font-style:italic}
+.hero-intro em{color:var(--blue-bright);font-style:normal}
 .hero-left>a{align-self:flex-start;padding:12px 20px;border:1px solid rgba(91,155,255,.4);border-radius:var(--radius-md);transition:background .2s,border-color .2s}
 .hero-left>a:hover{background:rgba(91,155,255,.1);border-color:var(--blue-bright)}
 
@@ -135,10 +135,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outlin
 .storia-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:96px;align-items:start;max-width:var(--wrap);margin:0 auto}
 .storia-text{position:sticky;top:110px}
 .storia-text p{font-size:16px;line-height:1.8;color:#c4c4c4;margin-bottom:20px;max-width:560px}
-.storia-text p:first-of-type{font-family:var(--serif);font-size:clamp(24px,2.2vw,32px);line-height:1.35;color:#ececec}
+.storia-text p:first-of-type{font-size:20px;line-height:1.6;color:#ececec}
 .storia-text p:last-child{margin-bottom:0}
 .storia-text strong{color:#fff;font-weight:500}
-.storia-text p:first-of-type strong{font-weight:400;font-style:italic;color:var(--blue-bright)}
+.storia-text p:first-of-type strong{font-weight:500;color:var(--blue-bright)}
 .storia-text .highlight{color:var(--blue-bright)}
 
 /* TIMELINE */
@@ -168,7 +168,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outlin
 .caffe{max-width:var(--wrap);margin:0 auto;background:var(--blue);border-radius:var(--radius-lg);padding:72px 64px;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 64px;align-items:end}
 .caffe::before{content:'☕';position:absolute;font-size:260px;opacity:.12;right:-20px;top:-40px;pointer-events:none;transform:rotate(-12deg)}
 .caffe-title{font-family:var(--font-d);font-weight:400;font-size:clamp(56px,7vw,112px);line-height:.86;color:#fff;position:relative;z-index:1;grid-column:1}
-.caffe-desc{font-family:var(--serif);font-size:clamp(20px,1.8vw,26px);line-height:1.4;color:rgba(255,255,255,.95);max-width:560px;position:relative;z-index:1;grid-column:1}
+.caffe-desc{font-size:17px;line-height:1.65;color:rgba(255,255,255,.95);max-width:560px;position:relative;z-index:1;grid-column:1}
 .caffe-btn{grid-column:2;grid-row:1/3;align-self:end;display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--blue);padding:16px 40px;font-family:var(--font-d);font-size:22px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:transform .2s,box-shadow .2s;position:relative;z-index:1}
 .caffe-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.3)}
 
@@ -250,16 +250,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outlin
   .hero-btns{justify-content:center}
   .hero-left>a{align-self:center}
 }
-
-/* SEZIONI CHIARE — fascia "carta" con angoli arrotondati (stile della ex pagina Servizi) */
-.is-light{--paper:#EDF1F7;--paper-2:#E2E8F2;--ink:#0A0F1F;--ink-2:#4A5468;--rule:rgba(10,15,31,.14);--line:var(--rule);background:var(--paper)!important;color:var(--ink);border:0!important;border-radius:var(--radius-lg);position:relative}
-.is-light{margin-left:max(48px,calc((100% - var(--wrap,1344px)) / 2));margin-right:max(48px,calc((100% - var(--wrap,1344px)) / 2))}
-@media(max-width:768px){.is-light{margin-left:20px;margin-right:20px}}
-.is-light :is(.sec-kicker,.section-tag){color:var(--blue)!important}
-.is-light :is(.sec-title,.section-title){color:var(--ink)!important}
-.is-light :is(.sec-title,.section-title) span{color:var(--blue)!important}
-.is-light .valore-name{color:var(--ink)}
-.is-light .valore-desc{color:var(--ink-2)}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -417,7 +407,7 @@ gtag('consent', 'default', {
 </section>
 
 <!-- VALORI -->
-<section class="valori is-light">
+<section class="valori">
   <div class="valori-head">
     <div class="section-tag">Come lavoro</div>
     <h2 class="section-title">Quello che mi<br>differenzia</h2>

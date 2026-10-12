@@ -294,6 +294,8 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 
 /* SEZIONI CHIARE — fascia "carta" con angoli arrotondati (stile della ex pagina Servizi) */
 .is-light{--paper:#EDF1F7;--paper-2:#E2E8F2;--ink:#0A0F1F;--ink-2:#4A5468;--rule:rgba(10,15,31,.14);--line:var(--rule);background:var(--paper)!important;color:var(--ink);border:0!important;border-radius:var(--radius-lg);position:relative}
+.is-light{margin-left:max(48px,calc((100% - var(--wrap,1344px)) / 2));margin-right:max(48px,calc((100% - var(--wrap,1344px)) / 2))}
+@media(max-width:768px){.is-light{margin-left:20px;margin-right:20px}}
 .is-light :is(.sec-kicker,.section-tag){color:var(--blue)!important}
 .is-light :is(.sec-title,.section-title){color:var(--ink)!important}
 .is-light :is(.sec-title,.section-title) span{color:var(--blue)!important}

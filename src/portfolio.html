@@ -290,6 +290,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .hero-btns{justify-content:center}
   .hero-left>a{align-self:center}
 }
+
+/* SEZIONI CHIARE — fascia "carta" con angoli arrotondati (stile della ex pagina Servizi) */
+.is-light{--paper:#EDF1F7;--paper-2:#E2E8F2;--ink:#0A0F1F;--ink-2:#4A5468;--rule:rgba(10,15,31,.14);--line:var(--rule);background:var(--paper)!important;color:var(--ink);border:0!important;border-radius:var(--radius-lg);position:relative}
+.is-light :is(.sec-kicker,.section-tag){color:var(--blue)!important}
+.is-light :is(.sec-title,.section-title){color:var(--ink)!important}
+.is-light :is(.sec-title,.section-title) span{color:var(--blue)!important}
+.light-band{padding:8px 0 24px;margin-top:40px}
+.is-light .filtri-title{color:var(--ink)}
+.is-light .filtri-title small{color:var(--blue)}
+.is-light .p-card{box-shadow:0 20px 50px rgba(10,15,31,.18)}
+.is-light .filtri{background:#fff;border-color:var(--rule)}
+.is-light .filtro{color:var(--ink-2)}
+.is-light .filtro:hover{color:var(--ink)}
+.is-light .filtro.active{color:#fff}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -378,6 +392,7 @@ gtag('consent', 'default', {
   </div>
 </section>
 
+<div class="light-band is-light">
 <!-- FILTRI -->
 <div class="filtri-bar reveal">
   <h2 class="filtri-title"><small>In vetrina</small>Scegli per servizio</h2>
@@ -656,6 +671,7 @@ gtag('consent', 'default', {
     </div>
 
   </div>
+</div>
 </div>
 
 <!-- SITO REGALO -->

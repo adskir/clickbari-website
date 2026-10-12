@@ -40,6 +40,20 @@ o la struttura del portfolio.
   Nuovi elementi arrotondati vanno su una di queste variabili, non su un
   valore fisso in px.
 
+- **Sezioni chiare** (`.is-light`): su ogni pagina principale una fascia
+  "carta" (`#EDF1F7`, angoli `--radius-lg`) interrompe il fondo nero —
+  servizi in home, prezzi sulle pagine servizio, valori in chi-sono,
+  griglia in portfolio, elenco articoli nel blog. Il blocco CSS
+  "SEZIONI CHIARE" è in fondo al `<style>` di ogni pagina (base comune +
+  override specifici della pagina); le card scure dentro la fascia passano
+  a `var(--ink)`.
+- La pagina `/servizi/` è stata eliminata (ottobre 2026): la voce "Servizi"
+  del menu punta a `/#servizi` (elenco servizi in home) con la tendina
+  verso le 4 pagine servizio.
+- Contatti: il bottone "Contattami" del menu (desktop `.nav-cta` e mobile
+  `.mobile-cta`) porta a `/contatti/`; tutti gli altri bottoni di contatto
+  aprono la modale (`openContactModal()`).
+
 ## Deploy
 
 ```

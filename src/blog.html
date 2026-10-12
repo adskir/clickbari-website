@@ -260,6 +260,34 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   .hero-btns{justify-content:center}
   .hero-left>a{align-self:center}
 }
+
+/* SEZIONI CHIARE — fascia "carta" con angoli arrotondati (stile della ex pagina Servizi) */
+.is-light{--paper:#EDF1F7;--paper-2:#E2E8F2;--ink:#0A0F1F;--ink-2:#4A5468;--rule:rgba(10,15,31,.14);--line:var(--rule);background:var(--paper)!important;color:var(--ink);border:0!important;border-radius:var(--radius-lg);position:relative}
+.is-light :is(.sec-kicker,.section-tag){color:var(--blue)!important}
+.is-light :is(.sec-title,.section-title){color:var(--ink)!important}
+.is-light :is(.sec-title,.section-title) span{color:var(--blue)!important}
+.light-band{padding:56px 0 8px;margin-bottom:96px}
+.is-light .blog-count{color:var(--ink-2)}
+.is-light .art-card{color:var(--ink)}
+.is-light .art-title{color:var(--ink)}
+.is-light .art-excerpt{color:var(--ink-2)}
+.is-light .art-date{color:var(--ink-2)}
+.is-light .art-read{color:#6b7385}
+.is-light .art-link{border-color:var(--rule)}
+.is-light .art-link::before{filter:invert(1)}
+.is-light .art-card:hover .art-link::before{filter:none}
+.is-light .art-card::before{background:var(--blue)}
+.is-light .art-card.coming .art-title{color:#8a93a6}
+.is-light .art-card.coming .art-excerpt{color:#9aa2b3}
+.is-light .coming-badge{color:var(--ink-2)}
+.is-light .art-cat.siti{background:rgba(37,99,235,.12);color:var(--blue)}
+.is-light .art-cat.google{background:rgba(234,67,53,.12);color:#c5221f}
+.is-light .art-cat.seo{background:rgba(34,197,94,.14);color:#15803d}
+.is-light .art-cat.auto{background:rgba(168,85,247,.12);color:#7e22ce}
+.is-light .filtri{background:#fff;border-color:var(--rule)}
+.is-light .filtro{color:var(--ink-2)}
+.is-light .filtro:hover{color:var(--ink)}
+.is-light .filtro.active{color:#fff}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -362,6 +390,7 @@ gtag('consent', 'default', {
   </div>
 </div>
 
+<div class="light-band is-light">
 <!-- FILTRI + ARTICOLI -->
 <div class="blog-header">
   <div class="filtri">
@@ -412,6 +441,7 @@ gtag('consent', 'default', {
 {%- endfor %}
 
   </div>
+</div>
 </div>
 
 <!-- NEWSLETTER -->

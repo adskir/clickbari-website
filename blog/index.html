@@ -141,6 +141,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .art-card::before{content:'';position:absolute;left:0;top:-1px;height:1px;width:0;background:var(--blue-bright);transition:width .5s cubic-bezier(.22,1,.36,1)}
 .art-card:hover{background:linear-gradient(90deg,rgba(37,99,235,.08),transparent 70%)}
 .art-card:hover::before{width:100%}
+.art-card.in-view:not(.coming){background:linear-gradient(90deg,rgba(37,99,235,.08),transparent 70%)}
+.art-card.in-view:not(.coming)::before{width:100%}
+.art-card.in-view:not(.coming) .art-link{background:var(--blue);border-color:var(--blue);transform:rotate(-45deg)}
 .art-card-top{flex:1;min-width:0;display:grid;grid-template-columns:170px minmax(0,1fr);gap:6px 32px;align-items:start}
 .art-cat{grid-row:1/3;align-self:start;justify-self:start;display:inline-flex;align-items:center;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-top:6px}
 .art-cat.siti{background:rgba(37,99,235,.15);color:var(--blue-bright)}
@@ -930,6 +933,14 @@ document.querySelector('.newsletter-btn').addEventListener('click', () => {
     });
   });
 })();
+
+// TOUCH: gli articoli si "accendono" quando passano a metà schermo
+if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
+  const ioArt = new IntersectionObserver(entries => {
+    entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+  }, { rootMargin: '-48% 0px -48% 0px' });
+  document.querySelectorAll('.art-card').forEach(el => ioArt.observe(el));
+}
 </script>
 </body>
 </html>

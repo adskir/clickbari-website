@@ -153,6 +153,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .svc-tags span{font-size:11px;letter-spacing:.06em;color:#bcd3ff;background:rgba(91,155,255,.10);border:1px solid rgba(91,155,255,.22);padding:4px 10px;border-radius:var(--radius-sm)}
 .svc-go{width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .25s,border-color .25s,transform .35s}
 .svc-go svg{width:20px;height:20px}
+.svc.in-view{background:linear-gradient(90deg,rgba(37,99,235,.10),transparent 70%)}
+.svc.in-view::before{width:100%}
+.svc.in-view .svc-go{background:var(--blue);border-color:var(--blue);transform:rotate(-45deg)}
 .svc:hover .svc-go{background:var(--blue);border-color:var(--blue);transform:rotate(-45deg)}
 
 /* CHI SONO + NUMERI */
@@ -451,20 +454,20 @@ gtag('consent', 'default', {
       <a href="/portfolio/" class="section-link">Vedi tutti →</a>
     </div>
     <div class="progetti-grid">
-      <a class="progetto-card" href="/portfolio/#beautybyksenia">
-        <div class="progetto-bg"><img src="/img/portfolio/beautybyksenia.webp" alt="Sito Beauty by Ksenia" width="1200" height="750" loading="lazy" decoding="async"></div>
+      <a class="progetto-card" href="/portfolio/#barmobile">
+        <div class="progetto-bg"><img src="/img/portfolio/barmobile.webp" alt="Sito Bar Mobile" width="1200" height="750" loading="lazy" decoding="async"></div>
         <div class="progetto-info">
-          <div class="progetto-tag">Social Media · New York</div>
-          <div class="progetto-name">Beauty by Ksenia</div>
-          <div class="progetto-location">@beautybyksenia</div>
+          <div class="progetto-tag">Sito Web · Bari</div>
+          <div class="progetto-name">Bar Mobile</div>
+          <div class="progetto-location">barmobile.it</div>
         </div>
       </a>
-      <a class="progetto-card" href="/portfolio/#lady-car">
-        <div class="progetto-bg"><img src="/img/portfolio/lady-car.webp" alt="Sito Lady-Car" width="1200" height="750" loading="lazy" decoding="async"></div>
+      <a class="progetto-card" href="/portfolio/#babygreensbari">
+        <div class="progetto-bg"><img src="/img/portfolio/babygreensbari.webp" alt="E-commerce Baby Greens Bari" width="1200" height="750" loading="lazy" decoding="async"></div>
         <div class="progetto-info">
-          <div class="progetto-tag">Google Ads · Roma</div>
-          <div class="progetto-name">Lady-Car</div>
-          <div class="progetto-location">@lady-car</div>
+          <div class="progetto-tag">E-commerce · Bari</div>
+          <div class="progetto-name">Baby Greens Bari</div>
+          <div class="progetto-location">babygreensbari.it</div>
         </div>
       </a>
       <a class="progetto-card" href="/portfolio/#blackmobiledetailing">
@@ -764,6 +767,14 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
     updateConsent(true);
   }
 })();
+
+// TOUCH: le righe dei servizi si "accendono" quando passano a metà schermo (come l'hover su desktop)
+if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+  }, { rootMargin: '-48% 0px -48% 0px' });
+  document.querySelectorAll('.svc').forEach(el => io.observe(el));
+}
 </script>
 
 </body>

@@ -276,6 +276,37 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @media(max-width:600px){
   .price-grid{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ARTICOLO — testo a sinistra, FAQ in colonna laterale (sticky) su desktop */
+.post-wrap{max-width:1240px;margin:0 auto;padding:140px 48px 96px;color:#fff;font-family:var(--font-b);font-weight:300;line-height:1.7}
+.post-head{max-width:900px;margin-bottom:48px}
+.post-cat{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:16px}
+.post-title{font-family:var(--font-d);font-weight:400;font-size:clamp(40px,5.4vw,76px);line-height:.95;margin-bottom:20px;letter-spacing:.01em}
+.post-meta{display:flex;gap:16px;color:#888;font-size:13px}
+.post-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:64px;align-items:start}
+.post-layout.no-faq{grid-template-columns:minmax(0,800px)}
+.post-body{font-size:17px;color:#ddd;min-width:0}
+.post-body>*:first-child{margin-top:0}
+.post-faq{position:sticky;top:100px}
+.post-faq-inner{background:var(--gray);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:28px 26px}
+.post-faq-tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:8px}
+.post-faq-title{font-family:var(--font-d);font-weight:400;font-size:32px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:18px}
+.faq-item{border-top:1px solid rgba(255,255,255,.08)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:16px 0;font-size:15px;font-weight:500;line-height:1.4;color:#fff}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1;color:var(--blue-bright);transition:transform .25s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:14px;line-height:1.7;color:#bbb;padding:0 0 18px}
+.post-faq-cta{display:block;margin-top:6px;padding:14px 16px;text-align:center;border-radius:var(--radius-md);background:var(--blue);color:#fff;font-size:13px;letter-spacing:.06em;text-decoration:none;transition:background .2s}
+.post-faq-cta:hover{background:var(--blue-dark)}
+@media(max-width:1024px){
+  .post-layout{grid-template-columns:minmax(0,1fr);gap:48px}
+  .post-faq{position:static}
+}
+@media(max-width:768px){
+  .post-wrap{padding:110px 20px 72px}
+  .post-title{font-size:clamp(36px,10vw,52px)}
+}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -328,28 +359,36 @@ gtag('consent', 'default', {
   <a href="/contatti/" class="mobile-cta">Contattami →</a>
 </div>
 
-<article style="max-width:740px;margin:0 auto;padding:140px 24px 96px;color:#fff;font-family:var(--font-b);font-weight:300;line-height:1.7">
-  <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:16px">{{ categoryLabel }}</div>
-  <h1 style="font-family:var(--font-d);font-size:clamp(32px,5vw,52px);line-height:1.05;margin-bottom:20px;letter-spacing:.01em">{{ title }}</h1>
-  <div style="display:flex;gap:16px;color:#888;font-size:13px;margin-bottom:48px">
-    <span>{{ date | readableDateIt }}</span>
-    <span>·</span>
-    <span>{{ readTime }} di lettura</span>
-  </div>
-  <div style="font-size:17px;color:#ddd" class="post-body">
-    {{ content | safe }}
-  </div>
-  {% if faq %}
-  <div class="post-faq reveal" style="margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.08)">
-    <h2 style="font-family:var(--font-d);font-size:clamp(22px,3vw,30px);letter-spacing:.03em;color:#fff;margin-bottom:24px">Domande frequenti</h2>
-    {% for item in faq %}
-    <div style="margin-bottom:24px">
-      <h3 style="font-family:var(--font-d);font-size:18px;letter-spacing:.02em;color:#fff;margin-bottom:8px">{{ item.q }}</h3>
-      <p style="font-size:15px;line-height:1.7;color:#ccc">{{ item.a }}</p>
+<article class="post-wrap">
+  <header class="post-head">
+    <div class="post-cat">{{ categoryLabel }}</div>
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta">
+      <span>{{ date | readableDateIt }}</span>
+      <span>·</span>
+      <span>{{ readTime }} di lettura</span>
     </div>
-    {% endfor %}
+  </header>
+  <div class="post-layout{% if not faq %} no-faq{% endif %}">
+    <div class="post-body">
+      {{ content | safe }}
+    </div>
+    {% if faq %}
+    <aside class="post-faq" aria-labelledby="faq-title">
+      <div class="post-faq-inner">
+        <div class="post-faq-tag">FAQ</div>
+        <h2 id="faq-title" class="post-faq-title">Domande frequenti</h2>
+        {% for item in faq %}
+        <details class="faq-item"{% if loop.first %} open{% endif %}>
+          <summary>{{ item.q }}</summary>
+          <p>{{ item.a }}</p>
+        </details>
+        {% endfor %}
+        <a href="#" class="post-faq-cta" onclick="openContactModal();return false;">Hai altre domande? Scrivimi →</a>
+      </div>
+    </aside>
+    {% endif %}
   </div>
-  {% endif %}
 </article>
 
 {% include "footer.njk" %}

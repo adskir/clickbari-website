@@ -72,6 +72,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .mobile-sub-list{list-style:none;margin:-6px 0 10px;padding:0 0 4px 16px;border-left:2px solid rgba(91,155,255,.3)}
 .mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9a9a9a;text-decoration:none}
 .mobile-sub-list a:hover,.mobile-sub-list a.active{color:var(--blue-bright)}
+.mobile-row{display:flex;align-items:center;gap:8px}
+.mobile-row .mobile-nav-link{flex:1}
+.mobile-sub-toggle{width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-md);color:#ddd;cursor:pointer;transition:background .2s,transform .3s}
+.mobile-sub-toggle svg{width:18px;height:18px;transition:transform .3s}
+.mobile-nav-item.open .mobile-sub-toggle{background:rgba(91,155,255,.15);border-color:rgba(91,155,255,.4);color:var(--blue-bright)}
+.mobile-nav-item.open .mobile-sub-toggle svg{transform:rotate(180deg)}
+.mobile-sub-list{display:none}
+.mobile-nav-item.open .mobile-sub-list{display:block}
 @media(max-width:960px){nav .nav-links{display:none}nav .nav-burger{display:flex}}
 
 /* HAMBURGER */
@@ -242,6 +250,16 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   .modal-body{padding:22px 20px 26px}
   .modal-canvas-wrap{height:90px}
 }
+
+/* MOBILE — hero centrato su tutte le pagine (come SEO + AEO) */
+@media(max-width:768px){
+  .hero,.hero-inner,.hero-left,.hero-content,.hero-copy{text-align:center}
+  .hero-tag{justify-content:center}
+  .hero-tag::after{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
+  .hero-desc,.hero-intro{margin-left:auto!important;margin-right:auto!important;border-left:0!important;padding-left:0!important}
+  .hero-btns{justify-content:center}
+  .hero-left>a{align-self:center}
+}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -293,7 +311,7 @@ gtag('consent', 'default', {
   <ul class="mobile-nav-list">
     <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">Home</a></li>
     <li class="mobile-nav-item"><a href="/chi-sono/" class="mobile-nav-link">Chi sono</a></li>
-    <li class="mobile-nav-item"><a href="/servizi/" class="mobile-nav-link">Servizi</a><ul class="mobile-sub-list"><li><a href="/siti-web/">Siti Web</a></li><li><a href="/google-ecosystem/">Google Ecosystem</a></li><li><a href="/seo-aeo/">SEO + AEO</a></li><li><a href="/automazione/">Automazione AI</a></li></ul></li>
+    <li class="mobile-nav-item has-sub"><div class="mobile-row"><a href="/servizi/" class="mobile-nav-link">Servizi</a><button type="button" class="mobile-sub-toggle" aria-expanded="false" aria-label="Mostra i servizi" onclick="var i=this.closest('.mobile-nav-item');i.classList.toggle('open');this.setAttribute('aria-expanded',i.classList.contains('open'))"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button></div><ul class="mobile-sub-list"><li><a href="/siti-web/">Siti Web</a></li><li><a href="/google-ecosystem/">Google Ecosystem</a></li><li><a href="/seo-aeo/">SEO + AEO</a></li><li><a href="/automazione/">Automazione AI</a></li></ul></li>
     <li class="mobile-nav-item"><a href="/portfolio/" class="mobile-nav-link">Portfolio</a></li>
     <li class="mobile-nav-item"><a href="/sito-regalo/" class="mobile-nav-link mobile-gift">Sito regalo <span class="gift-badge">99 €</span></a></li>
     <li class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link active">Blog</a></li>

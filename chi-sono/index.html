@@ -250,6 +250,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outlin
   .hero-btns{justify-content:center}
   .hero-left>a{align-self:center}
 }
+
+/* SEZIONI CHIARE — fascia "carta" con angoli arrotondati (stile della ex pagina Servizi) */
+.is-light{--paper:#EDF1F7;--paper-2:#E2E8F2;--ink:#0A0F1F;--ink-2:#4A5468;--rule:rgba(10,15,31,.14);--line:var(--rule);background:var(--paper)!important;color:var(--ink);border:0!important;border-radius:var(--radius-lg);position:relative}
+.is-light :is(.sec-kicker,.section-tag){color:var(--blue)!important}
+.is-light :is(.sec-title,.section-title){color:var(--ink)!important}
+.is-light :is(.sec-title,.section-title) span{color:var(--blue)!important}
+.is-light .valore-name{color:var(--ink)}
+.is-light .valore-desc{color:var(--ink-2)}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -407,7 +415,7 @@ gtag('consent', 'default', {
 </section>
 
 <!-- VALORI -->
-<section class="valori">
+<section class="valori is-light">
   <div class="valori-head">
     <div class="section-tag">Come lavoro</div>
     <h2 class="section-title">Quello che mi<br>differenzia</h2>

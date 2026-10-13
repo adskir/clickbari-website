@@ -466,6 +466,11 @@ sup.eur.eur.eur.eur{color:inherit!important;margin:0 0 0 6px!important;font-size
 .pacchetto:not(.featured) .pacchetto-desc,.pacchetto:not(.featured) .pacchetto-list li{color:#000!important}
 .pacchetto:not(.featured) .pacchetto-period{color:#1a1d24!important}
 .pacchetto:not(.featured) .pacchetto-list li[style]{color:#3A4152!important}
+
+/* link "Opzionale" nelle liste dei pacchetti */
+.pk-link{color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.pacchetto.featured .pk-link{color:var(--blue-bright)}
+.pk-link:hover{opacity:.8}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -569,11 +574,12 @@ gtag('consent', 'default', {
         <ul class="pacchetto-list">
         <li>1 pagina completa</li>
         <li>Design personalizzato</li>
-        <li>Form contatti</li>
-        <li>WhatsApp integrato</li>
+        <li>Form contatti + WhatsApp</li>
         <li>Mobile responsive</li>
-        <li>SEO base</li>
+        <li>SEO di base per Google</li>
         <li>Consegna in 24 ore</li>
+        <li>Opzionale: <a class="pk-link" href="/google-ecosystem/">Google Analytics 4 + GTM</a></li>
+        <li>Opzionale: <a class="pk-link" href="/automazione/">chatbot e integrazioni AI</a></li>
         <li style="color:rgba(255,255,255,0.4);font-style:italic">Gestione sito: 200 €/anno (hosting, dominio, backup, fino a 5 modifiche al mese)</li>
       </ul>
         <button type="button" class="pk-more-btn">Mostra tutto</button>
@@ -595,14 +601,14 @@ gtag('consent', 'default', {
       <div class="pk-back">
         <div class="pk-back-head"><span>Sito Vetrina</span></div>
         <ul class="pacchetto-list">
-        <li>5-8 pagine (Home, Servizi, Chi siamo, Contatti, GDPR)</li>
+        <li>5-8 pagine (Home, Servizi, Galleria, Recensioni, Contatti, GDPR)</li>
         <li>Design personalizzato</li>
         <li>Mobile responsive</li>
-        <li>SEO on-page</li>
+        <li>SEO on-page: titoli, testi e struttura ottimizzati per Google</li>
         <li>WhatsApp + form contatti</li>
-        <li>Google Analytics 4 + GTM — su richiesta</li>
-        <li>Integrazioni AI e chatbot — su richiesta</li>
-        <li>Consegna in circa 2 settimane</li>
+        <li>Consegna a partire da 72 ore</li>
+        <li>Opzionale: <a class="pk-link" href="/google-ecosystem/">Google Analytics 4 + GTM</a></li>
+        <li>Opzionale: <a class="pk-link" href="/automazione/">chatbot e integrazioni AI</a></li>
         <li style="color:rgba(255,255,255,0.7);font-style:italic">Gestione sito: 300 €/anno (hosting, dominio, backup, fino a 15 modifiche al mese)</li>
       </ul>
         <button type="button" class="pk-more-btn">Mostra tutto</button>
@@ -625,14 +631,14 @@ gtag('consent', 'default', {
         <ul class="pacchetto-list">
           <li>Catalogo prodotti con categorie, filtri e varianti</li>
           <li>Carrello e checkout semplice e veloce</li>
-          <li>Pagamenti online: carta, PayPal, Apple Pay e Google Pay</li>
+          <li>Pagamenti online: carta, PayPal, Apple Pay, Google Pay e Klarna (anche a rate)</li>
           <li>Gestione ordini e magazzino</li>
           <li>Spedizioni e calcolo dei costi</li>
           <li>CRM ed email automatiche ai clienti</li>
           <li>Pannello admin facile da usare</li>
           <li>SEO per le schede prodotto</li>
           <li>Mobile responsive</li>
-          <li>Consegna in circa 3 settimane</li>
+          <li>Consegna a partire da 1 settimana</li>
           <li style="color:rgba(255,255,255,0.4);font-style:italic">Gestione sito: 400 €/anno (hosting, dominio, backup, fino a 30 modifiche al mese; per Shopify l'abbonamento è escluso)</li>
         </ul>
         <button type="button" class="pk-more-btn">Mostra tutto</button>
@@ -642,7 +648,7 @@ gtag('consent', 'default', {
     </div>
 
   </div>
-  <p class="pacchetti-note">Ogni progetto è diverso — <a href="#" onclick="openContactModal('Siti Web');return false;" style="color:var(--blue-bright);text-decoration:none">contattami per un preventivo su misura</a>.</p>
+  <p class="pacchetti-note">Hosting e dominio sono inclusi nella gestione annuale del sito: trovi il prezzo dentro ogni pacchetto, in «Cosa include».</p>
 </section>
 
 <!-- PROCESSO -->
@@ -759,7 +765,7 @@ gtag('consent', 'default', {
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Quanto tempo ci vuole per fare il mio sito? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Una landing page può essere online già in 24 ore, un sito multipage in circa 2 settimane, un e-commerce in circa 3 settimane. I tempi partono da quando ricevo i materiali per il sito: se non li hai ancora pronti, ti aiuto io a prepararli. Hai una scadenza urgente? Ne parliamo e troviamo una soluzione su misura.</div>
+      <div class="faq-a">Una landing page può essere online già in 24 ore, un sito multipage a partire da 72 ore, un e-commerce a partire da 1 settimana. I tempi partono da quando ricevo i materiali per il sito: se non li hai ancora pronti, ti aiuto io a prepararli. Hai una scadenza urgente? Ne parliamo e troviamo una soluzione su misura.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Ho bisogno di comprare un dominio e un hosting? <span class="faq-icon">+</span></div>
@@ -778,8 +784,8 @@ gtag('consent', 'default', {
       <div class="faq-a">Certo! Puoi scegliere: un pannello di amministrazione semplice per modificare testi e foto, oppure una soluzione più moderna, in cui fai le modifiche scrivendo a un assistente AI, come in una chat. Se preferisci non pensarci, me ne occupo io con la gestione annuale, che include anche hosting e dominio.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Lavori solo a Bari? <span class="faq-icon">+</span></div>
-      <div class="faq-a">No, lavoro con clienti in tutta Italia e all'estero. Ho realizzato siti per clienti a New York, Toronto, Roma e altri. Tutto si gestisce comodamente online.</div>
+      <div class="faq-q" role="button" tabindex="0">Come fai a essere così veloce? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Lavoro su un solo progetto alla volta: quando inizio il tuo sito, è l'unico su cui lavoro, senza clienti in parallelo. Tutta la mia attenzione è sul tuo progetto, dall'inizio alla consegna. In più uso strumenti di intelligenza artificiale per le parti ripetitive, così il mio tempo va dove conta: design, testi e dettagli su misura. Niente modelli preconfezionati: ogni sito nasce da zero per la tua attività.</div>
     </div>
   </div>
 </div>

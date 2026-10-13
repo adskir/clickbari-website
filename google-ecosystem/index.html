@@ -1239,6 +1239,13 @@ document.querySelectorAll('.faq-item').forEach(item => {
       if (phone()) {
         const f = card.classList.toggle('flipped');
         front.inert = f; back.inert = !f;
+        if (!f && back.classList.contains('all')) {
+          // tornando al fronte richiudi "Mostra tutto", così la carta torna compatta
+          back.classList.remove('all');
+          const m = back.querySelector('.pk-more-btn');
+          if (m) m.textContent = 'Mostra tutto (+' + (back.querySelectorAll('li').length - 6) + ')';
+          setTimeout(() => fit(card), 350);
+        }
       } else {
         const open = !card.classList.contains('open');
         [card].forEach(c => {
@@ -1249,7 +1256,12 @@ document.querySelectorAll('.faq-item').forEach(item => {
     }));
   });
   reset();
-  window.addEventListener('resize', () => { if (phone() !== mode) { mode = phone(); reset(); } else cards.forEach(fit); });
+  let lastW = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === lastW) return; // su mobile la barra degli indirizzi cambia solo l'altezza: ignora
+    lastW = window.innerWidth;
+    if (phone() !== mode) { mode = phone(); reset(); } else cards.forEach(fit);
+  });
   window.addEventListener('load', () => cards.forEach(fit));
   if (document.fonts) document.fonts.ready.then(() => cards.forEach(fit));
 })();

@@ -102,7 +102,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .mobile-cta:hover{background:var(--blue-dark)}
 
 /* HERO — tutto centrato */
-.hero{position:relative;overflow:hidden;padding:170px 48px 120px;border-bottom:1px solid var(--line);min-height:min(92vh,980px);display:flex;align-items:center;text-align:center}
+.hero{position:relative;overflow:hidden;padding:170px 48px 120px;border-bottom:1px solid var(--line);min-height:min(92vh,980px);min-height:min(92svh,980px);display:flex;align-items:center;text-align:center}
 #neural-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;opacity:.45;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,#000 10%,transparent 80%);mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,#000 10%,transparent 80%)}
 .hero::after{content:'';position:absolute;left:50%;margin-left:-410px;top:-30%;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.24) 0%,rgba(37,99,235,.06) 42%,transparent 70%);pointer-events:none;z-index:0}
 .hero-grid{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;align-items:center}
@@ -786,7 +786,8 @@ function draw() {
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 window.addEventListener('load', () => { resize(); if (reduceMotion) { draw(); cancelAnimationFrame(animId); } else draw(); });
-window.addEventListener('resize', () => { cancelAnimationFrame(animId); resize(); draw(); });
+let lastCanvasW = window.innerWidth;
+window.addEventListener('resize', () => { if (window.innerWidth === lastCanvasW) return; lastCanvasW = window.innerWidth; cancelAnimationFrame(animId); resize(); draw(); });
 
 // SCROLL REVEAL
 const obs = new IntersectionObserver((entries) => {
@@ -922,7 +923,7 @@ if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in wind
 document.querySelectorAll('.rv-card').forEach(card => {
   const p = card.querySelector('.rv-text p'), btn = card.querySelector('.rv-more');
   const check = () => { if (!card.classList.contains('open')) btn.hidden = p.scrollHeight <= p.clientHeight + 2; };
-  check(); window.addEventListener('resize', check);
+  check(); let rvW = window.innerWidth; window.addEventListener('resize', () => { if (window.innerWidth !== rvW) { rvW = window.innerWidth; check(); } });
   btn.addEventListener('click', () => {
     const open = card.classList.toggle('open');
     btn.textContent = open ? 'Mostra meno' : 'Leggi tutto';

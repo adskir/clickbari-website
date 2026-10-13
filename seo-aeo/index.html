@@ -502,6 +502,16 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
   .prezzos-grid,.pacchetti-grid,.prezzi-grid{align-items:start!important}
   .pk-front>.prezzo-desc{flex-grow:0!important;min-height:calc(14px * 1.65 * 4)}
 }
+
+/* PACCHETTI — carte bianche più definite: bordo azzurro + testo più scuro */
+.prezzo:not(.featured){border:1px solid rgba(91,155,255,.55)!important;box-shadow:0 0 0 4px rgba(91,155,255,.14),0 24px 60px rgba(0,0,0,.45),0 0 40px rgba(37,99,235,.12)!important}
+.prezzo:not(.featured) .prezzo-name,.prezzo:not(.featured) .prezzo-val{color:#05070D}
+.prezzo:not(.featured) .prezzo-period{color:#3A4152;font-weight:400}
+.prezzo:not(.featured) .prezzo-desc{color:#1E2433;font-weight:400}
+.prezzo:not(.featured) .prezzo-list li{color:#05070D;font-weight:400}
+.prezzo:not(.featured) .prezzo-list li[style]{color:#4A5468!important}
+.prezzo:not(.featured) .pk-flip{background:#E6ECF7;border-color:rgba(10,15,31,.2);color:#05070D;font-weight:500}
+.prezzo:not(.featured) .pk-flip:hover{background:#D9E2F2;border-color:rgba(10,15,31,.35)}
 </style>
 </head>
 <body>

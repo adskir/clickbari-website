@@ -290,6 +290,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .hero-btns{justify-content:center}
   .hero-left>a{align-self:center}
 }
+
+/* CTA portfolio — compatta e centrata */
+.portfolio-cta{grid-template-columns:1fr!important;justify-items:center;text-align:center;padding:72px 48px;row-gap:32px}
+.portfolio-cta h2{margin-bottom:0}
+.portfolio-cta a{grid-column:1!important;grid-row:auto!important;justify-self:center!important;margin-top:0!important;padding:18px 40px;font-size:22px;box-shadow:0 14px 36px rgba(6,6,6,.28)}
+@media(max-width:768px){.portfolio-cta{padding:44px 22px}.portfolio-cta a{width:100%;justify-content:center}}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -664,7 +670,6 @@ gtag('consent', 'default', {
 <!-- CTA -->
 <div class="portfolio-cta reveal">
   <h2>Il tuo progetto<br>è il prossimo.</h2>
-  <p>Hai visto cosa so fare. Parliamo di come posso aiutare la tua attività a crescere online.</p>
   <a href="#" onclick="openContactModal();return false;">Contattami ora →</a>
 </div>
 

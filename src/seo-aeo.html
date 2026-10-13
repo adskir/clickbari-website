@@ -360,6 +360,20 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
   .hero-btns{justify-content:center}
   .hero-left>a{align-self:center}
 }
+
+/* CTA FINALE — compatta e centrata, senza testo, bottoni più evidenti */
+.cta-finale{grid-template-columns:1fr!important;justify-items:center;text-align:center;padding:72px 48px;gap:36px}
+.cta-finale h2{font-size:clamp(56px,7vw,104px)}
+.cta-finale-btns,.cta-btns{justify-content:center}
+.cta-finale .btn-primary{padding:18px 40px;font-size:22px;background:#fff;color:var(--blue);box-shadow:0 14px 36px rgba(6,6,6,.28)}
+.cta-finale .btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 18px 44px rgba(6,6,6,.38)}
+.cta-finale .btn-outline{padding:18px 36px;font-size:22px;color:#fff;background:rgba(6,6,6,.2);border:1.5px solid rgba(255,255,255,.85)}
+.cta-finale .btn-outline:hover{background:rgba(6,6,6,.32);border-color:#fff}
+@media(max-width:768px){
+  .cta-finale{padding:44px 22px;gap:28px}
+  .cta-finale-btns,.cta-btns{flex-direction:column;width:100%}
+  .cta-finale .btn-primary,.cta-finale .btn-outline{justify-content:center;width:100%;font-size:21px}
+}
 </style>
 </head>
 <body>
@@ -653,8 +667,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- CTA -->
 <div class="cta-wrap">
 <section class="cta-finale">
-  <div><h2>Inizia con<br>l'audit.</h2>
-  <p>Analizzo il tuo sito e ti dico esattamente cosa fare per migliorare il posizionamento su Google e sulle AI.</p></div>
+  <div><h2>Inizia con<br>l'audit.</h2></div>
   <div class="cta-btns">
     <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="btn-primary">Richiedi audit →</a>
     <a href="/google-ecosystem/" class="btn-outline">Google Ads →</a>

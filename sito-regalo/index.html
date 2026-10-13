@@ -427,6 +427,14 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .mobile-sub-list a.msub.active .dd-ic{background:var(--blue);color:#fff;border-color:var(--blue)}
 .mobile-sub-list .dd-tx b{font-size:15px;font-weight:500}
 .mobile-cta{box-shadow:0 10px 30px rgba(37,99,235,.45)}
+
+/* NAV — evidenziazione solo al passaggio del mouse (nessuno stato fisso per la pagina attiva) */
+.nav-links>li>a.active:not(.nav-cta):not(.nav-gift):not(:hover){color:#cfd6e4}
+.nav-links>li>a.active:not(.nav-cta):not(.nav-gift):not(:hover)::before{transform:scaleX(0)}
+.nav-dd:hover>a.active::before{transform:scaleX(1)}
+.nav-dd:hover>a.active{color:#fff}
+.nav-dd-menu a.dd-item.active:not(:hover){background:transparent!important}
+.nav-dd-menu a.dd-item.active:not(:hover) .dd-tx b{color:#fff}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quanto costa un sito regalo?", "acceptedAnswer": {"@type": "Answer", "text": "99 € tutto incluso: sito su misura, foto scontornata e animata, testi comici, bottone WhatsApp, QR code e un anno online. L'unico extra possibile è un dominio personalizzato, al suo costo."}}, {"@type": "Question", "name": "In quanto tempo è pronto?", "acceptedAnswer": {"@type": "Answer", "text": "Entro 72 ore da quando ricevo foto e informazioni. Entro 48 ore ti mando una bozza privata da vedere e correggere."}}, {"@type": "Question", "name": "Cosa ti devo mandare?", "acceptedAnswer": {"@type": "Answer", "text": "Una foto frontale ben illuminata, cinque manie o abitudini, due o tre aneddoti, l'occasione e, se vuoi, il numero WhatsApp da collegare al bottone."}}, {"@type": "Question", "name": "E se il festeggiato si offende?", "acceptedAnswer": {"@type": "Answer", "text": "Si scherza con affetto: niente insulti, niente dettagli privati o imbarazzanti per il lavoro. Se un dettaglio è troppo, lo togliamo. Prima della consegna vedi tutto tu."}}, {"@type": "Question", "name": "Il sito resta online per sempre?", "acceptedAnswer": {"@type": "Answer", "text": "Il prezzo include 12 mesi online. Dopo, se volete tenerlo, ci mettiamo d'accordo, oppure il sito va in pensione con tutti gli onori."}}, {"@type": "Question", "name": "Può diventare un sito vero?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Se il festeggiato ha davvero un'attività, il sito regalo può diventare la base del suo sito professionale."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Sito regalo", "serviceType": "Sito web comico personalizzato come regalo", "description": "Sito web one-page comico e animato su una persona a scelta, con foto animata, testi su misura, bottone WhatsApp e QR code. Pronto in 72 ore.", "provider": {"@type": "Organization", "name": "ClickBari", "url": "https://clickbari.it/"}, "areaServed": "IT", "offers": {"@type": "Offer", "price": "99", "priceCurrency": "EUR", "url": "https://clickbari.it/sito-regalo/"}}</script>
@@ -987,7 +995,7 @@ gtag('consent', 'default', {
     document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
   });
 
-  mobileMenu.querySelectorAll('a, button').forEach(function(el){
+  mobileMenu.querySelectorAll('a, button:not(.mobile-sub-toggle)').forEach(function(el){
     el.addEventListener('click', function(){
       burger.classList.remove('open');
       mobileMenu.classList.remove('open');

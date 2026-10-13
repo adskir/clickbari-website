@@ -361,6 +361,19 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .nav-dd:hover>a.active{color:#fff}
 .nav-dd-menu a.dd-item.active:not(:hover){background:transparent!important}
 .nav-dd-menu a.dd-item.active:not(:hover) .dd-tx b{color:#fff}
+
+/* PACCHETTI — dettagli a scomparsa ("Cosa include") */
+.pacchetto-desc{border-bottom:0;padding-bottom:0;margin-bottom:18px;flex-grow:1}
+.pk-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 16px;margin-bottom:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-md);color:#fff;font-family:var(--font-b);font-size:14px;font-weight:500;letter-spacing:.02em;cursor:pointer;transition:background .2s,border-color .2s}
+.pk-toggle:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3)}
+.pk-toggle svg{width:18px;height:18px;transition:transform .35s}
+.pacchetto.open .pk-toggle svg{transform:rotate(180deg)}
+.pacchetto.featured .pk-toggle{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35)}
+.pk-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1)}
+.pk-more>div{overflow:hidden;min-height:0}
+.pacchetto.open .pk-more{grid-template-rows:1fr}
+.pk-more .pacchetto-list{margin:4px 0 26px}
+.pacchetto-btn{margin-top:auto}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -493,6 +506,8 @@ gtag('consent', 'default', {
       <div class="pacchetto-price"><sup>da €</sup>300</div>
       <div class="pacchetto-period">una tantum</div>
       <div class="pacchetto-desc">Una pagina, un obiettivo. Perfetta per promozioni, eventi o per testare un'idea prima di investire di più.</div>
+      <button type="button" class="pk-toggle" aria-expanded="false">Cosa include <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="pk-more"><div>
       <ul class="pacchetto-list">
         <li>1 pagina completa</li>
         <li>Design personalizzato</li>
@@ -503,6 +518,7 @@ gtag('consent', 'default', {
         <li>Consegna da 1 settimana</li>
         <li style="color:rgba(255,255,255,0.4);font-style:italic">Manutenzione mensile: da €50/mese</li>
       </ul>
+      </div></div>
       <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
     </div>
 
@@ -512,6 +528,8 @@ gtag('consent', 'default', {
       <div class="pacchetto-price"><sup>da €</sup>500</div>
       <div class="pacchetto-period">una tantum</div>
       <div class="pacchetto-desc">Sito multipage completo per far crescere la tua attività online. La soluzione più scelta dai miei clienti.</div>
+      <button type="button" class="pk-toggle" aria-expanded="false">Cosa include <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="pk-more"><div>
       <ul class="pacchetto-list">
         <li>5-8 pagine (Home, Servizi, Chi siamo, Contatti, GDPR)</li>
         <li>Design personalizzato</li>
@@ -523,6 +541,7 @@ gtag('consent', 'default', {
         <li>Consegna da 2 settimane</li>
         <li style="color:rgba(255,255,255,0.7);font-style:italic">Manutenzione mensile: da €75/mese</li>
       </ul>
+      </div></div>
       <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
     </div>
 
@@ -531,6 +550,8 @@ gtag('consent', 'default', {
       <div class="pacchetto-price"><sup>da €</sup>700</div>
       <div class="pacchetto-period">una tantum</div>
       <div class="pacchetto-desc">Sito multipage con pannello di amministrazione. Aggiorni testi e immagini in autonomia e fai crescere il sito quando vuoi. Ideale anche per e-commerce e negozi online.</div>
+      <button type="button" class="pk-toggle" aria-expanded="false">Cosa include <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="pk-more"><div>
       <ul class="pacchetto-list">
         <li>Pagine illimitate</li>
         <li>Pannello admin WordPress</li>
@@ -544,6 +565,7 @@ gtag('consent', 'default', {
         <li>Consegna da 3 settimane</li>
         <li style="color:rgba(255,255,255,0.4);font-style:italic">Manutenzione mensile: da €100/mese</li>
       </ul>
+      </div></div>
       <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Richiedi preventivo →</a>
     </div>
 
@@ -936,6 +958,19 @@ document.querySelectorAll('.faq-item').forEach(item => {
     });
   });
 })();
+
+// PACCHETTI: "Cosa include" — su desktop si aprono tutti insieme (confronto), su mobile solo quello toccato
+document.querySelectorAll('.pk-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.pacchetto');
+    const open = !card.classList.contains('open');
+    const all = window.matchMedia('(min-width: 1101px)').matches;
+    (all ? document.querySelectorAll('.pacchetto') : [card]).forEach(c => {
+      c.classList.toggle('open', open);
+      c.querySelector('.pk-toggle').setAttribute('aria-expanded', open);
+    });
+  });
+});
 </script>
 </body>
 </html>

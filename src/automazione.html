@@ -412,6 +412,14 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .mobile-sub-list a.msub.active .dd-ic{background:var(--blue);color:#fff;border-color:var(--blue)}
 .mobile-sub-list .dd-tx b{font-size:15px;font-weight:500}
 .mobile-cta{box-shadow:0 10px 30px rgba(37,99,235,.45)}
+
+/* NAV — evidenziazione solo al passaggio del mouse (nessuno stato fisso per la pagina attiva) */
+.nav-links>li>a.active:not(.nav-cta):not(.nav-gift):not(:hover){color:#cfd6e4}
+.nav-links>li>a.active:not(.nav-cta):not(.nav-gift):not(:hover)::before{transform:scaleX(0)}
+.nav-dd:hover>a.active::before{transform:scaleX(1)}
+.nav-dd:hover>a.active{color:#fff}
+.nav-dd-menu a.dd-item.active:not(:hover){background:transparent!important}
+.nav-dd-menu a.dd-item.active:not(:hover) .dd-tx b{color:#fff}
 </style>
 </head>
 <body>
@@ -997,7 +1005,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
     document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
   });
 
-  mobileMenu.querySelectorAll('a, button').forEach(function(el){
+  mobileMenu.querySelectorAll('a, button:not(.mobile-sub-toggle)').forEach(function(el){
     el.addEventListener('click', function(){
       burger.classList.remove('open');
       mobileMenu.classList.remove('open');

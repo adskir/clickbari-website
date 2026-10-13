@@ -376,20 +376,6 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .pk-flip svg{width:16px;height:16px;transition:transform .5s}
 .pk-flip:hover svg{transform:rotate(180deg)}
 .pk-unflip{width:auto;margin:0;padding:8px 12px;font-size:13px;flex-shrink:0}
-/* pacchetto in evidenza: carta bianca (stile ex pagina Servizi) */
-.pacchetto.featured{background:#fff!important;border-color:#fff!important;box-shadow:0 30px 80px rgba(91,155,255,.22)!important}
-.pacchetto.featured .pacchetto-name,.pacchetto.featured .pacchetto-price,.pacchetto.featured .pk-back-head span{color:#0A0F1F}
-.pacchetto.featured .pacchetto-price sup{color:var(--blue)!important}
-.pacchetto.featured .pacchetto-period,.pacchetto.featured .pacchetto-desc{color:#4A5468}
-.pacchetto.featured .pacchetto-list li{color:#0A0F1F}
-.pacchetto.featured .pacchetto-list li[style]{color:#6B7385!important}
-.pacchetto.featured .pacchetto-list li::before{content:'';flex-shrink:0;width:16px;height:16px;margin-top:1px;border-radius:50%;background:rgba(91,155,255,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%235b9bff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
-.pacchetto.featured .pacchetto-badge{background:var(--blue);color:#fff}
-.pacchetto.featured .pacchetto-btn{background:#0A0F1F!important;color:#fff!important}
-.pacchetto.featured .pacchetto-btn:hover{background:var(--blue)!important}
-.pacchetto.featured .pk-flip{background:#EDF1F7;border-color:rgba(10,15,31,.12);color:#0A0F1F}
-.pacchetto.featured .pk-flip:hover{background:#E2E8F2;border-color:rgba(10,15,31,.25)}
-.pacchetto.featured .pk-back-head{border-bottom-color:rgba(10,15,31,.12)}
 @media(prefers-reduced-motion:reduce){.pacchetto{transition:none}}
 
 /* PACCHETTI — computer/tablet: niente rotazione, i dettagli si aprono sotto */
@@ -406,7 +392,7 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
   .pacchetto.open .pk-flip svg.ic-dd{transform:rotate(180deg)}
   .pk-back{position:static;inset:auto;transform:none;backface-visibility:visible;-webkit-backface-visibility:visible;padding:0;order:2;display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1);overflow:hidden;border-radius:0}
   .pacchetto.open .pk-back{grid-template-rows:1fr}
-  .pk-back-head,.pk-back>.pacchetto-btn,.pk-back .pk-more-btn{display:none!important}
+  .pk-back-head,.pk-back>.pacchetto-btn,.pk-back .pk-more-btn,.pk-back .pk-unflip{display:none!important}
   .pk-back .pacchetto-list{min-height:0;overflow:hidden;margin:0;padding:4px 0 0}
   .pacchetto.open .pk-back .pacchetto-list{padding:4px 0 22px}
   .pacchetto.open .pk-front>.pacchetto-desc{flex-grow:0;min-height:calc(14px * 1.65 * 4)}
@@ -417,6 +403,42 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
   .pk-back:not(.all) .pacchetto-list li:nth-child(n+7){display:none}
   .pk-more-btn{display:block;align-self:flex-start;margin:-10px 0 18px;padding:0;background:none;border:0;font-family:var(--font-b);font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;color:#fff}
   .pacchetto.featured .pk-more-btn{color:#0A0F1F}
+}
+
+/* PACCHETTI — colori: laterali bianchi, centrale nero */
+.pacchetto:not(.featured){background:#fff!important;border-color:rgba(10,15,31,.08)!important;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.pacchetto:not(.featured) .pacchetto-name,.pacchetto:not(.featured) .pacchetto-price,.pacchetto:not(.featured) .pk-back-head span{color:#0A0F1F}
+.pacchetto:not(.featured) .pacchetto-price sup{color:var(--blue)!important}
+.pacchetto:not(.featured) .pacchetto-period,.pacchetto:not(.featured) .pacchetto-desc{color:#4A5468}
+.pacchetto:not(.featured) .pacchetto-list li{color:#0A0F1F}
+.pacchetto:not(.featured) .pacchetto-list li[style]{color:#6B7385!important}
+.pacchetto:not(.featured) .pacchetto-btn{background:var(--blue)!important;color:#fff!important}
+.pacchetto:not(.featured) .pk-flip{background:#EDF1F7;border-color:rgba(10,15,31,.12);color:#0A0F1F}
+.pacchetto:not(.featured) .pk-flip:hover{background:#E2E8F2;border-color:rgba(10,15,31,.25)}
+.pacchetto:not(.featured) .pk-back-head{border-bottom-color:rgba(10,15,31,.12)}
+.pacchetto:not(.featured) .pk-more-btn{color:#0A0F1F!important}
+.pacchetto.featured{background:linear-gradient(180deg,#0f1626 0%,#07090f 100%)!important;border:1px solid rgba(91,155,255,.5)!important;box-shadow:0 30px 80px rgba(37,99,235,.35),0 0 0 4px rgba(37,99,235,.12)!important}
+.pacchetto.featured .pacchetto-name,.pacchetto.featured .pacchetto-price,.pacchetto.featured .pk-back-head span{color:#fff}
+.pacchetto.featured .pacchetto-price sup{color:var(--blue-bright)!important}
+.pacchetto.featured .pacchetto-period{color:rgba(255,255,255,.55)}
+.pacchetto.featured .pacchetto-desc{color:rgba(255,255,255,.78)}
+.pacchetto.featured .pacchetto-list li{color:rgba(255,255,255,.9)}
+.pacchetto.featured .pacchetto-list li[style]{color:rgba(255,255,255,.5)!important}
+.pacchetto.featured .pacchetto-list li::before{content:'';flex-shrink:0;width:16px;height:16px;margin-top:1px;border-radius:50%;background:rgba(91,155,255,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%235b9bff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.pacchetto.featured .pacchetto-badge{background:var(--blue);color:#fff}
+.pacchetto.featured .pacchetto-btn{background:#fff!important;color:#0A0F1F!important}
+.pacchetto.featured .pacchetto-btn:hover{background:var(--blue-bright)!important;color:#fff!important}
+.pacchetto.featured .pk-flip{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:#fff}
+.pacchetto.featured .pk-flip:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32)}
+.pacchetto.featured .pk-back-head{border-bottom-color:rgba(255,255,255,.14)}
+.pacchetto.featured .pk-more-btn{color:#fff!important}
+/* retro: "Torna al prezzo" in basso, come "Cosa include" sul fronte */
+.pk-unflip{width:100%!important;margin:auto 0 12px!important;padding:13px 16px!important;font-size:14px!important}
+.pk-back>.pacchetto-btn{margin-top:0!important}
+/* desktop: si apre solo la carta cliccata, le altre restano compatte */
+@media(min-width:769px){
+  .pacchettos-grid,.pacchetti-grid,.prezzi-grid{align-items:start!important}
+  .pk-front>.pacchetto-desc{flex-grow:0!important;min-height:calc(14px * 1.65 * 4)}
 }
 </style>
 <!-- GTM -->
@@ -555,7 +577,7 @@ gtag('consent', 'default', {
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
       <div class="pk-back">
-        <div class="pk-back-head"><span>Landing Page</span><button type="button" class="pk-flip pk-unflip" aria-label="Torna al prezzo">← Indietro</button></div>
+        <div class="pk-back-head"><span>Landing Page</span></div>
         <ul class="pacchetto-list">
         <li>1 pagina completa</li>
         <li>Design personalizzato</li>
@@ -567,6 +589,7 @@ gtag('consent', 'default', {
         <li style="color:rgba(255,255,255,0.4);font-style:italic">Manutenzione mensile: da €50/mese</li>
       </ul>
         <button type="button" class="pk-more-btn">Mostra tutto</button>
+        <button type="button" class="pk-flip pk-unflip" aria-label="Torna al prezzo">Torna al prezzo <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
     </div>
@@ -582,7 +605,7 @@ gtag('consent', 'default', {
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
       <div class="pk-back">
-        <div class="pk-back-head"><span>Sito Vetrina</span><button type="button" class="pk-flip pk-unflip" aria-label="Torna al prezzo">← Indietro</button></div>
+        <div class="pk-back-head"><span>Sito Vetrina</span></div>
         <ul class="pacchetto-list">
         <li>5-8 pagine (Home, Servizi, Chi siamo, Contatti, GDPR)</li>
         <li>Design personalizzato</li>
@@ -595,6 +618,7 @@ gtag('consent', 'default', {
         <li style="color:rgba(255,255,255,0.7);font-style:italic">Manutenzione mensile: da €75/mese</li>
       </ul>
         <button type="button" class="pk-more-btn">Mostra tutto</button>
+        <button type="button" class="pk-flip pk-unflip" aria-label="Torna al prezzo">Torna al prezzo <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
     </div>
@@ -609,7 +633,7 @@ gtag('consent', 'default', {
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Richiedi preventivo →</a>
       </div>
       <div class="pk-back">
-        <div class="pk-back-head"><span>Sito + CMS</span><button type="button" class="pk-flip pk-unflip" aria-label="Torna al prezzo">← Indietro</button></div>
+        <div class="pk-back-head"><span>Sito + CMS</span></div>
         <ul class="pacchetto-list">
         <li>Pagine illimitate</li>
         <li>Pannello admin WordPress</li>
@@ -624,6 +648,7 @@ gtag('consent', 'default', {
         <li style="color:rgba(255,255,255,0.4);font-style:italic">Manutenzione mensile: da €100/mese</li>
       </ul>
         <button type="button" class="pk-more-btn">Mostra tutto</button>
+        <button type="button" class="pk-flip pk-unflip" aria-label="Torna al prezzo">Torna al prezzo <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Richiedi preventivo →</a>
       </div>
     </div>
@@ -1086,7 +1111,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
 (function(){
   const cards = [...document.querySelectorAll('.flip-card')];
   const phone = () => window.matchMedia('(max-width: 768px)').matches;
-  const wide = () => window.matchMedia('(min-width: 1101px)').matches;
   const fit = card => {
     const front = card.querySelector('.pk-front'), back = card.querySelector('.pk-back');
     card.style.minHeight = '';
@@ -1119,7 +1143,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
         front.inert = f; back.inert = !f;
       } else {
         const open = !card.classList.contains('open');
-        (wide() ? cards : [card]).forEach(c => {
+        [card].forEach(c => {
           c.classList.toggle('open', open);
           c.querySelector('.pk-front .pk-flip').setAttribute('aria-expanded', open);
         });

@@ -269,6 +269,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .hero-btns{justify-content:center}
   .hero-left>a{align-self:center}
 }
+
+/* RECENSIONI — testi originali da Google, con link a ogni recensione */
+.recensioni{padding:0 48px 112px}
+.rv-summary{display:inline-flex;align-items:center;gap:14px;padding:12px 18px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--gray);text-decoration:none;color:#fff;transition:border-color .2s}
+.rv-summary:hover{border-color:rgba(91,155,255,.45)}
+.rv-summary b{font-family:var(--font-d);font-weight:400;font-size:30px;line-height:1;margin-right:6px;vertical-align:-3px}
+.rv-summary small{display:block;font-size:12px;color:#9a9a9a;margin-top:2px}
+.rv-g{display:inline-flex;width:26px;height:26px;flex-shrink:0}
+.rv-g svg{width:100%;height:100%}
+.rv-stars{color:#FBBC04;letter-spacing:.06em}
+.rv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.rv-card{margin:0;background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 28px 24px;display:flex;flex-direction:column;gap:16px}
+.rv-head{display:flex;align-items:center;gap:14px}
+.rv-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:18px;color:#fff;flex-shrink:0}
+.rv-who{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.rv-who b{font-weight:500;font-size:16px;color:#fff}
+.rv-who>span{font-size:13px;color:#8d8d8d}
+.rv-head .rv-g{width:22px;height:22px}
+.rv-text{margin:0}
+.rv-text p{font-size:15px;line-height:1.7;color:#cfcfcf}
+.rv-link{align-self:flex-start;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-bright);text-decoration:none}
+.rv-link:hover{color:#fff}
+.rv-actions{display:flex;justify-content:center;margin-top:32px}
+@media(max-width:900px){.rv-grid{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .recensioni{padding:0 20px 72px}
+  .rv-card{padding:22px 20px 20px}
+  .rv-summary{align-self:stretch;justify-content:center}
+}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -443,6 +472,63 @@ gtag('consent', 'default', {
         <div class="number-item"><div class="number-val">6</div><div class="number-label">Paesi di esperienza</div></div>
         <div class="number-item"><div class="number-val">50+</div><div class="number-label">Progetti realizzati</div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENSIONI (copiate da Google Business Profile, ognuna con link all'originale) -->
+<section class="recensioni">
+  <div class="wrap">
+    <div class="section-header">
+      <div>
+        <div class="section-tag">Recensioni</div>
+        <h2 class="section-title">Cosa dicono di me</h2>
+      </div>
+      <a class="rv-summary" href="https://maps.google.com/?cid=16553965086291542734" target="_blank" rel="noopener">
+        <span class="rv-g"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
+        <span><b>5,0</b> <span class="rv-stars">★★★★★</span><small>4 recensioni su Google</small></span>
+      </a>
+    </div>
+    <div class="rv-grid">
+      <figure class="rv-card">
+        <figcaption class="rv-head">
+          <span class="rv-avatar" style="background:#1a73e8" aria-hidden="true">R</span>
+          <span class="rv-who"><b>Roberta</b><span><span class="rv-stars" aria-label="5 stelle su 5">★★★★★</span> · ottobre 2026</span></span>
+          <span class="rv-g"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
+        </figcaption>
+        <blockquote class="rv-text"><p>Mi sono affidata a Kirill per creare il mio sito e sono davvero contenta di averlo scelto! È stato sempre disponibile, mi ha spiegato tutto in modo semplice e ha risposto velocemente a ogni mia domanda, venendo incontro alle mie esigenze. Ha realizzato il sito in poco tempo e rispettando gli accordi.<br>Il risultato mi piace tantissimo: è moderno, bello da vedere anche dal telefono e rispecchia davvero il mio stile e il modo in cui lavoro con i miei clienti.<br>Mi ha aiutata anche con tutta la parte tecnica, dal dominio all’email, occupandosi di tutto con grande pazienza.<br>Lo consiglio assolutamente a chi cerca una persona competente, disponibile e attenta alle proprie esigenze. Grazie Kirill per il bellissimo lavoro.</p></blockquote>
+        <a class="rv-link" href="https://maps.app.goo.gl/HL4xZzguxB47QELJ9" target="_blank" rel="noopener">Leggi su Google ↗</a>
+      </figure>
+      <figure class="rv-card">
+        <figcaption class="rv-head">
+          <span class="rv-avatar" style="background:#7b1fa2" aria-hidden="true">P</span>
+          <span class="rv-who"><b>Pavel Kuźmič</b><span><span class="rv-stars" aria-label="5 stelle su 5">★★★★★</span> · ottobre 2026</span></span>
+          <span class="rv-g"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
+        </figcaption>
+        <blockquote class="rv-text"><p>Abbiamo affidato a ClickBari la realizzazione del nostro sito e siamo davvero soddisfatti del risultato. Il team si è dimostrato professionale, puntuale e molto attento alle nostre esigenze, proponendo soluzioni efficaci e curate sia dal punto di vista grafico che funzionale.<br>Il sito è risultato moderno, chiaro e facile da consultare, con un’attenzione particolare ai dettagli e alla comunicazione della nostra identità. La collaborazione è stata serena e costruttiva: hanno ascoltato le nostre richieste, offerto consigli utili e rispettato i tempi concordati.<br>Consigliamo ClickBari a chi cerca un partner affidabile per la creazione o il rinnovamento del proprio sito web. Un lavoro di qualità, svolto con competenza e passione.</p></blockquote>
+        <a class="rv-link" href="https://maps.app.goo.gl/MzfTKp3BZ2AT1HDm8" target="_blank" rel="noopener">Leggi su Google ↗</a>
+      </figure>
+      <figure class="rv-card">
+        <figcaption class="rv-head">
+          <span class="rv-avatar" style="background:#455a64" aria-hidden="true">R</span>
+          <span class="rv-who"><b>Ruggiero Doronzo</b><span><span class="rv-stars" aria-label="5 stelle su 5">★★★★★</span> · ottobre 2026</span></span>
+          <span class="rv-g"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
+        </figcaption>
+        <blockquote class="rv-text"><p>ClickBari ha lavoro in modo professionale e competente sia sul piano tecnico sia su quello estetico.<br>Sono contento della collaborazione instaurata e soddisfatto del risultato raggiunto.<br>Ad maiora</p></blockquote>
+        <a class="rv-link" href="https://maps.app.goo.gl/riZzNGBCRnMjyBJH6" target="_blank" rel="noopener">Leggi su Google ↗</a>
+      </figure>
+      <figure class="rv-card">
+        <figcaption class="rv-head">
+          <span class="rv-avatar" style="background:#00897b" aria-hidden="true">S</span>
+          <span class="rv-who"><b>Siarhei Khrantsou</b><span><span class="rv-stars" aria-label="5 stelle su 5">★★★★★</span> · ottobre 2026</span></span>
+          <span class="rv-g"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
+        </figcaption>
+        <blockquote class="rv-text"><p>Kirill is a reliable and truly professional specialist who helped me test my business idea in Toronto. The Black Mobile Detailing website is excellent: it loads fast and everything works perfectly. We keep expanding it, and I'm very happy with the results. Highly recommend!</p></blockquote>
+        <a class="rv-link" href="https://maps.app.goo.gl/GpL9WtjMGMkyC7PR9" target="_blank" rel="noopener">Leggi su Google ↗</a>
+      </figure>
+    </div>
+    <div class="rv-actions">
+      <a class="section-link" href="https://maps.google.com/?cid=16553965086291542734" target="_blank" rel="noopener">Vedi tutte su Google ↗</a>
     </div>
   </div>
 </section>

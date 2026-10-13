@@ -425,6 +425,38 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .nav-dd:hover>a.active{color:#fff}
 .nav-dd-menu a.dd-item.active:not(:hover){background:transparent!important}
 .nav-dd-menu a.dd-item.active:not(:hover) .dd-tx b{color:#fff}
+
+/* PACCHETTI — carta girevole: davanti il prezzo, dietro "Cosa include" */
+.prezzo{transform-style:preserve-3d;transition:transform .7s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+.prezzo.flipped{transform:rotateY(180deg)}
+
+.pk-front{display:flex;flex-direction:column;flex:1;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.pk-front .prezzo-desc{flex-grow:1;border-bottom:0;padding-bottom:0;margin-bottom:18px}
+.pk-back{position:absolute;inset:0;padding:inherit;display:flex;flex-direction:column;transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow-y:auto;border-radius:inherit;scrollbar-width:thin}
+.pk-back-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.14)}
+.pk-back-head span{font-family:var(--font-d);font-size:24px;letter-spacing:.04em;color:#fff}
+.pk-back .prezzo-list{gap:9px;margin-bottom:22px}
+.pk-back .prezzo-btn{margin-top:auto}
+.pk-flip{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px 16px;margin-bottom:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius-md);color:#fff;font-family:var(--font-b);font-size:14px;font-weight:500;cursor:pointer;transition:background .2s,border-color .2s}
+.pk-flip:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32)}
+.pk-flip svg{width:16px;height:16px;transition:transform .5s}
+.pk-flip:hover svg{transform:rotate(180deg)}
+.pk-unflip{width:auto;margin:0;padding:8px 12px;font-size:13px;flex-shrink:0}
+/* pacchetto in evidenza: carta bianca (stile ex pagina Servizi) */
+.prezzo.featured{background:#fff!important;border-color:#fff!important;box-shadow:0 30px 80px rgba(91,155,255,.22)!important}
+.prezzo.featured .prezzo-name,.prezzo.featured .prezzo-val,.prezzo.featured .pk-back-head span{color:#0A0F1F}
+.prezzo.featured .prezzo-val sup{color:var(--blue)!important}
+.prezzo.featured .prezzo-period,.prezzo.featured .prezzo-desc{color:#4A5468}
+.prezzo.featured .prezzo-list li{color:#0A0F1F}
+.prezzo.featured .prezzo-list li[style]{color:#6B7385!important}
+.prezzo.featured .prezzo-list li::before{content:'';flex-shrink:0;width:16px;height:16px;margin-top:1px;border-radius:50%;background:rgba(91,155,255,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%235b9bff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.prezzo.featured .prezzo-badge{background:var(--blue);color:#fff}
+.prezzo.featured .prezzo-btn{background:#0A0F1F!important;color:#fff!important}
+.prezzo.featured .prezzo-btn:hover{background:var(--blue)!important}
+.prezzo.featured .pk-flip{background:#EDF1F7;border-color:rgba(10,15,31,.12);color:#0A0F1F}
+.prezzo.featured .pk-flip:hover{background:#E2E8F2;border-color:rgba(10,15,31,.25)}
+.prezzo.featured .pk-back-head{border-bottom-color:rgba(10,15,31,.12)}
+@media(prefers-reduced-motion:reduce){.prezzo{transition:none}}
 </style>
 </head>
 <body>
@@ -574,48 +606,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="sec-kicker">Prezzi</div>
   <h2 class="sec-title">Investimento trasparente.</h2>
   <div class="prezzi-grid">
-    <div class="prezzo">
+    <div class="prezzo flip-card">
+      <div class="pk-front">
       <div class="prezzo-name">SEO Audit</div>
       <div class="prezzo-val"><sup>da €</sup>100</div>
       <div class="prezzo-period">una tantum</div>
       <div class="prezzo-desc">Analisi completa del sito, raccolta parole chiave e piano editoriale. Il punto di partenza per qualsiasi strategia SEO.</div>
-      <ul class="prezzo-list">
+        <button type="button" class="pk-flip">Cosa include <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+        <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Inizia con l'audit →</a>
+      </div>
+      <div class="pk-back">
+        <div class="pk-back-head"><span>SEO Audit</span><button type="button" class="pk-flip pk-unflip" aria-label="Torna al prezzo">← Indietro</button></div>
+        <ul class="prezzo-list">
         <li>Audit tecnico completo</li>
         <li>Analisi competitor</li>
         <li>Semantica e keyword research</li>
         <li>Piano editoriale 3 mesi</li>
         <li>Setup AEO base</li>
       </ul>
-      <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Inizia con l'audit →</a>
+        <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Inizia con l'audit →</a>
+      </div>
     </div>
-    <div class="prezzo featured">
+    <div class="prezzo featured flip-card">
+      <div class="pk-front">
       <div class="prezzo-badge">Più efficace</div>
       <div class="prezzo-name">SEO Mensile</div>
       <div class="prezzo-val"><sup>da €</sup>150</div>
       <div class="prezzo-period">/mese</div>
       <div class="prezzo-desc">Articoli ottimizzati pubblicati ogni mese, aggiornamenti tecnici e ottimizzazione AEO continua. Il SEO che funziona davvero.</div>
-      <ul class="prezzo-list">
+        <button type="button" class="pk-flip">Cosa include <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+        <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Inizia ora →</a>
+      </div>
+      <div class="pk-back">
+        <div class="pk-back-head"><span>SEO Mensile</span><button type="button" class="pk-flip pk-unflip" aria-label="Torna al prezzo">← Indietro</button></div>
+        <ul class="prezzo-list">
         <li>4 articoli SEO/mese</li>
         <li>Pubblicazione sul sito</li>
         <li>Ottimizzazione pagine esistenti</li>
         <li>AEO aggiornamenti mensili</li>
         <li>Report posizionamento mensile</li>
       </ul>
-      <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Inizia ora →</a>
+        <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Inizia ora →</a>
+      </div>
     </div>
-    <div class="prezzo">
+    <div class="prezzo flip-card">
+      <div class="pk-front">
       <div class="prezzo-name">Articoli singoli</div>
       <div class="prezzo-val"><sup>da €</sup>50</div>
       <div class="prezzo-period">per articolo</div>
       <div class="prezzo-desc">Articolo SEO ottimizzato per Google e per le risposte AI. Minimo 800 parole, ricerca keyword inclusa, pubblicazione inclusa.</div>
-      <ul class="prezzo-list">
+        <button type="button" class="pk-flip">Cosa include <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+        <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Ordina articolo →</a>
+      </div>
+      <div class="pk-back">
+        <div class="pk-back-head"><span>Articoli singoli</span><button type="button" class="pk-flip pk-unflip" aria-label="Torna al prezzo">← Indietro</button></div>
+        <ul class="prezzo-list">
         <li>Ricerca keyword specifica</li>
         <li>Testo ottimizzato SEO</li>
         <li>FAQ per AEO incluse</li>
         <li>Meta title e description</li>
         <li>Pubblicazione sul sito</li>
       </ul>
-      <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Ordina articolo →</a>
+        <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="prezzo-btn">Ordina articolo →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -993,6 +1046,21 @@ document.querySelectorAll('.faq-item').forEach(item => {
     });
   });
 })();
+
+// PACCHETTI: girare la carta per vedere "Cosa include"
+document.querySelectorAll('.flip-card').forEach(card => {
+  const front = card.querySelector('.pk-front'), back = card.querySelector('.pk-back');
+  back.inert = true;
+  // la carta è alta abbastanza da contenere anche il retro (niente scroll interno)
+  const fit = () => { card.style.minHeight = ''; card.style.minHeight = Math.ceil(back.scrollHeight) + 'px'; };
+  fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+  if (document.fonts) document.fonts.ready.then(fit);
+  card.querySelectorAll('.pk-flip').forEach(btn => btn.addEventListener('click', () => {
+    const f = card.classList.toggle('flipped');
+    front.inert = f; back.inert = !f;
+    if (f) back.scrollTop = 0;
+  }));
+});
 </script>
 </body>
 </html>

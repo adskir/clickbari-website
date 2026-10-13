@@ -304,6 +304,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .post-wrap{padding:110px 20px 72px}
   .post-title{font-size:clamp(36px,10vw,52px)}
 }
+
+/* NAV — tendina Servizi più evidente (icone + sottotitolo) */
+.nav-dd-menu{min-width:300px!important;padding:10px!important;background:linear-gradient(180deg,#101a33 0%,#0b0f1a 100%)!important;border:1px solid rgba(91,155,255,.35)!important;border-radius:var(--radius-lg)!important;box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 4px rgba(37,99,235,.08),0 0 40px rgba(37,99,235,.18)!important}
+.nav-dd-menu a.dd-item{display:flex!important;align-items:center;gap:12px;padding:10px 12px!important;border-radius:var(--radius-md)!important;transition:background .2s}
+.nav-dd-menu a.dd-item:hover,.nav-dd-menu a.dd-item.active{background:rgba(91,155,255,.16)!important}
+.dd-ic{width:36px;height:36px;flex-shrink:0;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;background:rgba(37,99,235,.18);border:1px solid rgba(91,155,255,.35);color:var(--blue-bright);transition:background .2s,color .2s}
+.dd-ic svg{width:18px;height:18px}
+.nav-dd-menu a.dd-item:hover .dd-ic,.nav-dd-menu a.dd-item.active .dd-ic{background:var(--blue);color:#fff;border-color:var(--blue)}
+.dd-tx{display:flex;flex-direction:column;gap:2px;line-height:1.2}
+.dd-tx b{font-weight:500;color:#fff}
+.dd-tx small{font-size:12px;letter-spacing:0;text-transform:none;color:#9fb3d9}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -333,7 +344,7 @@ gtag('consent', 'default', {
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
     <li><a href="/chi-sono/">Chi sono</a></li>
-    <li class="nav-dd"><a href="/#servizi">Servizi</a><ul class="nav-dd-menu"><li><a href="/siti-web/">Siti Web</a></li><li><a href="/google-ecosystem/">Google Ecosystem</a></li><li><a href="/seo-aeo/">SEO + AEO</a></li><li><a href="/automazione/">Automazione AI</a></li></ul></li>
+    <li class="nav-dd"><a href="/#servizi">Servizi</a><ul class="nav-dd-menu"><li><a href="/siti-web/" class="dd-item"><span class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span class="dd-tx"><b>Siti Web</b><small>Landing, vetrina, e-commerce</small></span></a></li><li><a href="/google-ecosystem/" class="dd-item"><span class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="dd-tx"><b>Google Ecosystem</b><small>Google Ads e Business Profile</small></span></a></li><li><a href="/seo-aeo/" class="dd-item"><span class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></span><span class="dd-tx"><b>SEO + AEO</b><small>Primo su Google e sulle AI</small></span></a></li><li><a href="/automazione/" class="dd-item"><span class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><span class="dd-tx"><b>Automazione AI</b><small>Chatbot e flussi automatici</small></span></a></li></ul></li>
     <li><a href="/portfolio/">Portfolio</a></li>
     <li><a href="/sito-regalo/" class="nav-gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3-5-4-5-1.5S10 8 12 8zm0 0c1.5-3 5-4 5-1.5S14 8 12 8z"/></svg>Sito regalo</a></li>
     <li><a href="/blog/" class="active">Blog</a></li>

@@ -420,6 +420,9 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .nav-dd:hover>a.active{color:#fff}
 .nav-dd-menu a.dd-item.active:not(:hover){background:transparent!important}
 .nav-dd-menu a.dd-item.active:not(:hover) .dd-tx b{color:#fff}
+
+/* prezzo: simbolo € dopo la cifra */
+sup.eur{margin:0 0 0 6px!important;font-size:.42em!important;vertical-align:top;position:relative;top:.12em}
 </style>
 </head>
 <body>
@@ -556,7 +559,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="livello">
       <div>
         <div class="livello-level">Base</div>
-        <div class="livello-price"><sup>da €</sup>150</div>
+        <div class="livello-price"><sup>da</sup>150<sup class="eur">€</sup></div>
         <div class="livello-period">setup una tantum<br>+ da €80/mese</div>
       </div>
       <div class="livello-content">
@@ -577,7 +580,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="livello">
       <div>
         <div class="livello-level">Avanzato</div>
-        <div class="livello-price"><sup>da €</sup>300</div>
+        <div class="livello-price"><sup>da</sup>300<sup class="eur">€</sup></div>
         <div class="livello-period">setup una tantum<br>+ da €120/mese</div>
       </div>
       <div class="livello-content">
@@ -598,7 +601,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="livello custom">
       <div>
         <div class="livello-level">Su misura</div>
-        <div class="livello-price"><sup>da €</sup>500</div>
+        <div class="livello-price"><sup>da</sup>500<sup class="eur">€</sup></div>
         <div class="livello-period">preventivo personalizzato</div>
       </div>
       <div class="livello-content">

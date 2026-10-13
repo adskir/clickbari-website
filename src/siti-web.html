@@ -399,7 +399,7 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
   .pk-back-head,.pk-back>.pacchetto-btn,.pk-back .pk-more-btn,.pk-back .pk-unflip{display:none!important}
   .pk-back .pacchetto-list{min-height:0;overflow:hidden;margin:0;padding:4px 0 0}
   .pacchetto.open .pk-back .pacchetto-list{padding:4px 0 22px}
-  .pacchetto.open .pk-front>.pacchetto-desc{flex-grow:0;min-height:calc(14px * 1.65 * 4)}
+  .pacchetto.open .pk-front>.pacchetto-desc{flex-grow:0;min-height:calc(14.5px * 1.65 * 4)}
   .pacchetto.open .pk-back{flex-grow:1;align-content:start}
 }
 /* PACCHETTI — telefono: retro compatto, prime 6 voci + "Mostra tutto" */
@@ -442,7 +442,7 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 /* desktop: si apre solo la carta cliccata, le altre restano compatte */
 @media(min-width:769px){
   .pacchettos-grid,.pacchetti-grid,.prezzi-grid{align-items:start!important}
-  .pk-front>.pacchetto-desc{flex-grow:0!important;min-height:calc(14px * 1.65 * 4)}
+  .pk-front>.pacchetto-desc{flex-grow:0!important;min-height:calc(14.5px * 1.65 * 4)}
 }
 
 /* PACCHETTI — carte bianche più definite: bordo azzurro + testo più scuro */
@@ -454,6 +454,14 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .pacchetto:not(.featured) .pacchetto-list li[style]{color:#4A5468!important}
 .pacchetto:not(.featured) .pk-flip{background:#E6ECF7;border-color:rgba(10,15,31,.2);color:#05070D;font-weight:500}
 .pacchetto:not(.featured) .pk-flip:hover{background:#D9E2F2;border-color:rgba(10,15,31,.35)}
+
+/* PACCHETTI — testo un po' più deciso */
+.pacchetto-desc{font-weight:500!important;font-size:14.5px}
+.pacchetto-period{font-weight:500!important}
+.pacchetto-list li{font-weight:500!important}
+.pacchetto.featured .pacchetto-desc{color:rgba(255,255,255,.9)}
+.pacchetto.featured .pacchetto-period{color:rgba(255,255,255,.65)}
+.pk-flip{font-weight:600!important}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->

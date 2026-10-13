@@ -769,7 +769,7 @@ const filtri = document.querySelectorAll('.filtro');
     if (x0 !== null) { const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1)); }
     x0 = null;
   });
-  addEventListener('resize', layout);
+  let lw = innerWidth; addEventListener('resize', () => { if (innerWidth !== lw) { lw = innerWidth; layout(); } });
   layout();
 })();
 

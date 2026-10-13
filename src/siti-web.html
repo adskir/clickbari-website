@@ -577,7 +577,7 @@ gtag('consent', 'default', {
         <li>WhatsApp integrato</li>
         <li>Mobile responsive</li>
         <li>SEO base</li>
-        <li>Online da 24 ore</li>
+        <li>Consegna in 24 ore</li>
         <li style="color:rgba(255,255,255,0.4);font-style:italic">Gestione sito: 200 €/anno (hosting, dominio, backup, fino a 5 modifiche al mese)</li>
       </ul>
         <button type="button" class="pk-more-btn">Mostra tutto</button>
@@ -606,7 +606,7 @@ gtag('consent', 'default', {
         <li>WhatsApp + form contatti</li>
         <li>Google Analytics 4 + GTM — su richiesta</li>
         <li>Integrazioni AI e chatbot — su richiesta</li>
-        <li>Consegna da 2 settimane</li>
+        <li>Consegna in circa 2 settimane</li>
         <li style="color:rgba(255,255,255,0.7);font-style:italic">Gestione sito: 300 €/anno (hosting, dominio, backup, fino a 15 modifiche al mese)</li>
       </ul>
         <button type="button" class="pk-more-btn">Mostra tutto</button>
@@ -636,7 +636,7 @@ gtag('consent', 'default', {
           <li>Pannello admin facile da usare</li>
           <li>SEO per le schede prodotto</li>
           <li>Mobile responsive</li>
-          <li>Consegna da 3 settimane</li>
+          <li>Consegna in circa 3 settimane</li>
           <li style="color:rgba(255,255,255,0.4);font-style:italic">Gestione sito: 400 €/anno (hosting, dominio, backup, fino a 30 modifiche al mese; per Shopify l'abbonamento è escluso)</li>
         </ul>
         <button type="button" class="pk-more-btn">Mostra tutto</button>
@@ -1109,6 +1109,13 @@ document.querySelectorAll('.faq-item').forEach(item => {
       if (phone()) {
         const f = card.classList.toggle('flipped');
         front.inert = f; back.inert = !f;
+        if (!f && back.classList.contains('all')) {
+          // tornando al fronte richiudi "Mostra tutto", così la carta torna compatta
+          back.classList.remove('all');
+          const m = back.querySelector('.pk-more-btn');
+          if (m) m.textContent = 'Mostra tutto (+' + (back.querySelectorAll('li').length - 6) + ')';
+          setTimeout(() => fit(card), 350);
+        }
       } else {
         const open = !card.classList.contains('open');
         [card].forEach(c => {
@@ -1119,7 +1126,12 @@ document.querySelectorAll('.faq-item').forEach(item => {
     }));
   });
   reset();
-  window.addEventListener('resize', () => { if (phone() !== mode) { mode = phone(); reset(); } else cards.forEach(fit); });
+  let lastW = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === lastW) return; // su mobile la barra degli indirizzi cambia solo l'altezza: ignora
+    lastW = window.innerWidth;
+    if (phone() !== mode) { mode = phone(); reset(); } else cards.forEach(fit);
+  });
   window.addEventListener('load', () => cards.forEach(fit));
   if (document.fonts) document.fonts.ready.then(() => cards.forEach(fit));
 })();

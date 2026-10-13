@@ -255,14 +255,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outlin
 @media(max-width:768px){
   .hero{display:grid;grid-template-columns:1fr;grid-template-areas:"stack";min-height:0}
   .hero-photo,.hero-left{grid-area:stack}
-  .hero-photo{order:0;aspect-ratio:auto;min-height:0;height:min(128vw,640px);align-self:start}
+  .hero{--ph:min(86vw,54svh,440px)}
+  .hero-photo{order:0;aspect-ratio:auto;min-height:0;height:calc(var(--ph) + 200px);align-self:start}
   .photo-wrap img{object-position:68% 10%}
   .photo-wrap::after{background:linear-gradient(180deg,rgba(6,6,6,.3) 0%,rgba(6,6,6,0) 16%,rgba(6,6,6,0) 45%,rgba(6,6,6,.75) 72%,var(--black) 96%)}
   .photo-badge{left:auto;right:16px;top:84px;bottom:auto;flex-direction:column;align-items:flex-end;gap:4px;text-align:right}
   .photo-badge-val{font-size:52px}
   .photo-badge-label{font-size:10px;max-width:90px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.9)}
   .photo-badge-val{text-shadow:0 2px 16px rgba(0,0,0,.6)}
-  .hero-left{position:relative;z-index:2;padding:min(86vw,440px) 20px 56px;justify-content:flex-end}
+  .hero-left{position:relative;z-index:2;padding:var(--ph) 20px 56px;justify-content:flex-end}
   .hero-title{text-shadow:0 2px 24px rgba(0,0,0,.65)}
   .hero-tag{text-shadow:0 1px 10px rgba(0,0,0,.8)}
   .hero-intro{color:#dcdcdc}

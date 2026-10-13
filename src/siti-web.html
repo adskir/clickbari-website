@@ -395,6 +395,33 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .pacchetto.featured .pk-flip:hover{background:#E2E8F2;border-color:rgba(10,15,31,.25)}
 .pacchetto.featured .pk-back-head{border-bottom-color:rgba(10,15,31,.12)}
 @media(prefers-reduced-motion:reduce){.pacchetto{transition:none}}
+
+/* PACCHETTI — computer/tablet: niente rotazione, i dettagli si aprono sotto */
+.pk-more-btn{display:none}
+.pk-flip .ic-dd{display:none}
+@media(min-width:769px){
+  .pacchetto{transform-style:flat}
+  .pk-front{display:contents}
+  .pk-front>.pk-flip{order:1}
+  .pk-front>.pacchetto-btn{order:3}
+  .pk-flip .ic-flip{display:none}
+  .pk-flip .ic-dd{display:block;transition:transform .35s}
+  .pk-flip:hover svg.ic-dd{transform:none}
+  .pacchetto.open .pk-flip svg.ic-dd{transform:rotate(180deg)}
+  .pk-back{position:static;inset:auto;transform:none;backface-visibility:visible;-webkit-backface-visibility:visible;padding:0;order:2;display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1);overflow:hidden;border-radius:0}
+  .pacchetto.open .pk-back{grid-template-rows:1fr}
+  .pk-back-head,.pk-back>.pacchetto-btn,.pk-back .pk-more-btn{display:none!important}
+  .pk-back .pacchetto-list{min-height:0;overflow:hidden;margin:0;padding:4px 0 0}
+  .pacchetto.open .pk-back .pacchetto-list{padding:4px 0 22px}
+  .pacchetto.open .pk-front>.pacchetto-desc{flex-grow:0;min-height:calc(14px * 1.65 * 4)}
+  .pacchetto.open .pk-back{flex-grow:1;align-content:start}
+}
+/* PACCHETTI — telefono: retro compatto, prime 6 voci + "Mostra tutto" */
+@media(max-width:768px){
+  .pk-back:not(.all) .pacchetto-list li:nth-child(n+7){display:none}
+  .pk-more-btn{display:block;align-self:flex-start;margin:-10px 0 18px;padding:0;background:none;border:0;font-family:var(--font-b);font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;color:#fff}
+  .pacchetto.featured .pk-more-btn{color:#0A0F1F}
+}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -528,7 +555,7 @@ gtag('consent', 'default', {
       <div class="pacchetto-price"><sup>da €</sup>300</div>
       <div class="pacchetto-period">una tantum</div>
       <div class="pacchetto-desc">Una pagina, un obiettivo. Perfetta per promozioni, eventi o per testare un'idea prima di investire di più.</div>
-        <button type="button" class="pk-flip">Cosa include <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+        <button type="button" class="pk-flip" aria-expanded="false">Cosa include <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><svg class="ic-dd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
       <div class="pk-back">
@@ -543,6 +570,7 @@ gtag('consent', 'default', {
         <li>Consegna da 1 settimana</li>
         <li style="color:rgba(255,255,255,0.4);font-style:italic">Manutenzione mensile: da €50/mese</li>
       </ul>
+        <button type="button" class="pk-more-btn">Mostra tutto</button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
     </div>
@@ -554,7 +582,7 @@ gtag('consent', 'default', {
       <div class="pacchetto-price"><sup>da €</sup>500</div>
       <div class="pacchetto-period">una tantum</div>
       <div class="pacchetto-desc">Sito multipage completo per far crescere la tua attività online. La soluzione più scelta dai miei clienti.</div>
-        <button type="button" class="pk-flip">Cosa include <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+        <button type="button" class="pk-flip" aria-expanded="false">Cosa include <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><svg class="ic-dd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
       <div class="pk-back">
@@ -570,6 +598,7 @@ gtag('consent', 'default', {
         <li>Consegna da 2 settimane</li>
         <li style="color:rgba(255,255,255,0.7);font-style:italic">Manutenzione mensile: da €75/mese</li>
       </ul>
+        <button type="button" class="pk-more-btn">Mostra tutto</button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
     </div>
@@ -580,7 +609,7 @@ gtag('consent', 'default', {
       <div class="pacchetto-price"><sup>da €</sup>700</div>
       <div class="pacchetto-period">una tantum</div>
       <div class="pacchetto-desc">Sito multipage con pannello di amministrazione. Aggiorni testi e immagini in autonomia e fai crescere il sito quando vuoi. Ideale anche per e-commerce e negozi online.</div>
-        <button type="button" class="pk-flip">Cosa include <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+        <button type="button" class="pk-flip" aria-expanded="false">Cosa include <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><svg class="ic-dd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Richiedi preventivo →</a>
       </div>
       <div class="pk-back">
@@ -598,6 +627,7 @@ gtag('consent', 'default', {
         <li>Consegna da 3 settimane</li>
         <li style="color:rgba(255,255,255,0.4);font-style:italic">Manutenzione mensile: da €100/mese</li>
       </ul>
+        <button type="button" class="pk-more-btn">Mostra tutto</button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Richiedi preventivo →</a>
       </div>
     </div>
@@ -993,20 +1023,56 @@ document.querySelectorAll('.faq-item').forEach(item => {
 })();
 
 
-// PACCHETTI: girare la carta per vedere "Cosa include"
-document.querySelectorAll('.flip-card').forEach(card => {
-  const front = card.querySelector('.pk-front'), back = card.querySelector('.pk-back');
-  back.inert = true;
-  // la carta è alta abbastanza da contenere anche il retro (niente scroll interno)
-  const fit = () => { card.style.minHeight = ''; card.style.minHeight = Math.ceil(back.scrollHeight) + 'px'; };
-  fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
-  if (document.fonts) document.fonts.ready.then(fit);
-  card.querySelectorAll('.pk-flip').forEach(btn => btn.addEventListener('click', () => {
-    const f = card.classList.toggle('flipped');
-    front.inert = f; back.inert = !f;
-    if (f) back.scrollTop = 0;
-  }));
-});
+// PACCHETTI — telefono: carta girevole (retro compatto con "Mostra tutto");
+// computer/tablet: "Cosa include" apre i dettagli sotto (su desktop largo tutti insieme, per confrontare)
+(function(){
+  const cards = [...document.querySelectorAll('.flip-card')];
+  const phone = () => window.matchMedia('(max-width: 768px)').matches;
+  const wide = () => window.matchMedia('(min-width: 1101px)').matches;
+  const fit = card => {
+    const front = card.querySelector('.pk-front'), back = card.querySelector('.pk-back');
+    card.style.minHeight = '';
+    if (!phone()) return;
+    const cs = getComputedStyle(card);
+    card.style.minHeight = Math.ceil(Math.max(front.offsetHeight + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom), back.scrollHeight)) + 'px';
+  };
+  const reset = () => cards.forEach(card => {
+    card.classList.remove('flipped','open');
+    card.querySelector('.pk-front').inert = false;
+    card.querySelector('.pk-back').inert = phone();
+    card.querySelectorAll('.pk-flip').forEach(b => b.setAttribute('aria-expanded','false'));
+    fit(card);
+  });
+  let mode = phone();
+  cards.forEach(card => {
+    const front = card.querySelector('.pk-front'), back = card.querySelector('.pk-back');
+    const items = back.querySelectorAll('li').length, more = back.querySelector('.pk-more-btn');
+    if (more) {
+      if (items <= 6) more.remove();
+      else {
+        const label = () => back.classList.contains('all') ? 'Mostra meno' : 'Mostra tutto (+' + (items - 6) + ')';
+        more.textContent = label();
+        more.addEventListener('click', () => { back.classList.toggle('all'); more.textContent = label(); fit(card); });
+      }
+    }
+    card.querySelectorAll('.pk-flip').forEach(btn => btn.addEventListener('click', () => {
+      if (phone()) {
+        const f = card.classList.toggle('flipped');
+        front.inert = f; back.inert = !f;
+      } else {
+        const open = !card.classList.contains('open');
+        (wide() ? cards : [card]).forEach(c => {
+          c.classList.toggle('open', open);
+          c.querySelector('.pk-front .pk-flip').setAttribute('aria-expanded', open);
+        });
+      }
+    }));
+  });
+  reset();
+  window.addEventListener('resize', () => { if (phone() !== mode) { mode = phone(); reset(); } else cards.forEach(fit); });
+  window.addEventListener('load', () => cards.forEach(fit));
+  if (document.fonts) document.fonts.ready.then(() => cards.forEach(fit));
+})();
 </script>
 </body>
 </html>

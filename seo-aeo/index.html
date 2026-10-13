@@ -457,7 +457,7 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
   .pk-back-head,.pk-back>.prezzo-btn,.pk-back .pk-more-btn,.pk-back .pk-unflip{display:none!important}
   .pk-back .prezzo-list{min-height:0;overflow:hidden;margin:0;padding:4px 0 0}
   .prezzo.open .pk-back .prezzo-list{padding:4px 0 22px}
-  .prezzo.open .pk-front>.prezzo-desc{flex-grow:0;min-height:calc(14px * 1.65 * 4)}
+  .prezzo.open .pk-front>.prezzo-desc{flex-grow:0;min-height:calc(14.5px * 1.65 * 4)}
   .prezzo.open .pk-back{flex-grow:1;align-content:start}
 }
 /* PACCHETTI — telefono: retro compatto, prime 6 voci + "Mostra tutto" */
@@ -500,7 +500,7 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 /* desktop: si apre solo la carta cliccata, le altre restano compatte */
 @media(min-width:769px){
   .prezzos-grid,.pacchetti-grid,.prezzi-grid{align-items:start!important}
-  .pk-front>.prezzo-desc{flex-grow:0!important;min-height:calc(14px * 1.65 * 4)}
+  .pk-front>.prezzo-desc{flex-grow:0!important;min-height:calc(14.5px * 1.65 * 4)}
 }
 
 /* PACCHETTI — carte bianche più definite: bordo azzurro + testo più scuro */
@@ -512,6 +512,14 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .prezzo:not(.featured) .prezzo-list li[style]{color:#4A5468!important}
 .prezzo:not(.featured) .pk-flip{background:#E6ECF7;border-color:rgba(10,15,31,.2);color:#05070D;font-weight:500}
 .prezzo:not(.featured) .pk-flip:hover{background:#D9E2F2;border-color:rgba(10,15,31,.35)}
+
+/* PACCHETTI — testo un po' più deciso */
+.prezzo-desc{font-weight:500!important;font-size:14.5px}
+.prezzo-period{font-weight:500!important}
+.prezzo-list li{font-weight:500!important}
+.prezzo.featured .prezzo-desc{color:rgba(255,255,255,.9)}
+.prezzo.featured .prezzo-period{color:rgba(255,255,255,.65)}
+.pk-flip{font-weight:600!important}
 </style>
 </head>
 <body>

@@ -375,6 +375,38 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .dd-tx{display:flex;flex-direction:column;gap:2px;line-height:1.2}
 .dd-tx b{font-weight:500;color:#fff}
 .dd-tx small{font-size:12px;letter-spacing:0;text-transform:none;color:#9fb3d9}
+
+/* NAV — restyle: sottolineatura animata, pagina attiva, tendina e menu mobile coordinati */
+nav{background:rgba(6,8,14,.86)!important;border-bottom:1px solid rgba(255,255,255,.06)!important}
+nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(91,155,255,.55) 30%,rgba(91,155,255,.55) 70%,transparent);pointer-events:none}
+.nav-links>li>a:not(.nav-cta):not(.nav-gift){position:relative;padding:8px 0;color:#cfd6e4}
+.nav-links>li>a:not(.nav-cta):not(.nav-gift)::before{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--blue-bright);transform:scaleX(0);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.nav-links>li>a:not(.nav-cta):not(.nav-gift):hover,.nav-links>li>a.active:not(.nav-cta):not(.nav-gift),.nav-dd:hover>a{color:#fff}
+.nav-links>li>a:not(.nav-cta):not(.nav-gift):hover::before,.nav-links>li>a.active:not(.nav-cta):not(.nav-gift)::before,.nav-dd:hover>a::before{transform:scaleX(1)}
+.nav-dd>a::after{transition:transform .3s}
+.nav-dd:hover>a::after{transform:rotate(225deg) translate(-2px,-2px)}
+.nav-cta{box-shadow:0 6px 22px rgba(37,99,235,.45);transition:transform .2s,box-shadow .2s,background .2s!important}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(37,99,235,.6)}
+.nav-cta::before{display:none}
+/* tendina: pagina attuale discreta, hover pieno */
+.nav-dd-menu a.dd-item.active{background:rgba(91,155,255,.07)!important}
+.nav-dd-menu a.dd-item.active .dd-ic{background:rgba(37,99,235,.18);color:var(--blue-bright);border-color:rgba(91,155,255,.35)}
+.nav-dd-menu a.dd-item.active .dd-tx b{color:var(--blue-bright)}
+.nav-dd-menu a.dd-item:hover .dd-ic{background:var(--blue)!important;color:#fff!important;border-color:var(--blue)!important}
+/* menu mobile */
+.mobile-menu{background:radial-gradient(120% 60% at 100% 0%,rgba(37,99,235,.22),transparent 60%),rgba(6,8,14,.98)!important}
+.mobile-nav-link{color:#e2e6ee}
+.mobile-nav-link.active{color:var(--blue-bright)}
+.mobile-nav-link.active::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue-bright);box-shadow:0 0 10px var(--blue-bright);margin-right:12px;order:-1}
+.mobile-nav-link.active{justify-content:flex-start}
+.mobile-sub-list{border-left:0!important;padding:0 0 8px!important;margin:0 0 6px!important;display:none}
+.mobile-nav-item.open .mobile-sub-list{display:flex!important;flex-direction:column;gap:6px}
+.mobile-sub-list a.msub{display:flex!important;align-items:center;gap:12px;padding:10px 12px!important;border-radius:var(--radius-md);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);text-transform:none!important;letter-spacing:0!important;color:#fff!important}
+.mobile-sub-list a.msub:hover{background:rgba(91,155,255,.12)}
+.mobile-sub-list a.msub.active{border-color:rgba(91,155,255,.4);background:rgba(37,99,235,.12)}
+.mobile-sub-list a.msub.active .dd-ic{background:var(--blue);color:#fff;border-color:var(--blue)}
+.mobile-sub-list .dd-tx b{font-size:15px;font-weight:500}
+.mobile-cta{box-shadow:0 10px 30px rgba(37,99,235,.45)}
 </style>
 </head>
 <body>
@@ -426,7 +458,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <ul class="mobile-nav-list">
     <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">Home</a></li>
     <li class="mobile-nav-item"><a href="/chi-sono/" class="mobile-nav-link">Chi sono</a></li>
-    <li class="mobile-nav-item has-sub open"><div class="mobile-row"><a href="/#servizi" class="mobile-nav-link">Servizi</a><button type="button" class="mobile-sub-toggle" aria-expanded="true" aria-label="Mostra i servizi" onclick="var i=this.closest('.mobile-nav-item');i.classList.toggle('open');this.setAttribute('aria-expanded',i.classList.contains('open'))"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button></div><ul class="mobile-sub-list"><li><a href="/siti-web/">Siti Web</a></li><li><a href="/google-ecosystem/" class="active">Google Ecosystem</a></li><li><a href="/seo-aeo/">SEO + AEO</a></li><li><a href="/automazione/">Automazione AI</a></li></ul></li>
+    <li class="mobile-nav-item has-sub open"><div class="mobile-row"><a href="/#servizi" class="mobile-nav-link">Servizi</a><button type="button" class="mobile-sub-toggle" aria-expanded="true" aria-label="Mostra i servizi" onclick="var i=this.closest('.mobile-nav-item');i.classList.toggle('open');this.setAttribute('aria-expanded',i.classList.contains('open'))"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button></div><ul class="mobile-sub-list"><li><a href="/siti-web/" class="msub"><span class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><span class="dd-tx"><b>Siti Web</b><small>Landing, vetrina, e-commerce</small></span></a></li><li><a href="/google-ecosystem/" class="msub active"><span class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="dd-tx"><b>Google Ecosystem</b><small>Google Ads e Business Profile</small></span></a></li><li><a href="/seo-aeo/" class="msub"><span class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></span><span class="dd-tx"><b>SEO + AEO</b><small>Primo su Google e sulle AI</small></span></a></li><li><a href="/automazione/" class="msub"><span class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><span class="dd-tx"><b>Automazione AI</b><small>Chatbot e flussi automatici</small></span></a></li></ul></li>
     <li class="mobile-nav-item"><a href="/portfolio/" class="mobile-nav-link">Portfolio</a></li>
     <li class="mobile-nav-item"><a href="/sito-regalo/" class="mobile-nav-link mobile-gift">Sito regalo <span class="gift-badge">99 €</span></a></li>
     <li class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link">Blog</a></li>

@@ -30,7 +30,7 @@
 }
 html{scroll-behavior:smooth}
 
-body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:300;overflow-x:hidden}
+body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:400;overflow-x:hidden}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.09)}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
@@ -66,7 +66,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-dd-menu a:hover,.nav-dd-menu a.active{background:rgba(91,155,255,.12);color:#fff}
 .mobile-menu{z-index:99!important}
 .mobile-sub-list{list-style:none;margin:-6px 0 10px;padding:0 0 4px 16px;border-left:2px solid rgba(91,155,255,.3)}
-.mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9a9a9a;text-decoration:none}
+.mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#b3b3b3;text-decoration:none}
 .mobile-sub-list a:hover,.mobile-sub-list a.active{color:var(--blue-bright)}
 .mobile-row{display:flex;align-items:center;gap:8px}
 .mobile-row .mobile-nav-link{flex:1}
@@ -114,7 +114,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 /* CATEGORIE — sommario */
 .categorie{padding:24px max(48px,calc((100% - var(--wrap))/2)) 72px}
-.categorie>div:first-child{font-size:11px!important;letter-spacing:.2em!important;color:#7d7d7d!important}
+.categorie>div:first-child{font-size:11px!important;letter-spacing:.2em!important;color:#a3a3a3!important}
 .categorie-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cat-card{padding:28px 28px 26px 0;text-decoration:none;color:#fff;display:flex;flex-direction:column;position:relative;transition:background .3s}
 .cat-card+.cat-card{padding-left:28px;border-left:1px solid var(--line)}
@@ -122,17 +122,17 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .cat-card:hover::after,.cat-card.is-active::after{transform:scaleX(1)}
 .cat-icon{font-size:24px;margin-bottom:18px}
 .cat-name{font-family:var(--font-d);font-size:32px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
-.cat-desc{font-size:14px;line-height:1.6;color:#9a9a9a;margin-bottom:18px;flex:1}
-.cat-count{font-size:12px;letter-spacing:.08em;color:#6f6f6f}
+.cat-desc{font-size:14px;line-height:1.6;color:#b3b3b3;margin-bottom:18px;flex:1}
+.cat-count{font-size:12px;letter-spacing:.08em;color:#9a9a9a}
 .cat-count span{color:var(--blue-bright);font-weight:500}
 
 /* FILTRI */
 .blog-header{padding:0 max(48px,calc((100% - var(--wrap))/2));display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:16px}
 .filtri{display:flex;gap:4px;flex-wrap:wrap;padding:4px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:calc(var(--radius-md) + 4px)}
-.filtro{border:0;padding:10px 16px;border-radius:var(--radius-md);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#aaa;cursor:pointer;transition:all .2s;background:none;font-family:var(--font-b)}
+.filtro{border:0;padding:10px 16px;border-radius:var(--radius-md);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bdbdbd;cursor:pointer;transition:all .2s;background:none;font-family:var(--font-b)}
 .filtro:hover{color:#fff}
 .filtro.active{background:var(--blue);color:#fff}
-.blog-count{font-size:13px;color:#7d7d7d}
+.blog-count{font-size:13px;color:#a3a3a3}
 
 /* ARTICOLI — elenco */
 .articoli-wrap{padding:0 max(48px,calc((100% - var(--wrap))/2)) 96px}
@@ -151,21 +151,21 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .art-cat.seo{background:rgba(34,197,94,.1);color:#4ade80}
 .art-cat.auto{background:rgba(168,85,247,.12);color:#c084fc}
 .art-title{font-family:var(--font-d);font-size:clamp(28px,2.6vw,40px);letter-spacing:.01em;line-height:1;color:#fff}
-.art-excerpt{font-size:15px;line-height:1.6;color:#9a9a9a;max-width:720px}
+.art-excerpt{font-size:15px;line-height:1.6;color:#b3b3b3;max-width:720px}
 .art-card-bottom{flex-shrink:0;display:flex;align-items:center;gap:28px;padding:0;border:0;margin:0}
 .art-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;min-width:110px}
-.art-date{font-size:13px;color:#9a9a9a}
-.art-read{font-size:12px;color:#6f6f6f}
+.art-date{font-size:13px;color:#b3b3b3}
+.art-read{font-size:12px;color:#9a9a9a}
 .art-link{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:0;color:#fff;transition:background .25s,border-color .25s,transform .35s}
 .art-link::before{content:'';width:18px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.8'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat}
 .art-card:hover .art-link{background:var(--blue);border-color:var(--blue);transform:rotate(-45deg)}
 
 /* CARD COMING SOON */
 .art-card.coming{pointer-events:none}
-.art-card.coming .art-title{color:#6f6f6f}
+.art-card.coming .art-title{color:#9a9a9a}
 .art-card.coming .art-excerpt{color:#5f5f5f}
 .art-card.coming .art-link{opacity:.35}
-.coming-badge{position:absolute;right:96px;top:14px;font-size:11px;letter-spacing:.08em;color:#8d8d8d;border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+.coming-badge{position:absolute;right:96px;top:14px;font-size:11px;letter-spacing:.08em;color:#aaaaaa;border:1px solid var(--line);padding:3px 10px;border-radius:999px}
 
 /* NEWSLETTER */
 .newsletter{margin:0 max(48px,calc((100% - var(--wrap))/2)) 112px;background:var(--blue);padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;border-radius:var(--radius-lg);position:relative;overflow:hidden}
@@ -231,9 +231,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .modal-close:hover{background:rgba(255,255,255,0.18)}
 .modal-body{padding:28px 28px 32px}
 .modal-title{font-family:var(--font-d);font-size:26px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
-.modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
+.modal-sub{font-size:13px;color:#b3b3b3;margin-bottom:22px;line-height:1.6}
 .modal-field{margin-bottom:14px}
-.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
+.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a8a8a8;margin-bottom:6px}
 .modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
 .modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
 .modal-field select{appearance:none;cursor:pointer}
@@ -243,7 +243,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .modal-success.visible{display:block}
 .modal-success svg{width:48px;height:48px;margin-bottom:14px}
 .modal-success h3{font-family:var(--font-d);font-size:20px;color:#fff;margin-bottom:8px;letter-spacing:.02em}
-.modal-success p{font-size:13px;color:#999;line-height:1.6}
+.modal-success p{font-size:13px;color:#b3b3b3;line-height:1.6}
 
 @media(max-width:480px){
   .modal-body{padding:22px 20px 26px}
@@ -616,7 +616,7 @@ gtag('consent', 'default', {
       <input type="email" class="newsletter-input" placeholder="la-tua@email.it">
       <button class="newsletter-btn">Iscriviti</button>
     </div>
-    <p style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:10px">Nessuno spam. Cancellati quando vuoi.</p>
+    <p style="font-size:11px;color:rgba(255,255,255,.68);margin-top:10px">Nessuno spam. Cancellati quando vuoi.</p>
   </div>
 </div>
 
@@ -631,18 +631,18 @@ gtag('consent', 'default', {
 .sf-logo img{width:38px;height:38px;border-radius:var(--radius-sm,6px);display:block}
 .sf-logo b{display:block;font-family:var(--font-d,'Bebas Neue',sans-serif);font-weight:400;font-size:28px;letter-spacing:.06em;color:#fff;line-height:1}
 .sf-logo small{display:block;font-size:8px;letter-spacing:.3em;color:var(--blue-bright,#5b9bff);text-transform:uppercase;margin-top:3px}
-.sf-tagline{font-size:13px;color:#9a9a9a;line-height:1.7;margin:0}
+.sf-tagline{font-size:13px;color:#b3b3b3;line-height:1.7;margin:0}
 .sf-contact{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
 .sf-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;list-style:none;margin:0;padding:0}
 .sf-links a{display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 16px;border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-md,10px);font-size:13px;color:#d6d6d6;text-decoration:none;transition:border-color .2s,color .2s,background .2s}
 .sf-links a:hover{border-color:var(--blue-bright,#5b9bff);color:#fff;background:rgba(91,155,255,.08)}
 .sf-links svg{width:16px;height:16px;flex-shrink:0;color:var(--blue-bright,#5b9bff)}
 .sf-addr{display:flex;align-items:center;gap:8px;font-size:12px;color:#8a8a8a;margin:0}
-.sf-addr svg{width:14px;height:14px;color:#666}
+.sf-addr svg{width:14px;height:14px;color:#959595}
 .sf-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid rgba(255,255,255,.07);padding-top:22px}
-.sf-bottom p{font-size:11px;color:#6f6f6f;letter-spacing:.04em;margin:0}
+.sf-bottom p{font-size:11px;color:#9a9a9a;letter-spacing:.04em;margin:0}
 .sf-legal{display:flex;gap:22px;margin-right:76px}
-.sf-legal a{font-size:11px;color:#6f6f6f;text-decoration:none;transition:color .2s}
+.sf-legal a{font-size:11px;color:#9a9a9a;text-decoration:none;transition:color .2s}
 .sf-legal a:hover{color:#fff}
 @media(max-width:768px){
   .site-footer{padding:44px 20px 24px}
@@ -741,7 +741,7 @@ document.querySelector('.newsletter-btn').addEventListener('click', () => {
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);flex-wrap:wrap">
   <p style="font-size:13px;color:#bbb;line-height:1.7;margin:0;flex:1;min-width:200px">Usiamo cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity). Leggi la <a href="/cookie/" style="color:var(--blue-bright);text-decoration:none">Cookie Policy</a> e la <a href="/privacy/" style="color:var(--blue-bright);text-decoration:none">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;width:100%;max-width:340px">
-    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#888;flex:1">Solo necessari</button>
+    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#a8a8a8;flex:1">Solo necessari</button>
     <button onclick="cookieAccept()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:none;background:var(--blue);color:#fff;flex:1">Accetta tutti</button>
   </div>
 </div>
@@ -825,7 +825,7 @@ document.querySelector('.newsletter-btn').addEventListener('click', () => {
           </div>
           <button type="submit" class="modal-submit">Invia richiesta</button>
         </form>
-        <p style="margin-top:14px;font-size:13px;color:#9a9a9a;text-align:center">Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a></p>
+        <p style="margin-top:14px;font-size:13px;color:#b3b3b3;text-align:center">Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a></p>
       </div>
       <div class="modal-success" id="modal-success">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="#5b9bff" stroke-width="1.5"/><path d="M7 12.5L10.5 16L17 8.5" stroke="#5b9bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>

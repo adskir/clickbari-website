@@ -10,7 +10,7 @@ excerpt: "Dal fai-da-te su un builder all'agenzia: prezzi reali per Bari, spiega
 permalink: "blog/quanto-costa-un-sito-web-a-bari-nel-2026/index.html"
 faq:
   - q: "Quanto costa un sito web a Bari nel 2026?"
-    a: "I prezzi partono da 300€ per una landing page e arrivano a 1.000€ o più per un e-commerce. Un sito vetrina standard costa in media 500-700€, mentre le agenzie applicano tariffe da 1.500€ fino a oltre 15.000€ per progetti complessi."
+    a: "I prezzi partono da 400€ per una landing page e arrivano a 1.200€ o più per un e-commerce. Un sito vetrina parte da circa 800€, mentre le agenzie applicano tariffe da 1.500€ fino a oltre 15.000€ per progetti complessi."
   - q: "Conviene un freelance o un'agenzia per il proprio sito web?"
     a: "Per la maggior parte delle piccole imprese un freelance è la scelta più efficiente: stesso risultato di un'agenzia, contatto diretto senza intermediari, e senza il ricarico di 2-3 volte che serve a coprire le spese fisse di un team."
   - q: "I prezzi dei siti web scenderanno ancora nei prossimi anni?"
@@ -22,22 +22,17 @@ Se lo stai cercando su Google, ecco i prezzi diretti:
 <div class="price-grid">
   <div class="price-card">
     <div class="price-card-label">Landing page</div>
-    <div class="price-card-value">300€</div>
+    <div class="price-card-value">400€</div>
     <div class="price-card-from">a partire da</div>
   </div>
   <div class="price-card">
     <div class="price-card-label">Sito vetrina</div>
-    <div class="price-card-value">500€</div>
-    <div class="price-card-from">a partire da</div>
-  </div>
-  <div class="price-card">
-    <div class="price-card-label">Con CMS</div>
-    <div class="price-card-value">700€</div>
+    <div class="price-card-value">800€</div>
     <div class="price-card-from">a partire da</div>
   </div>
   <div class="price-card">
     <div class="price-card-label">E-commerce</div>
-    <div class="price-card-value">1.000€</div>
+    <div class="price-card-value">1.200€</div>
     <div class="price-card-from">a partire da</div>
   </div>
 </div>
@@ -57,7 +52,7 @@ Se lo stai cercando su Google, ecco i prezzi diretti:
   <div class="level-card highlight">
     <div class="level-badge">Il mio livello</div>
     <div class="level-name">Freelance</div>
-    <div class="level-price">300-1.000€</div>
+    <div class="level-price">400-1.500€</div>
     <ul class="level-list">
       <li>Design su misura</li>
       <li>Contatto diretto, no intermediari</li>

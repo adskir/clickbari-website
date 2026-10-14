@@ -116,7 +116,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 .nav-cta:hover{background:var(--blue-dark)!important}
 
-/* ===== VARIANTE D — "Cruscotto": hero con pannello analytics, numeri in stile dashboard ===== */
+/* ===== hero con mock dei risultati Google ===== */
 :root{--line:rgba(255,255,255,.09);--wrap:1344px;--panel:#0f1115}
 a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px}
 .sec{padding:112px 48px}
@@ -139,24 +139,51 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.22);color:#e6e6e6;padding:15px 30px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s,background .2s}
 .btn-outline:hover{border-color:var(--blue-bright);color:#fff;background:rgba(91,155,255,.08)}
 
-/* pannello finto analytics (decorativo) */
-.dash{background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:22px;box-shadow:0 40px 90px rgba(0,0,0,.6);display:grid;gap:14px}
-.dash-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.dash-tile{background:#151821;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);padding:14px 14px 12px}
-.dash-tile b{display:block;width:44%;height:8px;border-radius:4px;background:rgba(255,255,255,.14);margin-bottom:12px}
-.dash-tile i{display:block;width:70%;height:20px;border-radius:5px;background:linear-gradient(90deg,#fff,rgba(255,255,255,.55))}
-.dash-tile:nth-child(2) i{width:52%;background:linear-gradient(90deg,var(--blue-bright),rgba(91,155,255,.5))}
-.dash-tile:nth-child(3) i{width:60%}
-.dash-tile s{display:block;margin-top:10px;width:38%;height:6px;border-radius:3px;background:rgba(40,200,120,.55)}
-.dash-chart{background:#151821;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);padding:16px}
-.dash-chart svg{display:block;width:100%;height:auto}
-.dash-ad{display:flex;gap:12px;align-items:center;background:#151821;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);padding:14px}
-.dash-ad .pin{width:34px;height:34px;border-radius:50%;background:rgba(37,99,235,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.dash-ad .pin svg{width:18px;height:18px}
-.dash-ad .lines{flex:1;display:grid;gap:7px}
-.dash-ad .lines span{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.12)}
-.dash-ad .lines span:first-child{width:56%;background:rgba(91,155,255,.6);height:9px}
-.dash-ad .lines span:last-child{width:80%}
+/* mock risultati Google (decorativo) */
+.gm{position:relative;max-width:600px;margin-left:auto;width:100%;text-align:left}
+.gm-card{background:#fff;border-radius:var(--radius-lg);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(91,155,255,.35),0 0 60px rgba(37,99,235,.25);overflow:hidden;color:#202124;font-family:var(--font-b)}
+.gm-top{padding:18px 20px 0}
+.gm-search{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:999px;border:1px solid #dfe1e5;box-shadow:0 1px 6px rgba(32,33,36,.18)}
+.gm-search svg{width:18px;height:18px;flex-shrink:0}
+.gm-q{flex:1;font-size:15px;color:#202124;white-space:nowrap;overflow:hidden}
+.gm-q i{display:inline-block;width:2px;height:17px;background:var(--blue);vertical-align:-3px;margin-left:2px;animation:gmblink 1s steps(1) infinite}
+@keyframes gmblink{50%{opacity:0}}
+.gm-tabs{display:flex;gap:22px;padding:14px 6px 0;font-size:13px;color:#5f6368;border-bottom:1px solid #ebebeb}
+.gm-tabs span{padding-bottom:10px}
+.gm-tabs span:first-child{color:#1a73e8;border-bottom:3px solid #1a73e8;font-weight:500}
+.gm-body{padding:16px 20px 20px;display:grid;gap:14px}
+.gm-ad{border-radius:var(--radius-md);padding:14px 16px;background:#f5f8ff;border:1px solid #d6e3ff;position:relative}
+.gm-spons{font-size:12px;font-weight:700;color:#202124;margin-bottom:8px}
+.gm-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.gm-fav{width:26px;height:26px;border-radius:50%;background:#0a0a0a;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gm-fav img{width:16px;height:16px}
+.gm-site b{display:block;font-size:13px;font-weight:500;color:#202124;line-height:1.2}
+.gm-site small{display:block;font-size:12px;color:#4d5156}
+.gm-title{font-size:19px;line-height:1.3;color:#1a0dab;margin-bottom:4px}
+.gm-desc{font-size:13.5px;line-height:1.5;color:#4d5156}
+.gm-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.gm-links span{font-size:12.5px;color:#1a0dab;border:1px solid #d2d6dc;background:#fff;border-radius:999px;padding:5px 12px}
+.gm-local{display:grid;grid-template-columns:132px 1fr;border:1px solid #ebebeb;border-radius:var(--radius-md);overflow:hidden}
+.gm-map{background:#e8eef5;position:relative}
+.gm-map svg{position:absolute;inset:0;width:100%;height:100%}
+.gm-info{padding:12px 14px}
+.gm-info b{display:block;font-size:15px;font-weight:500;color:#1a0dab;margin-bottom:3px}
+.gm-rating{display:flex;align-items:center;gap:6px;font-size:13px;color:#4d5156;margin-bottom:3px}
+.gm-rating .st{color:#fbbc04;letter-spacing:1px;font-size:13px}
+.gm-meta{font-size:12.5px;color:#4d5156}
+.gm-meta em{font-style:normal;color:#188038}
+.gm-acts{display:flex;gap:8px;margin-top:9px}
+.gm-acts span{font-size:12px;color:#1a73e8;border:1px solid #dadce0;border-radius:999px;padding:4px 11px}
+.gm-chip{position:absolute;display:flex;align-items:center;gap:10px;background:rgba(15,17,21,.92);backdrop-filter:blur(10px);border:1px solid rgba(91,155,255,.45);border-radius:14px;padding:10px 14px;box-shadow:0 18px 40px rgba(0,0,0,.5);color:#fff;animation:gmfloat 6s ease-in-out infinite}
+.gm-chip strong{font-family:var(--font-d);font-weight:400;font-size:28px;line-height:1;color:var(--blue-bright);letter-spacing:.02em}
+.gm-chip span{font-size:12px;line-height:1.3;color:#cfcfcf}
+.gm-chip .dot{width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.2);flex-shrink:0}
+.gm-chip svg{width:20px;height:20px;flex-shrink:0}
+.gm-c1{right:-34px;bottom:96px;animation-delay:-3s}
+.gm-c2{right:-28px;top:-22px;animation-delay:-2s}
+.gm-c3{left:-36px;bottom:-24px;animation-delay:-4s}
+@keyframes gmfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.gm-chip{animation:none}.gm-q i{animation:none}}
 
 /* BONUS */
 .bonus{max-width:var(--wrap);margin:0 auto;position:relative;overflow:hidden;background:linear-gradient(120deg,#0f2a6b 0%,var(--blue) 55%,#3b82f6 100%);border-radius:var(--radius-lg);padding:36px 44px;display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:28px;align-items:center}
@@ -261,7 +288,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 
 @media(max-width:1100px){
   .hero-grid{grid-template-columns:1fr}
-  .dash{max-width:620px}
+  .gm{margin:24px auto 0;max-width:600px}
   .bonus{grid-template-columns:auto 1fr}
   .bonus-text{grid-column:1/-1}
   .prezzi-grid{grid-template-columns:1fr;max-width:560px}
@@ -289,6 +316,20 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
   .cta-wrap{padding:0 20px 72px}
   .cta-finale{padding:40px 24px}
   .wa-float{bottom:20px;right:20px;width:48px;height:48px}
+  .gm{margin-top:36px}
+  .gm-top{padding:14px 14px 0}
+  .gm-body{padding:14px;gap:12px}
+  .gm-q{font-size:14px}
+  .gm-tabs{gap:16px;font-size:12px}
+  .gm-title{font-size:16.5px}
+  .gm-desc{font-size:13px}
+  .gm-local{grid-template-columns:92px 1fr}
+  .gm-acts{display:none}
+  .gm-c1{right:-6px;bottom:-26px}
+  .gm-c2{right:-6px;top:-26px}
+  .gm-c3{display:none}
+  .gm-chip{padding:8px 12px;text-align:left}
+  .gm-chip strong{font-size:24px}
 }
 
 /* Cookie banner */
@@ -590,26 +631,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#servizi-google" class="btn-outline">Scopri i servizi</a>
     </div>
   </div>
-    <div class="dash reveal" aria-hidden="true">
-      <div class="dash-row">
-        <div class="dash-tile"><b></b><i></i><s></s></div>
-        <div class="dash-tile"><b></b><i></i><s></s></div>
-        <div class="dash-tile"><b></b><i></i><s></s></div>
+    <div class="gm reveal" aria-hidden="true">
+      <div class="gm-card">
+        <div class="gm-top">
+          <div class="gm-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <div class="gm-q">consulente google ads bari<i></i></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+          </div>
+          <div class="gm-tabs"><span>Tutti</span><span>Maps</span><span>Immagini</span><span>Notizie</span></div>
+        </div>
+        <div class="gm-body">
+          <div class="gm-ad">
+            <div class="gm-spons">Sponsorizzato</div>
+            <div class="gm-site"><div class="gm-fav"><img src="/logo-icon.png" alt="" width="16" height="16"></div><div><b>ClickBari</b><small>https://clickbari.it › google-ads</small></div></div>
+            <div class="gm-title">Google Ads a Bari — Campagne che portano clienti</div>
+            <div class="gm-desc">Annunci, Google Maps e Analytics in un'unica strategia. Ogni euro tracciato, report chiari.</div>
+            <div class="gm-links"><span>Prenota una call</span><span>Risultati</span><span>Prezzi</span></div>
+          </div>
+          <div class="gm-local">
+            <div class="gm-map">
+              <svg viewBox="0 0 132 120" preserveAspectRatio="xMidYMid slice"><g stroke="#fff" stroke-width="6" fill="none"><path d="M-10 40 L150 70"/><path d="M40 -10 L70 140"/><path d="M-10 100 L150 88"/></g><g stroke="#fff" stroke-width="2.5" fill="none"><path d="M100 -10 L110 140"/><path d="M-10 18 L150 22"/></g><path d="M0 120 L0 104 Q40 96 70 112 L132 106 L132 120Z" fill="#aecbfa"/><path d="M66 62c0-7 5.4-12 12-12s12 5 12 12c0 9-12 20-12 20S66 71 66 62Z" fill="#ea4335"/><circle cx="78" cy="62" r="4.2" fill="#a50e0e"/></svg>
+            </div>
+            <div class="gm-info">
+              <b>ClickBari</b>
+              <div class="gm-rating">5,0 <span class="st">★★★★★</span> (4)</div>
+              <div class="gm-meta">Agenzia di marketing · Bari · <em>Aperto</em></div>
+              <div class="gm-acts"><span>Sito web</span><span>Indicazioni</span></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="dash-chart">
-        <svg viewBox="0 0 520 170" fill="none">
-          <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(91,155,255,.35)"/><stop offset="1" stop-color="rgba(91,155,255,0)"/></linearGradient></defs>
-          <g stroke="rgba(255,255,255,.07)"><line x1="0" y1="40" x2="520" y2="40"/><line x1="0" y1="85" x2="520" y2="85"/><line x1="0" y1="130" x2="520" y2="130"/></g>
-          <path d="M0 150 L52 140 L104 146 L156 120 L208 126 L260 98 L312 92 L364 70 L416 74 L468 44 L520 24 L520 170 L0 170Z" fill="url(#g1)"/>
-          <path d="M0 150 L52 140 L104 146 L156 120 L208 126 L260 98 L312 92 L364 70 L416 74 L468 44 L520 24" stroke="#5b9bff" stroke-width="2.5" stroke-linejoin="round"/>
-          <path d="M0 160 L52 156 L104 158 L156 150 L208 152 L260 142 L312 140 L364 132 L416 134 L468 122 L520 116" stroke="rgba(255,255,255,.28)" stroke-width="1.5" stroke-dasharray="4 5"/>
-          <circle cx="514" cy="26" r="5" fill="#5b9bff"/>
-        </svg>
-      </div>
-      <div class="dash-ad">
-        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
-        <div class="lines"><span></span><span></span><span></span></div>
-      </div>
+      <div class="gm-chip gm-c1"><strong>11%</strong><span>CTR medio<br>delle campagne</span></div>
+      <div class="gm-chip gm-c2"><span class="dot"></span><span>Annuncio attivo<br>su Google e Maps</span></div>
+      <div class="gm-chip gm-c3"><svg viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2" stroke-linecap="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><span>Ogni contatto<br>tracciato in GA4</span></div>
     </div>
   </div>
 </section>

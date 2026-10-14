@@ -56,7 +56,7 @@ Se lo stai cercando su Google, ecco i prezzi diretti:
     <ul class="level-list">
       <li>Design su misura</li>
       <li>Contatto diretto, no intermediari</li>
-      <li>Nessun costo d'agenzia</li>
+      <li>Tempi rapidi</li>
     </ul>
   </div>
   <div class="level-card">

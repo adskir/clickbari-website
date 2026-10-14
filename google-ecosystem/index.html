@@ -232,7 +232,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 /* BUDGET NOTE */
 .budget-note{max-width:var(--wrap);margin:40px auto 0;background:var(--gray);border:1px solid var(--line);border-left:3px solid #f5c542;border-radius:var(--radius-md);padding:14px 22px;display:flex;gap:14px;align-items:center}
 .budget-note-icon{font-size:20px;flex-shrink:0}
-.budget-note-text{margin:0;font-size:15px;color:#e6e6e6;line-height:1.6}
+.budget-note-text{flex:1;margin:0;font-size:15px;color:#e6e6e6;line-height:1.6}
 
 
 /* PROCESSO */
@@ -304,7 +304,8 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
   .servizi-grid{grid-template-columns:1fr}
   .sg-card{padding:28px 24px}
   .processo-steps{grid-template-columns:1fr}
-  .budget-note{padding:14px 16px;align-items:flex-start}
+  .budget-note{padding:14px 16px;align-items:flex-start;flex-wrap:wrap;gap:12px}
+  .budget-note-text{flex:1 1 calc(100% - 40px)}
   .budget-note-text{font-size:14.5px}
   .cta-wrap{padding:0 20px 72px}
   .cta-finale{padding:40px 24px}
@@ -755,13 +756,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="budget-note">
     <div class="budget-note-icon" aria-hidden="true">💡</div>
     <p class="budget-note-text">Il budget pubblicitario è tuo: lo paghi direttamente a Google con la tua carta, io ti addebito solo il lavoro di gestione.</p>
+    <a href="#faq-budget" class="bonus-link">Come funziona →</a>
   </div>
 </section>
 
 <!-- SERVIZI GOOGLE -->
 <section class="sec servizi" id="servizi-google">
   <div class="sec-kicker">Cosa faccio</div>
-  <h2 class="sec-title">Tutta l'ecosistema<br>Google, gestita.</h2>
+  <h2 class="sec-title">Tutto l'ecosistema<br>Google, gestito.</h2>
   <div class="servizi-grid">
     <div class="sg-card">
       <div class="sg-icon">🔍</div>
@@ -868,9 +870,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="faq-q" role="button" tabindex="0">Quando vedrò i primi risultati? <span class="faq-icon">+</span></div>
       <div class="faq-a">Con Google Ads i primi click arrivano subito, ma i risultati concreti — lead e clienti — richiedono 4-8 settimane di ottimizzazione. Le prime settimane servono per raccogliere dati, testare annunci e affinare il targeting. È normale e fa parte del processo.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Posso smettere quando voglio? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Sì. Non ci sono contratti a lungo termine. Puoi interrompere il servizio con un preavviso di 30 giorni. Il tuo account Google Ads rimane sempre tuo.</div>
+    <div class="faq-item" id="faq-budget">
+      <div class="faq-q" role="button" tabindex="0">Il budget pubblicitario è incluso nel prezzo? <span class="faq-icon">+</span></div>
+      <div class="faq-a">No, il budget è tuo e lo paghi direttamente a Google con la tua carta: io ti addebito solo il lavoro di gestione. Il budget consigliato dipende dal settore e dalla città: con più concorrenza i clic costano di più. Lo definiamo insieme prima di partire.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Con che frequenza ricevo i report? <span class="faq-icon">+</span></div>
@@ -965,8 +967,8 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 setTimeout(() => document.querySelector('.hero .reveal').classList.add('visible'), 150);
 
-document.querySelectorAll('a[href="#faq-bonus"]').forEach(a => a.addEventListener('click', () => {
-  const it = document.getElementById('faq-bonus');
+document.querySelectorAll('a[href^="#faq-"]').forEach(a => a.addEventListener('click', () => {
+  const it = document.getElementById(a.getAttribute('href').slice(1));
   if (it && !it.classList.contains('open')) it.click();
 }));
 document.querySelectorAll('.faq-item').forEach(item => {

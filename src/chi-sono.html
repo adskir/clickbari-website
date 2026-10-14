@@ -34,7 +34,7 @@ eleventyExcludeFromCollections: true
   --radius-sm:6px;
 }
 html{scroll-behavior:smooth}
-body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:300;overflow-x:hidden}
+body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:400;overflow-x:hidden}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.09)}
@@ -71,7 +71,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-dd-menu a:hover,.nav-dd-menu a.active{background:rgba(91,155,255,.12);color:#fff}
 .mobile-menu{z-index:99!important}
 .mobile-sub-list{list-style:none;margin:-6px 0 10px;padding:0 0 4px 16px;border-left:2px solid rgba(91,155,255,.3)}
-.mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9a9a9a;text-decoration:none}
+.mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#b3b3b3;text-decoration:none}
 .mobile-sub-list a:hover,.mobile-sub-list a.active{color:var(--blue-bright)}
 .mobile-row{display:flex;align-items:center;gap:8px}
 .mobile-row .mobile-nav-link{flex:1}
@@ -155,7 +155,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outlin
 .timeline-dot{position:absolute;left:-6px;top:22px;width:11px;height:11px;border-radius:50%;background:var(--black);border:2px solid var(--blue-bright)}
 .timeline-item:last-child .timeline-dot{background:var(--blue-bright);box-shadow:0 0 0 5px rgba(91,155,255,.2)}
 .timeline-event{font-family:var(--font-d);font-size:30px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:8px}
-.timeline-desc{font-size:15px;line-height:1.65;color:#a9a9a9;max-width:480px}
+.timeline-desc{font-size:15px;line-height:1.65;color:#bdbdbd;max-width:480px}
 
 /* VALORI */
 .valori{padding:112px 48px;background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -226,9 +226,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outlin
 .modal-close:hover{background:rgba(255,255,255,0.18)}
 .modal-body{padding:28px 28px 32px}
 .modal-title{font-family:var(--font-d);font-size:26px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
-.modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
+.modal-sub{font-size:13px;color:#b3b3b3;margin-bottom:22px;line-height:1.6}
 .modal-field{margin-bottom:14px}
-.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
+.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a8a8a8;margin-bottom:6px}
 .modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
 .modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
 .modal-field select{appearance:none;cursor:pointer}
@@ -238,7 +238,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outlin
 .modal-success.visible{display:block}
 .modal-success svg{width:48px;height:48px;margin-bottom:14px}
 .modal-success h3{font-family:var(--font-d);font-size:20px;color:#fff;margin-bottom:8px;letter-spacing:.02em}
-.modal-success p{font-size:13px;color:#999;line-height:1.6}
+.modal-success p{font-size:13px;color:#b3b3b3;line-height:1.6}
 
 @media(max-width:480px){
   .modal-body{padding:22px 20px 26px}
@@ -402,7 +402,7 @@ gtag('consent', 'default', {
     <div class="photo-frame"></div>
     <div class="photo-wrap">
       <img src="/kir-photo.webp" alt="KIR — ClickBari, Bari" 
-           onerror="var w=this.parentElement;this.remove();w.style.background='var(--gray)';w.style.minHeight='500px';w.insertAdjacentHTML('beforeend','<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:18px;letter-spacing:.2em;color:#555\'>FOTO IN ARRIVO</div>')">
+           onerror="var w=this.parentElement;this.remove();w.style.background='var(--gray)';w.style.minHeight='500px';w.insertAdjacentHTML('beforeend','<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:18px;letter-spacing:.2em;color:#8a8a8a\'>FOTO IN ARRIVO</div>')">
     </div>
     <div class="photo-badge">
       <div class="photo-badge-val">10+</div>
@@ -532,7 +532,7 @@ setTimeout(() => document.querySelectorAll('.hero .reveal').forEach(el => el.cla
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);flex-wrap:wrap">
   <p style="font-size:13px;color:#bbb;line-height:1.7;margin:0;flex:1;min-width:200px">Usiamo cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity). Leggi la <a href="/cookie/" style="color:var(--blue-bright);text-decoration:none">Cookie Policy</a> e la <a href="/privacy/" style="color:var(--blue-bright);text-decoration:none">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;width:100%;max-width:340px">
-    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#888;flex:1">Solo necessari</button>
+    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#a8a8a8;flex:1">Solo necessari</button>
     <button onclick="cookieAccept()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:none;background:var(--blue);color:#fff;flex:1">Accetta tutti</button>
   </div>
 </div>
@@ -616,7 +616,7 @@ setTimeout(() => document.querySelectorAll('.hero .reveal').forEach(el => el.cla
           </div>
           <button type="submit" class="modal-submit">Invia richiesta</button>
         </form>
-        <p style="margin-top:14px;font-size:13px;color:#9a9a9a;text-align:center">Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a></p>
+        <p style="margin-top:14px;font-size:13px;color:#b3b3b3;text-align:center">Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a></p>
       </div>
       <div class="modal-success" id="modal-success">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="#5b9bff" stroke-width="1.5"/><path d="M7 12.5L10.5 16L17 8.5" stroke="#5b9bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>

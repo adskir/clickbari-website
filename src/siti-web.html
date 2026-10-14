@@ -33,7 +33,7 @@ eleventyExcludeFromCollections: true
   --radius-sm:6px;
 }
 html{scroll-behavior:smooth}
-body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:300;overflow-x:hidden}
+body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:400;overflow-x:hidden}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.09)}
@@ -69,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-dd-menu a:hover,.nav-dd-menu a.active{background:rgba(91,155,255,.12);color:#fff}
 .mobile-menu{z-index:99!important}
 .mobile-sub-list{list-style:none;margin:-6px 0 10px;padding:0 0 4px 16px;border-left:2px solid rgba(91,155,255,.3)}
-.mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9a9a9a;text-decoration:none}
+.mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#b3b3b3;text-decoration:none}
 .mobile-sub-list a:hover,.mobile-sub-list a.active{color:var(--blue-bright)}
 .mobile-row{display:flex;align-items:center;gap:8px}
 .mobile-row .mobile-nav-link{flex:1}
@@ -130,7 +130,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .browser-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#1a1a1a;border-bottom:1px solid var(--line)}
 .browser-bar i{width:10px;height:10px;border-radius:50%;background:#3a3a3a}
 .browser-bar i:nth-child(1){background:#ff5f57}.browser-bar i:nth-child(2){background:#febc2e}.browser-bar i:nth-child(3){background:#28c840}
-.browser-url{margin-left:12px;flex:1;max-width:260px;height:22px;border-radius:6px;background:#0d0d0d;display:flex;align-items:center;padding:0 10px;font-size:11px;color:#8d8d8d}
+.browser-url{margin-left:12px;flex:1;max-width:260px;height:22px;border-radius:6px;background:#0d0d0d;display:flex;align-items:center;padding:0 10px;font-size:11px;color:#aaaaaa}
 .browser img{display:block;width:100%;height:auto;aspect-ratio:1200/750;object-fit:cover;object-position:top}
 .showcase .phone{position:absolute;right:-12px;bottom:0;width:150px;padding:6px;background:#0d0d0d;border-radius:26px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 30px 60px rgba(0,0,0,.75)}
 .showcase .phone img{display:block;width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:21px}
@@ -142,7 +142,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .include-item:hover{border-color:rgba(91,155,255,.35);transform:translateY(-3px)}
 .include-icon{width:48px;height:48px;border-radius:var(--radius-md);background:rgba(37,99,235,.12);border:1px solid rgba(91,155,255,.25);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:22px}
 .include-name{font-family:var(--font-d);font-size:28px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
-.include-desc{font-size:14px;line-height:1.7;color:#a9a9a9}
+.include-desc{font-size:14px;line-height:1.7;color:#bdbdbd}
 .include-desc a{display:inline-block;margin-top:10px}
 
 /* PACCHETTI */
@@ -154,7 +154,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .pacchetto-price{font-family:var(--font-d);font-size:80px;line-height:.9;color:#fff;margin-bottom:6px}
 .pacchetto-price sup{font-size:22px;vertical-align:top;margin-right:6px;letter-spacing:.06em;color:var(--blue-bright)}
 .pacchetto.featured .pacchetto-price sup{color:rgba(255,255,255,.75)}
-.pacchetto-period{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.08em;margin-bottom:22px}
+.pacchetto-period{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.08em;margin-bottom:22px}
 .pacchetto-desc{font-size:14px;line-height:1.65;color:rgba(255,255,255,.78);margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12)}
 .pacchetto-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:30px}
 .pacchetto-list li{font-size:14px;display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.85);line-height:1.45}
@@ -164,7 +164,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .pacchetto:not(.featured) .pacchetto-btn{background:var(--blue);color:#fff}
 .pacchetto.featured .pacchetto-btn{background:#fff;color:var(--blue)}
 .pacchetto-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.pacchetti-note{text-align:center;margin-top:32px;font-size:14px;color:#8d8d8d}
+.pacchetti-note{text-align:center;margin-top:36px;font-size:16px;font-weight:500;color:#e6e6e6;line-height:1.6}
 
 /* PROCESSO — linea del tempo */
 .processo{background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -174,7 +174,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .step-num{position:relative;width:56px;height:56px;border-radius:50%;background:var(--black);border:1px solid rgba(91,155,255,.5);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:24px;color:var(--blue-bright);margin-bottom:24px}
 .step:first-child .step-num{background:var(--blue);border-color:var(--blue);color:#fff}
 .step-title{font-family:var(--font-d);font-size:26px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
-.step-desc{font-size:14px;line-height:1.65;color:#9a9a9a}
+.step-desc{font-size:14px;line-height:1.65;color:#b3b3b3}
 .step-arrow{display:none}
 
 /* PORTFOLIO PREVIEW */
@@ -185,13 +185,13 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .preview-overlay{padding:22px 24px 24px}
 .preview-tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:8px}
 .preview-name{font-family:var(--font-d);font-size:32px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:6px}
-.preview-link{font-size:13px;color:#8d8d8d;text-decoration:none;transition:color .2s}
+.preview-link{font-size:13px;color:#aaaaaa;text-decoration:none;transition:color .2s}
 .preview-link:hover{color:var(--blue-bright)}
 .preview-more{text-align:center;margin-top:32px}
 
 /* DOMANDE */
 .domande-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
-.domande-note{font-size:15px;color:#9a9a9a;max-width:380px;margin-top:18px;line-height:1.7}
+.domande-note{font-size:15px;color:#b3b3b3;max-width:380px;margin-top:18px;line-height:1.7}
 .faq-list{display:flex;flex-direction:column;gap:10px}
 .faq-item{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;transition:border-color .2s}
 .faq-item.open{border-color:rgba(91,155,255,.35)}
@@ -199,7 +199,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .faq-q:hover{color:var(--blue-bright)}
 .faq-icon{width:30px;height:30px;border-radius:50%;border:1px solid rgba(91,155,255,.4);display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:var(--font-b);font-size:18px;flex-shrink:0;transition:transform .3s,background .3s}
 .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue);color:#fff;border-color:var(--blue)}
-.faq-a{padding:0 24px 22px;font-size:15px;line-height:1.75;color:#a9a9a9;display:none}
+.faq-a{padding:0 24px 22px;font-size:15px;line-height:1.75;color:#bdbdbd;display:none}
 .faq-item.open .faq-a{display:block}
 
 /* CTA FINALE */
@@ -268,9 +268,9 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .modal-close:hover{background:rgba(255,255,255,0.18)}
 .modal-body{padding:28px 28px 32px}
 .modal-title{font-family:var(--font-d);font-size:26px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
-.modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
+.modal-sub{font-size:13px;color:#b3b3b3;margin-bottom:22px;line-height:1.6}
 .modal-field{margin-bottom:14px}
-.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
+.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a8a8a8;margin-bottom:6px}
 .modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
 .modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
 .modal-field select{appearance:none;cursor:pointer}
@@ -280,7 +280,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .modal-success.visible{display:block}
 .modal-success svg{width:48px;height:48px;margin-bottom:14px}
 .modal-success h3{font-family:var(--font-d);font-size:20px;color:#fff;margin-bottom:8px;letter-spacing:.02em}
-.modal-success p{font-size:13px;color:#999;line-height:1.6}
+.modal-success p{font-size:13px;color:#b3b3b3;line-height:1.6}
 
 @media(max-width:480px){
   .modal-body{padding:22px 20px 26px}
@@ -424,10 +424,10 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .pacchetto.featured{background:linear-gradient(180deg,#0f1626 0%,#07090f 100%)!important;border:1px solid rgba(91,155,255,.5)!important;box-shadow:0 30px 80px rgba(37,99,235,.35),0 0 0 4px rgba(37,99,235,.12)!important}
 .pacchetto.featured .pacchetto-name,.pacchetto.featured .pacchetto-price,.pacchetto.featured .pk-back-head span{color:#fff}
 .pacchetto.featured .pacchetto-price sup{color:var(--blue-bright)!important}
-.pacchetto.featured .pacchetto-period{color:rgba(255,255,255,.55)}
+.pacchetto.featured .pacchetto-period{color:rgba(255,255,255,.7)}
 .pacchetto.featured .pacchetto-desc{color:rgba(255,255,255,.78)}
 .pacchetto.featured .pacchetto-list li{color:rgba(255,255,255,.9)}
-.pacchetto.featured .pacchetto-list li[style]{color:rgba(255,255,255,.5)!important}
+.pacchetto.featured .pacchetto-list li[style]{color:rgba(255,255,255,.68)!important}
 .pacchetto.featured .pacchetto-list li::before{content:'';flex-shrink:0;width:16px;height:16px;margin-top:1px;border-radius:50%;background:rgba(91,155,255,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%235b9bff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
 .pacchetto.featured .pacchetto-badge{background:var(--blue);color:#fff}
 .pacchetto.featured .pacchetto-btn{background:#fff!important;color:#0A0F1F!important}
@@ -836,7 +836,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);flex-wrap:wrap">
   <p style="font-size:13px;color:#bbb;line-height:1.7;margin:0;flex:1;min-width:200px">Usiamo cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity). Leggi la <a href="/cookie/" style="color:var(--blue-bright);text-decoration:none">Cookie Policy</a> e la <a href="/privacy/" style="color:var(--blue-bright);text-decoration:none">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;width:100%;max-width:340px">
-    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#888;flex:1">Solo necessari</button>
+    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#a8a8a8;flex:1">Solo necessari</button>
     <button onclick="cookieAccept()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:none;background:var(--blue);color:#fff;flex:1">Accetta tutti</button>
   </div>
 </div>
@@ -920,7 +920,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
           </div>
           <button type="submit" class="modal-submit">Invia richiesta</button>
         </form>
-        <p style="margin-top:14px;font-size:13px;color:#9a9a9a;text-align:center">Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a></p>
+        <p style="margin-top:14px;font-size:13px;color:#b3b3b3;text-align:center">Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a></p>
       </div>
       <div class="modal-success" id="modal-success">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="#5b9bff" stroke-width="1.5"/><path d="M7 12.5L10.5 16L17 8.5" stroke="#5b9bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>

@@ -35,7 +35,7 @@ eleventyExcludeFromCollections: true
 }
 html{scroll-behavior:smooth}
 
-body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:300;overflow-x:hidden}
+body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:400;overflow-x:hidden}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.09)}
@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-dd-menu a:hover,.nav-dd-menu a.active{background:rgba(91,155,255,.12);color:#fff}
 .mobile-menu{z-index:99!important}
 .mobile-sub-list{list-style:none;margin:-6px 0 10px;padding:0 0 4px 16px;border-left:2px solid rgba(91,155,255,.3)}
-.mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9a9a9a;text-decoration:none}
+.mobile-sub-list a{display:block;padding:9px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#b3b3b3;text-decoration:none}
 .mobile-sub-list a:hover,.mobile-sub-list a.active{color:var(--blue-bright)}
 .mobile-row{display:flex;align-items:center;gap:8px}
 .mobile-row .mobile-nav-link{flex:1}
@@ -115,7 +115,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-title span{color:var(--blue-bright)}
 .hero-desc{font-size:16px;line-height:1.75;color:#c9c9c9;max-width:440px}
 .hero-stats{list-style:none;display:flex;gap:0;margin-top:40px;border-top:1px solid rgba(255,255,255,.1)}
-.hero-stats li{flex:1;padding:18px 18px 0 0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8d8d8d;line-height:1.5}
+.hero-stats li{flex:1;padding:18px 18px 0 0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#aaaaaa;line-height:1.5}
 .hero-stats li+li{padding-left:18px;border-left:1px solid rgba(255,255,255,.1)}
 .hero-stats b{display:block;font-family:var(--font-d);font-weight:400;font-size:44px;letter-spacing:.02em;color:#fff;line-height:1;margin-bottom:6px}
 
@@ -136,10 +136,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* FILTRI */
 .filtri-bar{max-width:1344px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:56px 48px 0;box-sizing:content-box}
 .filtri-title{font-family:var(--font-d);font-size:34px;letter-spacing:.03em;color:#fff;line-height:1}
-.filtri-title small{display:block;font-family:var(--font-b);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7d7d7d;margin-bottom:8px}
+.filtri-title small{display:block;font-family:var(--font-b);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#a3a3a3;margin-bottom:8px}
 .filtri{display:flex;gap:4px;flex-wrap:wrap;padding:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:calc(var(--radius-md) + 4px)}
-.filtro{border:0;padding:9px 16px;border-radius:var(--radius-md);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;cursor:pointer;transition:all .2s;background:none;font-family:var(--font-b)}
-.filtro .n{margin-left:8px;font-size:10px;color:#666;letter-spacing:0}
+.filtro{border:0;padding:9px 16px;border-radius:var(--radius-md);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#bdbdbd;cursor:pointer;transition:all .2s;background:none;font-family:var(--font-b)}
+.filtro .n{margin-left:8px;font-size:10px;color:#959595;letter-spacing:0}
 .filtro:hover{color:#fff}
 .filtro.active{background:var(--blue);color:#fff}
 .filtro.active .n{color:rgba(255,255,255,.7)}
@@ -168,26 +168,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .p-card-visual-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(6,6,6,0.6) 100%)}
 .p-card-visual-placeholder{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gray) 0%,#0a0a0a 100%)}
 .placeholder-name{font-family:var(--font-d);font-size:26px;line-height:1.15;letter-spacing:.03em;color:rgba(255,255,255,.3);text-align:center;padding:0 24px}
-.coming-badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:var(--radius-sm);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#666}
+.coming-badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:var(--radius-sm);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#959595}
 
 .p-card-body{padding:24px 24px 20px;flex:1;display:flex;flex-direction:column}
 .p-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
 .p-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:var(--radius-sm)}
 .p-tag-blue{background:rgba(37,99,235,0.2);color:var(--blue-bright)}
-.p-tag-gray{background:rgba(255,255,255,0.06);color:#888}
+.p-tag-gray{background:rgba(255,255,255,0.06);color:#a8a8a8}
 
 .p-card-name{font-family:var(--font-d);font-size:24px;letter-spacing:.04em;color:#fff;margin-bottom:6px;line-height:1}
-.p-card-desc{font-size:12px;line-height:1.75;color:#999;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.p-card-desc{font-size:12px;line-height:1.75;color:#b3b3b3;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
 /* METRICHE */
 .p-metrics{display:flex;gap:0;border-top:1px solid rgba(255,255,255,0.06);margin-top:16px}
 .p-metric{flex:1;padding:14px 12px;text-align:center;position:relative}
 .p-metric+.p-metric::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:1px;background:rgba(255,255,255,0.06)}
 .p-metric-val{font-family:var(--font-d);font-size:22px;color:var(--blue-bright);line-height:1;margin-bottom:3px}
-.p-metric-label{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#666}
+.p-metric-label{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#959595}
 
 .p-card-footer{padding:16px 24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between}
-.p-card-url{font-size:11px;color:#666;letter-spacing:.06em}
+.p-card-url{font-size:11px;color:#959595;letter-spacing:.06em}
 .p-card-link{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-bright);text-decoration:none;transition:gap .2s}
 .p-card-link:hover{gap:10px}
 
@@ -262,9 +262,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .modal-close:hover{background:rgba(255,255,255,0.18)}
 .modal-body{padding:28px 28px 32px}
 .modal-title{font-family:var(--font-d);font-size:26px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
-.modal-sub{font-size:13px;color:#999;margin-bottom:22px;line-height:1.6}
+.modal-sub{font-size:13px;color:#b3b3b3;margin-bottom:22px;line-height:1.6}
 .modal-field{margin-bottom:14px}
-.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
+.modal-field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a8a8a8;margin-bottom:6px}
 .modal-field input,.modal-field select{width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-md);padding:12px 14px;color:#fff;font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
 .modal-field input:focus,.modal-field select:focus{border-color:var(--blue-bright)}
 .modal-field select{appearance:none;cursor:pointer}
@@ -274,7 +274,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .modal-success.visible{display:block}
 .modal-success svg{width:48px;height:48px;margin-bottom:14px}
 .modal-success h3{font-family:var(--font-d);font-size:20px;color:#fff;margin-bottom:8px;letter-spacing:.02em}
-.modal-success p{font-size:13px;color:#999;line-height:1.6}
+.modal-success p{font-size:13px;color:#b3b3b3;line-height:1.6}
 
 @media(max-width:480px){
   .modal-body{padding:22px 20px 26px}
@@ -801,7 +801,7 @@ filtri.forEach(f => {
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);flex-wrap:wrap">
   <p style="font-size:13px;color:#bbb;line-height:1.7;margin:0;flex:1;min-width:200px">Usiamo cookie tecnici (necessari) e, previo consenso, cookie analitici e di profilazione (Google Analytics, Meta Pixel, Microsoft Clarity). Leggi la <a href="/cookie/" style="color:var(--blue-bright);text-decoration:none">Cookie Policy</a> e la <a href="/privacy/" style="color:var(--blue-bright);text-decoration:none">Privacy Policy</a>.</p>
   <div style="display:flex;gap:10px;width:100%;max-width:340px">
-    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#888;flex:1">Solo necessari</button>
+    <button onclick="cookieDecline()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#a8a8a8;flex:1">Solo necessari</button>
     <button onclick="cookieAccept()" style="font-family:var(--font-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-radius:var(--radius-md);cursor:pointer;border:none;background:var(--blue);color:#fff;flex:1">Accetta tutti</button>
   </div>
 </div>
@@ -885,7 +885,7 @@ filtri.forEach(f => {
           </div>
           <button type="submit" class="modal-submit">Invia richiesta</button>
         </form>
-        <p style="margin-top:14px;font-size:13px;color:#9a9a9a;text-align:center">Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a></p>
+        <p style="margin-top:14px;font-size:13px;color:#b3b3b3;text-align:center">Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a></p>
       </div>
       <div class="modal-success" id="modal-success">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="#5b9bff" stroke-width="1.5"/><path d="M7 12.5L10.5 16L17 8.5" stroke="#5b9bff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>

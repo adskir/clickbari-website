@@ -139,49 +139,51 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .btn-outline{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.22);color:#e6e6e6;padding:15px 30px;font-family:var(--font-d);font-size:20px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);transition:border-color .2s,color .2s,background .2s}
 .btn-outline:hover{border-color:var(--blue-bright);color:#fff;background:rgba(91,155,255,.08)}
 
-/* mock risultati Google (decorativo) */
+/* mock annuncio Google con estensioni (decorativo, esempio) */
 .gm{position:relative;max-width:600px;margin-left:auto;width:100%;text-align:left}
 .gm-card{background:#fff;border-radius:var(--radius-lg);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(91,155,255,.35),0 0 60px rgba(37,99,235,.25);overflow:hidden;color:#202124;font-family:var(--font-b)}
-.gm-top{padding:18px 20px 0}
-.gm-search{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:999px;border:1px solid #dfe1e5;box-shadow:0 1px 6px rgba(32,33,36,.18)}
+.gm-top{padding:16px 18px 14px;border-bottom:1px solid #ebebeb}
+.gm-search{display:flex;align-items:center;gap:12px;padding:11px 18px;border-radius:999px;border:1px solid #dfe1e5;box-shadow:0 1px 6px rgba(32,33,36,.18)}
 .gm-search svg{width:18px;height:18px;flex-shrink:0}
 .gm-q{flex:1;font-size:15px;color:#202124;white-space:nowrap;overflow:hidden}
 .gm-q i{display:inline-block;width:2px;height:17px;background:var(--blue);vertical-align:-3px;margin-left:2px;animation:gmblink 1s steps(1) infinite}
 @keyframes gmblink{50%{opacity:0}}
-.gm-tabs{display:flex;gap:22px;padding:14px 6px 0;font-size:13px;color:#5f6368;border-bottom:1px solid #ebebeb}
-.gm-tabs span{padding-bottom:10px}
-.gm-tabs span:first-child{color:#1a73e8;border-bottom:3px solid #1a73e8;font-weight:500}
-.gm-body{padding:16px 20px 20px;display:grid;gap:14px}
-.gm-ad{border-radius:var(--radius-md);padding:14px 16px;background:#f5f8ff;border:1px solid #d6e3ff;position:relative}
+.gm-ad{padding:16px 18px 18px}
 .gm-spons{font-size:12px;font-weight:700;color:#202124;margin-bottom:8px}
+.gm-head{display:grid;grid-template-columns:1fr 92px;gap:14px}
 .gm-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.gm-fav{width:26px;height:26px;border-radius:50%;background:#0a0a0a;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.gm-fav img{width:16px;height:16px}
-.gm-site b{display:block;font-size:13px;font-weight:500;color:#202124;line-height:1.2}
+.gm-fav{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#f3d9c4,#c98f6b);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-d);font-size:15px;color:#fff;letter-spacing:.02em}
+.gm-site b{display:block;font-size:13.5px;font-weight:500;color:#202124;line-height:1.2}
 .gm-site small{display:block;font-size:12px;color:#4d5156}
-.gm-title{font-size:19px;line-height:1.3;color:#1a0dab;margin-bottom:4px}
+.gm-title{font-size:19px;line-height:1.28;color:#1a0dab;margin-bottom:5px}
+.gm-rate{font-size:12.5px;color:#4d5156;margin-bottom:4px}
+.gm-rate .st{color:#fbbc04;letter-spacing:1px}
 .gm-desc{font-size:13.5px;line-height:1.5;color:#4d5156}
-.gm-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.gm-links span{font-size:12.5px;color:#1a0dab;border:1px solid #d2d6dc;background:#fff;border-radius:999px;padding:5px 12px}
-.gm-local{display:grid;grid-template-columns:132px 1fr;border:1px solid #ebebeb;border-radius:var(--radius-md);overflow:hidden}
-.gm-map{background:#e8eef5;position:relative}
-.gm-map svg{position:absolute;inset:0;width:100%;height:100%}
-.gm-info{padding:12px 14px}
-.gm-info b{display:block;font-size:15px;font-weight:500;color:#1a0dab;margin-bottom:3px}
-.gm-rating{display:flex;align-items:center;gap:6px;font-size:13px;color:#4d5156;margin-bottom:3px}
-.gm-rating .st{color:#fbbc04;letter-spacing:1px;font-size:13px}
-.gm-meta{font-size:12.5px;color:#4d5156}
-.gm-meta em{font-style:normal;color:#188038}
-.gm-acts{display:flex;gap:8px;margin-top:9px}
-.gm-acts span{font-size:12px;color:#1a73e8;border:1px solid #dadce0;border-radius:999px;padding:4px 11px}
-.gm-chip{position:absolute;display:flex;align-items:center;gap:10px;background:rgba(15,17,21,.92);backdrop-filter:blur(10px);border:1px solid rgba(91,155,255,.45);border-radius:14px;padding:10px 14px;box-shadow:0 18px 40px rgba(0,0,0,.5);color:#fff;animation:gmfloat 6s ease-in-out infinite}
+.gm-desc b{font-weight:500;color:#202124}
+.gm-img{width:92px;height:92px;border-radius:12px;overflow:hidden;align-self:start;margin-top:26px}
+.gm-img svg{display:block;width:100%;height:100%}
+.gm-promo{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:#202124}
+.gm-promo span{display:inline-flex;align-items:center;gap:5px;background:#e6f4ea;color:#137333;font-weight:500;border-radius:6px;padding:3px 8px;font-size:12.5px}
+.gm-snip{font-size:13px;color:#4d5156;margin-top:6px}
+.gm-snip b{font-weight:500;color:#202124}
+.gm-loc{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:13px;color:#4d5156;margin-top:8px}
+.gm-loc svg{width:14px;height:14px;flex-shrink:0}
+.gm-loc em{font-style:normal;color:#188038}
+.gm-call{display:inline-flex;align-items:center;gap:6px;color:#1a0dab;font-weight:500}
+.gm-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.gm-prices div{border:1px solid #dadce0;border-radius:10px;padding:8px 10px}
+.gm-prices small{display:block;font-size:11.5px;color:#4d5156;line-height:1.25}
+.gm-prices b{display:block;font-size:14px;font-weight:500;color:#202124;margin-top:2px}
+.gm-sl{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:14px;padding-top:12px;border-top:1px solid #ebebeb}
+.gm-sl b{display:block;font-size:14.5px;font-weight:400;color:#1a0dab;line-height:1.3}
+.gm-sl small{display:block;font-size:12px;color:#4d5156;line-height:1.35}
+.gm-chip{position:absolute;display:flex;align-items:center;gap:10px;background:rgba(15,17,21,.92);backdrop-filter:blur(10px);border:1px solid rgba(91,155,255,.45);border-radius:14px;padding:10px 14px;box-shadow:0 18px 40px rgba(0,0,0,.5);color:#fff;animation:gmfloat 6s ease-in-out infinite;z-index:2}
 .gm-chip strong{font-family:var(--font-d);font-weight:400;font-size:28px;line-height:1;color:var(--blue-bright);letter-spacing:.02em}
 .gm-chip span{font-size:12px;line-height:1.3;color:#cfcfcf}
 .gm-chip .dot{width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.2);flex-shrink:0}
 .gm-chip svg{width:20px;height:20px;flex-shrink:0}
-.gm-c1{right:-34px;bottom:96px;animation-delay:-3s}
-.gm-c2{right:-28px;top:-22px;animation-delay:-2s}
-.gm-c3{left:-36px;bottom:-24px;animation-delay:-4s}
+.gm-c1{right:-34px;top:-22px}
+.gm-c2{left:-36px;bottom:-50px;animation-delay:-3s}
 @keyframes gmfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @media(prefers-reduced-motion:reduce){.gm-chip{animation:none}.gm-q i{animation:none}}
 
@@ -316,20 +318,23 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
   .cta-wrap{padding:0 20px 72px}
   .cta-finale{padding:40px 24px}
   .wa-float{bottom:20px;right:20px;width:48px;height:48px}
-  .gm{margin-top:36px}
-  .gm-top{padding:14px 14px 0}
-  .gm-body{padding:14px;gap:12px}
+  .gm{margin-top:36px;margin-bottom:34px}
+  .gm-top{padding:12px 12px 12px}
+  .gm-ad{padding:14px 14px 16px}
   .gm-q{font-size:14px}
-  .gm-tabs{gap:16px;font-size:12px}
+  .gm-head{grid-template-columns:1fr 64px;gap:10px}
+  .gm-img{width:64px;height:64px;margin-top:30px}
   .gm-title{font-size:16.5px}
   .gm-desc{font-size:13px}
-  .gm-local{grid-template-columns:92px 1fr}
-  .gm-acts{display:none}
-  .gm-c1{right:-6px;bottom:-26px}
-  .gm-c2{right:-6px;top:-26px}
-  .gm-c3{display:none}
+  .gm-prices{gap:6px}
+  .gm-prices div{padding:7px 8px}
+  .gm-prices small{font-size:10.5px}
+  .gm-prices b{font-size:13px}
+  .gm-sl{gap:8px 12px}
+  .gm-sl b{font-size:13.5px}
+  .gm-c1{right:-6px;top:-26px}
+  .gm-c2{left:-6px;bottom:-48px}
   .gm-chip{padding:8px 12px;text-align:left}
-  .gm-chip strong{font-size:24px}
 }
 
 /* Cookie banner */
@@ -636,35 +641,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="gm-top">
           <div class="gm-search">
             <svg viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <div class="gm-q">consulente google ads bari<i></i></div>
+            <div class="gm-q">massaggi bari<i></i></div>
             <svg viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
           </div>
-          <div class="gm-tabs"><span>Tutti</span><span>Maps</span><span>Immagini</span><span>Notizie</span></div>
         </div>
-        <div class="gm-body">
-          <div class="gm-ad">
-            <div class="gm-spons">Sponsorizzato</div>
-            <div class="gm-site"><div class="gm-fav"><img src="/logo-icon.png" alt="" width="16" height="16"></div><div><b>ClickBari</b><small>https://clickbari.it › google-ads</small></div></div>
-            <div class="gm-title">Google Ads a Bari — Campagne che portano clienti</div>
-            <div class="gm-desc">Annunci, Google Maps e Analytics in un'unica strategia. Ogni euro tracciato, report chiari.</div>
-            <div class="gm-links"><span>Prenota una call</span><span>Risultati</span><span>Prezzi</span></div>
+        <div class="gm-ad">
+          <div class="gm-spons">Sponsorizzato</div>
+          <div class="gm-head">
+            <div>
+              <div class="gm-site"><div class="gm-fav">L</div><div><b>Studio Lune · Massaggi</b><small>www.studiolune.it › massaggi-bari</small></div></div>
+              <div class="gm-title">Massaggi a Bari — Prenota Oggi | Relax e Benessere</div>
+              <div class="gm-rate">4,9 <span class="st">★★★★★</span> (128) · Studio di massaggi</div>
+              <div class="gm-desc">Massaggiatrice qualificata nel centro di Bari. <b>Prenotazione online</b> · Aperto anche il sabato · Buoni regalo</div>
+            </div>
+            <div class="gm-img"><svg viewBox="0 0 92 92"><defs><linearGradient id="gmbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e7da"/><stop offset="1" stop-color="#d7b39a"/></linearGradient></defs><rect width="92" height="92" fill="url(#gmbg)"/><ellipse cx="46" cy="74" rx="30" ry="9" fill="#5b4a42"/><ellipse cx="46" cy="60" rx="24" ry="8" fill="#7a665c"/><ellipse cx="46" cy="47" rx="18" ry="7" fill="#99857a"/><ellipse cx="46" cy="36" rx="12" ry="5.5" fill="#b8a497"/><path d="M60 30c8-14 20-16 24-14-2 10-12 18-24 14z" fill="#6d9b6a"/><path d="M60 30c6-6 13-10 20-12" stroke="#4e7a4c" stroke-width="1.2" fill="none"/></svg></div>
           </div>
-          <div class="gm-local">
-            <div class="gm-map">
-              <svg viewBox="0 0 132 120" preserveAspectRatio="xMidYMid slice"><g stroke="#fff" stroke-width="6" fill="none"><path d="M-10 40 L150 70"/><path d="M40 -10 L70 140"/><path d="M-10 100 L150 88"/></g><g stroke="#fff" stroke-width="2.5" fill="none"><path d="M100 -10 L110 140"/><path d="M-10 18 L150 22"/></g><path d="M0 120 L0 104 Q40 96 70 112 L132 106 L132 120Z" fill="#aecbfa"/><path d="M66 62c0-7 5.4-12 12-12s12 5 12 12c0 9-12 20-12 20S66 71 66 62Z" fill="#ea4335"/><circle cx="78" cy="62" r="4.2" fill="#a50e0e"/></svg>
-            </div>
-            <div class="gm-info">
-              <b>ClickBari</b>
-              <div class="gm-rating">5,0 <span class="st">★★★★★</span> (4)</div>
-              <div class="gm-meta">Agenzia di marketing · Bari · <em>Aperto</em></div>
-              <div class="gm-acts"><span>Sito web</span><span>Indicazioni</span></div>
-            </div>
+          <div class="gm-promo"><span>🏷 −20% primo massaggio</span> fino al 31 ott</div>
+          <div class="gm-snip"><b>Servizi:</b> Decontratturante, Linfodrenante, Sportivo, Hot stone</div>
+          <div class="gm-loc"><svg viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Via Sparano, Bari · <em>Aperto</em> · <span class="gm-call"><svg viewBox="0 0 24 24" fill="none" stroke="#1a0dab" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Chiama</span></div>
+          <div class="gm-prices"><div><small>Decontratturante</small><b>da 45 €</b></div><div><small>Linfodrenante</small><b>da 50 €</b></div><div><small>Di coppia</small><b>da 90 €</b></div></div>
+          <div class="gm-sl">
+            <div><b>Prenota online</b><small>Scegli giorno e orario</small></div>
+            <div><b>Buoni regalo</b><small>L'idea regalo perfetta</small></div>
+            <div><b>Listino prezzi</b><small>Trattamenti e pacchetti</small></div>
+            <div><b>Recensioni</b><small>Cosa dicono i clienti</small></div>
           </div>
         </div>
       </div>
-      <div class="gm-chip gm-c1"><strong>11%</strong><span>CTR medio<br>delle campagne</span></div>
-      <div class="gm-chip gm-c2"><span class="dot"></span><span>Annuncio attivo<br>su Google e Maps</span></div>
-      <div class="gm-chip gm-c3"><svg viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2" stroke-linecap="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><span>Ogni contatto<br>tracciato in GA4</span></div>
+      <div class="gm-chip gm-c1"><span class="dot"></span><span>Esempio di annuncio<br>con tutte le estensioni</span></div>
+      <div class="gm-chip gm-c2"><svg viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2" stroke-linecap="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><span>Chiamate e prenotazioni<br>tracciate in GA4</span></div>
     </div>
   </div>
 </section>
@@ -680,64 +685,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 </div>
-
-<!-- SERVIZI GOOGLE -->
-<section class="sec servizi" id="servizi-google">
-  <div class="sec-kicker">Cosa faccio</div>
-  <h2 class="sec-title">Tutta l'ecosistema<br>Google, gestita.</h2>
-  <div class="servizi-grid">
-    <div class="sg-card">
-      <div class="sg-icon">🔍</div>
-      <div class="sg-name">Google Ads</div>
-      <p class="sg-desc">Campagne Search ottimizzate per intercettare i tuoi clienti nel momento esatto in cui cercano quello che offri. Performance Max, Demand Gen e Display disponibili in un secondo momento.</p>
-      <ul class="sg-list">
-        <li>Ricerca e selezione parole chiave</li>
-        <li>Creazione annunci ottimizzati</li>
-        <li>Ottimizzazione continua delle offerte</li>
-        <li>Tracciamento conversioni con GTM</li>
-        <li>Report settimanale o bisettimanale</li>
-      </ul>
-    </div>
-    <div class="sg-card">
-      <div class="sg-icon">📍</div>
-      <div class="sg-name">Google Business Profile</div>
-      <p class="sg-desc">Configurazione e ottimizzazione scheda, gestione recensioni, post mensili, Local Search Ads su Google Maps. Google offre spesso €400 di credito pubblicitario gratuito ai nuovi account Business Profile — controlliamo insieme se puoi ottenerlo.</p>
-      <ul class="sg-list">
-        <li>Configurazione e ottimizzazione scheda</li>
-        <li>Descrizione con parole chiave locali</li>
-        <li>Caricamento foto del cliente</li>
-        <li>Gestione recensioni e risposta</li>
-        <li>4 post mensili</li>
-        <li>Local Search Ads su Google Maps (solo con gestione mensile)</li>
-      </ul>
-    </div>
-    <div class="sg-card">
-      <div class="sg-icon">📊</div>
-      <div class="sg-name">Analytics 4 + GTM + Clarity</div>
-      <p class="sg-desc">Sai quante persone visitano il tuo sito, da dove vengono e cosa fanno esattamente? Con Analytics 4, Google Tag Manager e Microsoft Clarity hai il quadro completo: traffico, conversioni, heatmap e registrazioni delle sessioni reali. Dati reali per decisioni reali.</p>
-      <ul class="sg-list">
-        <li>Setup Google Analytics 4</li>
-        <li>Configurazione Google Tag Manager</li>
-        <li>Setup Microsoft Clarity (heatmap + session recording)</li>
-        <li>Tracciamento eventi e conversioni</li>
-        <li>Dashboard personalizzata</li>
-        <li>Report comportamento utenti</li>
-      </ul>
-    </div>
-    <div class="sg-card">
-      <div class="sg-icon">🎯</div>
-      <div class="sg-name">Remarketing Cross-Channel</div>
-      <p class="sg-desc">Chi visita il tuo sito da Google Ads è già interessato. Con il Meta Pixel raccogliamo queste visite e le raggiungiamo su Instagram e Facebook con annunci mirati. L'audience più calda che esiste — la convertiamo.</p>
-      <ul class="sg-list">
-        <li>Installazione e configurazione Meta Pixel</li>
-        <li>Creazione pubblici personalizzati</li>
-        <li>Campagne remarketing su Meta</li>
-        <li>Connessione Google Ads ↔ Meta Ads</li>
-        <li>Report performance cross-channel</li>
-      </ul>
-    </div>
-  </div>
-</section>
 
 <!-- PREZZI -->
 <section class="sec prezzi">
@@ -829,6 +776,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 </div>
+
+<!-- SERVIZI GOOGLE -->
+<section class="sec servizi" id="servizi-google">
+  <div class="sec-kicker">Cosa faccio</div>
+  <h2 class="sec-title">Tutta l'ecosistema<br>Google, gestita.</h2>
+  <div class="servizi-grid">
+    <div class="sg-card">
+      <div class="sg-icon">🔍</div>
+      <div class="sg-name">Google Ads</div>
+      <p class="sg-desc">Campagne Search ottimizzate per intercettare i tuoi clienti nel momento esatto in cui cercano quello che offri. Performance Max, Demand Gen e Display disponibili in un secondo momento.</p>
+      <ul class="sg-list">
+        <li>Ricerca e selezione parole chiave</li>
+        <li>Creazione annunci ottimizzati</li>
+        <li>Ottimizzazione continua delle offerte</li>
+        <li>Tracciamento conversioni con GTM</li>
+        <li>Report settimanale o bisettimanale</li>
+      </ul>
+    </div>
+    <div class="sg-card">
+      <div class="sg-icon">📍</div>
+      <div class="sg-name">Google Business Profile</div>
+      <p class="sg-desc">Configurazione e ottimizzazione scheda, gestione recensioni, post mensili, Local Search Ads su Google Maps. Google offre spesso €400 di credito pubblicitario gratuito ai nuovi account Business Profile — controlliamo insieme se puoi ottenerlo.</p>
+      <ul class="sg-list">
+        <li>Configurazione e ottimizzazione scheda</li>
+        <li>Descrizione con parole chiave locali</li>
+        <li>Caricamento foto del cliente</li>
+        <li>Gestione recensioni e risposta</li>
+        <li>4 post mensili</li>
+        <li>Local Search Ads su Google Maps (solo con gestione mensile)</li>
+      </ul>
+    </div>
+    <div class="sg-card">
+      <div class="sg-icon">📊</div>
+      <div class="sg-name">Analytics 4 + GTM + Clarity</div>
+      <p class="sg-desc">Sai quante persone visitano il tuo sito, da dove vengono e cosa fanno esattamente? Con Analytics 4, Google Tag Manager e Microsoft Clarity hai il quadro completo: traffico, conversioni, heatmap e registrazioni delle sessioni reali. Dati reali per decisioni reali.</p>
+      <ul class="sg-list">
+        <li>Setup Google Analytics 4</li>
+        <li>Configurazione Google Tag Manager</li>
+        <li>Setup Microsoft Clarity (heatmap + session recording)</li>
+        <li>Tracciamento eventi e conversioni</li>
+        <li>Dashboard personalizzata</li>
+        <li>Report comportamento utenti</li>
+      </ul>
+    </div>
+    <div class="sg-card">
+      <div class="sg-icon">🎯</div>
+      <div class="sg-name">Remarketing Cross-Channel</div>
+      <p class="sg-desc">Chi visita il tuo sito da Google Ads è già interessato. Con il Meta Pixel raccogliamo queste visite e le raggiungiamo su Instagram e Facebook con annunci mirati. L'audience più calda che esiste — la convertiamo.</p>
+      <ul class="sg-list">
+        <li>Installazione e configurazione Meta Pixel</li>
+        <li>Creazione pubblici personalizzati</li>
+        <li>Campagne remarketing su Meta</li>
+        <li>Connessione Google Ads ↔ Meta Ads</li>
+        <li>Report performance cross-channel</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <!-- RISULTATI -->
 <section class="sec risultati">

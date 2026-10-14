@@ -631,10 +631,10 @@ gtag('consent', 'default', {
         <ul class="pacchetto-list">
           <li>Catalogo prodotti con categorie, filtri e varianti</li>
           <li>Carrello e checkout semplice e veloce</li>
-          <li>Pagamenti online: carta, PayPal, Apple Pay, Google Pay e Klarna</li>
+          <li>Pagamenti online: carta, PayPal e altri</li>
           <li>Gestione ordini e magazzino</li>
           <li>Spedizioni e calcolo dei costi</li>
-          <li>CRM ed email automatiche ai clienti</li>
+          <li>CRM e messaggi automatici ai clienti</li>
           <li>Pannello admin facile da usare</li>
           <li>SEO per le schede prodotto</li>
           <li>Mobile responsive</li>
@@ -965,7 +965,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
             <label for="modal-phone">Telefono *</label>
             <input type="tel" id="modal-phone" name="phone" required>
           </div>
-          <div class="modal-field">
+          <div class="modal-field" hidden>
             <label for="modal-service">Servizio</label>
             <select id="modal-service" name="service">
               <option value="">Seleziona (opzionale)</option>
@@ -1070,7 +1070,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
     formWrap.style.display = 'block';
     successBox.classList.remove('visible');
     form.reset();
-    if(prefillService && serviceSelect){ serviceSelect.value = prefillService; }
+    if(serviceSelect){ serviceSelect.value = prefillService || 'Siti Web'; } // pagina servizio: campo nascosto, valore fisso
     startAnimation();
   };
 

@@ -972,7 +972,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
             <label for="modal-phone">Telefono *</label>
             <input type="tel" id="modal-phone" name="phone" required>
           </div>
-          <div class="modal-field">
+          <div class="modal-field" hidden>
             <label for="modal-service">Servizio</label>
             <select id="modal-service" name="service">
               <option value="">Seleziona (opzionale)</option>
@@ -1077,7 +1077,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
     formWrap.style.display = 'block';
     successBox.classList.remove('visible');
     form.reset();
-    if(prefillService && serviceSelect){ serviceSelect.value = prefillService; }
+    if(serviceSelect){ serviceSelect.value = prefillService || 'Google Ecosystem'; } // pagina servizio: campo nascosto, valore fisso
     startAnimation();
   };
 

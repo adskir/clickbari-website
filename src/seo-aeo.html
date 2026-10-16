@@ -532,6 +532,67 @@ sup.eur.eur.eur.eur{color:inherit!important;margin:0 0 0 6px!important;font-size
 .prezzo:not(.featured) .prezzo-desc,.prezzo:not(.featured) .prezzo-list li{color:#000!important}
 .prezzo:not(.featured) .prezzo-period{color:#1a1d24!important}
 .prezzo:not(.featured) .prezzo-list li[style]{color:#3A4152!important}
+
+/* ===== HERO restyle: due colonne + mock risposta AI (decorativo, esempio) ===== */
+.hero{text-align:left;padding:150px 48px 88px}
+.hero::before{left:auto;right:-20%;transform:none}
+.hero-grid{position:relative;z-index:1;max-width:1344px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.hero-inner{max-width:none;margin:0}
+.hero-tag::after{display:none}
+.hero-title{font-size:clamp(68px,8.6vw,140px)}
+.hero-desc{margin:0 0 40px;max-width:520px}
+.hero-btns{justify-content:flex-start}
+.am{position:relative;max-width:600px;margin-left:auto;width:100%;text-align:left}
+.am-card{background:#fff;border-radius:var(--radius-lg);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(91,155,255,.35),0 0 60px rgba(37,99,235,.25);overflow:hidden;color:#202124;font-family:var(--font-b)}
+.am-top{padding:16px 18px 14px;border-bottom:1px solid #ebebeb}
+.am-search{display:flex;align-items:center;gap:12px;padding:11px 18px;border-radius:999px;border:1px solid #dfe1e5;box-shadow:0 1px 6px rgba(32,33,36,.18)}
+.am-search svg{width:18px;height:18px;flex-shrink:0}
+.am-q{flex:1;font-size:15px;color:#202124;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.am-q i{display:inline-block;width:2px;height:17px;background:var(--blue);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+.am-ai{margin:16px 18px 0;padding:14px 16px 16px;border-radius:14px;background:linear-gradient(135deg,#eef4ff 0%,#f5f0ff 100%);border:1px solid #dfe6fb}
+.am-ai-h{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#202124;margin-bottom:10px}
+.am-ai-h svg{width:18px;height:18px}
+.am-ai p{font-size:14px;line-height:1.6;color:#2b2f36;margin:0}
+.am-ai p b{font-weight:500;color:#1a0dab}
+.am-src{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.am-src span{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#3c4043;background:#fff;border:1px solid #dadce0;border-radius:999px;padding:4px 10px 4px 5px}
+.am-src span i{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#f3d9c4,#c98f6b);display:inline-block}
+.am-src span.alt i{background:#cfd8e3}
+.am-org{padding:16px 18px 18px}
+.am-site{display:flex;align-items:center;gap:10px;margin-bottom:5px}
+.am-fav{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#f3d9c4,#c98f6b);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-d);font-size:14px;color:#fff}
+.am-site b{display:block;font-size:13.5px;font-weight:500;color:#202124;line-height:1.2}
+.am-site small{display:block;font-size:12px;color:#4d5156}
+.am-title{font-size:19px;line-height:1.28;color:#1a0dab;margin-bottom:4px}
+.am-desc{font-size:13.5px;line-height:1.5;color:#4d5156}
+.am-chip{position:absolute;display:flex;align-items:center;gap:10px;background:rgba(15,17,21,.92);backdrop-filter:blur(10px);border:1px solid rgba(91,155,255,.45);border-radius:14px;padding:10px 14px;box-shadow:0 18px 40px rgba(0,0,0,.5);color:#fff;animation:amfloat 6s ease-in-out infinite;z-index:2}
+.am-chip span{font-size:12px;line-height:1.3;color:#cfcfcf}
+.am-chip .dot{width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.2);flex-shrink:0}
+.am-chip svg{width:20px;height:20px;flex-shrink:0}
+.am-c1{right:-34px;top:-22px}
+.am-c2{left:-36px;bottom:-50px;animation-delay:-3s}
+@keyframes amfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.am-chip{animation:none}.am-q i{animation:none}}
+@media(max-width:1100px){.hero-grid{grid-template-columns:1fr}.am{margin:24px auto 0}}
+@media(max-width:768px){
+  .hero{padding:110px 20px 56px;text-align:center}
+  .hero-title{font-size:clamp(46px,14.5vw,80px)}
+  .hero-title .br-d{display:none}
+  .hero-tag::after{display:block}
+  .hero-desc{margin:0 auto 32px}
+  .hero-btns{justify-content:center}
+  .am{margin:36px auto 34px}
+  .am-top{padding:12px}
+  .am-q{font-size:14px}
+  .am-ai{margin:12px 12px 0;padding:12px 14px 14px}
+  .am-ai p{font-size:13.5px}
+  .am-org{padding:14px}
+  .am-title{font-size:16.5px}
+  .am-desc{font-size:13px}
+  .am-c1{right:-6px;top:-26px}
+  .am-c2{left:-6px;bottom:-48px}
+  .am-chip{padding:8px 12px}
+}
 </style>
 </head>
 <body>
@@ -594,19 +655,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-grid">
   <div class="hero-inner reveal">
     <div class="hero-tag">SEO + AEO · Bari</div>
     <h1 class="hero-title">Trovato<br>su Google<br><span>e dall'AI.</span></h1>
     <p class="hero-desc">SEO classico più ottimizzazione per Google AI Overview, ChatGPT, Claude e Gemini. Il traffico organico non si paga — si costruisce. Con contenuti di qualità e strategia.</p>
-    <div class="searchbar" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-      <span class="q">qual è il miglior ristorante sul mare a Bari?<span class="caret"></span></span>
-      <span class="ai">AI Overview</span>
-    </div>
     <div class="hero-btns">
       <a href="#" onclick="openContactModal('SEO + AEO');return false;" class="btn-primary">Richiedi audit →</a>
       <a href="#differenza" class="btn-outline">SEO vs AEO</a>
     </div>
+  </div>
+  <div class="am reveal" aria-hidden="true">
+    <div class="am-card">
+      <div class="am-top">
+        <div class="am-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <div class="am-q">dove fare un buon massaggio a Bari?<i></i></div>
+        </div>
+      </div>
+      <div class="am-ai">
+        <div class="am-ai-h"><svg viewBox="0 0 24 24"><defs><linearGradient id="amg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z" fill="url(#amg)"/></svg>Risposta generata dall'AI</div>
+        <p>Per un massaggio rilassante in centro a Bari, molti consigliano <b>Studio Lune</b>: valutazione 4,9 su 128 recensioni, prenotazione online e trattamenti decontratturanti e hot stone.</p>
+        <div class="am-src"><span><i></i>studiolune.it</span><span class="alt"><i></i>Google Maps</span><span class="alt"><i></i>+2 fonti</span></div>
+      </div>
+      <div class="am-org">
+        <div class="am-site"><div class="am-fav">L</div><div><b>Studio Lune · Massaggi</b><small>www.studiolune.it › massaggi-bari</small></div></div>
+        <div class="am-title">Massaggi a Bari: decontratturante, linfodrenante e hot stone</div>
+        <div class="am-desc">Studio di massaggi nel centro di Bari. Prenota online in 2 minuti, aperto anche il sabato.</div>
+      </div>
+    </div>
+    <div class="am-chip am-c1"><span class="dot"></span><span>Esempio: citato dall'AI<br>e primo su Google</span></div>
+    <div class="am-chip am-c2"><svg viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2" stroke-linecap="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><span>Traffico organico<br>che cresce nel tempo</span></div>
+  </div>
   </div>
 </section>
 
@@ -870,7 +950,7 @@ const obs = new IntersectionObserver((entries) => {
   });
 }, {threshold: 0.08});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-setTimeout(() => document.querySelector('.hero .reveal').classList.add('visible'), 150);
+setTimeout(() => document.querySelectorAll('.hero .reveal').forEach(e=>e.classList.add('visible')), 150);
 document.querySelectorAll('.faq-item').forEach(item => {
   item.addEventListener('click', () => {
     const isOpen = item.classList.contains('open');

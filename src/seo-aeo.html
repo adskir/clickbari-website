@@ -612,6 +612,33 @@ sup.eur.eur.eur.eur{color:inherit!important;margin:0 0 0 6px!important;font-size
   .mc-text{flex:1 1 calc(100% - 56px);font-size:14.5px;text-align:left}
   .mc-link{flex:1 1 100%;text-align:center}
 }
+
+/* ===== Come lavoro (unisce Cosa faccio + Come funziona) ===== */
+.wk{background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wk-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:64px;position:relative}
+.wk-steps::before{content:'';position:absolute;left:28px;right:28px;top:27px;height:1px;background:linear-gradient(90deg,var(--blue-bright),rgba(91,155,255,.15))}
+.wk-step{position:relative;display:flex;flex-direction:column}
+.wk-num{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--black);border:1px solid rgba(91,155,255,.5);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:22px;color:var(--blue-bright);margin-bottom:22px}
+.wk-step:first-child .wk-num{background:var(--blue);border-color:var(--blue);color:#fff}
+.wk-card{flex:1;background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 24px 24px;transition:border-color .25s,background .25s}
+.wk-card:hover{border-color:rgba(91,155,255,.45);background:rgba(37,99,235,.06)}
+.wk-title{font-family:var(--font-d);font-size:30px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
+.wk-desc{font-size:15px;line-height:1.6;color:#cfcfcf;margin:0 0 16px}
+.wk-list{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:9px}
+.wk-list li{display:flex;gap:10px;font-size:14px;line-height:1.45;color:#d6d6d6}
+.wk-list li::before{content:'';flex-shrink:0;width:6px;height:6px;margin-top:7px;border-radius:50%;background:var(--blue-bright)}
+@media(max-width:1100px){.wk-steps{grid-template-columns:1fr 1fr}.wk-steps::before{display:none}}
+@media(max-width:768px){
+  .wk-steps{grid-template-columns:1fr;gap:28px;margin-top:40px}
+  .wk-step{flex-direction:row;gap:16px;align-items:flex-start}
+  .wk-num{width:44px;height:44px;font-size:18px;margin:0;flex-shrink:0}
+  .wk-card{padding:22px 20px}
+  .wk-title{font-size:26px}
+}
+/* Topic cluster: esempio pizzeria */
+.cluster-center-box small{display:block;font-family:var(--font-b);font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:4px}
+.cluster-item-q{font-size:12.5px;color:#9db8e8;margin-top:8px}
+@media(max-width:768px){.cluster-center-box{font-size:22px;padding:16px 26px}}
 </style>
 </head>
 <body>
@@ -802,102 +829,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- COSA FACCIO -->
-<section class="sec cosa">
-  <div class="sec-kicker">Cosa faccio</div>
-  <h2 class="sec-title">Tutto il necessario<br>per posizionarti.</h2>
-  <div class="cosa-grid">
-    <div class="cosa-item">
-      <div class="cosa-icon">🔬</div>
-      <div class="cosa-name">Audit SEO tecnico</div>
-      <p class="cosa-desc">Analizzo il tuo sito dall'interno: velocità, struttura, errori di indicizzazione, meta tag, link interni. Trovo i problemi che frenano il tuo posizionamento.</p>
+<!-- COME LAVORO -->
+<section class="sec wk" id="come-lavoro">
+  <div class="sec-kicker">Come lavoro</div>
+  <h2 class="sec-title">Dall'audit<br>ai risultati.</h2>
+  <div class="wk-steps">
+    <div class="wk-step">
+      <div class="wk-num">01</div>
+      <div class="wk-card">
+        <div class="wk-title">Audit</div>
+        <p class="wk-desc">Guardo il tuo sito come lo vedono Google e l'AI e trovo cosa ti frena.</p>
+        <ul class="wk-list">
+          <li>Velocità e versione mobile</li>
+          <li>Errori di indicizzazione</li>
+          <li>Concorrenti in zona</li>
+          <li>Visibilità su ChatGPT e Google AI</li>
+        </ul>
+      </div>
     </div>
-    <div class="cosa-item">
-      <div class="cosa-icon">🗂️</div>
-      <div class="cosa-name">Semantica e keyword</div>
-      <p class="cosa-desc">Raccolgo le parole chiave che i tuoi clienti usano davvero. Le organizzo in cluster tematici — ogni pagina del sito punta a un gruppo di ricerche specifico.</p>
+    <div class="wk-step">
+      <div class="wk-num">02</div>
+      <div class="wk-card">
+        <div class="wk-title">Strategia</div>
+        <p class="wk-desc">Scelgo le ricerche giuste: quelle che fanno i tuoi clienti quando sono pronti a comprare.</p>
+        <ul class="wk-list">
+          <li>Parole chiave del tuo settore e della tua zona</li>
+          <li>Priorità: cosa sistemare prima</li>
+          <li>Piano degli argomenti per i prossimi mesi</li>
+        </ul>
+      </div>
     </div>
-    <div class="cosa-item">
-      <div class="cosa-icon">✍️</div>
-      <div class="cosa-name">Articoli SEO</div>
-      <p class="cosa-desc">Scrivo articoli ottimizzati per Google e per le risposte AI. Ogni articolo risponde a una domanda specifica del tuo pubblico e porta traffico qualificato.</p>
+    <div class="wk-step">
+      <div class="wk-num">03</div>
+      <div class="wk-card">
+        <div class="wk-title">Ottimizzazione</div>
+        <p class="wk-desc">Sistemo ogni pagina e pubblico contenuti che rispondono alle domande dei clienti.</p>
+        <ul class="wk-list">
+          <li>Titoli, sottotitoli e meta tag</li>
+          <li>Testi alternativi delle immagini e link interni</li>
+          <li>FAQ e dati strutturati per l'AI</li>
+          <li>Articoli con le tue informazioni</li>
+          <li>Presenza nelle directory locali</li>
+        </ul>
+      </div>
     </div>
-    <div class="cosa-item">
-      <div class="cosa-icon">🤖</div>
-      <div class="cosa-name">AEO e structured data</div>
-      <p class="cosa-desc">Aggiungo schema markup, FAQ ottimizzate e contenuti strutturati per apparire nelle risposte AI. Un vantaggio competitivo che pochi offrono ancora.</p>
-    </div>
-    <div class="cosa-item">
-      <div class="cosa-icon">📈</div>
-      <div class="cosa-name">Monitoraggio posizioni</div>
-      <p class="cosa-desc">Tracciamento mensile delle posizioni su Google Search Console. Vedi come crescono i tuoi ranking parola chiave per parola chiave.</p>
-    </div>
-    <div class="cosa-item">
-      <div class="cosa-icon">🔗</div>
-      <div class="cosa-name">Ottimizzazione on-page</div>
-      <p class="cosa-desc">Titoli, descrizioni, heading, immagini, link interni. Ogni pagina del sito ottimizzata per massimizzare la visibilità su Google.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESSO -->
-<section class="sec processo">
-  <div class="sec-kicker">Come funziona</div>
-  <h2 class="sec-title">Dal audit<br>ai risultati.</h2>
-  <div class="processo-steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-title">Audit</div>
-      <div class="step-desc">Analizzo il tuo sito, i competitor e raccolgo le parole chiave giuste per il tuo settore e la tua zona.</div>
-      <div class="step-arrow">→</div>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-title">Strategia</div>
-      <div class="step-desc">Creo un piano editoriale con argomenti che portano traffico qualificato. Ogni articolo ha un obiettivo preciso.</div>
-      <div class="step-arrow">→</div>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-title">Contenuti</div>
-      <div class="step-desc">Scrivo e pubblico articoli ottimizzati per Google e per le risposte AI. Ogni mese nuovi contenuti sul tuo sito.</div>
-      <div class="step-arrow">→</div>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-title">Monitoraggio</div>
-      <div class="step-desc">Tracciamo le posizioni su Search Console, aggiustiamo la strategia e vediamo il traffico crescere mese dopo mese.</div>
-      <div class="step-arrow">→</div>
+    <div class="wk-step">
+      <div class="wk-num">04</div>
+      <div class="wk-card">
+        <div class="wk-title">Monitoraggio</div>
+        <p class="wk-desc">Controllo ogni mese cosa funziona e correggo la rotta.</p>
+        <ul class="wk-list">
+          <li>Posizioni su Google</li>
+          <li>Traffico e richieste dal sito</li>
+          <li>Citazioni nelle risposte AI</li>
+          <li>Report mensile chiaro</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- TOPIC CLUSTER -->
 <section class="sec cluster">
-  <div class="sec-kicker">La strategia</div>
-  <h2 class="sec-title">Topic cluster:<br>come funziona.</h2>
-  <p class="cluster-intro">Ogni servizio ha una pagina principale (pillar page) ottimizzata per la ricerca principale. Attorno ad essa, articoli del blog che rispondono a domande specifiche e rimandano alla pagina principale. Google capisce che sei l'esperto del settore.</p>
+  <div class="sec-kicker">Perché servono gli articoli</div>
+  <h2 class="sec-title">Ogni domanda<br>porta un cliente.</h2>
+  <p class="cluster-intro">I clienti non cercano solo "pizzeria Bari": fanno domande precise. Ogni articolo risponde a una di queste domande e porta le persone alla tua pagina principale. Più domande copri, più Google e l'AI ti considerano il punto di riferimento.</p>
   <div class="cluster-visual">
     <div class="cluster-center">
-      <div class="cluster-center-box">Pagina servizio "Siti Web Bari"</div>
+      <div class="cluster-center-box"><small>Pagina principale</small>Pizzeria a Bari</div>
     </div>
-    <div class="cluster-arrow">↑ link interni ↑</div>
+    <div class="cluster-arrow">↑ ogni articolo porta qui ↑</div>
     <div class="cluster-grid">
       <div class="cluster-item">
-        <div class="cluster-item-tag">Articolo blog</div>
-        <div class="cluster-item-title">Quanto costano i pannelli solari a Bari?</div>
+        <div class="cluster-item-tag">Articolo</div>
+        <div class="cluster-item-title">Pizza senza glutine a Bari: dove mangiarla sicuri</div>
+        <div class="cluster-item-q">Chi cerca: "pizza senza glutine Bari"</div>
       </div>
       <div class="cluster-item">
-        <div class="cluster-item-tag">Articolo blog</div>
-        <div class="cluster-item-title">Incentivi statali per il fotovoltaico in Puglia 2026</div>
+        <div class="cluster-item-tag">Articolo</div>
+        <div class="cluster-item-title">Pizza per feste e compleanni: come organizzarla</div>
+        <div class="cluster-item-q">Chi cerca: "pizza per festa Bari"</div>
       </div>
       <div class="cluster-item">
-        <div class="cluster-item-tag">Articolo blog</div>
-        <div class="cluster-item-title">Quanti pannelli servono per una casa di 100mq?</div>
+        <div class="cluster-item-tag">Articolo</div>
+        <div class="cluster-item-title">Napoletana o romana: le differenze</div>
+        <div class="cluster-item-q">Chi chiede all'AI: "che differenza c'è…"</div>
       </div>
       <div class="cluster-item">
-        <div class="cluster-item-tag">Articolo blog</div>
-        <div class="cluster-item-title">Fotovoltaico con accumulo: conviene davvero?</div>
+        <div class="cluster-item-tag">Articolo</div>
+        <div class="cluster-item-title">Pizzerie aperte la domenica sera a Bari</div>
+        <div class="cluster-item-q">Chi cerca: "pizzeria aperta domenica"</div>
       </div>
     </div>
   </div>

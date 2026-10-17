@@ -249,6 +249,9 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 
 /* STRUMENTI */
 .strumenti-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.strumenti-grid>*{min-width:0}
+.strumento-name{overflow-wrap:anywhere}
+@media(max-width:360px){.strumenti-grid{grid-template-columns:1fr!important}}
 .strumento{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 24px;transition:border-color .3s}
 .strumento:hover{border-color:rgba(91,155,255,.35)}
 .strumento-icon{font-size:26px;margin-bottom:16px}
@@ -423,6 +426,47 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 
 /* prezzo: simbolo € dopo la cifra */
 sup.eur.eur.eur.eur{color:inherit!important;margin:0 0 0 6px!important;font-size:.42em!important;vertical-align:top;position:relative;top:.12em}
+
+/* ===== HERO chatbot mock (esempio) ===== */
+.cb{position:relative;max-width:440px;margin-left:auto;width:100%;text-align:left}
+.cb-win{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(91,155,255,.35),0 0 60px rgba(37,99,235,.25);font-family:var(--font-b)}
+.cb-head{display:flex;align-items:center;gap:12px;padding:16px 18px;background:linear-gradient(135deg,#1d4ed8,#2563EB);color:#fff}
+.cb-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#f3d9c4,#c98f6b);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:20px;color:#fff;flex-shrink:0}
+.cb-head b{display:block;font-size:15px;font-weight:500}
+.cb-head small{display:flex;align-items:center;gap:6px;font-size:12px;opacity:.85}
+.cb-head small i{width:7px;height:7px;border-radius:50%;background:#4ade80;display:inline-block}
+.cb-body{padding:18px 16px 20px;background:#f4f6fb;display:flex;flex-direction:column;gap:10px}
+.cb-msg{max-width:82%;font-size:14px;line-height:1.45;padding:10px 14px;border-radius:16px;position:relative}
+.cb-msg em{display:block;font-style:normal;font-size:10.5px;opacity:.55;margin-top:4px;text-align:right}
+.cb-msg.in{align-self:flex-end;background:#2563EB;color:#fff;border-bottom-right-radius:4px}
+.cb-msg.bot{align-self:flex-start;background:#fff;color:#1f2937;border:1px solid #e3e7ef;border-bottom-left-radius:4px}
+.cb-typing{align-self:flex-start;display:flex;gap:4px;padding:12px 14px;background:#fff;border:1px solid #e3e7ef;border-radius:16px;border-bottom-left-radius:4px}
+.cb-typing i{width:6px;height:6px;border-radius:50%;background:#9aa5b8;animation:cbdot 1.2s infinite}
+.cb-typing i:nth-child(2){animation-delay:.2s}.cb-typing i:nth-child(3){animation-delay:.4s}
+@keyframes cbdot{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.cb-chip{position:absolute;display:flex;align-items:center;gap:10px;background:rgba(15,17,21,.92);backdrop-filter:blur(10px);border:1px solid rgba(91,155,255,.45);border-radius:14px;padding:10px 14px;box-shadow:0 18px 40px rgba(0,0,0,.5);color:#fff;animation:cbfloat 6s ease-in-out infinite;z-index:2}
+.cb-chip span{font-size:12px;line-height:1.35;color:#cfcfcf}
+.cb-chip b{color:#fff;font-weight:500}
+.cb-chip .dot{width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.2);flex-shrink:0}
+.cb-chip .ic{font-size:18px}
+.cb-c1{right:-40px;top:-22px}
+.cb-c2{left:-60px;bottom:-30px;animation-delay:-3s}
+@keyframes cbfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.cb-chip,.cb-typing i{animation:none}}
+.hero-grid>*{min-width:0}
+@media(max-width:1100px){.cb{margin:24px auto 0}}
+@media(max-width:768px){
+  .hero-title{font-size:clamp(46px,14.5vw,80px)}
+  .cb{margin:36px auto 40px}
+  .cb-msg{font-size:13.5px}
+  .cb-c1{right:-6px;top:-26px}
+  .cb-c2{left:-6px;bottom:-34px}
+  .cb-chip{padding:8px 12px}
+}
+/* Livelli: prezzi di lancio */
+.livello-price-txt{font-family:var(--font-d);font-size:40px;line-height:1;color:#fff}
+.livello.featured-auto{border-color:rgba(91,155,255,.45);box-shadow:0 0 40px rgba(37,99,235,.15)}
+.livelli-note{font-size:14px;color:#a8a8a8;margin-top:24px!important;line-height:1.6}
 </style>
 </head>
 <body>
@@ -487,26 +531,105 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-grid">
     <div class="hero-inner reveal">
-    <div class="hero-tag">Automazione AI · Bari</div>
+    <div class="hero-tag">Chatbot e automazioni · Bari</div>
     <h1 class="hero-title">Lavora<br>anche<br><span>offline.</span></h1>
-    <p class="hero-desc">Chatbot, risponditori automatici e flussi AI che gestiscono i primi contatti per te. Il tuo business risponde, qualifica e accompagna il cliente — anche mentre dormi.</p>
+    <p class="hero-desc">Un chatbot che risponde ai tuoi clienti con le informazioni della tua attività e automazioni che chiedono recensioni e ricordano gli appuntamenti. Anche mentre dormi.</p>
     <div class="hero-btns">
       <a href="#" onclick="openContactModal('Automazione AI');return false;" class="btn-primary">Richiedi preventivo →</a>
       <a href="#livelli" class="btn-outline">Vedi i servizi</a>
     </div>
   </div>
-    <div class="chat reveal" aria-hidden="true">
-      <div class="chat-head"><div class="chat-av"><img src="/logo-icon.png" alt=""></div><div><b></b><i></i></div></div>
-      <div class="chat-body">
-        <div class="bub in"><span style="width:180px"></span><span style="width:120px"></span></div>
-        <div class="bub bot"><span style="width:200px"></span><span style="width:160px"></span><span style="width:90px"></span></div>
-        <div class="bub in"><span style="width:110px"></span></div>
-        <div class="bub bot"><span style="width:170px"></span><span style="width:130px"></span></div>
-        <div class="bub out"><span style="width:150px"></span></div>
-        <div class="typing"><i></i><i></i><i></i></div>
+    <div class="cb reveal" aria-hidden="true">
+      <div class="cb-win">
+        <div class="cb-head">
+          <div class="cb-av">L</div>
+          <div><b>Studio Lune · Assistente</b><small><i></i>Online ora</small></div>
+        </div>
+        <div class="cb-body">
+          <div class="cb-msg in">Ciao! Siete aperti sabato pomeriggio?<em>23:14</em></div>
+          <div class="cb-msg bot">Ciao! 😊 Sabato siamo aperti dalle 9 alle 18. Vuoi prenotare un massaggio?<em>23:14</em></div>
+          <div class="cb-msg in">Sì, decontratturante verso le 16<em>23:15</em></div>
+          <div class="cb-msg bot">Perfetto! Lasciami nome e numero: domattina ti confermiamo l'orario.<em>23:15</em></div>
+          <div class="cb-typing"><i></i><i></i><i></i></div>
+        </div>
       </div>
+      <div class="cb-chip cb-c1"><span class="dot"></span><span>Esempio di chatbot<br>con le tue informazioni</span></div>
+      <div class="cb-chip cb-c2"><span class="ic">📩</span><span><b>Nuovo contatto</b><br>Giulia · massaggio sabato 16:00</span></div>
     </div>
   </div>
+</section>
+
+<!-- LIVELLI -->
+<section class="sec livelli" id="livelli">
+  <div class="sec-kicker">Servizi · prezzi di lancio</div>
+  <h2 class="sec-title">Semplice da usare,<br>utile da subito.</h2>
+
+  <div class="livelli-grid">
+
+    <div class="livello">
+      <div>
+        <div class="livello-level">Chatbot AI</div>
+        <div class="livello-price"><sup>da</sup>300<sup class="eur">€</sup></div>
+        <div class="livello-period">setup una tantum<br>+ piattaforma da ~30 €/mese</div>
+      </div>
+      <div class="livello-content">
+        <div class="livello-name">Risponde ai tuoi clienti, giorno e notte</div>
+        <p class="livello-desc">Un assistente sul tuo sito che conosce orari, prezzi e servizi della tua attività. Risponde alle domande, raccoglie nome e numero di chi è interessato e ti avvisa subito.</p>
+        <div class="livello-tags">
+          <span class="livello-tag">Risposte con le tue informazioni</span>
+          <span class="livello-tag">Raccolta contatti</span>
+          <span class="livello-tag">Notifica immediata</span>
+          <span class="livello-tag">Anche su WhatsApp: + da 200 €</span>
+        </div>
+      </div>
+      <div class="livello-action">
+        <a href="#" onclick="openContactModal('Automazione AI');return false;" class="livello-btn">Inizia →</a>
+      </div>
+    </div>
+
+    <div class="livello featured-auto">
+      <div>
+        <div class="livello-level">Automazioni</div>
+        <div class="livello-price"><sup>da</sup>150<sup class="eur">€</sup></div>
+        <div class="livello-period">per automazione, una tantum</div>
+      </div>
+      <div class="livello-content">
+        <div class="livello-name">Più recensioni, meno appuntamenti saltati</div>
+        <p class="livello-desc">Piccoli automatismi che lavorano in silenzio: chiedono una recensione su Google dopo ogni visita e ricordano l'appuntamento il giorno prima, via WhatsApp, SMS o email.</p>
+        <div class="livello-tags">
+          <span class="livello-tag">Richiesta recensioni automatica</span>
+          <span class="livello-tag">Promemoria appuntamenti</span>
+          <span class="livello-tag">WhatsApp, SMS o email</span>
+        </div>
+      </div>
+      <div class="livello-action">
+        <a href="#" onclick="openContactModal('Automazione AI');return false;" class="livello-btn">Inizia →</a>
+      </div>
+    </div>
+
+    <div class="livello custom">
+      <div>
+        <div class="livello-level">Su misura</div>
+        <div class="livello-price"><span class="livello-price-txt">Su preventivo</span></div>
+        <div class="livello-period">studiamo insieme cosa serve</div>
+      </div>
+      <div class="livello-content">
+        <div class="livello-name">AI agent e integrazioni</div>
+        <p class="livello-desc">Progetti più complessi, costruiti sulle tue esigenze: assistenti AI che lavorano sui tuoi dati, bot vocali, WhatsApp Business API, collegamento al tuo CRM o gestionale.</p>
+        <div class="livello-tags">
+          <span class="livello-tag">AI agent</span>
+          <span class="livello-tag">Bot vocali</span>
+          <span class="livello-tag">WhatsApp Business API</span>
+          <span class="livello-tag">Collegamento CRM / gestionale</span>
+        </div>
+      </div>
+      <div class="livello-action">
+        <a href="#" onclick="openContactModal('Automazione AI');return false;" class="livello-btn">Parliamo →</a>
+      </div>
+    </div>
+
+  </div>
+  <p class="livelli-note">Gestione e aggiornamenti facoltativi da 50 €/mese. I costi delle piattaforme (chatbot, WhatsApp, SMS) li paghi direttamente ai fornitori, senza ricarichi.</p>
 </section>
 
 <!-- PERCHE -->
@@ -521,137 +644,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="perche-icon">⏰</div>
         <div class="perche-text">
           <strong>Risposte immediate 24/7</strong>
-          <span>Il cliente scrive alle 23:00. Il tuo bot risponde in secondi, raccoglie le informazioni e ti avvisa. Tu rispondi il giorno dopo con tutto il contesto.</span>
+          <span>Il cliente scrive alle 23:00. Il chatbot risponde in pochi secondi, raccoglie il contatto e ti avvisa. Tu richiami il giorno dopo sapendo già cosa vuole.</span>
         </div>
       </div>
       <div class="perche-item">
-        <div class="perche-icon">🎯</div>
+        <div class="perche-icon">📇</div>
         <div class="perche-text">
-          <strong>Lead qualificati</strong>
-          <span>Il bot filtra le richieste, raccoglie nome, numero, tipo di servizio richiesto. Arrivi alla conversazione con le informazioni già pronte.</span>
+          <strong>Nessun contatto perso</strong>
+          <span>Chi scrive fuori orario non resta senza risposta e non va dalla concorrenza: nome, numero e richiesta ti arrivano subito.</span>
         </div>
       </div>
       <div class="perche-item">
-        <div class="perche-icon">📉</div>
+        <div class="perche-icon">⭐</div>
         <div class="perche-text">
-          <strong>Meno lavoro ripetitivo</strong>
-          <span>Risposte alle domande frequenti, conferme di appuntamento, aggiornamenti sullo stato degli ordini. Tutto automatico.</span>
+          <strong>Più recensioni su Google</strong>
+          <span>Dopo ogni visita il cliente riceve un messaggio con il link diretto per lasciare la recensione. Più stelle, più clienti da Google Maps.</span>
         </div>
       </div>
       <div class="perche-item">
-        <div class="perche-icon">📈</div>
+        <div class="perche-icon">📅</div>
         <div class="perche-text">
-          <strong>Scala senza assumere</strong>
-          <span>Gestisci 10 o 100 conversazioni simultanee con la stessa qualità. L'automazione cresce con te.</span>
+          <strong>Meno appuntamenti saltati</strong>
+          <span>Un promemoria il giorno prima riduce le dimenticanze. Meno buchi in agenda, meno soldi persi.</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- LIVELLI -->
-<section class="sec livelli" id="livelli">
-  <div class="sec-kicker">Servizi</div>
-  <h2 class="sec-title">Dal semplice<br>al su misura.</h2>
-
-  <div class="livelli-grid">
-
-    <div class="livello">
-      <div>
-        <div class="livello-level">Base</div>
-        <div class="livello-price"><sup>da</sup>150<sup class="eur">€</sup></div>
-        <div class="livello-period">setup una tantum<br>+ da €80/mese</div>
-      </div>
-      <div class="livello-content">
-        <div class="livello-name">Chatbot + Notifiche</div>
-        <p class="livello-desc">Chatbot sul sito web, risponditore automatico WhatsApp e notifiche Telegram quando arriva una nuova richiesta. Perfetto per chi vuole iniziare ad automatizzare i primi contatti.</p>
-        <div class="livello-tags">
-          <span class="livello-tag">Chatbot sito</span>
-          <span class="livello-tag">WhatsApp auto</span>
-          <span class="livello-tag">Notifiche Telegram</span>
-          <span class="livello-tag">Form intelligente</span>
-        </div>
-      </div>
-      <div class="livello-action">
-        <a href="#" onclick="openContactModal('Automazione AI');return false;" class="livello-btn">Inizia →</a>
-      </div>
-    </div>
-
-    <div class="livello">
-      <div>
-        <div class="livello-level">Avanzato</div>
-        <div class="livello-price"><sup>da</sup>300<sup class="eur">€</sup></div>
-        <div class="livello-period">setup una tantum<br>+ da €120/mese</div>
-      </div>
-      <div class="livello-content">
-        <div class="livello-name">Flussi automatici</div>
-        <p class="livello-desc">Flussi multi-step con Make o n8n. Il lead arriva dal sito, viene qualificato automaticamente, inserito in un CRM, riceve una email di benvenuto e tu ricevi una notifica completa.</p>
-        <div class="livello-tags">
-          <span class="livello-tag">Make / n8n</span>
-          <span class="livello-tag">CRM integration</span>
-          <span class="livello-tag">Email automatiche</span>
-          <span class="livello-tag">Lead scoring</span>
-        </div>
-      </div>
-      <div class="livello-action">
-        <a href="#" onclick="openContactModal('Automazione AI');return false;" class="livello-btn">Inizia →</a>
-      </div>
-    </div>
-
-    <div class="livello custom">
-      <div>
-        <div class="livello-level">Su misura</div>
-        <div class="livello-price"><sup>da</sup>500<sup class="eur">€</sup></div>
-        <div class="livello-period">preventivo personalizzato</div>
-      </div>
-      <div class="livello-content">
-        <div class="livello-name">AI Agent su misura</div>
-        <p class="livello-desc">Immagina un assistente digitale che conosce il tuo business meglio di un nuovo dipendente — risponde ai clienti, gestisce le chiamate, aggiorna il tuo CRM e chiude trattative, tutto in automatico. Lo costruiamo insieme sui tuoi dati reali.</p>
-        <div class="livello-tags">
-          <span class="livello-tag">AI Agent custom</span>
-          <span class="livello-tag">Training su dati tuoi</span>
-          <span class="livello-tag">Voicebot</span>
-          <span class="livello-tag">Gestionale integration</span>
-          <span class="livello-tag">Sales automation</span>
-        </div>
-      </div>
-      <div class="livello-action">
-        <a href="#" onclick="openContactModal('Automazione AI');return false;" class="livello-btn">Parliamo →</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <!-- FLUSSO ESEMPIO -->
 <section class="sec flusso">
-  <div class="sec-kicker">Esempio reale</div>
-  <h2 class="sec-title">Come funziona<br>un flusso base.</h2>
+  <div class="sec-kicker">Esempio</div>
+  <h2 class="sec-title">Recensioni<br>in automatico.</h2>
   <div class="flusso-visual">
-    <div class="flusso-title">Flusso: nuovo contatto dal sito web</div>
+    <div class="flusso-title">Flusso: richiesta recensione dopo la visita</div>
     <div class="flusso-row">
       <div class="flusso-node trigger">
-        <div class="flusso-node-icon">🌐</div>
-        <div class="flusso-node-label">Trigger</div>
-        <div class="flusso-node-name">Cliente compila il form sul sito</div>
+        <div class="flusso-node-icon">💆</div>
+        <div class="flusso-node-label">Visita</div>
+        <div class="flusso-node-name">Il cliente termina il trattamento</div>
       </div>
       <div class="flusso-arrow">→</div>
       <div class="flusso-node">
-        <div class="flusso-node-icon">🤖</div>
-        <div class="flusso-node-label">Bot</div>
-        <div class="flusso-node-name">WhatsApp: risposta automatica in 30 secondi</div>
+        <div class="flusso-node-icon">⏱️</div>
+        <div class="flusso-node-label">Dopo 2 ore</div>
+        <div class="flusso-node-name">Messaggio di ringraziamento su WhatsApp o SMS</div>
       </div>
       <div class="flusso-arrow">→</div>
       <div class="flusso-node">
-        <div class="flusso-node-icon">📋</div>
-        <div class="flusso-node-label">CRM</div>
-        <div class="flusso-node-name">Lead salvato con nome, numero e servizio richiesto</div>
+        <div class="flusso-node-icon">🔗</div>
+        <div class="flusso-node-label">Un tocco</div>
+        <div class="flusso-node-name">Link diretto alla recensione su Google</div>
       </div>
       <div class="flusso-arrow">→</div>
       <div class="flusso-node action">
-        <div class="flusso-node-icon">📱</div>
-        <div class="flusso-node-label">Tu ricevi</div>
-        <div class="flusso-node-name">Notifica Telegram con tutti i dettagli del lead</div>
+        <div class="flusso-node-icon">⭐</div>
+        <div class="flusso-node-label">Risultato</div>
+        <div class="flusso-node-name">Più recensioni su Google Maps, senza chiederle a voce</div>
       </div>
     </div>
   </div>
@@ -715,31 +764,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Ho bisogno di competenze tecniche? <span class="faq-icon">+</span></div>
-      <div class="faq-a">No. Mi occupo io di tutto — dalla configurazione degli strumenti all'integrazione con il tuo sito. Tu usi il risultato finale senza preoccuparti della tecnica.</div>
+      <div class="faq-a">No. Mi occupo io di tutto, dalla configurazione all'installazione sul tuo sito. Tu usi il risultato senza preoccuparti della tecnica.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Il chatbot risponde a qualsiasi domanda? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Dipende dal livello. Il chatbot base risponde a domande predefinite (FAQ, orari, prezzi) e raccoglie contatti. Un AI agent avanzato, addestrato sui tuoi dati, può rispondere in modo molto più naturale e preciso.</div>
+      <div class="faq-a">Risponde alle domande sulla tua attività usando le informazioni che mi dai: orari, prezzi, servizi, come arrivare. Se non conosce la risposta, non inventa: raccoglie il contatto e ti avvisa.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Funziona con WhatsApp normale o serve Business? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Per le automazioni base bastano strumenti di terze parti che si connettono a WhatsApp. Per un'integrazione più robusta e ufficiale, consiglio WhatsApp Business API — ti spiego come attivarlo.</div>
+      <div class="faq-q" role="button" tabindex="0">Funziona anche su WhatsApp? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sì, tramite WhatsApp Business API, l'unico collegamento ufficiale. Meta applica un piccolo costo per conversazione, che paghi direttamente. Non uso strumenti non ufficiali: rischiano il blocco del numero.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Posso vedere come funzionerà prima di pagare? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Sì. Per i progetti personalizzati preparo prima una proposta dettagliata con il flusso esatto che andremo a costruire. Approvi tu prima di iniziare.</div>
+      <div class="faq-q" role="button" tabindex="0">Cosa pago ogni mese? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Solo il costo delle piattaforme che usiamo (ad esempio il servizio di chatbot, da circa 30 €/mese), direttamente al fornitore. La mia gestione mensile è facoltativa, da 50 €/mese.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" role="button" tabindex="0">Perché i prezzi sono così bassi? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sono prezzi di lancio: chatbot e automazioni sono un servizio nuovo di ClickBari. Prezzi più bassi del mercato, in cambio ti chiedo un feedback sincero.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Cosa succede se qualcosa non funziona? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Con il canone mensile includo il monitoraggio e la manutenzione. Se un flusso si interrompe, lo ripristino io. Per i progetti una tantum, includo 30 giorni di assistenza post-consegna.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Cosa sono i voicebot? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Sono bot vocali che rispondono alle chiamate in modo automatico. Utili per gestire prenotazioni, rispondere a domande frequenti e qualificare il cliente prima che parli con te. Li realizzo tramite ElevenLabs e Twilio — il risultato è sorprendentemente naturale.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Posso automatizzare il mio gestionale o CRM esistente? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Nella maggior parte dei casi sì. Con Make o n8n posso connettere il tuo gestionale al sito, ai form, alle email e ai canali social. Prima facciamo insieme un'analisi di fattibilità.</div>
+      <div class="faq-a">Per 30 giorni dalla consegna sistemo tutto gratuitamente. Dopo, con la gestione mensile mi occupo io di aggiornamenti e problemi; senza gestione, intervengo su richiesta.</div>
     </div>
   </div>
 </div>
@@ -766,7 +811,7 @@ const obs = new IntersectionObserver((entries) => {
   });
 }, {threshold: 0.08});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-setTimeout(() => document.querySelector('.hero .reveal').classList.add('visible'), 150);
+setTimeout(() => document.querySelectorAll('.hero .reveal').forEach(e=>e.classList.add('visible')), 150);
 document.querySelectorAll('.faq-item').forEach(item => {
   item.addEventListener('click', () => {
     const isOpen = item.classList.contains('open');

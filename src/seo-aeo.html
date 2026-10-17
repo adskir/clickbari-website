@@ -248,21 +248,8 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 /* PREZZI */
 .prezzi .sec-title{margin-bottom:0}
 .processo-steps{grid-template-columns:repeat(4,1fr)}
-.cluster-intro{margin-left:max(0px,calc((100% - var(--wrap))/2))!important}
 
 /* TOPIC CLUSTER */
-.cluster{background:#0a0a0a;border-top:1px solid var(--line)}
-.cluster-intro{font-size:15px;color:#bdbdbd;max-width:620px;margin-top:18px;line-height:1.75}
-.cluster-visual{margin-top:56px;position:relative}
-.cluster-center{text-align:center;margin-bottom:0;position:relative}
-.cluster-center-box{display:inline-block;background:var(--blue);padding:20px 40px;border-radius:999px;font-family:var(--font-d);font-size:28px;letter-spacing:.04em;color:#fff;box-shadow:0 20px 60px rgba(37,99,235,.4)}
-.cluster-arrow{text-align:center;color:var(--blue-bright);font-size:13px;letter-spacing:.1em;margin:0;padding:22px 0;position:relative}
-.cluster-arrow::before{content:'';position:absolute;left:12.5%;right:12.5%;bottom:0;height:22px;border:1px solid rgba(91,155,255,.45);border-bottom:0;border-radius:14px 14px 0 0}
-.cluster-arrow::after{content:'';position:absolute;left:50%;top:0;height:calc(100% - 22px);width:1px;background:rgba(91,155,255,.45)}
-.cluster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.cluster-item{background:var(--gray);border:1px solid rgba(91,155,255,.25);padding:20px;border-radius:var(--radius-md);text-align:left}
-.cluster-item-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:8px}
-.cluster-item-title{font-size:15px;color:#e0e0e0;line-height:1.45}
 
 /* WA FLOAT */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;text-decoration:none}
@@ -285,9 +272,6 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
   .cosa-grid{grid-template-columns:1fr 1fr}
   .cosa-item:not(:nth-child(3n)){border-right:0}
   .cosa-item:nth-child(odd){border-right:1px solid var(--line)}
-  .cluster-grid{grid-template-columns:1fr 1fr}
-  .cluster-arrow::before{display:none}
-  .cluster-arrow::after{height:100%}
 }
 @media(max-width:768px){
   nav{padding:14px 18px}
@@ -306,8 +290,6 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
   .cosa-grid{grid-template-columns:1fr}
   .cosa-item:nth-child(odd){border-right:0}
   .cosa-item{padding:28px 4px}
-  .cluster-grid{grid-template-columns:1fr}
-  .cluster-center-box{font-size:22px;padding:16px 24px}
   .cta-wrap{padding:0 20px 72px}
   .cta-finale{padding:40px 24px}
   .wa-float{bottom:20px;right:20px;width:48px;height:48px}
@@ -641,10 +623,6 @@ sup.eur.eur.eur.eur{color:inherit!important;margin:0 0 0 6px!important;font-size
   .wk-card{padding:22px 20px}
   .wk-title{font-size:26px}
 }
-/* Topic cluster: esempio pizzeria */
-.cluster-center-box small{display:block;font-family:var(--font-b);font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:4px}
-.cluster-item-q{font-size:12.5px;color:#9db8e8;margin-top:8px}
-@media(max-width:768px){.cluster-center-box{font-size:22px;padding:16px 26px}}
 
 /* SEO pensato per l'AI */
 .diff-intro{font-size:16px;line-height:1.7;color:#cfcfcf;max-width:680px;margin-top:18px;margin-left:max(0px,calc((100% - var(--wrap))/2))!important}
@@ -920,41 +898,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- TOPIC CLUSTER -->
-<section class="sec cluster">
-  <div class="sec-kicker">Perché servono gli articoli</div>
-  <h2 class="sec-title">Ogni domanda<br>porta un cliente.</h2>
-  <p class="cluster-intro">I clienti non cercano solo "pizzeria Bari": fanno domande precise. Ogni articolo risponde a una di queste domande e porta le persone alla tua pagina principale. Più domande copri, più Google e l'AI ti considerano il punto di riferimento.</p>
-  <div class="cluster-visual">
-    <div class="cluster-center">
-      <div class="cluster-center-box"><small>Pagina principale</small>Pizzeria a Bari</div>
-    </div>
-    <div class="cluster-arrow">↑ ogni articolo porta qui ↑</div>
-    <div class="cluster-grid">
-      <div class="cluster-item">
-        <div class="cluster-item-tag">Articolo</div>
-        <div class="cluster-item-title">Pizza senza glutine a Bari: dove mangiarla sicuri</div>
-        <div class="cluster-item-q">Chi cerca: "pizza senza glutine Bari"</div>
-      </div>
-      <div class="cluster-item">
-        <div class="cluster-item-tag">Articolo</div>
-        <div class="cluster-item-title">Pizza per feste e compleanni: come organizzarla</div>
-        <div class="cluster-item-q">Chi cerca: "pizza per festa Bari"</div>
-      </div>
-      <div class="cluster-item">
-        <div class="cluster-item-tag">Articolo</div>
-        <div class="cluster-item-title">Napoletana o romana: le differenze</div>
-        <div class="cluster-item-q">Chi chiede all'AI: "che differenza c'è…"</div>
-      </div>
-      <div class="cluster-item">
-        <div class="cluster-item-tag">Articolo</div>
-        <div class="cluster-item-title">Pizzerie aperte la domenica sera a Bari</div>
-        <div class="cluster-item-q">Chi cerca: "pizzeria aperta domenica"</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="sec faq">
   <div class="faq-grid">
@@ -976,8 +919,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="faq-a">Google Ads porta clienti subito, ma paghi ogni clic finché la campagna è attiva. Il SEO richiede qualche mese, poi il traffico arriva senza pagare per ogni clic e continua nel tempo. Spesso la scelta migliore è usarli insieme: Ads per avere clienti da subito, SEO per costruire una visibilità che dura. Man mano che il SEO cresce, puoi ridurre il budget pubblicitario.</div>
     </div>
     <div class="faq-item">
+      <div class="faq-q" role="button" tabindex="0">A cosa servono gli articoli? <span class="faq-icon">+</span></div>
+      <div class="faq-a">I clienti non cercano solo "pizzeria Bari": fanno domande precise, come "pizza senza glutine Bari" o "pizzeria aperta la domenica". Ogni articolo risponde a una di queste domande e porta le persone alla tua pagina principale. Più domande copri, più Google e l'AI ti considerano un punto di riferimento.</div>
+    </div>
+    <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Cos'è l'AEO e perché mi interessa? <span class="faq-icon">+</span></div>
-      <div class="faq-a">È la parte del SEO che serve a farti trovare anche nelle risposte dell'AI, come Google AI Overview, ChatGPT e Gemini. Sempre più persone chiedono un consiglio all'AI invece di cercare su Google. Lavoro su risposte chiare, dati strutturati e informazioni coerenti ovunque: nessuno può garantire una citazione, ma così le probabilità aumentano.</div>
+      <div class="faq-a">È la parte del SEO che serve a farti trovare anche nelle risposte dell'AI, come Google AI Overview, ChatGPT e Gemini. Sempre più persone chiedono un consiglio all'AI invece di cercare su Google. Lavoro su risposte chiare, dati strutturati e gli stessi dati ovunque: nessuno può garantire una citazione, ma così le probabilità aumentano.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Mi serve un pannello di amministrazione per il SEO? <span class="faq-icon">+</span></div>

@@ -44,6 +44,7 @@ o la struttura del portfolio.
   del menu punta a `/#servizi` (elenco servizi in home) con la tendina
   verso le 4 pagine servizio.
 - Pagina `/chatgpt-ads/` (ottobre 2026): servizio pilota ChatGPT Ads (300 € setup + 30 giorni, poi da 200 €/mese). Voce "ChatGPT Ads" con badge NEW (stile inline) nella tendina Servizi e nel menu mobile di OGNI pagina, subito dopo Google Ecosystem. Una nuova pagina deve copiarla.
+- Pagina `/per-agenzie/` (ottobre 2026): collaborazione con agenzie (siti, SEO, Google Ads, Business Profile; condizioni da concordare, nessun prezzo dedicato). Voce di menu "Per agenzie" (pillola con bordo blu `.nav-agency` + `.mobile-agency`) subito dopo "Sito regalo" in OGNI pagina, con blocco CSS "NAV — Per agenzie" prima di `/* HAMBURGER */`. Il menu desktop passa all'hamburger sotto i 1120px.
 - Contatti: il bottone "Contattami" del menu (desktop `.nav-cta` e mobile
   `.mobile-cta`) porta a `/contatti/`; tutti gli altri bottoni di contatto
   aprono la modale (`openContactModal()`).

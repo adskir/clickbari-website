@@ -1157,10 +1157,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
             <label for="modal-phone">Telefono *</label>
             <input type="tel" id="modal-phone" name="phone" required>
           </div>
-          <div class="modal-field" id="modal-site-field" hidden>
-            <label for="modal-site">Sito o nome della tua attività *</label>
-            <input type="text" id="modal-site" name="sito">
-          </div>
           <div class="modal-field" hidden>
             <label for="modal-service">Servizio</label>
             <select id="modal-service" name="service">
@@ -1269,11 +1265,9 @@ document.querySelectorAll('.faq-item').forEach(item => {
     form.reset();
     if(serviceSelect){ serviceSelect.value = prefillService || 'SEO + AEO'; } // pagina servizio: campo nascosto, valore fisso
     var mc = prefillService === 'Mini-check SEO gratuito';
-    var siteField = document.getElementById('modal-site-field'), siteInput = document.getElementById('modal-site');
-    if(siteField){ siteField.hidden = !mc; siteInput.required = mc; }
     var mt = document.querySelector('#modal-form-wrap .modal-title'), ms = document.querySelector('#modal-form-wrap .modal-sub');
     if(mt){ mt.textContent = mc ? 'Mini-check gratuito' : 'Parliamone'; }
-    if(ms){ ms.textContent = mc ? 'Lasciami nome, numero e il tuo sito: ti mando il check su WhatsApp.' : 'Lasciami nome e numero, ti rispondo entro 24 ore.'; }
+    if(ms){ ms.textContent = mc ? 'Lasciami nome e numero: ti scrivo su WhatsApp per il check.' : 'Lasciami nome e numero, ti rispondo entro 24 ore.'; }
     startAnimation();
   };
 

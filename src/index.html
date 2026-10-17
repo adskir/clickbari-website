@@ -130,7 +130,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-cta-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff;box-shadow:none}
 #servizi{scroll-margin-top:72px}
 
-.hero-chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:-22px auto 44px;padding:0;max-width:680px;justify-content:center}
+.hero-chips{list-style:none;display:flex;flex-wrap:nowrap;gap:8px;margin:-22px auto 44px;padding:0;max-width:680px;justify-content:center}
 .hero-chips li{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(91,155,255,.3);background:rgba(37,99,235,.08);border-radius:999px;font-size:14px;color:#e6e6e6;white-space:nowrap}
 .hero-chips li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue-bright);box-shadow:0 0 10px var(--blue-bright)}
 
@@ -248,7 +248,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .hero-btns{flex-direction:column}
   .hero-btns .hero-cta{justify-content:center}
   .hero-chips{justify-content:center;margin:-20px auto 32px}
-  .hero-chips li{font-size:13px;padding:7px 12px}
+  .hero-chips{gap:6px}
+  .hero-chips li{font-size:13px;padding:7px 11px;white-space:nowrap}
   .section{padding:72px 20px}
   .section-header{flex-direction:column;align-items:flex-start;margin-bottom:28px}
   .svc{padding:26px 0}
@@ -360,6 +361,7 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .nav-dd:hover>a.active{color:#fff}
 .nav-dd-menu a.dd-item.active:not(:hover){background:transparent!important}
 .nav-dd-menu a.dd-item.active:not(:hover) .dd-tx b{color:#fff}
+.hero-grid>*{min-width:0}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -444,9 +446,9 @@ gtag('consent', 'default', {
       </h1>
       <p class="hero-desc">Trasformo la tua comunicazione in risultati concreti.</p>
       <ul class="hero-chips" aria-label="Servizi">
-        <li>Siti web &amp; Chatbot AI</li>
-        <li>Google Ads &amp; ChatGPT Ads</li>
-        <li>SEO &amp; AEO</li>
+        <li>Siti web</li>
+        <li>AI</li>
+        <li>Google Ecosystem</li>
       </ul>
       <div class="hero-btns">
         <a href="#servizi" class="hero-cta">Scopri i servizi <span class="hero-cta-arrow" aria-hidden="true">↓</span></a>

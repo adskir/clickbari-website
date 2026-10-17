@@ -14,7 +14,7 @@ faq:
   - q: "Conviene un freelance o un'agenzia per il proprio sito web?"
     a: "Dipende dal progetto. Per una piccola impresa che ha bisogno di un sito veloce e ben fatto, un freelance offre contatto diretto e tempi brevi. Per progetti complessi, con più servizi da coordinare (branding, campagne, contenuti), un'agenzia strutturata è spesso la scelta giusta. E le due cose non si escludono: molte agenzie collaborano con freelance specializzati."
   - q: "I prezzi dei siti web scenderanno ancora nei prossimi anni?"
-    a: "I siti semplici sì, perché gli strumenti IA riducono sempre di più i tempi di sviluppo. Ma quello che non si automatizza — capire il business del cliente, la strategia e il supporto dopo il lancio — manterrà il suo valore, ed è lì che si gioca la differenza tra i professionisti."
+    a: "I siti semplici sì, perché gli strumenti AI riducono sempre di più i tempi di sviluppo. Ma quello che non si automatizza — capire il business del cliente, la strategia e il supporto dopo il lancio — manterrà il suo valore, ed è lì che si gioca la differenza tra i professionisti."
 ---
 
 Se lo stai cercando su Google, ecco i prezzi diretti:
@@ -70,10 +70,10 @@ Se lo stai cercando su Google, ecco i prezzi diretti:
   </div>
 </div>
 
-Il motivo dietro questi prezzi è semplice: gli strumenti IA hanno accelerato la parte più costosa del lavoro — la scrittura del codice da zero. Quello che prima richiedeva giorni, oggi si fa in ore. Il costo di produzione è sceso davvero, ed è giusto che il prezzo lo rifletta.
+Il motivo dietro questi prezzi è semplice: gli strumenti AI hanno accelerato la parte più costosa del lavoro — la scrittura del codice da zero. Quello che prima richiedeva giorni, oggi si fa in ore. Il costo di produzione è sceso davvero, ed è giusto che il prezzo lo rifletta.
 
 C'è anche un secondo motivo: lavoro da solo, senza grandi costi fissi, e posso concentrarmi su un progetto alla volta. Un'agenzia offre invece una struttura più ampia, con più professionisti e servizi coordinati: due modelli diversi, adatti a esigenze diverse.
 
-Cosa succederà ai prezzi nei prossimi anni? I siti semplici continueranno a scendere — la concorrenza tra chi usa l'IA cresce. Ma quello che non si automatizza mai è capire il business del cliente, la strategia, e il supporto dopo il lancio. Ecco perché chi unisce la velocità dell'IA alla conoscenza del mercato locale (Bari, la Puglia — non Milano) ne uscirà vincitore.
+Cosa succederà ai prezzi nei prossimi anni? I siti semplici continueranno a scendere — la concorrenza tra chi usa l'AI cresce. Ma quello che non si automatizza mai è capire il business del cliente, la strategia, e il supporto dopo il lancio. Ecco perché chi unisce la velocità dell'IA alla conoscenza del mercato locale (Bari, la Puglia — non Milano) ne uscirà vincitore.
 
 Non aspettare pensando che tra sei mesi costerà meno — i prezzi di base sono già onesti. Se ti serve solo una pagina, i prezzi sono qui sopra. Se vuoi un risultato, cerca non il prezzo più basso, ma chi capisce davvero la tua attività.

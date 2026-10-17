@@ -43,6 +43,7 @@ o la struttura del portfolio.
 - La pagina `/servizi/` è stata eliminata (ottobre 2026): la voce "Servizi"
   del menu punta a `/#servizi` (elenco servizi in home) con la tendina
   verso le 4 pagine servizio.
+- Pagina `/chatgpt-ads/` (ottobre 2026): servizio pilota ChatGPT Ads (300 € setup + 30 giorni, poi da 200 €/mese). Voce "ChatGPT Ads" con badge NEW (stile inline) nella tendina Servizi e nel menu mobile di OGNI pagina, subito dopo Google Ecosystem. Una nuova pagina deve copiarla.
 - Contatti: il bottone "Contattami" del menu (desktop `.nav-cta` e mobile
   `.mobile-cta`) porta a `/contatti/`; tutti gli altri bottoni di contatto
   aprono la modale (`openContactModal()`).

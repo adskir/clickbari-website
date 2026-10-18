@@ -14,6 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   // Portfolio preview screenshots — served at /img/portfolio/...
   eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/fonts");
 
   // Custom filter: counts items in an array whose `category` field matches.
   // (Nunjucks' built-in selectattr(...,"equalto",...) does not reliably

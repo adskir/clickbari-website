@@ -913,51 +913,105 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ALTRI SERVIZI -->
 <style>
-.as-sec{padding:96px 48px;border-top:1px solid rgba(255,255,255,.09)}
+.as-sec{padding:112px 48px;border-top:1px solid rgba(255,255,255,.09)}
 .as-in{max-width:1344px;margin:0 auto}
+.as-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:24px 64px;align-items:end}
 .as-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright,#5b9bff);margin-bottom:12px}
-.as-title{font-family:var(--font-d,'Bebas Neue',sans-serif);font-weight:400;font-size:clamp(40px,4.4vw,68px);line-height:.9;letter-spacing:.01em;color:#fff;margin:0}
-.as-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:40px}
-.as-card{display:flex;flex-direction:column;background:var(--gray,#161616);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius-lg,18px);padding:24px;text-decoration:none;transition:border-color .25s,background .25s,transform .25s}
-.as-card:hover{border-color:rgba(91,155,255,.45);background:rgba(37,99,235,.06);transform:translateY(-3px)}
-.as-ic{width:42px;height:42px;border-radius:12px;background:rgba(37,99,235,.14);border:1px solid rgba(91,155,255,.3);display:flex;align-items:center;justify-content:center;color:var(--blue-bright,#5b9bff);margin-bottom:18px}
-.as-ic svg{width:20px;height:20px}
-.as-t{font-family:var(--font-d,'Bebas Neue',sans-serif);font-size:26px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:8px}
-.as-d{flex:1;font-size:14px;line-height:1.6;color:#bdbdbd;margin:0 0 16px}
-.as-f{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}
+.as-title{font-family:var(--font-d,'Bebas Neue',sans-serif);font-weight:400;font-size:clamp(44px,5vw,80px);line-height:.9;letter-spacing:.01em;color:#fff;margin:0}
+.as-title span{color:var(--blue-bright,#5b9bff)}
+.as-intro{font-size:16px;line-height:1.7;color:#bdbdbd;margin:0}
+.as-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:48px}
+.as-card{display:flex;flex-direction:column;background:var(--gray,#161616);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius-lg,18px);overflow:hidden;text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s}
+.as-card:hover{border-color:rgba(91,155,255,.5);transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.4),0 0 40px rgba(37,99,235,.15)}
+.as-vis{position:relative;height:150px;background:radial-gradient(120% 120% at 0% 0%,rgba(37,99,235,.22),rgba(15,17,21,1) 60%);border-bottom:1px solid rgba(255,255,255,.07);overflow:hidden}
+.as-body{display:flex;flex-direction:column;flex:1;padding:22px 22px 20px}
+.as-t{font-family:var(--font-d,'Bebas Neue',sans-serif);font-size:28px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:8px}
+.as-d{flex:1;font-size:14px;line-height:1.6;color:#bdbdbd;margin:0 0 18px}
+.as-f{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
 .as-p{color:#fff;font-weight:500}
-.as-go{color:var(--blue-bright,#5b9bff)}
-@media(max-width:1100px){.as-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:768px){.as-sec{padding:72px 20px}.as-grid{grid-template-columns:1fr}}
+.as-go{color:var(--blue-bright,#5b9bff);transition:transform .25s}
+.as-card:hover .as-go{transform:translateX(4px)}
+/* mini-infografiche */
+.as-v-panel{position:absolute;left:18px;right:18px;top:18px;bottom:-12px;background:#fff;border-radius:10px 10px 0 0;box-shadow:0 0 0 1px rgba(91,155,255,.3),0 10px 30px rgba(0,0,0,.4);padding:10px 12px;color:#1f2937;font-family:var(--font-b,'DM Sans',sans-serif)}
+.as-v-dots{display:flex;gap:4px;margin-bottom:9px}.as-v-dots i{width:6px;height:6px;border-radius:50%;background:#d6dbe4}
+.as-v-line{height:6px;border-radius:3px;background:#e6eaf1;margin-bottom:6px}
+.as-v-btn{display:inline-block;margin-top:6px;height:14px;width:46%;border-radius:4px;background:#2563EB}
+.as-v-hero{height:34px;border-radius:6px;background:linear-gradient(135deg,#2563EB,#5b9bff);margin-bottom:8px}
+.as-v-bars{position:absolute;left:22px;right:22px;bottom:22px;top:30px;display:flex;align-items:flex-end;gap:8px}
+.as-v-bars i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#5b9bff,rgba(37,99,235,.35))}
+.as-v-tag{position:absolute;top:14px;right:14px;font-size:11px;font-weight:600;color:#0b1a10;background:#34d399;padding:3px 8px;border-radius:999px}
+.as-v-search{display:flex;align-items:center;gap:6px;height:20px;border-radius:999px;border:1px solid #e3e7ef;padding:0 8px;font-size:9.5px;color:#5f6368;margin-bottom:9px}
+.as-v-search b{width:7px;height:7px;border-radius:50%;border:1.5px solid #5f6368;display:inline-block}
+.as-v-res{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.as-v-res em{font-style:normal;flex-shrink:0;width:15px;height:15px;border-radius:50%;background:#e6eaf1;color:#5f6368;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.as-v-res.top em{background:#2563EB;color:#fff}
+.as-v-res span{flex:1;height:6px;border-radius:3px;background:#e6eaf1}
+.as-v-res.top span{background:#bcd3ff}
+.as-v-chat{position:absolute;left:18px;right:18px;top:18px;display:flex;flex-direction:column;gap:7px;font-family:var(--font-b,'DM Sans',sans-serif)}
+.as-v-msg{max-width:78%;font-size:10.5px;line-height:1.35;padding:6px 9px;border-radius:12px}
+.as-v-msg.in{align-self:flex-end;background:#2563EB;color:#fff;border-bottom-right-radius:3px}
+.as-v-msg.bot{align-self:flex-start;background:#fff;color:#1f2937;border-bottom-left-radius:3px}
+.as-v-chip{position:absolute;right:14px;bottom:12px;display:flex;align-items:center;gap:6px;font-size:10px;color:#fff;background:rgba(10,12,18,.92);border:1px solid rgba(91,155,255,.4);padding:5px 9px;border-radius:999px}
+.as-v-chip i{width:6px;height:6px;border-radius:50%;background:#34d399}
+.as-v-ad{border:1px solid #e3e7ef;border-radius:8px;padding:6px 8px;background:#fafbfd;margin-top:6px}
+.as-v-ad small{display:block;font-size:8px;font-weight:700;letter-spacing:.06em;color:#5f6368;text-transform:uppercase;margin-bottom:4px}
+.as-v-ad div{display:flex;align-items:center;gap:7px}
+.as-v-ad b{width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#34d399,#2563EB);flex-shrink:0}
+.as-v-ad span{flex:1;height:6px;border-radius:3px;background:#e6eaf1}
+@media(max-width:1100px){.as-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.as-head{grid-template-columns:1fr}}
+@media(max-width:768px){.as-sec{padding:80px 20px}.as-grid{grid-template-columns:1fr}.as-vis{height:130px}}
 </style>
 <section class="as-sec" aria-labelledby="as-title">
   <div class="as-in">
-    <div class="as-kicker">Altri servizi</div>
-    <h2 class="as-title" id="as-title">Tutto quello che serve<br>per portare clienti.</h2>
+    <div class="as-head">
+      <div>
+        <div class="as-kicker">Altri servizi</div>
+        <h2 class="as-title" id="as-title">Tutto quello che serve<br><span>per portare clienti.</span></h2>
+      </div>
+      <p class="as-intro">Ogni servizio funziona da solo, ma insieme rendono di più: il sito accoglie, Google e l&#39;AI portano le persone, l&#39;automazione non ne perde nessuna.</p>
+    </div>
     <div class="as-grid">
       <a href="/siti-web/" class="as-card">
-        <span class="as-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span>
-        <span class="as-t">Siti web</span>
-        <p class="as-d">Landing page, siti vetrina ed e-commerce su misura.</p>
-        <span class="as-f"><span class="as-p">da 400 €</span><span class="as-go">Scopri →</span></span>
+        <div class="as-vis" aria-hidden="true">
+          <div class="as-v-panel"><div class="as-v-dots"><i></i><i></i><i></i></div><div class="as-v-hero"></div><div class="as-v-line" style="width:82%"></div><div class="as-v-line" style="width:64%"></div><span class="as-v-btn"></span></div>
+        </div>
+        <div class="as-body">
+          <span class="as-t">Siti web</span>
+          <p class="as-d">Landing page, siti vetrina ed e-commerce su misura.</p>
+          <span class="as-f"><span class="as-p">da 400 €</span><span class="as-go">Scopri →</span></span>
+        </div>
       </a>
       <a href="/google-ecosystem/" class="as-card">
-        <span class="as-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
-        <span class="as-t">Google Ecosystem</span>
-        <p class="as-d">Google Ads e Google Business Profile per clienti locali.</p>
-        <span class="as-f"><span class="as-p">da 200 €/mese</span><span class="as-go">Scopri →</span></span>
+        <div class="as-vis" aria-hidden="true">
+          <span class="as-v-tag">+ richieste</span>
+          <div class="as-v-bars"><i style="height:28%"></i><i style="height:40%"></i><i style="height:36%"></i><i style="height:58%"></i><i style="height:70%"></i><i style="height:92%"></i></div>
+        </div>
+        <div class="as-body">
+          <span class="as-t">Google Ecosystem</span>
+          <p class="as-d">Google Ads e Business Profile per farti trovare da chi cerca ora.</p>
+          <span class="as-f"><span class="as-p">da 200 €/mese</span><span class="as-go">Scopri →</span></span>
+        </div>
       </a>
       <a href="/seo-aeo/" class="as-card">
-        <span class="as-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></span>
-        <span class="as-t">SEO + AEO</span>
-        <p class="as-d">Visibilità su Google e nelle risposte dell&#39;AI.</p>
-        <span class="as-f"><span class="as-p">da 200 €</span><span class="as-go">Scopri →</span></span>
+        <div class="as-vis" aria-hidden="true">
+          <div class="as-v-panel"><div class="as-v-search"><b></b>pizzeria a Bari</div><div class="as-v-res top"><em>1</em><span></span></div><div class="as-v-res"><em>2</em><span style="flex:.8"></span></div><div class="as-v-res"><em>3</em><span style="flex:.6"></span></div></div>
+        </div>
+        <div class="as-body">
+          <span class="as-t">SEO + AEO</span>
+          <p class="as-d">Visibilità su Google e nelle risposte dell&#39;AI, che cresce nel tempo.</p>
+          <span class="as-f"><span class="as-p">da 200 €</span><span class="as-go">Scopri →</span></span>
+        </div>
       </a>
       <a href="/automazione/" class="as-card">
-        <span class="as-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
-        <span class="as-t">Automazione AI</span>
-        <p class="as-d">Chatbot AI sul sito e su WhatsApp, moduli automatici.</p>
-        <span class="as-f"><span class="as-p">da 150 €</span><span class="as-go">Scopri →</span></span>
+        <div class="as-vis" aria-hidden="true">
+          <div class="as-v-chat"><div class="as-v-msg in">Vorrei un preventivo</div><div class="as-v-msg bot">Certo! Per quale servizio?</div></div>
+          <div class="as-v-chip"><i></i>Nuova richiesta</div>
+        </div>
+        <div class="as-body">
+          <span class="as-t">Automazione AI</span>
+          <p class="as-d">Chatbot AI sul sito e su WhatsApp: nessun contatto perso.</p>
+          <span class="as-f"><span class="as-p">da 150 €</span><span class="as-go">Scopri →</span></span>
+        </div>
       </a>
     </div>
   </div>

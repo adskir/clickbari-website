@@ -152,12 +152,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .include-desc{font-size:14px;line-height:1.7;color:#bdbdbd}
 .include-link{display:inline-block;margin-top:8px;color:var(--blue-bright);font-size:12px;letter-spacing:.04em;text-decoration:none}
 .include-link:hover{color:#fff}
-.next-step{margin-top:28px!important;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;padding:18px 22px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--gray)}
-.next-step-t{font-size:15px;color:#d6d6d6;margin-right:6px}
-.next-step a{display:inline-flex;align-items:center;height:38px;padding:0 16px;border:1px solid rgba(91,155,255,.35);border-radius:var(--radius-md);font-size:13px;color:#dbe7ff;text-decoration:none;transition:border-color .2s,background .2s}
-.next-step a:hover{border-color:var(--blue-bright);background:rgba(37,99,235,.15);color:#fff}
-@media(max-width:768px){.next-step{flex-direction:column;align-items:stretch;text-align:center}.next-step a{justify-content:center}}
-.include-desc a{display:inline-block;margin-top:10px}
+@media(max-width:768px){.include-desc a{display:inline-block;margin-top:10px}
 
 /* PACCHETTI */
 .pacchetti-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;align-items:stretch}
@@ -755,12 +750,6 @@ gtag('consent', 'default', {
       <p class="include-desc">Dopo la pubblicazione non sparisco. Modifiche, aggiornamenti e supporto tecnico inclusi nella gestione annuale, oppure a parte su richiesta.</p>
     </div>
   </div>
-  <div class="next-step">
-    <span class="next-step-t">Il sito è il primo passo. Per portare clienti:</span>
-    <a href="/google-ecosystem/">Google Ads e Business Profile →</a>
-    <a href="/seo-aeo/">SEO + AEO →</a>
-    <a href="/automazione/">Chatbot AI →</a>
-  </div>
 </section>
 
 <!-- PORTFOLIO PREVIEW -->
@@ -789,6 +778,9 @@ gtag('consent', 'default', {
     <a href="/portfolio/" class="btn-outline">Vedi tutti i progetti →</a>
   </div>
 </section>
+
+<!-- ALTRI SERVIZI -->
+{% set current = "siti" %}{% include "altri-servizi.njk" %}
 
 <!-- FAQ -->
 <section class="sec domande">

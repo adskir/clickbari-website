@@ -52,7 +52,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --radius-md:10px;
   --radius-sm:6px;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{background:var(--black);color:#fff;font-family:var(--font-b);font-weight:400;overflow-x:hidden}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(6,6,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.09)}
@@ -205,10 +205,10 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 @keyframes dot{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
 
 /* PERCHE */
-.perche-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start}
-.perche-title{font-family:var(--font-d);font-weight:400;font-size:clamp(52px,6vw,96px);line-height:.88;color:#fff;position:sticky;top:120px}
+.perche-head{text-align:center;max-width:900px;margin:0 auto 56px}
+.perche-title{font-family:var(--font-d);font-weight:400;font-size:clamp(44px,5vw,80px);line-height:.9;color:#fff}
 .perche-title span{color:var(--blue-bright)}
-.perche-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.perche-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .perche-item{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px}
 .perche-icon{width:46px;height:46px;border-radius:14px;background:rgba(37,99,235,.14);border:1px solid rgba(91,155,255,.3);display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:22px}
 .perche-text strong{display:block;font-family:var(--font-d);font-weight:400;font-size:26px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
@@ -232,6 +232,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .livello-desc{font-size:15px;line-height:1.7;color:#c4c4c4;margin-bottom:16px;max-width:640px}
 .livello.custom .livello-desc{color:rgba(255,255,255,.88)}
 .livello-tags{display:flex;flex-wrap:wrap;gap:6px}
+.livello-tag-link{text-decoration:none;cursor:pointer;transition:border-color .2s,color .2s}.livello-tag-link:hover{border-color:var(--blue-bright);color:#fff}
 .livello-tag{font-size:11px;letter-spacing:.04em;color:#bcd3ff;background:rgba(91,155,255,.10);border:1px solid rgba(91,155,255,.22);padding:4px 10px;border-radius:var(--radius-sm)}
 .livello.custom .livello-tag{color:#fff;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.25)}
 .livello-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:14px 26px;font-family:var(--font-d);font-size:19px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);white-space:nowrap;transition:transform .2s,box-shadow .2s}
@@ -278,8 +279,6 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 @media(max-width:1100px){
   .hero-grid{grid-template-columns:1fr;gap:44px}
   .chat{justify-self:start}
-  .perche-grid{grid-template-columns:1fr;gap:40px}
-  .perche-title{position:static}
   .livello{grid-template-columns:1fr;gap:20px}
   .livello>div:first-child{padding-right:0;border-right:0;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.1)}
   .flusso-row{flex-direction:column}
@@ -584,12 +583,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="livello-content">
         <div class="livello-name">Risponde ai tuoi clienti, giorno e notte</div>
-        <p class="livello-desc">Un assistente sul tuo sito che conosce orari, prezzi e servizi della tua attività. Risponde alle domande, raccoglie nome e numero di chi è interessato e ti avvisa subito.</p>
+        <p class="livello-desc">Un assistente sul tuo sito che conosce orari, prezzi e servizi. Gestisce il primo contatto con chi ti scrive, raccoglie nome e richiesta e te li manda subito: a te resta solo da richiamare.</p>
         <div class="livello-tags">
           <span class="livello-tag">Risposte con le tue informazioni</span>
           <span class="livello-tag">Raccolta contatti</span>
           <span class="livello-tag">Notifica immediata</span>
-          <span class="livello-tag">Anche su WhatsApp: + da 200 €</span>
+          <a href="#faq-whatsapp" class="livello-tag livello-tag-link">Anche su WhatsApp: + da 200 € ?</a>
         </div>
       </div>
       <div class="livello-action">
@@ -604,12 +603,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="livello-period">per automazione, una tantum</div>
       </div>
       <div class="livello-content">
-        <div class="livello-name">Più recensioni, meno appuntamenti saltati</div>
-        <p class="livello-desc">Piccoli automatismi che lavorano in silenzio: chiedono una recensione su Google dopo ogni visita e ricordano l'appuntamento il giorno prima, via WhatsApp, SMS o email.</p>
+        <div class="livello-name">Più recensioni, meno appuntamenti saltati, più clienti che tornano</div>
+        <p class="livello-desc">Piccoli automatismi che lavorano in silenzio, via WhatsApp o email: chiedono una recensione dopo ogni visita, confermano e ricordano gli appuntamenti, ti avvisano a ogni nuova richiesta dal sito e invitano a tornare chi non si vede da un po'.</p>
         <div class="livello-tags">
-          <span class="livello-tag">Richiesta recensioni automatica</span>
-          <span class="livello-tag">Promemoria appuntamenti</span>
-          <span class="livello-tag">WhatsApp, SMS o email</span>
+          <span class="livello-tag">Richiesta recensioni</span>
+          <span class="livello-tag">Conferma e promemoria appuntamenti</span>
+          <span class="livello-tag">Avviso nuove richieste</span>
+          <span class="livello-tag">Richiamo clienti</span>
         </div>
       </div>
       <div class="livello-action">
@@ -625,7 +625,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="livello-content">
         <div class="livello-name">AI agent e integrazioni</div>
-        <p class="livello-desc">Progetti più complessi, costruiti sulle tue esigenze: assistenti AI che lavorano sui tuoi dati, bot vocali, WhatsApp Business API, collegamento al tuo CRM o gestionale.</p>
+        <p class="livello-desc">Quando serve qualcosa di più complesso: automazioni costruite sulla tua attività e collegate agli strumenti che già usi.</p>
         <div class="livello-tags">
           <span class="livello-tag">AI agent</span>
           <span class="livello-tag">Bot vocali</span>
@@ -639,44 +639,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
   </div>
-  <p class="livelli-note">Gestione e aggiornamenti facoltativi da 50 €/mese. I costi delle piattaforme (chatbot, WhatsApp, SMS) li paghi direttamente ai fornitori, senza ricarichi.</p>
+  <p class="livelli-note">Gestione e aggiornamenti facoltativi da 50 €/mese. I costi delle piattaforme (chatbot, WhatsApp) li paghi direttamente ai fornitori, senza ricarichi.</p>
 </section>
 
 <!-- PERCHE -->
 <section class="sec perche">
-  <div class="perche-grid">
-    <div>
-      <div class="sec-kicker">Perché automatizzare</div>
-      <h2 class="perche-title">Il tempo è<br>la tua risorsa<br><span>più preziosa.</span></h2>
+  <div class="perche-head">
+    <div class="sec-kicker">Perché automatizzare</div>
+    <h2 class="perche-title">Il tempo è la tua risorsa<br><span>più preziosa.</span></h2>
+  </div>
+  <div class="perche-list">
+    <div class="perche-item">
+      <div class="perche-icon">💬</div>
+      <div class="perche-text">
+        <strong>Nessun contatto perso</strong>
+        <span>Il cliente scrive alle 23:00. Il chatbot risponde in pochi secondi, raccoglie nome e richiesta e ti avvisa. Tu richiami il giorno dopo sapendo già cosa vuole.</span>
+      </div>
     </div>
-    <div class="perche-list">
-      <div class="perche-item">
-        <div class="perche-icon">⏰</div>
-        <div class="perche-text">
-          <strong>Risposte immediate 24/7</strong>
-          <span>Il cliente scrive alle 23:00. Il chatbot risponde in pochi secondi, raccoglie il contatto e ti avvisa. Tu richiami il giorno dopo sapendo già cosa vuole.</span>
-        </div>
+    <div class="perche-item">
+      <div class="perche-icon">⭐</div>
+      <div class="perche-text">
+        <strong>Più recensioni su Google</strong>
+        <span>Dopo ogni visita il cliente riceve un messaggio con il link diretto per lasciare la recensione. Più stelle, più clienti da Google Maps.</span>
       </div>
-      <div class="perche-item">
-        <div class="perche-icon">📇</div>
-        <div class="perche-text">
-          <strong>Nessun contatto perso</strong>
-          <span>Chi scrive fuori orario non resta senza risposta e non va dalla concorrenza: nome, numero e richiesta ti arrivano subito.</span>
-        </div>
-      </div>
-      <div class="perche-item">
-        <div class="perche-icon">⭐</div>
-        <div class="perche-text">
-          <strong>Più recensioni su Google</strong>
-          <span>Dopo ogni visita il cliente riceve un messaggio con il link diretto per lasciare la recensione. Più stelle, più clienti da Google Maps.</span>
-        </div>
-      </div>
-      <div class="perche-item">
-        <div class="perche-icon">📅</div>
-        <div class="perche-text">
-          <strong>Meno appuntamenti saltati</strong>
-          <span>Un promemoria il giorno prima riduce le dimenticanze. Meno buchi in agenda, meno soldi persi.</span>
-        </div>
+    </div>
+    <div class="perche-item">
+      <div class="perche-icon">📅</div>
+      <div class="perche-text">
+        <strong>Meno appuntamenti saltati</strong>
+        <span>Conferma subito dopo la prenotazione e promemoria il giorno prima. Meno buchi in agenda, meno soldi persi.</span>
       </div>
     </div>
   </div>
@@ -698,7 +689,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="flusso-node">
         <div class="flusso-node-icon">⏱️</div>
         <div class="flusso-node-label">Dopo 2 ore</div>
-        <div class="flusso-node-name">Messaggio di ringraziamento su WhatsApp o SMS</div>
+        <div class="flusso-node-name">Messaggio di ringraziamento su WhatsApp</div>
       </div>
       <div class="flusso-arrow">→</div>
       <div class="flusso-node">
@@ -773,28 +764,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="faq-list">
     <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Ho bisogno di competenze tecniche? <span class="faq-icon">+</span></div>
-      <div class="faq-a">No. Mi occupo io di tutto, dalla configurazione all'installazione sul tuo sito. Tu usi il risultato senza preoccuparti della tecnica.</div>
+      <div class="faq-q" role="button" tabindex="0">Quanto spendo in totale ogni mese? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Dipende da cosa attiviamo. Il chatbot usa una piattaforma da circa 30 €/mese; i messaggi WhatsApp costano pochi centesimi l'uno e li paghi direttamente a Meta. La mia gestione mensile è facoltativa, da 50 €/mese. Ti mando sempre un preventivo con tutti i costi prima di partire.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Il chatbot risponde a qualsiasi domanda? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Risponde alle domande sulla tua attività usando le informazioni che mi dai: orari, prezzi, servizi, come arrivare. Se non conosce la risposta, non inventa: raccoglie il contatto e ti avvisa.</div>
+      <div class="faq-q" role="button" tabindex="0">Devo gestirlo io? È complicato? <span class="faq-icon">+</span></div>
+      <div class="faq-a">No. Configuro e installo tutto io, e una volta attivo funziona da solo: tu ricevi i contatti e i messaggi. Se cambiano orari, prezzi o servizi, mi scrivi e aggiorno io le informazioni.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Funziona anche su WhatsApp? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Sì, tramite WhatsApp Business API, l'unico collegamento ufficiale. Meta applica un piccolo costo per conversazione, che paghi direttamente. Non uso strumenti non ufficiali: rischiano il blocco del numero.</div>
+      <div class="faq-q" role="button" tabindex="0">Il chatbot può sbagliare? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Come ogni AI, può capitare. Per questo risponde solo con le informazioni della tua attività, lo provo a lungo prima di metterlo online e non inventa prezzi o disponibilità: se non è sicuro, raccoglie il contatto e ti avvisa. Puoi rileggere tutte le conversazioni.</div>
+    </div>
+    <div class="faq-item" id="faq-whatsapp">
+      <div class="faq-q" role="button" tabindex="0">Cosa comprende il collegamento a WhatsApp? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sul sito il chatbot è una finestra che installo io. Per farlo rispondere anche su WhatsApp serve la WhatsApp Business API, l'unico collegamento ufficiale di Meta: creo e verifico l'account aziendale su Meta, configuro il numero (nuovo o il tuo attuale), preparo i modelli di messaggio da far approvare a Meta e collego tutto al chatbot. Sono alcuni giorni di lavoro, per questo costa da 200 € in più. Meta applica poi un piccolo costo per messaggio, che paghi direttamente. Non uso strumenti non ufficiali: rischiano il blocco del numero.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Cosa pago ogni mese? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Solo il costo delle piattaforme che usiamo (ad esempio il servizio di chatbot, da circa 30 €/mese), direttamente al fornitore. La mia gestione mensile è facoltativa, da 50 €/mese.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" role="button" tabindex="0">Perché i prezzi sono così bassi? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Sono prezzi di lancio: chatbot e automazioni sono un servizio nuovo di ClickBari. Prezzi più bassi del mercato, in cambio ti chiedo un feedback sincero.</div>
+      <div class="faq-q" role="button" tabindex="0">I dati dei miei clienti sono al sicuro? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Uso solo piattaforme conformi al GDPR e raccolgo solo i dati che servono, come nome, numero e richiesta. Il chatbot dice chiaramente che è un assistente AI, e ti aiuto ad aggiornare l'informativa privacy del sito.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Cosa succede se qualcosa non funziona? <span class="faq-icon">+</span></div>
       <div class="faq-a">Per 30 giorni dalla consegna sistemo tutto gratuitamente. Dopo, con la gestione mensile mi occupo io di aggiornamenti e problemi; senza gestione, intervengo su richiesta.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" role="button" tabindex="0">Perché i prezzi sono così bassi? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sono prezzi di lancio: chatbot e automazioni sono un servizio nuovo di ClickBari. Prezzi più bassi del mercato, in cambio ti chiedo un feedback sincero.</div>
     </div>
   </div>
 </div>
@@ -822,6 +817,10 @@ const obs = new IntersectionObserver((entries) => {
 }, {threshold: 0.08});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 setTimeout(() => document.querySelectorAll('.hero .reveal').forEach(e=>e.classList.add('visible')), 150);
+document.querySelectorAll('a[href^="#faq-"]').forEach(a => a.addEventListener('click', () => {
+  const t = document.querySelector(a.getAttribute('href'));
+  if (t && !t.classList.contains('open')) { document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); t.classList.add('open'); }
+}));
 document.querySelectorAll('.faq-item').forEach(item => {
   item.addEventListener('click', () => {
     const isOpen = item.classList.contains('open');

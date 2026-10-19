@@ -1,7 +1,7 @@
 {#- Blocco "Altri servizi": 4 card con mini-infografica verso le altre pagine servizio.
     Uso: {% set current = "siti" %}{% include "altri-servizi.njk" %}
     current: siti | google | seo | automazione | chatgpt
-    Opzionali prima dell'include: {% set as_kicker = "..." %}{% set as_title = "...<br>..." %}{% set as_intro = "..." %} -#}
+    Opzionali prima dell'include: {% set as_kicker = "..." %}{% set as_title = "...<br>..." %} -#}
 {%- set servizi = [
   { id: "siti", href: "/siti-web/", t: "Siti web", d: "Landing page, siti vetrina ed e-commerce su misura.", p: "da 400 €" },
   { id: "google", href: "/google-ecosystem/", t: "Google Ecosystem", d: "Google Ads e Business Profile per farti trovare da chi cerca ora.", p: "da 200 €/mese" },
@@ -12,7 +12,7 @@
 <style>
 .as-sec{padding:112px 48px;border-top:1px solid rgba(255,255,255,.09)}
 .as-in{max-width:1344px;margin:0 auto}
-.as-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:24px 64px;align-items:end}
+.as-head{display:block}
 .as-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright,#5b9bff);margin-bottom:12px}
 .as-title{font-family:var(--font-d,'Bebas Neue',sans-serif);font-weight:400;font-size:clamp(44px,5vw,80px);line-height:.9;letter-spacing:.01em;color:#fff;margin:0}
 .as-title span{color:var(--blue-bright,#5b9bff)}
@@ -86,7 +86,6 @@
         <div class="as-kicker">{{ as_kicker or "Altri servizi" }}</div>
         <h2 class="as-title" id="as-title">{{ (as_title or "Tutto quello che serve<br><span>per portare clienti.</span>") | safe }}</h2>
       </div>
-      <p class="as-intro">{{ as_intro or "Ogni servizio funziona da solo, ma insieme rendono di più: il sito accoglie, Google e l'AI portano le persone, l'automazione non ne perde nessuna." }}</p>
     </div>
     <div class="as-grid">
       {%- for s in servizi %}{% if s.id != current %}

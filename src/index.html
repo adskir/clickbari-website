@@ -366,6 +366,12 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .nav-dd-menu a.dd-item.active:not(:hover){background:transparent!important}
 .nav-dd-menu a.dd-item.active:not(:hover) .dd-tx b{color:#fff}
 .hero-grid>*{min-width:0}
+/* Contatti home: "Hai fretta? WhatsApp" — sotto il testo su desktop, sotto il form su telefono */
+.contact-fast{position:relative;z-index:1;display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin-top:22px;font-size:15px;color:rgba(255,255,255,.9)}
+.wa-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;background:#fff;color:#0b0b0f;border:2px solid #0b0b0f;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:3px 3px 0 #0b0b0f;transition:transform .15s,box-shadow .15s}
+.wa-pill:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #0b0b0f}
+.cf-mob{display:none}
+@media(max-width:1100px){.cf-desk{display:none}.cf-mob{display:flex;margin-top:-12px}}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -645,7 +651,8 @@ gtag('consent', 'default', {
   <div class="contact-left">
     <div class="section-tag">Parliamo</div>
     <h2 class="section-title">Raccontami il tuo progetto</h2>
-    <p class="contact-desc">Ogni collaborazione inizia con una conversazione. Dimmi di cosa hai bisogno e ti rispondo entro 24 ore. Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:6px 14px;border-radius:999px;background:#25D366;color:#0b1a10;font-weight:600;text-decoration:none;white-space:nowrap">Scrivimi su WhatsApp →</a></p>
+    <p class="contact-desc">Ogni collaborazione inizia con una conversazione. Dimmi di cosa hai bisogno e ti rispondo entro 24 ore.</p>
+    <p class="contact-fast cf-desk">Hai fretta? <a class="wa-pill" href="https://wa.me/393805826738" target="_blank" rel="noopener">Scrivimi su WhatsApp →</a></p>
   </div>
   <form class="contact-form" id="home-contact-form" action="https://formspree.io/f/mlgkbbkv" method="POST">
     <div class="form-group">
@@ -659,6 +666,7 @@ gtag('consent', 'default', {
     <button type="submit" class="form-submit" id="home-form-submit">Invia richiesta →</button>
     <div id="home-form-success" style="display:none;font-size:14px;color:var(--blue-bright);margin-top:6px;line-height:1.6">Richiesta inviata! Ti rispondo entro 24 ore.</div>
   </form>
+  <p class="contact-fast cf-mob">Hai fretta? <a class="wa-pill" href="https://wa.me/393805826738" target="_blank" rel="noopener">Scrivimi su WhatsApp →</a></p>
 </section>
 </div>
 

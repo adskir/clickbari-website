@@ -106,9 +106,8 @@ push su main → GitHub Action (.github/workflows/build.yml)
   **pizzichino.it** (repo `adskir/pizzichino`, stesso schema di deploy). Su
   clickbari.it non deve restare nessuna traccia: niente voce di menu, niente
   demo nel portfolio, niente link (scelta voluta: le agenzie non devono vederlo).
-- `src/sito-regalo.html` resta solo come pagina di passaggio finché pizzichino.it
-  non è online; poi diventa una pagina `noindex` che reindirizza a
-  https://pizzichino.it/ (serve per il QR code e i vecchi link a /sito-regalo/).
+- La vecchia pagina `/sito-regalo/` è stata eliminata (era online solo una
+  settimana come prova): nessun redirect.
 - Le 3 demo (Kir fa tutto, Nonna a Noleggio, Mimmo il Parcheggiatore) restano
   su Netlify, repo separati.
 

@@ -32,7 +32,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <title>Automazione AI Bari — Chatbot e flussi automatici · ClickBari</title>
-<meta name="description" content="Automazione AI per piccole imprese a Bari. Chatbot, risponditori WhatsApp, flussi automatici e AI agents. Setup da 200€. Preventivo su misura per progetti avanzati.">
+<meta name="description" content="Chatbot AI e automazioni per piccole imprese a Bari, configurati e seguiti ogni mese. Chatbot da 300 € + gestione 39 €/mese, automazioni da 150 €. Recensioni, promemoria, WhatsApp.">
 <link rel="canonical" href="{{ site.url }}/automazione/">
 <link rel="preload" href="/fonts/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -473,6 +473,46 @@ sup.eur.eur.eur.eur{color:inherit!important;margin:0 0 0 6px!important;font-size
 .livello-price-txt{font-family:var(--font-d);font-size:40px;line-height:1;color:#fff}
 .livello.featured-auto{border-color:rgba(91,155,255,.45);box-shadow:0 0 40px rgba(37,99,235,.15)}
 .livelli-note{font-size:14px;color:#a8a8a8;margin-top:24px!important;line-height:1.6}
+/* Pacchetti: canone */
+.livello-month{display:inline-block;margin:6px 0 2px;color:#fff;font-weight:500;background:rgba(91,155,255,.16);border:1px solid rgba(91,155,255,.35);padding:3px 9px;border-radius:var(--radius-sm)}
+.livello.custom .livello-month{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3)}
+.livelli-note a{color:var(--blue-bright)}
+/* GESTIONE */
+.gestione-head,.confronto-head{max-width:820px;margin:0 0 48px}
+.gestione-intro{font-size:16px;line-height:1.75;color:#c4c4c4;margin-top:20px;max-width:680px}
+.gestione-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.gestione-item{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 24px}
+.gestione-item strong{display:block;font-family:var(--font-d);font-weight:400;font-size:24px;letter-spacing:.02em;line-height:1.05;color:#fff;margin-bottom:10px}
+.gestione-item span{font-size:14px;color:#bdbdbd;line-height:1.65}
+/* CONFRONTO */
+.confronto{background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.confronto-table{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--gray)}
+.ct-row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.2fr);border-top:1px solid var(--line)}
+.ct-row:first-child{border-top:0}
+.ct-row>div{padding:18px 24px;font-size:15px;line-height:1.55;color:#b3b3b3}
+.ct-headrow>div{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8f8f8f;padding-top:16px;padding-bottom:16px}
+.ct-label{font-family:var(--font-d);font-size:21px!important;letter-spacing:.02em;color:#fff!important}
+.ct-row>.ct-us{background:rgba(37,99,235,.10);color:#fff;border-left:1px solid rgba(91,155,255,.25)}
+.ct-headrow>.ct-us{color:var(--blue-bright)}
+/* STRUMENTI compatti */
+.strumenti{padding-top:0!important}
+.strumenti-box{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center;background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px 36px}
+.strumenti-txt{font-size:15px;line-height:1.7;color:#c4c4c4}
+.strumenti-chips{display:flex;flex-wrap:wrap;gap:8px}
+.strumenti-chips span{font-size:13px;color:#dbe7ff;background:rgba(91,155,255,.08);border:1px solid rgba(91,155,255,.22);padding:7px 12px;border-radius:var(--radius-sm)}
+@media(max-width:1100px){.gestione-grid{grid-template-columns:1fr 1fr}.strumenti-box{grid-template-columns:1fr;gap:20px}}
+@media(max-width:768px){
+  .gestione-grid{grid-template-columns:1fr}
+  .gestione-head,.confronto-head{margin-bottom:32px}
+  .ct-headrow{display:none!important}
+  .ct-row{grid-template-columns:1fr;padding:18px 18px 16px}
+  .ct-row>div{padding:0;border:0!important;background:none!important}
+  .ct-label{margin-bottom:10px}
+  .ct-row>.ct-them,.ct-row>.ct-us{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;font-size:14px;padding:6px 0}
+  .ct-row>.ct-them::before,.ct-row>.ct-us::before{content:attr(data-l);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8f8f8f;padding-top:3px}
+  .ct-row>.ct-us::before{color:var(--blue-bright)}
+  .strumenti-box{padding:24px 20px}
+}
 /* FAQ: titolo fisso a sinistra mentre scorrono le domande */
 @media(min-width:1101px){.faq-grid>div:first-child{position:sticky;top:110px;align-self:start}}
 </style>
@@ -542,10 +582,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-inner reveal">
     <div class="hero-tag">Chatbot e automazioni · Bari</div>
     <h1 class="hero-title">Il tuo assistente<br>che non dorme<br><span>mai.</span></h1>
-    <p class="hero-desc">Un chatbot che risponde ai tuoi clienti con le informazioni della tua attività e automazioni per i piccoli compiti ripetitivi.</p>
+    <p class="hero-desc">Un chatbot che risponde ai tuoi clienti con le informazioni della tua attività e automazioni per i compiti ripetitivi. Lo configuro, lo addestro e lo seguo ogni mese: tu ricevi solo i contatti.</p>
     <div class="hero-btns">
       <a href="#" onclick="openContactModal('Automazione AI');return false;" class="btn-primary">Richiedi preventivo →</a>
-      <a href="#livelli" class="btn-outline">Vedi i servizi</a>
+      <a href="#livelli" class="btn-outline">Vedi i pacchetti</a>
     </div>
   </div>
     <div class="cb reveal" aria-hidden="true">
@@ -570,24 +610,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- LIVELLI -->
 <section class="sec livelli" id="livelli">
-  <div class="sec-kicker">Servizi · prezzi di lancio</div>
-  <h2 class="sec-title">Semplice da usare,<br>utile da subito.</h2>
+  <div class="sec-kicker">Pacchetti · prezzi di lancio</div>
+  <h2 class="sec-title">Scegli il problema,<br>al resto penso io.</h2>
 
   <div class="livelli-grid">
 
     <div class="livello">
       <div>
-        <div class="livello-level">Chatbot AI</div>
+        <div class="livello-level">Nessun cliente perso</div>
         <div class="livello-price"><sup>da</sup>300<sup class="eur">€</sup></div>
-        <div class="livello-period">setup una tantum<br>+ piattaforma da ~30 €/mese</div>
+        <div class="livello-period">attivazione una tantum<br><b class="livello-month">+ 39 €/mese gestione</b><br>piattaforma ~30 €/mese al fornitore</div>
       </div>
       <div class="livello-content">
-        <div class="livello-name">Risponde ai tuoi clienti, giorno e notte</div>
+        <div class="livello-name">Chatbot AI che risponde giorno e notte</div>
         <p class="livello-desc">Un assistente sul tuo sito che conosce orari, prezzi e servizi. Gestisce il primo contatto con chi ti scrive, raccoglie nome e richiesta e te li manda subito: a te resta solo da richiamare.</p>
         <div class="livello-tags">
           <span class="livello-tag">Risposte con le tue informazioni</span>
           <span class="livello-tag">Raccolta contatti</span>
           <span class="livello-tag">Notifica immediata</span>
+          <span class="livello-tag">Gestione mensile inclusa</span>
           <a href="#faq-whatsapp" class="livello-tag livello-tag-link">Anche su WhatsApp: + da 200 € ?</a>
         </div>
       </div>
@@ -598,12 +639,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="livello featured-auto">
       <div>
-        <div class="livello-level">Automazioni</div>
+        <div class="livello-level">Agenda piena</div>
         <div class="livello-price"><sup>da</sup>150<sup class="eur">€</sup></div>
-        <div class="livello-period">per automazione, una tantum</div>
+        <div class="livello-period">per automazione, una tantum<br><b class="livello-month">+ 39 €/mese gestione</b></div>
       </div>
       <div class="livello-content">
-        <div class="livello-name">Più recensioni, meno appuntamenti saltati, più clienti che tornano</div>
+        <div class="livello-name">Automazioni per recensioni, promemoria e clienti che tornano</div>
         <p class="livello-desc">Piccoli automatismi che lavorano in silenzio, via WhatsApp o email: chiedono una recensione dopo ogni visita, confermano e ricordano gli appuntamenti, ti avvisano a ogni nuova richiesta dal sito e invitano a tornare chi non si vede da un po'.</p>
         <div class="livello-tags">
           <span class="livello-tag">Richiesta recensioni</span>
@@ -639,7 +680,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
   </div>
-  <p class="livelli-note">Gestione e aggiornamenti facoltativi da 50 €/mese. I costi delle piattaforme (chatbot, WhatsApp) li paghi direttamente ai fornitori, senza ricarichi.</p>
+  <p class="livelli-note">La gestione da 39 €/mese è compresa in ogni pacchetto, ed è una sola anche se attivi chatbot e automazioni insieme: <a href="#gestione">ecco cosa comprende</a>. I costi delle piattaforme (chatbot, WhatsApp) li paghi direttamente ai fornitori, senza ricarichi.</p>
+</section>
+
+<!-- GESTIONE -->
+<section class="sec gestione" id="gestione">
+  <div class="gestione-head">
+    <div class="sec-kicker">Gestione mensile · 39 €/mese</div>
+    <h2 class="sec-title">Non lo installo<br>e sparisco.</h2>
+    <p class="gestione-intro">Un chatbot o un'automazione lasciati da soli smettono presto di funzionare bene: cambiano orari e prezzi, scadono i collegamenti, le piattaforme si aggiornano. Per questo la gestione è compresa in ogni pacchetto.</p>
+  </div>
+  <div class="gestione-grid">
+    <div class="gestione-item">
+      <div class="perche-icon">🔄</div>
+      <strong>Informazioni sempre giuste</strong>
+      <span>Orari, prezzi, servizi, chiusure per ferie: mi scrivi su WhatsApp e aggiorno io le risposte del chatbot.</span>
+    </div>
+    <div class="gestione-item">
+      <div class="perche-icon">👀</div>
+      <strong>Controllo delle conversazioni</strong>
+      <span>Ogni mese rileggo le chat, correggo le risposte imprecise e aggiungo quelle che mancano.</span>
+    </div>
+    <div class="gestione-item">
+      <div class="perche-icon">🛠️</div>
+      <strong>Collegamenti sempre attivi</strong>
+      <span>Se un collegamento scade o una piattaforma cambia, sistemo io, prima che tu perda messaggi o promemoria.</span>
+    </div>
+    <div class="gestione-item">
+      <div class="perche-icon">📊</div>
+      <strong>Un report semplice</strong>
+      <span>Una volta al mese: quante conversazioni, quanti contatti raccolti e cosa chiedono di più i tuoi clienti.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONFRONTO -->
+<section class="sec confronto">
+  <div class="confronto-head">
+    <div class="sec-kicker">Fai da te o chiavi in mano?</div>
+    <h2 class="sec-title">Perché non basta<br>un abbonamento da 29&nbsp;€?</h2>
+    <p class="gestione-intro">Le piattaforme per chatbot costano poco, ed è giusto così: le uso anch'io. Ma la piattaforma è solo lo strumento. Qualcuno deve configurarla, scrivere le risposte giuste e controllarla nel tempo.</p>
+  </div>
+  <div class="confronto-table" role="table" aria-label="Fai da te e ClickBari a confronto">
+    <div class="ct-row ct-headrow" role="row">
+      <div role="columnheader"></div>
+      <div role="columnheader">Fai da te</div>
+      <div role="columnheader" class="ct-us">Con ClickBari</div>
+    </div>
+    <div class="ct-row" role="row">
+      <div class="ct-label" role="rowheader">Configurazione</div>
+      <div class="ct-them" role="cell" data-l="Fai da te">Serate tra tutorial e impostazioni</div>
+      <div class="ct-us" role="cell" data-l="Con ClickBari">La faccio io, tu mi dai solo le informazioni</div>
+    </div>
+    <div class="ct-row" role="row">
+      <div class="ct-label" role="rowheader">Risposte del bot</div>
+      <div class="ct-them" role="cell" data-l="Fai da te">Le scrivi e le provi tu</div>
+      <div class="ct-us" role="cell" data-l="Con ClickBari">Le scrivo e le provo io, nel tono della tua attività</div>
+    </div>
+    <div class="ct-row" role="row">
+      <div class="ct-label" role="rowheader">Aggiornamenti</div>
+      <div class="ct-them" role="cell" data-l="Fai da te">Quando trovi il tempo</div>
+      <div class="ct-us" role="cell" data-l="Con ClickBari">Mi scrivi e ci penso io</div>
+    </div>
+    <div class="ct-row" role="row">
+      <div class="ct-label" role="rowheader">Se qualcosa si rompe</div>
+      <div class="ct-them" role="cell" data-l="Fai da te">Te ne accorgi tardi, quando mancano i contatti</div>
+      <div class="ct-us" role="cell" data-l="Con ClickBari">Lo controllo io ogni mese</div>
+    </div>
+    <div class="ct-row" role="row">
+      <div class="ct-label" role="rowheader">Costo mensile</div>
+      <div class="ct-them" role="cell" data-l="Fai da te">~30 € + il tuo tempo</div>
+      <div class="ct-us" role="cell" data-l="Con ClickBari">~30 € piattaforma + 39 € gestione</div>
+    </div>
+  </div>
 </section>
 
 <!-- PERCHE -->
@@ -709,48 +822,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- STRUMENTI -->
 <section class="sec strumenti">
-  <div class="sec-kicker">Strumenti</div>
-  <h2 class="sec-title">Tecnologie che uso.</h2>
-  <div class="strumenti-grid">
-    <div class="strumento">
-      <div class="strumento-icon">⚡</div>
-      <div class="strumento-name">Make</div>
-      <div class="strumento-desc">Automazione visuale no-code. Connette centinaia di app senza scrivere codice.</div>
+  <div class="strumenti-box">
+    <div>
+      <div class="sec-kicker">Strumenti</div>
+      <p class="strumenti-txt">Lavoro solo con piattaforme affidabili, ufficiali e conformi al GDPR. Scelgo io la più adatta alla tua attività, tu non devi impararne nessuna.</p>
     </div>
-    <div class="strumento">
-      <div class="strumento-icon">🔧</div>
-      <div class="strumento-name">n8n</div>
-      <div class="strumento-desc">Alternativa open-source a Make. Più flessibile per progetti complessi.</div>
-    </div>
-    <div class="strumento">
-      <div class="strumento-icon">💬</div>
-      <div class="strumento-name">Tidio / Crisp</div>
-      <div class="strumento-desc">Chatbot sul sito web con risposte automatiche e live chat.</div>
-    </div>
-    <div class="strumento">
-      <div class="strumento-icon">📱</div>
-      <div class="strumento-name">WhatsApp Business</div>
-      <div class="strumento-desc">Messaggi automatici, catalogo prodotti e gestione professionale dei contatti.</div>
-    </div>
-    <div class="strumento">
-      <div class="strumento-icon">🧠</div>
-      <div class="strumento-name">OpenAI / Claude API</div>
-      <div class="strumento-desc">Per AI agent personalizzati addestrati sui tuoi dati. Supporto sia OpenAI che Claude (Anthropic).</div>
-    </div>
-    <div class="strumento">
-      <div class="strumento-icon">✈️</div>
-      <div class="strumento-name">Telegram Bot</div>
-      <div class="strumento-desc">Notifiche istantanee e automazioni via bot Telegram.</div>
-    </div>
-    <div class="strumento">
-      <div class="strumento-icon">📊</div>
-      <div class="strumento-name">Google Sheets</div>
-      <div class="strumento-desc">CRM semplice per raccogliere e gestire lead automaticamente.</div>
-    </div>
-    <div class="strumento">
-      <div class="strumento-icon">🗂️</div>
-      <div class="strumento-name">CRM & Database</div>
-      <div class="strumento-desc">HubSpot, Notion, Airtable — gestione contatti e lead, dalla soluzione gratuita alla base dati avanzata.</div>
+    <div class="strumenti-chips">
+      <span>Make</span><span>n8n</span><span>Tidio</span><span>Crisp</span><span>WhatsApp Business API</span><span>OpenAI</span><span>Claude</span><span>Telegram</span><span>Google Sheets</span><span>HubSpot</span><span>Notion</span><span>Airtable</span>
     </div>
   </div>
 </section>
@@ -765,11 +843,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Quanto spendo in totale ogni mese? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Dipende da cosa attiviamo. Il chatbot usa una piattaforma da circa 30 €/mese; i messaggi WhatsApp costano pochi centesimi l'uno e li paghi direttamente a Meta. La mia gestione mensile è facoltativa, da 50 €/mese. Ti mando sempre un preventivo con tutti i costi prima di partire.</div>
+      <div class="faq-a">Per un chatbot sul sito, circa 70 € al mese: 39 € la mia gestione e circa 30 € la piattaforma, che paghi direttamente al fornitore. Con WhatsApp si aggiungono pochi centesimi a messaggio, pagati a Meta. Ti mando sempre un preventivo con tutti i costi prima di partire.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" role="button" tabindex="0">Perché la gestione mensile è obbligatoria? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Perché senza qualcuno che lo segue, un chatbot invecchia in fretta: cambia un orario o un prezzo e inizia a dare risposte sbagliate ai tuoi clienti. E le automazioni si fermano in silenzio quando scade un collegamento. Con 39 €/mese tengo tutto aggiornato e funzionante, così non scopri un problema quando hai già perso clienti.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Devo gestirlo io? È complicato? <span class="faq-icon">+</span></div>
-      <div class="faq-a">No. Configuro e installo tutto io, e una volta attivo funziona da solo: tu ricevi i contatti e i messaggi. Se cambiano orari, prezzi o servizi, mi scrivi e aggiorno io le informazioni.</div>
+      <div class="faq-a">No. Configuro e installo tutto io, e una volta attivo tu ricevi solo i contatti e i messaggi. Se cambiano orari, prezzi o servizi, mi scrivi e aggiorno io le informazioni: è compreso nella gestione.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Il chatbot può sbagliare? <span class="faq-icon">+</span></div>
@@ -785,7 +867,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Cosa succede se qualcosa non funziona? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Per 30 giorni dalla consegna sistemo tutto gratuitamente. Dopo, con la gestione mensile mi occupo io di aggiornamenti e problemi; senza gestione, intervengo su richiesta.</div>
+      <div class="faq-a">Ci penso io: è proprio quello che copre la gestione mensile. Controllo i collegamenti ogni mese e, se mi segnali un problema, lo sistemo senza costi extra.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Perché i prezzi sono così bassi? <span class="faq-icon">+</span></div>

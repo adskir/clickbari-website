@@ -218,6 +218,9 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .servizi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
 .sg-card{background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);padding:36px 34px;transition:border-color .3s}
 .sg-card:hover{border-color:rgba(91,155,255,.35)}
+.sg-card.sg-hot{position:relative;border-color:rgba(91,155,255,.55);background:radial-gradient(130% 120% at 100% 0%,rgba(37,99,235,.28),rgba(22,22,22,1) 55%);box-shadow:0 0 0 1px rgba(91,155,255,.25),0 20px 60px rgba(37,99,235,.22)}
+.sg-card.sg-hot .sg-icon{background:var(--blue);border-color:var(--blue-bright)}
+.sg-badge{position:absolute;top:22px;right:22px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#0A0F1F;background:linear-gradient(135deg,#f5c542,#ffd978);padding:5px 11px;border-radius:999px;box-shadow:0 6px 18px rgba(245,197,66,.3)}
 .sg-icon{width:52px;height:52px;border-radius:var(--radius-md);background:rgba(37,99,235,.12);border:1px solid rgba(91,155,255,.25);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:22px}
 .sg-name{font-family:var(--font-d);font-size:36px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:12px}
 .sg-desc{font-size:15px;line-height:1.7;color:#c4c4c4;margin-bottom:20px}
@@ -819,7 +822,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><span><b>Capisci cosa migliorare:</b> dove le persone si fermano e dove abbandonano</span></li>
       </ul>
     </div>
-    <div class="sg-card">
+    <div class="sg-card sg-hot">
+      <span class="sg-badge">★ Spesso dimenticato</span>
       <div class="sg-icon">🎯</div>
       <div class="sg-name">Remarketing</div>
       <p class="sg-desc">Chi ha visitato il tuo sito è già interessato, ma spesso non compra subito. Lo ritroviamo su Instagram, Facebook e Google e gli ricordiamo di te.</p>
@@ -829,38 +833,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><span><b>Annunci mirati:</b> messaggi diversi per chi ha visto un servizio o ha lasciato il carrello</span></li>
         <li><span><b>Costa meno della pubblicità a freddo:</b> budget piccolo, persone già interessate</span></li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESSO -->
-<section class="sec processo">
-  <div class="sec-kicker">Come funziona</div>
-  <h2 class="sec-title">Dal primo giorno<br>ai primi risultati.</h2>
-  <div class="processo-steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-title">Accesso account</div>
-      <div class="step-desc">Mi invii un accesso come amministratore al tuo account Google Ads. Se non ne hai uno, lo creiamo insieme e verifichiamo se puoi ottenere il bonus Google.</div>
-      <div class="step-arrow">→</div>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-title">Analisi e strategia</div>
-      <div class="step-desc">Studio il tuo settore, i competitor e le parole chiave più profittevoli. Definisco la strategia di campagna.</div>
-      <div class="step-arrow">→</div>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-title">Setup e lancio</div>
-      <div class="step-desc">Configuro GTM, Analytics 4, Clarity e le conversioni. Lancio le campagne quando tutto è pronto e tracciato correttamente.</div>
-      <div class="step-arrow">→</div>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-title">Ottimizzazione</div>
-      <div class="step-desc">Ottimizzazione continua delle offerte, annunci e targeting. Report regolari con i numeri che contano davvero.</div>
-      <div class="step-arrow">→</div>
     </div>
   </div>
 </section>
@@ -948,7 +920,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/siti-web/" class="as-card">
         <div class="as-vis" aria-hidden="true">
           <div class="as-m" style="top:22px;bottom:-30px"><div class="as-br"><i></i><i></i><i></i><span>barmobile.it</span></div><img class="as-shot" src="/img/portfolio/barmobile.webp" alt="" width="1200" height="750" loading="lazy" decoding="async"></div>
-          <div class="as-chip br"><i></i>Design su misura</div>
+          <div class="as-chip br"><i></i>Prima bozza in 24 ore</div>
         </div>
         <div class="as-body">
           <span class="as-t">Siti web</span>

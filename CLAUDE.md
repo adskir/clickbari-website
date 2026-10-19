@@ -44,8 +44,8 @@ o la struttura del portfolio.
   del menu punta a `/#servizi` (elenco servizi in home) con la tendina
   verso le 4 pagine servizio.
 - Pagina `/chatgpt-ads/` (ottobre 2026): servizio pilota ChatGPT Ads (300 € setup + 30 giorni, poi da 200 €/mese). Voce "ChatGPT Ads" con badge NEW (stile inline) nella tendina Servizi e nel menu mobile di OGNI pagina, subito dopo Google Ecosystem. Una nuova pagina deve copiarla.
-- Pagina `/per-agenzie/` (ottobre 2026): collaborazione con agenzie (siti, SEO, Google Ads, Business Profile; condizioni da concordare, nessun prezzo dedicato). Voce di menu "Per agenzie" (pillola con bordo blu `.nav-agency` + `.mobile-agency`) subito dopo "Sito regalo" in OGNI pagina, con blocco CSS "NAV — Per agenzie" prima di `/* HAMBURGER */`. Il menu desktop passa all'hamburger sotto i 1120px.
-- **Font self-hosted** (ottobre 2026): Bebas Neue e DM Sans sono in `src/fonts/` (woff2 latin), con `<link rel="preload">` + `@font-face` inline nel `<head>` di ogni pagina (niente Google Fonts, che causava un lampo di Arial al caricamento). Bebas ha `font-display:block`, DM Sans `swap`. Solo `sito-regalo` carica ancora Shantell Sans da Google. Una nuova pagina deve copiare lo stesso blocco.
+- Pagina `/per-agenzie/` (ottobre 2026): collaborazione con agenzie (siti, SEO, Google Ads, Business Profile; condizioni da concordare, nessun prezzo dedicato). Voce di menu "Per agenzie" (pillola con bordo blu `.nav-agency` + `.mobile-agency`) subito dopo "Portfolio" in OGNI pagina, con blocco CSS "NAV — Per agenzie" prima di `/* HAMBURGER */`. Il menu desktop passa all'hamburger sotto i 1120px.
+- **Font self-hosted** (ottobre 2026): Bebas Neue e DM Sans sono in `src/fonts/` (woff2 latin), con `<link rel="preload">` + `@font-face` inline nel `<head>` di ogni pagina (niente Google Fonts, che causava un lampo di Arial al caricamento). Bebas ha `font-display:block`, DM Sans `swap`. Una nuova pagina deve copiare lo stesso blocco.
 - **Blocco «Altri servizi»** (`src/_includes/altri-servizi.njk`): prima delle FAQ di ogni pagina servizio, mostra le altre 4 card. Uso: `{% set current = "siti|google|seo|automazione|chatgpt" %}{% include "altri-servizi.njk" %}`. Prezzi «da…» delle card sono scritti nell'include: se cambiano i prezzi, aggiornali anche lì.
 - **Anteprime social (Open Graph)**: ogni pagina ha og:title/description/url/image + twitter:card subito dopo `<meta name="description">`. Immagini 1200×630 in `src/img/og/<slug>.png` (pagine senza immagine propria usano `home.png`). Se cambi title/description, aggiorna anche og:title/og:description.
 - Contatti: il bottone "Contattami" del menu (desktop `.nav-cta` e mobile
@@ -83,7 +83,7 @@ push su main → GitHub Action (.github/workflows/build.yml)
   (`.p-card-desc` è clampata a 3 righe); niente card "featured"/più larga.
 - Ogni card: `id` = slug del progetto, `data-tags` = valori filtrabili
   separati da spazio. I filtri attivi sono `sito-web`, `google-ads`,
-  `in-corso`, `sito-regalo` (bottoni in `.filtri`); altri valori (es. `seo`) possono stare
+  `in-corso` (bottoni in `.filtri`); altri valori (es. `seo`) possono stare
   in `data-tags` per coerenza/futuro ma non hanno un bottone filtro oggi.
 - **Card con sito pubblicato**: `.p-card-visual` contiene un `<img>` verso
   `/img/portfolio/<slug>.webp` (1200×750, `width`/`height` espliciti,
@@ -100,27 +100,17 @@ push su main → GitHub Action (.github/workflows/build.yml)
   `.coming-badge` con l'`<img>` nello stesso formato delle altre card
   (vedi sopra) e togli il tag "In corso" se non più pertinente.
 
-## Sito regalo (`src/sito-regalo.html`, URL `/sito-regalo/`)
+## Sito regalo → spostato su pizzichino.it (ottobre 2026)
 
-- Servizio "sito comico in regalo": 99 € tutto incluso, consegna in 72 ore.
-  Pagina volutamente più giocosa del resto del sito (fondo giallo, adesivi,
-  coriandoli), ma con lo stesso nav, footer, cookie banner, modal contatti
-  e GTM delle altre pagine. CSS della pagina con prefisso `rg-`.
-- **Voce di menu evidenziata** "Sito regalo" (pillola gialla `.nav-gift` +
-  voce `.mobile-gift` con badge "99 €"): è duplicata a mano in OGNI pagina
-  (`src/*.html`, `src/_includes/post.njk`, `src/post.njk`), insieme al suo
-  blocco CSS "NAV — Sito regalo" subito prima di `/* HAMBURGER */`. Una
-  nuova pagina deve copiare entrambi.
-- Esempi (demo, non clienti): Kir fa tutto, Nonna a Noleggio, Mimmo il
-  Parcheggiatore — repo GitHub separati (`adskir/max-bari`,
-  `adskir/nonna-a-noleggio`, `adskir/mimmo-parcheggiatore`) pubblicati su
-  Netlify. Screenshot mobile per la pagina in `src/img/regalo/<slug>.webp`
-  (600×1298).
-- Nel portfolio le tre demo hanno `data-tags="sito-regalo"` (filtro
-  "Siti regalo", tag giallo `.p-tag-gift`) e **non** vengono contate nella
-  statistica "Progetti online" dell'hero (solo progetti per clienti).
-- La pagina ha JSON-LD `FAQPage` + `Service`/`Offer` (99 EUR): se cambiano
-  prezzo o FAQ, aggiorna sia il testo visibile sia il JSON-LD.
+- Il servizio "sito comico in regalo" (99 €) ora vive su un sito a parte,
+  **pizzichino.it** (repo `adskir/pizzichino`, stesso schema di deploy). Su
+  clickbari.it non deve restare nessuna traccia: niente voce di menu, niente
+  demo nel portfolio, niente link (scelta voluta: le agenzie non devono vederlo).
+- `src/sito-regalo.html` resta solo come pagina di passaggio finché pizzichino.it
+  non è online; poi diventa una pagina `noindex` che reindirizza a
+  https://pizzichino.it/ (serve per il QR code e i vecchi link a /sito-regalo/).
+- Le 3 demo (Kir fa tutto, Nonna a Noleggio, Mimmo il Parcheggiatore) restano
+  su Netlify, repo separati.
 
 ## `scripts/screenshots.js`
 

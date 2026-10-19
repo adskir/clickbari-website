@@ -828,7 +828,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="prezzo-period">setup + primi 30 giorni</div>
       <div class="prezzo-desc">Configuro l'account, lancio la prima campagna e la seguo per un mese. Alla fine ti dico, numeri alla mano, se conviene continuare.</div>
         <button type="button" class="pk-flip" aria-expanded="false">Cosa include <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><svg class="ic-dd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <a href="#" onclick="openContactModal('ChatGPT Ads');return false;" class="prezzo-btn">Richiedi il pilota →</a>
+        <a href="#" onclick="openContactModal('ChatGPT Ads — Pilota ChatGPT Ads');return false;" class="prezzo-btn">Richiedi il pilota →</a>
       </div>
       <div class="pk-back">
         <div class="pk-back-head"><span>Pilota ChatGPT Ads</span></div>
@@ -850,7 +850,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="prezzo-period">/mese, dopo il pilota</div>
       <div class="prezzo-desc">Se il test funziona, continuo a ottimizzare le campagne ogni mese per mantenere e migliorare i risultati.</div>
         <button type="button" class="pk-flip" aria-expanded="false">Cosa include <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><svg class="ic-dd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <a href="#" onclick="openContactModal('ChatGPT Ads');return false;" class="prezzo-btn">Parliamone →</a>
+        <a href="#" onclick="openContactModal('ChatGPT Ads — Gestione mensile');return false;" class="prezzo-btn">Parliamone →</a>
       </div>
       <div class="pk-back">
         <div class="pk-back-head"><span>Gestione mensile</span></div>
@@ -1361,7 +1361,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
     formWrap.style.display = 'block';
     successBox.classList.remove('visible');
     form.reset();
-    if(serviceSelect){ serviceSelect.value = prefillService || 'ChatGPT Ads'; } // pagina servizio: campo nascosto, valore fisso
+    if(serviceSelect){ var _v = prefillService || 'ChatGPT Ads'; if(!Array.prototype.some.call(serviceSelect.options,function(o){return o.value===_v;})){ var _o=document.createElement('option'); _o.value=_o.textContent=_v; serviceSelect.appendChild(_o); } serviceSelect.value = _v; } // pagina servizio: campo nascosto, valore fisso
     var mc = prefillService === 'Mini-check SEO gratuito';
     var mt = document.querySelector('#modal-form-wrap .modal-title'), ms = document.querySelector('#modal-form-wrap .modal-sub');
     if(mt){ mt.textContent = mc ? 'Mini-check gratuito' : 'Parliamone'; }

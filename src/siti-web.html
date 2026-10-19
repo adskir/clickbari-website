@@ -12,8 +12,8 @@ eleventyExcludeFromCollections: true
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=2">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2">
 <link rel="shortcut icon" href="/favicon.ico?v=2">
-<title>Siti Web a Bari — Landing page, sito multipage, e-commerce · ClickBari</title>
-<meta name="description" content="Realizzo siti web a Bari da 300€. Landing page, siti multipage ed e-commerce su misura. Design professionale, SEO integrato, consegna rapida.">
+<title>Siti Web a Bari — Landing page, sito vetrina, e-commerce · ClickBari</title>
+<meta name="description" content="Realizzo siti web a Bari da 400 €. Landing page, siti vetrina ed e-commerce su misura. Design professionale, SEO integrato, consegna rapida.">
 <link rel="canonical" href="{{ site.url }}/siti-web/">
 <link rel="preload" href="/fonts/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -150,6 +150,13 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .include-icon{width:48px;height:48px;border-radius:var(--radius-md);background:rgba(37,99,235,.12);border:1px solid rgba(91,155,255,.25);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:22px}
 .include-name{font-family:var(--font-d);font-size:28px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:10px}
 .include-desc{font-size:14px;line-height:1.7;color:#bdbdbd}
+.include-link{display:inline-block;margin-top:8px;color:var(--blue-bright);font-size:12px;letter-spacing:.04em;text-decoration:none}
+.include-link:hover{color:#fff}
+.next-step{margin-top:28px!important;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;padding:18px 22px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--gray)}
+.next-step-t{font-size:15px;color:#d6d6d6;margin-right:6px}
+.next-step a{display:inline-flex;align-items:center;height:38px;padding:0 16px;border:1px solid rgba(91,155,255,.35);border-radius:var(--radius-md);font-size:13px;color:#dbe7ff;text-decoration:none;transition:border-color .2s,background .2s}
+.next-step a:hover{border-color:var(--blue-bright);background:rgba(37,99,235,.15);color:#fff}
+@media(max-width:768px){.next-step{flex-direction:column;align-items:stretch;text-align:center}.next-step a{justify-content:center}}
 .include-desc a{display:inline-block;margin-top:10px}
 
 /* PACCHETTI */
@@ -621,7 +628,7 @@ gtag('consent', 'default', {
       <div class="pacchetto-price"><sup>da</sup>800<sup class="eur">€</sup></div>
       <div class="pacchetto-period">una tantum</div>
         <div class="pk-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Prima bozza in 3 giorni</div>
-      <div class="pacchetto-desc">Sito multipage completo per far crescere la tua attività online. La soluzione più scelta dai miei clienti.</div>
+      <div class="pacchetto-desc">Sito completo su più pagine per far crescere la tua attività online. La soluzione più scelta dai miei clienti.</div>
         <button type="button" class="pk-flip" aria-expanded="false">Cosa include <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><svg class="ic-dd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
@@ -735,18 +742,24 @@ gtag('consent', 'default', {
     <div class="include-item">
       <div class="include-icon">🔍</div>
       <div class="include-name">SEO integrato</div>
-      <p class="include-desc">Meta tag, struttura URL, heading corretti. Le basi SEO sono già dentro — non un'aggiunta posteriore.</p>
+      <p class="include-desc">Meta tag, struttura URL, heading corretti. Le basi SEO sono già dentro — non un'aggiunta posteriore.<br><a href="/seo-aeo/" class="include-link">Vuoi andare oltre le basi? SEO + AEO →</a></p>
     </div>
     <div class="include-item">
       <div class="include-icon">💬</div>
       <div class="include-name">WhatsApp + form</div>
-      <p class="include-desc">Bottone WhatsApp flottante e form di contatto funzionante. Il cliente ti trova al primo click.<br><a href="/automazione/" style="color:var(--blue-bright);font-size:11px;text-decoration:none;letter-spacing:.06em">Scopri le automazioni AI e i chatbot →</a></p>
+      <p class="include-desc">Bottone WhatsApp flottante e form di contatto funzionante. Il cliente ti trova al primo click.<br><a href="/automazione/" class="include-link">Chatbot AI e moduli automatici →</a></p>
     </div>
     <div class="include-item">
       <div class="include-icon">🔧</div>
       <div class="include-name">Assistenza post-lancio</div>
       <p class="include-desc">Dopo la pubblicazione non sparisco. Modifiche, aggiornamenti e supporto tecnico inclusi nella gestione annuale, oppure a parte su richiesta.</p>
     </div>
+  </div>
+  <div class="next-step">
+    <span class="next-step-t">Il sito è il primo passo. Per portare clienti:</span>
+    <a href="/google-ecosystem/">Google Ads e Business Profile →</a>
+    <a href="/seo-aeo/">SEO + AEO →</a>
+    <a href="/automazione/">Chatbot AI →</a>
   </div>
 </section>
 

@@ -223,7 +223,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 /* MAP STRIP */
 .map-strip{max-width:var(--wrap);margin:0 auto 112px;height:320px;background:var(--gray);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;position:relative;box-sizing:border-box}
 .map-wrap{padding:0 48px}
-.map-strip iframe{width:100%;height:100%;border:none;filter:grayscale(80%) invert(90%) contrast(90%)}
+.map-strip iframe{width:100%;height:100%;border:none;filter:saturate(.85)}
 .map-label{position:absolute;bottom:20px;left:20px;background:rgba(6,6,6,.92);backdrop-filter:blur(10px);border:1px solid rgba(91,155,255,.3);padding:12px 18px;border-radius:var(--radius-md);font-size:14px;color:#ececec}
 .map-label strong{color:var(--blue-bright);font-weight:500}
 
@@ -520,11 +520,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <select id="servizio" name="servizio">
           <option value="" disabled selected>Seleziona un servizio</option>
           <option value="Siti Web">Sito web</option>
-          <option value="Google Ecosystem">Google Ads e Business Profile</option>
+          <option value="Google Ecosystem">Google Ads</option>
           <option value="SEO + AEO">SEO + AEO</option>
           <option value="Automazione AI">Chatbot e automazioni</option>
           <option value="ChatGPT Ads">ChatGPT Ads</option>
-          <option value="Più servizi">Più servizi insieme</option>
           <option value="Collaborazione agenzia">Collaborazione per agenzie</option>
           <option value="Altro">Altro / Non so ancora</option>
         </select>
@@ -561,8 +560,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="form-group">
-        <label for="messaggio">Raccontami il progetto *</label>
-        <textarea id="messaggio" name="messaggio" placeholder="Descrivi la tua attività, cosa vuoi ottenere e qualsiasi dettaglio utile..." required></textarea>
+        <label for="messaggio">Raccontami il progetto</label>
+        <textarea id="messaggio" name="messaggio" placeholder="Descrivi la tua attività, cosa vuoi ottenere e qualsiasi dettaglio utile..."></textarea>
       </div>
 
       <!-- honeypot anti-spam -->

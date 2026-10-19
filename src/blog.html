@@ -331,6 +331,10 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .nav-dd:hover>a.active{color:#fff}
 .nav-dd-menu a.dd-item.active:not(:hover){background:transparent!important}
 .nav-dd-menu a.dd-item.active:not(:hover) .dd-tx b{color:#fff}
+/* Hero centrato */
+.hero{text-align:center}
+.hero::after{left:50%;right:auto;transform:translateX(-50%)}
+.hero-tag::after{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
 </style>
 <!-- GTM -->
 <!-- Consent Mode v2: stato iniziale (prima di GTM) -->
@@ -396,7 +400,6 @@ gtag('consent', 'default', {
 <section class="hero reveal">
   <div class="hero-tag">Blog</div>
   <h1 class="hero-title">Consigli pratici<br>per crescere<br><span>online.</span></h1>
-  <p class="hero-desc">Articoli su siti web, Google Ads, SEO e automazione AI. Scritti da chi lo fa davvero — per piccole imprese a Bari e in tutta Italia.</p>
 </section>
 
 <!-- CATEGORIE -->
@@ -486,21 +489,6 @@ gtag('consent', 'default', {
   </div>
 </div>
 
-<!-- NEWSLETTER -->
-<div class="newsletter">
-  <div>
-    <h3>Vuoi sapere quando escono gli articoli?</h3>
-    <p>Niente spam. Solo contenuti utili, quando sono pronti. Un articolo alla settimana sulla crescita digitale per PMI.</p>
-  </div>
-  <div>
-    <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="la-tua@email.it">
-      <button class="newsletter-btn">Iscriviti</button>
-    </div>
-    <p style="font-size:11px;color:rgba(255,255,255,.68);margin-top:10px">Nessuno spam. Cancellati quando vuoi.</p>
-  </div>
-</div>
-
 <!-- FOOTER -->
 {% include "footer.njk" %}
 
@@ -546,15 +534,6 @@ document.querySelectorAll('.cat-card').forEach(cat => {
   });
 });
 
-// NEWSLETTER
-document.querySelector('.newsletter-btn').addEventListener('click', () => {
-  const input = document.querySelector('.newsletter-input');
-  if (input.value.includes('@')) {
-    input.value = '';
-    input.placeholder = '✓ Iscritto! A presto.';
-    input.style.color = '#4ade80';
-  }
-});
 </script>
 
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,0.97);border-top:1px solid rgba(91,155,255,0.25);backdrop-filter:blur(16px);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);flex-wrap:wrap">

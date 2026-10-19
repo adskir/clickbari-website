@@ -339,6 +339,19 @@ nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;ba
 .nav-dd:hover>a.active{color:#fff}
 .nav-dd-menu a.dd-item.active:not(:hover){background:transparent!important}
 .nav-dd-menu a.dd-item.active:not(:hover) .dd-tx b{color:#fff}
+/* Hero centrato */
+.hero{display:block;text-align:center}
+.hero-tag{justify-content:center}
+.hero::after{left:50%;right:auto;transform:translateX(-50%)}
+.hero-tag::after{content:'';display:block;width:28px;height:1px;background:var(--blue-bright)}
+/* Pannelli info e form della stessa altezza (desktop) */
+@media(min-width:1101px){
+.contact-main{align-items:stretch}
+.form-panel{display:flex;flex-direction:column}
+#contact-form{flex:1;display:flex;flex-direction:column}
+#contact-form .form-group:has(textarea){flex:1;display:flex;flex-direction:column}
+#contact-form textarea{flex:1}
+}
 </style>
 </head>
 <body>
@@ -405,8 +418,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO -->
 <section class="hero reveal">
   <div class="hero-tag">Contatti</div>
-  <h1 class="hero-title">Parliamo<br>del tuo<br><span>progetto.</span></h1>
-  <p class="hero-desc">Rispondo entro 24 ore. Hai fretta? <a href="https://wa.me/393805826738" target="_blank" rel="noopener" style="color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a>. Se preferisci, possiamo vederci di persona a Bari per un caffè.</p>
+  <h1 class="hero-title">Parliamo del tuo<br><span>progetto.</span></h1>
 </section>
 
 <!-- MAIN -->
@@ -420,7 +432,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="contact-item">
         <div class="contact-icon">📍</div>
         <div>
-          <div class="contact-item-label">Indirizzo</div>
+          <div class="contact-item-label">Indirizzo (su appuntamento)</div>
           <div class="contact-item-val">Via Francesco Saverio Abbrescia 96<br>70121 Bari, Puglia</div>
         </div>
       </div>
@@ -502,21 +514,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="mario@esempio.it">
-      </div>
 
       <div class="form-group">
         <label for="servizio">Di cosa hai bisogno?</label>
         <select id="servizio" name="servizio">
           <option value="" disabled selected>Seleziona un servizio</option>
-          <option value="sito-web">Sito Web</option>
-          <option value="google-ads">Google Ads</option>
-          <option value="seo-aeo">SEO + AEO</option>
-          <option value="automazione">Automazione AI</option>
-          <option value="pacchetto">Pacchetto completo</option>
-          <option value="altro">Altro / Non so ancora</option>
+          <option value="Siti Web">Sito web</option>
+          <option value="Google Ecosystem">Google Ads e Business Profile</option>
+          <option value="SEO + AEO">SEO + AEO</option>
+          <option value="Automazione AI">Chatbot e automazioni</option>
+          <option value="ChatGPT Ads">ChatGPT Ads</option>
+          <option value="Più servizi">Più servizi insieme</option>
+          <option value="Collaborazione agenzia">Collaborazione per agenzie</option>
+          <option value="Altro">Altro / Non so ancora</option>
         </select>
       </div>
 

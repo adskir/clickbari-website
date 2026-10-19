@@ -233,7 +233,7 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible{outline:2px solid var(
 .livello-desc{font-size:15px;line-height:1.7;color:#c4c4c4;margin-bottom:16px;max-width:640px}
 .livello.custom .livello-desc{color:rgba(255,255,255,.88)}
 .livello-tags{display:flex;flex-wrap:wrap;gap:6px}
-.livello-tag-link{text-decoration:none;cursor:pointer;transition:border-color .2s,color .2s}.livello-tag-link:hover{border-color:var(--blue-bright);color:#fff}
+.livello-tag.livello-tag-link{background:none;border-color:transparent;padding-left:2px;padding-right:2px;color:var(--blue-bright);text-decoration:underline;text-underline-offset:3px;cursor:pointer;transition:color .2s}.livello-tag.livello-tag-link:hover{color:#fff}
 .livello-tag{font-size:11px;letter-spacing:.04em;color:#bcd3ff;background:rgba(91,155,255,.10);border:1px solid rgba(91,155,255,.22);padding:4px 10px;border-radius:var(--radius-sm)}
 .livello.custom .livello-tag{color:#fff;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.25)}
 .livello-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:14px 26px;font-family:var(--font-d);font-size:19px;letter-spacing:.1em;text-decoration:none;border-radius:var(--radius-md);white-space:nowrap;transition:transform .2s,box-shadow .2s}
@@ -475,7 +475,7 @@ sup.eur.eur.eur.eur{color:inherit!important;margin:0 0 0 6px!important;font-size
 .livello.featured-auto{border-color:rgba(91,155,255,.45);box-shadow:0 0 40px rgba(37,99,235,.15)}
 .livelli-note{font-size:14px;color:#a8a8a8;margin-top:24px!important;line-height:1.6}
 /* Pacchetti: canone */
-.livello-plat{display:inline-block;margin:4px 0 0;color:#cfcfcf;border:1px dashed rgba(255,255,255,.25);padding:3px 9px;border-radius:var(--radius-sm)}
+.livello-plat{display:block;margin-top:6px;font-size:11px;color:#8f8f8f}
 .livello-month{display:inline-block;margin:6px 0 2px;color:#fff;font-weight:500;background:rgba(91,155,255,.16);border:1px solid rgba(91,155,255,.35);padding:3px 9px;border-radius:var(--radius-sm)}
 .livello.custom .livello-month{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3)}
 .livelli-note a{color:var(--blue-bright)}
@@ -621,17 +621,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <div class="livello-level">Nessun cliente perso</div>
         <div class="livello-price"><sup>da</sup>400<sup class="eur">€</sup></div>
-        <div class="livello-period">configurazione una tantum<br><b class="livello-month">+ 69 €/mese tutto incluso</b><br><span class="livello-plat">piattaforma e gestione comprese</span></div>
+        <div class="livello-period">configurazione una tantum<br><b class="livello-month">+ 69 €/mese tutto incluso</b><br><span class="livello-plat">a parte solo i messaggi WhatsApp inviati da te</span></div>
       </div>
       <div class="livello-content">
         <div class="livello-name">Chatbot AI sul sito e su WhatsApp</div>
-        <p class="livello-desc">Un assistente che risponde giorno e notte sul tuo sito e sul tuo WhatsApp, e conosce orari, prezzi e servizi. Gestisce il primo contatto con chi ti scrive, raccoglie nome e richiesta e te li manda subito: a te resta solo da richiamare.</p>
+        <p class="livello-desc">Un assistente AI che chatta con i tuoi clienti sul sito e su WhatsApp, giorno e notte: risponde alle domande su orari, prezzi e servizi, raccoglie nome e richiesta e te li manda subito. A te resta solo da richiamare.</p>
         <div class="livello-tags">
           <span class="livello-tag">Risposte con le tue informazioni</span>
           <span class="livello-tag">Raccolta contatti</span>
           <span class="livello-tag">Notifica immediata</span>
           <span class="livello-tag">Sito + WhatsApp</span>
-          <a href="#faq-whatsapp" class="livello-tag livello-tag-link">Costi WhatsApp ?</a>
+          <a href="#faq-whatsapp" class="livello-tag livello-tag-link">Quanto costa WhatsApp?</a>
         </div>
       </div>
       <div class="livello-action">
@@ -654,7 +654,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="livello-tag">Richieste in un foglio Google</span>
           <span class="livello-tag">Promemoria se non risponde</span>
           <span class="livello-tag">+ Richiesta recensione Google dopo il lavoro</span>
-          <a href="#faq-whatsapp" class="livello-tag livello-tag-link">Messaggi su WhatsApp: + 200 € una tantum ?</a>
+          <a href="#faq-whatsapp" class="livello-tag livello-tag-link">Anche su WhatsApp: quanto costa?</a>
         </div>
       </div>
       <div class="livello-action">
@@ -832,7 +832,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="faq-item" id="faq-whatsapp">
       <div class="faq-q" role="button" tabindex="0">Quanto costa WhatsApp? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Uso la WhatsApp Business API, l'unico collegamento ufficiale di Meta: creo e verifico l'account aziendale, configuro il numero (nuovo o il tuo attuale) e lo collego al chatbot. Per il chatbot è già compreso nei 400 €; per le sole automazioni costa 200 € una volta. Poi Meta conta i messaggi così: se è il cliente a scriverti, le risposte sono gratuite, quindi un chatbot che risponde non costa quasi nulla. Si pagano solo i messaggi che partono da te per primo, come conferme, promemoria o richieste di recensione: pochi centesimi l'uno, direttamente a Meta. Non uso strumenti non ufficiali: rischiano il blocco del numero.</div>
+      <div class="faq-a">Nel chatbot il collegamento ufficiale a WhatsApp (WhatsApp Business API) è già compreso; per le sole automazioni costa 200 € una volta. Poi Meta fa pagare solo i messaggi che partono da te, come conferme e promemoria: pochi centesimi l'uno, pagati direttamente a Meta. Le risposte a chi ti scrive sono gratuite.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">I dati dei miei clienti sono al sicuro? <span class="faq-icon">+</span></div>

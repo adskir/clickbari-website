@@ -607,7 +607,7 @@ gtag('consent', 'default', {
         <div class="pk-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Prima bozza in 24 ore</div>
       <div class="pacchetto-desc">Una pagina che lavora per te: biglietto da visita digitale. Perfetta anche per promozioni, eventi o per testare una nuova idea.</div>
         <button type="button" class="pk-flip" aria-expanded="false">Cosa include <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><svg class="ic-dd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
+        <a href="#" onclick="openContactModal('Siti Web — Landing Page');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
       <div class="pk-back">
         <div class="pk-back-head"><span>Landing Page</span></div>
@@ -635,7 +635,7 @@ gtag('consent', 'default', {
         <div class="pk-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Prima bozza in 3 giorni</div>
       <div class="pacchetto-desc">Sito completo su più pagine per far crescere la tua attività online. La soluzione più scelta dai miei clienti.</div>
         <button type="button" class="pk-flip" aria-expanded="false">Cosa include <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><svg class="ic-dd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Inizia ora →</a>
+        <a href="#" onclick="openContactModal('Siti Web — Sito Vetrina');return false;" class="pacchetto-btn">Inizia ora →</a>
       </div>
       <div class="pk-back">
         <div class="pk-back-head"><span>Sito Vetrina</span></div>
@@ -662,7 +662,7 @@ gtag('consent', 'default', {
         <div class="pk-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Prima bozza in 1 settimana</div>
       <div class="pacchetto-desc">Il tuo negozio online, dal più semplice al più completo: catalogo, carrello e pagamenti sicuri. Per cataloghi grandi, versione su Shopify con magazzino e CRM.</div>
         <button type="button" class="pk-flip" aria-expanded="false">Cosa include <svg class="ic-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><svg class="ic-dd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <a href="#" onclick="openContactModal('Siti Web');return false;" class="pacchetto-btn">Richiedi preventivo →</a>
+        <a href="#" onclick="openContactModal('Siti Web — E-commerce');return false;" class="pacchetto-btn">Richiedi preventivo →</a>
       </div>
       <div class="pk-back">
         <div class="pk-back-head"><span>E-commerce</span></div>
@@ -1006,7 +1006,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
     formWrap.style.display = 'block';
     successBox.classList.remove('visible');
     form.reset();
-    if(serviceSelect){ serviceSelect.value = prefillService || 'Siti Web'; } // pagina servizio: campo nascosto, valore fisso
+    if(serviceSelect){ var _v = prefillService || 'Siti Web'; if(!Array.prototype.some.call(serviceSelect.options,function(o){return o.value===_v;})){ var _o=document.createElement('option'); _o.value=_o.textContent=_v; serviceSelect.appendChild(_o); } serviceSelect.value = _v; } // pagina servizio: campo nascosto, valore fisso
     startAnimation();
   };
 

@@ -874,10 +874,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .as-title{font-family:var(--font-d,'Bebas Neue',sans-serif);font-weight:400;font-size:clamp(44px,5vw,80px);line-height:.9;letter-spacing:.01em;color:#fff;margin:0}
 .as-title span{color:var(--blue-bright,#5b9bff)}
 .as-intro{font-size:16px;line-height:1.7;color:#bdbdbd;margin:0}
-.as-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:48px}
+.as-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:48px}
 .as-card{display:flex;flex-direction:column;background:var(--gray,#161616);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius-lg,18px);overflow:hidden;text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s}
 .as-card:hover{border-color:rgba(91,155,255,.5);transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.4),0 0 40px rgba(37,99,235,.15)}
-.as-vis{position:relative;height:150px;background:radial-gradient(120% 120% at 0% 0%,rgba(37,99,235,.22),rgba(15,17,21,1) 60%);border-bottom:1px solid rgba(255,255,255,.07);overflow:hidden}
+.as-vis{position:relative;background:radial-gradient(120% 120% at 0% 0%,rgba(37,99,235,.22),rgba(15,17,21,1) 60%);border-bottom:1px solid rgba(255,255,255,.07);overflow:hidden}
 .as-body{display:flex;flex-direction:column;flex:1;padding:22px 22px 20px}
 .as-t{font-family:var(--font-d,'Bebas Neue',sans-serif);font-size:28px;letter-spacing:.02em;line-height:1;color:#fff;margin-bottom:8px}
 .as-d{flex:1;font-size:14px;line-height:1.6;color:#bdbdbd;margin:0 0 18px}
@@ -885,35 +885,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .as-p{color:#fff;font-weight:500}
 .as-go{color:var(--blue-bright,#5b9bff);transition:transform .25s}
 .as-card:hover .as-go{transform:translateX(4px)}
-/* mini-infografiche */
-.as-v-panel{position:absolute;left:18px;right:18px;top:18px;bottom:-12px;background:#fff;border-radius:10px 10px 0 0;box-shadow:0 0 0 1px rgba(91,155,255,.3),0 10px 30px rgba(0,0,0,.4);padding:10px 12px;color:#1f2937;font-family:var(--font-b,'DM Sans',sans-serif)}
-.as-v-dots{display:flex;gap:4px;margin-bottom:9px}.as-v-dots i{width:6px;height:6px;border-radius:50%;background:#d6dbe4}
-.as-v-line{height:6px;border-radius:3px;background:#e6eaf1;margin-bottom:6px}
-.as-v-btn{display:inline-block;margin-top:6px;height:14px;width:46%;border-radius:4px;background:#2563EB}
-.as-v-hero{height:34px;border-radius:6px;background:linear-gradient(135deg,#2563EB,#5b9bff);margin-bottom:8px}
-.as-v-bars{position:absolute;left:22px;right:22px;bottom:22px;top:30px;display:flex;align-items:flex-end;gap:8px}
-.as-v-bars i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#5b9bff,rgba(37,99,235,.35))}
-.as-v-tag{position:absolute;top:14px;right:14px;font-size:11px;font-weight:600;color:#0b1a10;background:#34d399;padding:3px 8px;border-radius:999px}
-.as-v-search{display:flex;align-items:center;gap:6px;height:20px;border-radius:999px;border:1px solid #e3e7ef;padding:0 8px;font-size:9.5px;color:#5f6368;margin-bottom:9px}
-.as-v-search b{width:7px;height:7px;border-radius:50%;border:1.5px solid #5f6368;display:inline-block}
-.as-v-res{display:flex;align-items:center;gap:7px;margin-bottom:7px}
-.as-v-res em{font-style:normal;flex-shrink:0;width:15px;height:15px;border-radius:50%;background:#e6eaf1;color:#5f6368;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
-.as-v-res.top em{background:#2563EB;color:#fff}
-.as-v-res span{flex:1;height:6px;border-radius:3px;background:#e6eaf1}
-.as-v-res.top span{background:#bcd3ff}
-.as-v-chat{position:absolute;left:18px;right:18px;top:18px;display:flex;flex-direction:column;gap:7px;font-family:var(--font-b,'DM Sans',sans-serif)}
-.as-v-msg{max-width:78%;font-size:10.5px;line-height:1.35;padding:6px 9px;border-radius:12px}
-.as-v-msg.in{align-self:flex-end;background:#2563EB;color:#fff;border-bottom-right-radius:3px}
-.as-v-msg.bot{align-self:flex-start;background:#fff;color:#1f2937;border-bottom-left-radius:3px}
-.as-v-chip{position:absolute;right:14px;bottom:12px;display:flex;align-items:center;gap:6px;font-size:10px;color:#fff;background:rgba(10,12,18,.92);border:1px solid rgba(91,155,255,.4);padding:5px 9px;border-radius:999px}
-.as-v-chip i{width:6px;height:6px;border-radius:50%;background:#34d399}
-.as-v-ad{border:1px solid #e3e7ef;border-radius:8px;padding:6px 8px;background:#fafbfd;margin-top:6px}
-.as-v-ad small{display:block;font-size:8px;font-weight:700;letter-spacing:.06em;color:#5f6368;text-transform:uppercase;margin-bottom:4px}
-.as-v-ad div{display:flex;align-items:center;gap:7px}
-.as-v-ad b{width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#34d399,#2563EB);flex-shrink:0}
-.as-v-ad span{flex:1;height:6px;border-radius:3px;background:#e6eaf1}
+/* mini-mockup (stile hero delle pagine servizio) */
+.as-vis{height:230px}
+.as-m{position:absolute;left:22px;right:22px;top:24px;background:#fff;border-radius:12px;box-shadow:0 24px 50px rgba(0,0,0,.55),0 0 0 1px rgba(91,155,255,.35),0 0 40px rgba(37,99,235,.25);color:#1f2937;font-family:var(--font-b,'DM Sans',sans-serif);overflow:hidden;transition:transform .35s}
+.as-card:hover .as-m{transform:translateY(-4px)}
+.as-chip{position:absolute;z-index:2;display:flex;align-items:center;gap:7px;font-size:10.5px;line-height:1.25;color:#fff;background:rgba(10,12,18,.94);border:1px solid rgba(91,155,255,.45);padding:6px 10px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.5);white-space:nowrap}
+.as-chip i{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 0 3px rgba(52,211,153,.2);flex-shrink:0}
+.as-chip.br{right:12px;bottom:14px}.as-chip.tr{right:12px;top:12px}.as-chip.bl{left:12px;bottom:14px}
+/* browser */
+.as-br{display:flex;align-items:center;gap:5px;padding:7px 10px;background:#f1f3f7;border-bottom:1px solid #e3e7ef}
+.as-br i{width:7px;height:7px;border-radius:50%}.as-br i:nth-child(1){background:#ff5f57}.as-br i:nth-child(2){background:#febc2e}.as-br i:nth-child(3){background:#28c840}
+.as-br span{margin-left:8px;flex:1;height:14px;border-radius:7px;background:#fff;font-size:8.5px;color:#5f6368;line-height:14px;padding-left:8px}
+.as-shot{display:block;width:100%;height:170px;object-fit:cover;object-position:top}
+/* google */
+.as-q{display:flex;align-items:center;gap:7px;margin:10px 12px 8px;height:24px;border-radius:999px;border:1px solid #e3e7ef;padding:0 10px;font-size:10.5px;color:#1f2937;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.as-q svg{width:11px;height:11px;color:#5f6368;flex-shrink:0}
+.as-ad{padding:0 12px 10px}
+.as-ad small{display:block;font-size:8.5px;font-weight:700;color:#1f2937;margin-bottom:3px}
+.as-ad .u{font-size:8.5px;color:#4d5156;margin-bottom:2px}
+.as-ad b{display:block;font-size:12px;font-weight:500;color:#1a0dab;line-height:1.25;margin-bottom:3px}
+.as-ad p{margin:0 0 6px;font-size:9px;line-height:1.4;color:#4d5156}
+.as-sl{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px}
+.as-sl span{font-size:9px;color:#1a0dab}
+.as-stars{color:#fbbc04;letter-spacing:1px}
+/* seo / ai */
+.as-ai{margin:0 12px 8px;padding:8px 10px;border-radius:10px;background:linear-gradient(135deg,#eef3ff,#f6f0ff)}
+.as-ai small{display:flex;align-items:center;gap:5px;font-size:8.5px;font-weight:600;color:#5b3fd6;margin-bottom:4px}
+.as-ai p{margin:0;font-size:9.5px;line-height:1.45;color:#1f2937}
+.as-ai p em{font-style:normal;font-weight:600;color:#2563EB}
+.as-org{padding:0 12px 10px}
+.as-org .u{font-size:8.5px;color:#4d5156}
+.as-org b{display:block;font-size:11.5px;font-weight:500;color:#1a0dab}
+/* chat */
+.as-ch{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#2563EB;color:#fff}
+.as-ch em{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#f5c542,#e08e3c);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:10px;font-weight:700}
+.as-ch b{display:block;font-size:10.5px;font-weight:500}.as-ch small{display:block;font-size:8.5px;opacity:.85}
+.as-cb{display:flex;flex-direction:column;gap:6px;padding:9px 10px;background:#f6f8fc}
+.as-msg{max-width:82%;font-size:9.5px;line-height:1.4;padding:6px 9px;border-radius:11px}
+.as-msg.in{align-self:flex-end;background:#2563EB;color:#fff;border-bottom-right-radius:3px}
+.as-msg.bot{align-self:flex-start;background:#fff;color:#1f2937;border:1px solid #e6eaf1;border-bottom-left-radius:3px}
+/* chatgpt */
+.as-gu{align-self:flex-end;margin:10px 10px 6px auto;max-width:80%;background:#f0f2f6;color:#1f2937;font-size:9.5px;line-height:1.4;padding:6px 10px;border-radius:12px 12px 3px 12px;width:fit-content}
+.as-ga{padding:0 12px 6px;font-size:9.5px;line-height:1.45;color:#2b2f36}
+.as-gad{margin:0 12px 10px;border:1px solid #e3e7ef;border-radius:10px;padding:7px 9px;background:#fafbfd}
+.as-gad small{display:block;font-size:7.5px;font-weight:700;letter-spacing:.06em;color:#5f6368;text-transform:uppercase;margin-bottom:5px}
+.as-gad div{display:flex;align-items:center;gap:8px}
+.as-gad i{width:28px;height:28px;border-radius:7px;background:linear-gradient(160deg,#7cc4f5,#2563EB 55%,#f5c542);flex-shrink:0}
+.as-gad b{display:block;font-size:10px;font-weight:500;color:#111}.as-gad span{display:block;font-size:8.5px;color:#4d5156}
+.as-gad u{margin-left:auto;text-decoration:none;font-size:8.5px;color:#fff;background:#111;border-radius:999px;padding:4px 9px}
 @media(max-width:1100px){.as-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.as-head{grid-template-columns:1fr}}
-@media(max-width:768px){.as-sec{padding:80px 20px}.as-grid{grid-template-columns:1fr}.as-vis{height:130px}}
+@media(max-width:768px){.as-sec{padding:80px 20px}.as-grid{grid-template-columns:1fr}}
 </style>
 <section class="as-sec" aria-labelledby="as-title">
   <div class="as-in">
@@ -927,7 +948,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="as-grid">
       <a href="/siti-web/" class="as-card">
         <div class="as-vis" aria-hidden="true">
-          <div class="as-v-panel"><div class="as-v-dots"><i></i><i></i><i></i></div><div class="as-v-hero"></div><div class="as-v-line" style="width:82%"></div><div class="as-v-line" style="width:64%"></div><span class="as-v-btn"></span></div>
+          <div class="as-m" style="top:22px;bottom:-30px"><div class="as-br"><i></i><i></i><i></i><span>barmobile.it</span></div><img class="as-shot" src="/img/portfolio/barmobile.webp" alt="" width="1200" height="750" loading="lazy" decoding="async"></div>
+          <div class="as-chip br"><i></i>Design su misura</div>
         </div>
         <div class="as-body">
           <span class="as-t">Siti web</span>
@@ -937,7 +959,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <a href="/seo-aeo/" class="as-card">
         <div class="as-vis" aria-hidden="true">
-          <div class="as-v-panel"><div class="as-v-search"><b></b>pizzeria a Bari</div><div class="as-v-res top"><em>1</em><span></span></div><div class="as-v-res"><em>2</em><span style="flex:.8"></span></div><div class="as-v-res"><em>3</em><span style="flex:.6"></span></div></div>
+          <div class="as-m"><div class="as-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>dove mangiare la pizza a Bari?</div>
+            <div class="as-ai"><small>✦ Risposta generata dall'AI</small><p>Tra le pizzerie più apprezzate c'è <em>Pizzeria Lievito Lento</em>: impasto a lunga lievitazione e forno a legna.</p></div>
+            <div class="as-org"><div class="u">lievitolento.it</div><b>Pizzeria a Bari con forno a legna</b></div></div>
+          <div class="as-chip br"><i></i>Citata dall'AI</div>
         </div>
         <div class="as-body">
           <span class="as-t">SEO + AEO</span>
@@ -947,8 +972,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <a href="/automazione/" class="as-card">
         <div class="as-vis" aria-hidden="true">
-          <div class="as-v-chat"><div class="as-v-msg in">Vorrei un preventivo</div><div class="as-v-msg bot">Certo! Per quale servizio?</div></div>
-          <div class="as-v-chip"><i></i>Nuova richiesta</div>
+          <div class="as-m"><div class="as-ch"><em>C</em><div><b>Cantiere Azzurro · Assistente</b><small>Online ora</small></div></div>
+            <div class="as-cb"><div class="as-msg in">Vorrei un preventivo per il bagno</div><div class="as-msg bot">Certo! Quanti metri quadri e in che zona?</div><div class="as-msg in">6 mq, Poggiofranco</div></div></div>
+          <div class="as-chip br">📩 Nuova richiesta · Marco</div>
         </div>
         <div class="as-body">
           <span class="as-t">Automazione AI</span>
@@ -958,7 +984,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <a href="/chatgpt-ads/" class="as-card">
         <div class="as-vis" aria-hidden="true">
-          <div class="as-v-panel"><div class="as-v-line" style="width:90%"></div><div class="as-v-line" style="width:70%"></div><div class="as-v-ad"><small>Sponsorizzato</small><div><b></b><span></span></div></div></div>
+          <div class="as-m" style="display:flex;flex-direction:column"><div class="as-gu">Un b&amp;b vicino al mare in Puglia?</div>
+            <div class="as-ga">Polignano a Mare e Monopoli sono ottime scelte per una vacanza al mare…</div>
+            <div class="as-gad"><small>Sponsorizzato</small><div><i></i><div><b>Masseria Ulivo Blu</b><span>Monopoli · colazione inclusa</span></div><u>Scopri</u></div></div></div>
+          <div class="as-chip br"><i></i>Annuncio nella risposta</div>
         </div>
         <div class="as-body">
           <span class="as-t">ChatGPT Ads</span>

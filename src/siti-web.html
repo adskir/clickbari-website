@@ -714,43 +714,8 @@ gtag('consent', 'default', {
   </div>
 </section>
 
-<!-- COSA INCLUDE -->
-<section class="sec include">
-  <div class="sec-kicker">Cosa include ogni sito</div>
-  <h2 class="sec-title">Tutto quello che serve,<br>niente di superfluo.</h2>
-  <div class="include-grid">
-    <div class="include-item">
-      <div class="include-icon">🎨</div>
-      <div class="include-name">Progettato per te</div>
-      <p class="include-desc">Niente template preconfezionati. Ogni sito è costruito sul tuo business, il tuo settore e i tuoi clienti.</p>
-    </div>
-    <div class="include-item">
-      <div class="include-icon">📱</div>
-      <div class="include-name">Mobile first</div>
-      <p class="include-desc">Oltre il 70% degli utenti naviga da smartphone. Il tuo sito funziona perfettamente su tutti i dispositivi.</p>
-    </div>
-    <div class="include-item">
-      <div class="include-icon">⚡</div>
-      <div class="include-name">Velocità</div>
-      <p class="include-desc">Siti veloci. Google premia i siti rapidi e i visitatori non aspettano. Ottimizzazione delle performance inclusa.</p>
-    </div>
-    <div class="include-item">
-      <div class="include-icon">🔍</div>
-      <div class="include-name">SEO integrato</div>
-      <p class="include-desc">Meta tag, struttura URL, heading corretti. Le basi SEO sono già dentro — non un'aggiunta posteriore.<br><a href="/seo-aeo/" class="include-link">Vuoi andare oltre le basi? SEO + AEO →</a></p>
-    </div>
-    <div class="include-item">
-      <div class="include-icon">💬</div>
-      <div class="include-name">WhatsApp + form</div>
-      <p class="include-desc">Bottone WhatsApp flottante e form di contatto funzionante. Il cliente ti trova al primo click.<br><a href="/automazione/" class="include-link">Chatbot AI e moduli automatici →</a></p>
-    </div>
-    <div class="include-item">
-      <div class="include-icon">🔧</div>
-      <div class="include-name">Assistenza post-lancio</div>
-      <p class="include-desc">Dopo la pubblicazione non sparisco. Modifiche, aggiornamenti e supporto tecnico inclusi nella gestione annuale, oppure a parte su richiesta.</p>
-    </div>
-  </div>
-</section>
+<!-- ALTRI SERVIZI (al posto di "Cosa include", già nelle card prezzi) -->
+{% set current = "siti" %}{% set as_kicker = "Dopo il sito" %}{% set as_title = "Il sito è pronto.<br><span>Ora portiamoci clienti.</span>" %}{% set as_intro = "Un bel sito da solo non basta: servono persone che lo trovino e nessuna richiesta persa. Ecco cosa posso aggiungere, quando ti serve." %}{% include "altri-servizi.njk" %}
 
 <!-- PORTFOLIO PREVIEW -->
 <section class="sec preview">
@@ -778,9 +743,6 @@ gtag('consent', 'default', {
     <a href="/portfolio/" class="btn-outline">Vedi tutti i progetti →</a>
   </div>
 </section>
-
-<!-- ALTRI SERVIZI -->
-{% set current = "siti" %}{% include "altri-servizi.njk" %}
 
 <!-- FAQ -->
 <section class="sec domande">

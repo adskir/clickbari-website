@@ -92,9 +92,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a{white-space:nowrap}
 
 /* NAV — Per agenzie */
-.nav-links a.nav-agency{padding:7px 14px!important;letter-spacing:.1em;border:1px solid rgba(91,155,255,.55);border-radius:999px;color:#dbe7ff!important;transition:background .2s,border-color .2s}
+.nav-links a.nav-agency{display:inline-block;padding:7px 15px!important;letter-spacing:.1em;border:1px solid rgba(140,180,255,.7);border-radius:999px;color:#fff!important;background:linear-gradient(135deg,rgba(37,99,235,.45),rgba(124,92,255,.35));box-shadow:0 0 18px rgba(37,99,235,.35);transform:rotate(-2deg);animation:navAg 7s ease-in-out infinite;transition:transform .25s,box-shadow .25s,background .25s}
 .nav-links a.nav-agency::before{display:none!important}
-.nav-links a.nav-agency:hover,.nav-links a.nav-agency.active{background:rgba(37,99,235,.18);border-color:var(--blue-bright);color:#fff!important}
+.nav-links a.nav-agency:hover,.nav-links a.nav-agency.active{animation:none;transform:rotate(3deg) scale(1.07);background:linear-gradient(135deg,#2563EB,#7c5cff);border-color:#a9c6ff;box-shadow:0 0 0 5px rgba(91,155,255,.18),0 8px 26px rgba(37,99,235,.5)}
+@keyframes navAg{0%,86%,100%{transform:rotate(-2deg)}90%{transform:rotate(3deg) scale(1.06)}94%{transform:rotate(-4deg) scale(1.06)}97%{transform:rotate(1deg)}}
 .mobile-nav-link.mobile-agency{color:#9cc2ff}
 /* HAMBURGER */
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:110}

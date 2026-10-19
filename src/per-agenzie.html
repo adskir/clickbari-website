@@ -26,11 +26,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NRZ3S9F5');</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2">
+<link rel="shortcut icon" href="/favicon.ico?v=2">
 <title>Per le agenzie — Partner web e Google a Bari · ClickBari</title>
 <meta name="description" content="Partner esterno per agenzie di marketing: siti web, SEO, Google Ads e Google Business Profile, anche in white label. Prima bozza in 24 ore. Bari e tutta Italia.">
 <link rel="canonical" href="{{ site.url }}/per-agenzie/">
@@ -551,6 +551,7 @@ sup.eur.eur.eur.eur{color:inherit!important;margin:0 0 0 6px!important;font-size
 .am-q{min-width:0}
 .hero-tag::after{display:none}
 .hero-title{font-size:clamp(68px,8.6vw,140px)}
+@media(min-width:1101px){.hero-title{font-size:clamp(64px,6.6vw,108px)}}
 .hero-desc{margin:0 0 40px;max-width:520px}
 .hero-btns{justify-content:flex-start}
 .am{position:relative;max-width:600px;margin-left:auto;width:100%;text-align:left}
@@ -745,10 +746,21 @@ sup.eur.eur.eur.eur{color:inherit!important;margin:0 0 0 6px!important;font-size
 .ag-proj-btn{margin-top:28px!important;width:max-content;margin-left:max(0px,calc((100% - var(--wrap))/2))!important}
 .ag-cond{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
 .ag-cond p{font-size:17px;line-height:1.75;color:#d6d6d6;margin:0 0 16px}
+.ag-cond-box{max-width:var(--wrap);margin:0 auto;border-radius:var(--radius-lg);padding:56px;border:1px solid rgba(91,155,255,.35);background:radial-gradient(120% 140% at 0% 0%,rgba(37,99,235,.20),rgba(22,22,22,1) 55%)}
+.ag-cond-list{list-style:none;margin:6px 0 22px;padding:0;display:grid;gap:10px}
+.ag-cond-list li{display:flex;align-items:center;gap:12px;font-size:16px;color:#fff}
+.ag-cond-list li::before{content:'✓';flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(91,155,255,.18);color:var(--blue-bright);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.ag-cond-last{color:#bdbdbd!important;margin-bottom:24px!important}
+.ag-note{max-width:var(--wrap);margin:24px auto 0;display:flex;align-items:center;gap:14px;background:var(--gray);border:1px solid var(--line);border-left:3px solid var(--blue-bright);border-radius:var(--radius-md);padding:14px 22px}
+.ag-note-ic{font-size:20px;flex-shrink:0}
+.ag-note p{margin:0;font-size:15px;line-height:1.6;color:#d6d6d6}
+.ag-note b{color:#fff;font-weight:500}
 @media(max-width:1100px){.ag-grid,.ag-how{grid-template-columns:1fr 1fr}.ag-tl{margin:24px auto 0}}
 @media(max-width:768px){
   .ag-grid,.ag-how,.ag-proj{grid-template-columns:1fr}
   .ag-cond{grid-template-columns:1fr;gap:20px}
+  .ag-cond-box{padding:32px 22px}
+  .ag-note{align-items:flex-start;padding:14px 16px}
   .ag-tl{margin:36px auto 40px}
   .ag-tl-card{padding:20px}
   .ag-tl-list span{font-size:14px}
@@ -876,6 +888,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="ag-more">Dettagli →</span>
     </a>
   </div>
+
+  <div class="ag-note"><span class="ag-note-ic">🤝</span><p>I prezzi che trovate nelle pagine dei servizi sono per i clienti finali. <b>Per le agenzie le condizioni le definiamo insieme.</b></p></div>
 </section>
 
 <!-- COME LAVORIAMO -->
@@ -912,7 +926,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2 class="sec-title">Progetti<br>già online.</h2>
   <div class="ag-proj">
     <a href="/portfolio/#barmobile" class="ag-p"><img src="/img/portfolio/barmobile.webp" alt="Sito Bar Mobile" width="1200" height="750" loading="lazy" decoding="async"><span>Bar Mobile · eventi</span></a>
-    <a href="/portfolio/#babygreensbari" class="ag-p"><img src="/img/portfolio/babygreensbari.webp" alt="Sito Baby Greens Bari" width="1200" height="750" loading="lazy" decoding="async"><span>Baby Greens · e-commerce</span></a>
+    <a href="/portfolio/#cappuccinipuglia" class="ag-p"><img src="/img/portfolio/cappuccinipuglia.webp" alt="Sito Cappuccini di Puglia" width="1200" height="750" loading="lazy" decoding="async"><span>Cappuccini di Puglia · sito e SEO</span></a>
     <a href="/portfolio/#blackmobiledetailing" class="ag-p"><img src="/img/portfolio/blackmobiledetailing.webp" alt="Sito Black Mobile Detailing" width="1200" height="750" loading="lazy" decoding="async"><span>Black Mobile Detailing · servizi</span></a>
   </div>
   <a href="/portfolio/" class="btn-outline ag-proj-btn">Tutto il portfolio →</a>
@@ -920,14 +934,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- CONDIZIONI -->
 <section class="sec ag-sec">
-  <div class="ag-cond">
-    <div>
-      <div class="sec-kicker">Condizioni</div>
-      <h2 class="sec-title">Ne parliamo<br>insieme.</h2>
-    </div>
-    <div>
-      <p>I prezzi al pubblico sono sul sito. Per le agenzie valgono condizioni dedicate, che definiamo insieme in base al tipo di lavoro e alla continuità della collaborazione.</p>
-      <p>Il modo migliore per conoscerci è partire da un primo progetto.</p>
+  <div class="ag-cond-box">
+    <div class="ag-cond">
+      <div>
+        <div class="sec-kicker">Condizioni</div>
+        <h2 class="sec-title">Ne parliamo<br>insieme.</h2>
+      </div>
+      <div>
+        <p>I prezzi al pubblico sono sul sito. Per le agenzie valgono condizioni dedicate, che definiamo insieme in base al tipo di lavoro e alla continuità della collaborazione.</p>
+        <ul class="ag-cond-list">
+          <li>Condizioni riservate alle agenzie</li>
+          <li>Preventivo chiaro prima di ogni progetto</li>
+          <li>Fattura all'agenzia, cliente finale vostro</li>
+        </ul>
+        <p class="ag-cond-last">Il modo migliore per conoscerci è partire da un primo progetto.</p>
+        <a href="#" onclick="openContactModal('Collaborazione agenzia');return false;" class="btn-primary">Parliamone →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -951,6 +973,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Quanti progetti puoi seguire? <span class="faq-icon">+</span></div>
       <div class="faq-a">Organizzo il lavoro per progetti: tempi e priorità li concordiamo insieme prima di partire, così sapete sempre quando arriva la consegna.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" role="button" tabindex="0">Segui anche la gestione mensile? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sì: gestione di Google Ads, SEO e Google Business Profile, aggiornamenti e manutenzione dei siti. Volumi, tempi e condizioni li concordiamo all'inizio, così posso garantire la stessa qualità su ogni progetto.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" role="button" tabindex="0">Lavori solo con agenzie di Bari? <span class="faq-icon">+</span></div>

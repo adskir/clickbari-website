@@ -151,6 +151,12 @@ normale):
   origine dell'upload sbagliato di `src/README.md`) e non vengono
   pubblicati da Eleventy (non hanno `permalink`/non sono formati di
   template riconosciuti) — innocui ma da ripulire prima o poi.
-- `/admin` (Decap CMS) non è ancora collegato a un OAuth provider:
-  l'interfaccia visuale per scrivere articoli non funziona finché quel
-  passaggio non viene fatto.
+- (risolto 11.11.2026) `/admin` (Decap CMS) è collegato al login GitHub
+  tramite il Worker Cloudflare `icy-grass-5a06.marketing-ads-kir.workers.dev`
+  (account Cloudflare di Kirill; OAuth App GitHub «ClickBari CMS» su adskir).
+  Codice del Worker: `src/cloudflare-oauth-worker.js` (non pubblicato dal
+  sito). Variabili del Worker: GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET (Secret),
+  ALLOWED_ORIGINS (domini separati da virgola). Lo stesso Worker può servire
+  altri siti: aggiungi il dominio in ALLOWED_ORIGINS e metti `base_url` +
+  `auth_endpoint: auth` nel loro `admin/config.yml`. Scope attuale
+  `public_repo` (per repository privati: `repo`).

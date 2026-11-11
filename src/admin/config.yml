@@ -2,10 +2,11 @@ backend:
   name: github
   repo: adskir/clickbari-website
   branch: main
-  # NOTA: il backend "github" richiede un OAuth provider (un piccolo servizio
-  # che gestisce il login). Non è ancora configurato — finché non lo facciamo,
-  # l'accesso a /admin non funzionerà. Per scrivere articoli OGGI puoi comunque
-  # creare i file .md direttamente su GitHub (vedi src/posts/README.md).
+  # Login via GitHub tramite il nostro OAuth proxy su Cloudflare Workers
+  # (codice: src/cloudflare-oauth-worker.js; il dominio del sito deve essere
+  # in ALLOWED_ORIGINS del Worker).
+  base_url: https://icy-grass-5a06.marketing-ads-kir.workers.dev
+  auth_endpoint: auth
 
 media_folder: "src/images/blog"
 public_folder: "/images/blog"
